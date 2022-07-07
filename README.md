@@ -10,7 +10,7 @@
 
 # About The Extension
 
-This extension is for the [Vizzu](https://github.com/vizzuhq/vizzu-lib) library 
+This extension is for the [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) library 
 that allows users to to create presentations with animated data visualisations.
 
 # License
