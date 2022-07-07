@@ -2,7 +2,7 @@
 
 from typing import Optional, Union
 
-from ipyvizzu import Data, Style, Config, PlainAnimation
+from ipyvizzu import Data, Style, Config  # , PlainAnimation
 
 from ipyvizzustory.storylib.animation import DataFilter
 
@@ -21,7 +21,8 @@ class Step(dict):
         self._update(*animations)
 
         if anim_options:
-            self["animOptions"] = PlainAnimation(**anim_options).build()
+            # self["animOptions"] = PlainAnimation(**anim_options).build()
+            raise NotImplementedError("Anim options are not supported.")
 
     def _update(self, *animations: Union[Data, Style, Config]) -> None:
         for animation in animations:
