@@ -1,4 +1,4 @@
-.PHONY: install dev clean check format check-format lint
+.PHONY: install dev clean check format check-format lint test
 
 VIRTUAL_ENV = .venv
 DEV_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_BUILD_FLAG
@@ -27,13 +27,18 @@ clean:
 requirements:
 	$(VIRTUAL_ENV)/bin/pip-compile --upgrade dev-requirements.in
 
-check: check-format lint
+check: check-format lint test
 
 format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black src
+	$(VIRTUAL_ENV)/bin/black src tests
 
 check-format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black --check src
+	$(VIRTUAL_ENV)/bin/black --check src tests
 
 lint: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/pylint src
+	$(VIRTUAL_ENV)/bin/pylint src tests
+
+test: $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/bin/coverage run --branch --source ipyvizzustory -m unittest discover tests
+	$(VIRTUAL_ENV)/bin/coverage html
+	$(VIRTUAL_ENV)/bin/coverage report -m --fail-under=100
