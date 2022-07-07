@@ -80,4 +80,6 @@ class Story(dict):
     def add_slide(self, slide: Slide) -> None:
         """A method for adding a slide for the story."""
 
+        if not slide or type(slide) != Slide:  # pylint: disable=unidiomatic-typecheck
+            raise TypeError("Type must be Slide.")
         self["slides"].append(slide)
