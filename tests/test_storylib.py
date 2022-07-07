@@ -19,7 +19,7 @@ class TestStory(unittest.TestCase):
     def test_init_if_no_data_was_set(self) -> None:
         """A method for testing Story().__init__() if no data was set."""
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             Story(data={})
 
     def test_init_if_not_valid_data_was_set(self) -> None:

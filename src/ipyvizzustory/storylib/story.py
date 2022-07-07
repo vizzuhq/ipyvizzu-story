@@ -64,9 +64,7 @@ class Story(dict):
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__()
 
-        if not data:
-            raise ValueError("No data was set.")
-        if type(data) != Data:  # pylint: disable=unidiomatic-typecheck
+        if not data or type(data) != Data:  # pylint: disable=unidiomatic-typecheck
             raise TypeError("Type must be Data.")
         self.update(data.build())
 
