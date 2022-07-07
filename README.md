@@ -2,7 +2,7 @@
   <a href="https://github.com/vizzuhq/vizzu-lib">
     <img src="https://github.com/vizzuhq/vizzu-lib-doc/blob/main/docs/readme/infinite-60.gif" alt="Vizzu" />
   </a>
-  <p align="center"><b>ipvizzu - Story</b> JavaScript Extension</p>
+  <p align="center"><b>ipvizzu - Story</b> Extension</p>
   <p align="center">
     <a href="https://github.com/vizzuhq/ipvizzu-story/">Repository</a>
   </p>
