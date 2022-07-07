@@ -9,6 +9,6 @@ class DataFilter(Data):
     def build(self) -> dict:
         """A method for overwriting Data().build()."""
 
-        if len(self.keys()) != 1:
-            raise KeyError("Data can only contain a filter.")
+        if len(self.keys()) != 1 and "filter" not in self:
+            raise KeyError("Data must contain filter and only that.")
         return {"filter": self["filter"]}
