@@ -26,15 +26,13 @@ class Step(dict):
 
     def _update(self, *animations: Union[Data, Style, Config]) -> None:
         for animation in animations:
-            if all(
-                [
-                    not isinstance(animation, Data),
-                    not isinstance(animation, Style),
-                    not isinstance(animation, Config),
-                ]
-            ):
+            if not animation or type(animation) not in [
+                Data,
+                Style,
+                Config,
+            ]:  # pylint: disable=unidiomatic-typecheck
                 raise TypeError("Type must be Data, Style or Config.")
-            if isinstance(animation, Data):
+            if type(animation) == Data:  # pylint: disable=unidiomatic-typecheck
                 animation = DataFilter(animation)
 
             builded_animation = animation.build()
@@ -55,6 +53,8 @@ class Slide(list):
     def add_step(self, step: Step) -> None:
         """A method for adding a step for the slide."""
 
+        if not step or type(step) != Step:  # pylint: disable=unidiomatic-typecheck
+            raise TypeError("Type must be Step.")
         self.append(step)
 
 
@@ -64,12 +64,17 @@ class Story(dict):
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__()
 
-        if any([not isinstance(data, Data), not isinstance(style, Style)]):
-            raise TypeError("Type must be Data or Style.")
-
+        if not data:
+            raise ValueError("No data was set.")
+        if type(data) != Data:  # pylint: disable=unidiomatic-typecheck
+            raise TypeError("Type must be Data.")
         self.update(data.build())
-        if style is not None:
+
+        if style:
+            if type(style) != Style:  # pylint: disable=unidiomatic-typecheck
+                raise TypeError("Type must be Style.")
             self.update(style.build())
+
         self["slides"] = []
 
     def add_slide(self, slide: Slide) -> None:
