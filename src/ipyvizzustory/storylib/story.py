@@ -68,7 +68,8 @@ class Story(dict):
             raise TypeError("Type must be Data or Style.")
 
         self.update(data.build())
-        self.update(style.build())
+        if style is not None:
+            self.update(style.build())
         self["slides"] = []
 
     def add_slide(self, slide: Slide) -> None:
