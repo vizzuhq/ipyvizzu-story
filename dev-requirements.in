@@ -1,5 +1,6 @@
 pip-tools
 black
+black[jupyter]
 pylint
 coverage
 notebook

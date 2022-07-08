@@ -30,15 +30,16 @@ requirements:
 check: check-format lint test
 
 format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black src tests
+	$(VIRTUAL_ENV)/bin/black src tests docs
 
 check-format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black --check src tests
+	$(VIRTUAL_ENV)/bin/black --check src tests docs
 
 lint: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/pylint src tests
 
 test: $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/bin/python setup.py install
 	$(VIRTUAL_ENV)/bin/coverage run --branch --source ipyvizzustory -m unittest discover tests
 	$(VIRTUAL_ENV)/bin/coverage html
 	$(VIRTUAL_ENV)/bin/coverage report -m --fail-under=100
