@@ -18,4 +18,4 @@ class Story(StoryLib):
     def play(self) -> None:
         """A method for displaying the html code."""
 
-        html(self.to_html(), raw=True)
+        html(self.to_html())
