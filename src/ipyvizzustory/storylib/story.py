@@ -1,10 +1,13 @@
 """A module for working with ipyvizzu-story presentations."""
 
 from typing import Optional, Union
+import json
+import uuid
 
-from ipyvizzu import Data, Style, Config  # , PlainAnimation
+from ipyvizzu import RawJavaScriptEncoder, Data, Style, Config  # , PlainAnimation
 
 from ipyvizzustory.storylib.animation import DataFilter
+from ipyvizzustory.storylib.template import VIZZU_STORY, DISPLAY_TEMPLATE
 
 
 class Step(dict):
@@ -81,3 +84,13 @@ class Story(dict):
         if not slide or type(slide) != Slide:  # pylint: disable=unidiomatic-typecheck
             raise TypeError("Type must be Slide.")
         self["slides"].append(slide)
+
+    def to_html(self) -> str:
+        """A method for assembling the html code."""
+
+        vizzu_player_data = f"{json.dumps(self, cls=RawJavaScriptEncoder)}"
+        return DISPLAY_TEMPLATE.format(
+            id=uuid.uuid4().hex[:7],
+            vizzu_story=VIZZU_STORY,
+            vizzu_player_data=vizzu_player_data,
+        )

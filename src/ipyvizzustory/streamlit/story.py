@@ -2,7 +2,7 @@
 
 from typing import Optional
 
-from IPython.display import display_html
+from streamlit.components.v1 import html
 
 from ipyvizzu import Data, Style
 
@@ -15,10 +15,7 @@ class Story(StoryLib):
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__(data=data, style=style)
 
-    def _repr_html_(self) -> str:
-        return self.to_html()
-
     def play(self) -> None:
         """A method for displaying the html code."""
 
-        display_html(self.to_html(), raw=True)
+        html(self.to_html(), raw=True)

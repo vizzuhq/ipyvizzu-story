@@ -2,23 +2,18 @@
 
 from typing import Optional
 
-from IPython.display import display_html
-
 from ipyvizzu import Data, Style
 
 from ipyvizzustory.storylib.story import Story as StoryLib
 
 
 class Story(StoryLib):
-    """A class for representing a presentation story in Jupyter environment."""
+    """A class for representing a presentation story in Python environment."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__(data=data, style=style)
 
-    def _repr_html_(self) -> str:
-        return self.to_html()
-
-    def play(self) -> None:
+    def play(self) -> str:
         """A method for displaying the html code."""
 
-        display_html(self.to_html(), raw=True)
+        return self.to_html()

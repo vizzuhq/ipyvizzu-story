@@ -4,3 +4,4 @@ black[jupyter]
 pylint
 coverage
 notebook
+streamlit
