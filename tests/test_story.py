@@ -45,21 +45,20 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
     def test_play(self) -> None:
         """A method for testing Story().play()."""
 
-        with unittest.mock.patch(
-            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
-        ):
+        with unittest.mock.patch("ipyvizzustory.jupyter.story.display"):
             with unittest.mock.patch(
-                "ipyvizzustory.jupyter.story.display_html"
-            ) as output:
-                self.get_story().play()
-                self.assertEqual(
-                    output.call_args_list[0].args[0],
-                    DISPLAY_TEMPLATE.format(
-                        id="1234567",
-                        vizzu_story=VIZZU_STORY,
-                        vizzu_player_data=self.get_vpd(),
-                    ),
-                )
+                "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+            ):
+                with unittest.mock.patch("ipyvizzustory.jupyter.story.HTML") as output:
+                    self.get_story().play()
+                    self.assertEqual(
+                        output.call_args_list[0].args[0],
+                        DISPLAY_TEMPLATE.format(
+                            id="1234567",
+                            vizzu_story=VIZZU_STORY,
+                            vizzu_player_data=self.get_vpd(),
+                        ),
+                    )
 
     def test_repr_html_(self) -> None:
         """A method for testing Story()._repr_html_()."""

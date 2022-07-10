@@ -40,9 +40,6 @@ clean-test:
 	rm -rf htmlcov
 
 test: install test-wo-install
-	$(VIRTUAL_ENV)/bin/coverage run --branch --source ipyvizzustory -m unittest discover tests
-	$(VIRTUAL_ENV)/bin/coverage html
-	$(VIRTUAL_ENV)/bin/coverage report -m --fail-under=100
 
 test-wo-install: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/coverage run --branch --source ipyvizzustory -m unittest discover tests
@@ -67,4 +64,4 @@ check-release: $(DEV_BUILD_FLAG)
 release: clean-build build-release check-release
 
 doc: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/index.ipynb
+	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/index.ipynb
