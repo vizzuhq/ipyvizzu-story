@@ -15,16 +15,16 @@ class Environment:
         """A static method for importing the appropriate chart for the environment."""
 
         if Environment.is_ipython():  # pragma: no cover
-            from .ipython_env.story import Story as JupyterStory
+            from .ipy_env.story import Story as JupyterStory
 
             return JupyterStory
 
         if Environment.is_streamlit():  # pragma: no cover
-            from .streamlit_env.story import Story as StreamlitStory
+            from .st_env.story import Story as StreamlitStory
 
             return StreamlitStory
 
-        from .python_env.story import Story as PythonStory
+        from .py_env.story import Story as PythonStory
 
         return PythonStory
 

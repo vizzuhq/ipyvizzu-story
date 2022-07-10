@@ -5,9 +5,9 @@ import unittest.mock
 
 from ipyvizzustory.storylib.template import VIZZU_STORY, DISPLAY_TEMPLATE
 
-from ipyvizzustory.python_env.story import Story as PythonStory
-from ipyvizzustory.ipython_env.story import Story as JupyterStory
-from ipyvizzustory.streamlit_env.story import Story as StreamlitStory
+from ipyvizzustory.py_env.story import Story as PythonStory
+from ipyvizzustory.ipy_env.story import Story as JupyterStory
+from ipyvizzustory.st_env.story import Story as StreamlitStory
 
 from tests.test_storylib import TestHtml
 
@@ -50,7 +50,7 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
             return_value=self,
         ):
             with unittest.mock.patch(
-                "ipyvizzustory.ipython_env.story.display_html"
+                "ipyvizzustory.ipy_env.story.display_html"
             ) as output:
                 self.get_story().play()
                 self.assertEqual(
@@ -91,9 +91,7 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
-            with unittest.mock.patch(
-                "ipyvizzustory.streamlit_env.story.html"
-            ) as output:
+            with unittest.mock.patch("ipyvizzustory.st_env.story.html") as output:
                 self.get_story().play()
                 self.assertEqual(
                     output.call_args_list[0].args[0],
