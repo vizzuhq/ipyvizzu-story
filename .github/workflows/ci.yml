@@ -15,7 +15,7 @@ jobs:
     - uses: actions/cache@v3
       with:
         path: ./.venv
-        key: venv
+        key: venv-${{ github.run_id }}
 
     - name: Touch dev environment
       run: make touch-dev
@@ -27,4 +27,4 @@ jobs:
       run: make lint
 
     - name: Run test
-      run: make test
+      run: make test-wo-install
