@@ -5,13 +5,14 @@ DEV_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_BUILD_FLAG
 
 clean: clean-dev clean-build clean-test
 
-dev: $(DEV_BUILD_FLAG) install
+dev: $(DEV_BUILD_FLAG)
 
 $(DEV_BUILD_FLAG):
 	python3 -m venv $(VIRTUAL_ENV)
 	$(VIRTUAL_ENV)/bin/python -m pip install --upgrade pip
 	$(VIRTUAL_ENV)/bin/pip install -r dev-requirements.txt
 	$(VIRTUAL_ENV)/bin/ipython kernel install --name ".venv" --user
+	$(VIRTUAL_ENV)/bin/python setup.py install
 	touch $(DEV_BUILD_FLAG)
 
 clean-dev:
