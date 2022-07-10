@@ -1,10 +1,11 @@
 <p align="center">
   <a href="https://github.com/vizzuhq/vizzu-lib">
-    <img src="https://github.com/vizzuhq/vizzu-lib-doc/blob/main/docs/readme/infinite-60.gif" alt="Vizzu" />
+    <img src="https://github.com/vizzuhq/vizzu-lib-doc/raw/main/docs/readme/infinite-60.gif" alt="Vizzu" />
   </a>
   <p align="center"><b>ipyvizzu - story</b> Extension</p>
   <p align="center">
-    <a href="https://github.com/vizzuhq/ipvizzu-story/">Repository</a>
+    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/examples/">Example</a>
+    · <a href="https://github.com/vizzuhq/ipvizzu-story/">Repository</a>
   </p>
 </p>
 
