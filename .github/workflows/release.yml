@@ -1,24 +1,24 @@
-name: Release ipyvizzustory
+name: Release
 
 on:
-  workflow_dispatch:
-  release:
-    types: [published]
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_call:
 
 jobs:
-  deploy:
+
+  release_package:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build dev environment
-      run: make dev
+    - uses: actions/cache@v3
+        with:
+          path: ./.venv
+          key: venv
+
+    - name: Touch dev environment
+      run: make touch-dev
 
     - name: Build package
       run: make release

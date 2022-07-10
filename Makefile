@@ -1,4 +1,4 @@
-.PHONY: clean install clean-dev dev check format check-format lint clean-test test clean-build build-release check-release release
+.PHONY: clean install clean-dev touch-dev dev check format check-format lint clean-test test test-wo-install clean-build build-release check-release release
 
 VIRTUAL_ENV = .venv
 DEV_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_BUILD_FLAG
@@ -18,6 +18,9 @@ $(DEV_BUILD_FLAG):
 clean-dev:
 	rm -rf $(VIRTUAL_ENV)
 
+touch-dev:
+	touch $(DEV_BUILD_FLAG)
+
 update-dev-req:
 	$(VIRTUAL_ENV)/bin/pip-compile --upgrade dev-requirements.in
 
@@ -36,7 +39,12 @@ clean-test:
 	rm -rf .coverage
 	rm -rf htmlcov
 
-test: $(DEV_BUILD_FLAG) install
+test: install test-wo-install
+	$(VIRTUAL_ENV)/bin/coverage run --branch --source ipyvizzustory -m unittest discover tests
+	$(VIRTUAL_ENV)/bin/coverage html
+	$(VIRTUAL_ENV)/bin/coverage report -m --fail-under=100
+
+test-wo-install: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/coverage run --branch --source ipyvizzustory -m unittest discover tests
 	$(VIRTUAL_ENV)/bin/coverage html
 	$(VIRTUAL_ENV)/bin/coverage report -m --fail-under=100
