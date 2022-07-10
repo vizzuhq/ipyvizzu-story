@@ -45,7 +45,7 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
     def test_play(self) -> None:
         """A method for testing Story().play()."""
 
-        with unittest.mock.patch("ipyvizzustory.jupyter.story.display"):
+        with unittest.mock.patch("ipyvizzustory.jupyter.story.display_html"):
             with unittest.mock.patch(
                 "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
             ):

@@ -2,7 +2,7 @@
 
 from typing import Optional
 
-from IPython.display import HTML, display
+from IPython.display import HTML, display as display_html
 
 from ipyvizzu import Data, Style
 
@@ -21,4 +21,4 @@ class Story(StoryLib):
     def play(self) -> None:
         """A method for displaying the html code."""
 
-        display(HTML(self.to_html()))
+        display_html(HTML(self.to_html()))
