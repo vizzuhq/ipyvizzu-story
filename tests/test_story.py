@@ -91,7 +91,9 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
-            with unittest.mock.patch("ipyvizzustory.streamlit_env.story.html") as output:
+            with unittest.mock.patch(
+                "ipyvizzustory.streamlit_env.story.html"
+            ) as output:
                 self.get_story().play()
                 self.assertEqual(
                     output.call_args_list[0].args[0],
