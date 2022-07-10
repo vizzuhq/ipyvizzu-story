@@ -48,8 +48,8 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
-            with unittest.mock.patch("ipyvizzustory.jupyter.story.display"):
-                with unittest.mock.patch("ipyvizzustory.jupyter.story.HTML") as output:
+            with unittest.mock.patch("ipyvizzustory.jupyter.story.HTML") as output:
+                with unittest.mock.patch("ipyvizzustory.jupyter.story.display"):
                     self.get_story().play()
                     self.assertEqual(
                         output.call_args_list[0].args[0],
