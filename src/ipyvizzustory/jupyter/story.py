@@ -2,7 +2,7 @@
 
 from typing import Optional
 
-from IPython.display import HTML, display as display_html
+from IPython.display import display as display_html, HTML
 
 from ipyvizzu import Data, Style
 
