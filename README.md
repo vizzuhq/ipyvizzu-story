@@ -8,6 +8,9 @@
   </p>
 </p>
 
+[![CI-CD](https://github.com/vizzuhq/ipyvizzu-story/actions/workflows/cicd.yml/badge.svg?branch=main)](https://github.com/vizzuhq/ipyvizzu-story/actions/workflows/cicd.yml)
+
+
 # About The Extension
 
 This extension is for the [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) library 
