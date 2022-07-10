@@ -27,4 +27,4 @@ jobs:
       run: make lint
 
     - name: Run test
-      run: make test-wo-install
+      run: make test
