@@ -1,7 +1,7 @@
 """A module for storing the information needed to generate html code."""
 
 
-VIZZU_STORY = "http://127.0.0.1:5500//src/vizzu-player.js"
+VIZZU_STORY = "https://vizzuhq.github.io/vizzu-ext-js-story/src/vizzu-player.js"
 
 DISPLAY_TEMPLATE = """
 <div id="{id}">

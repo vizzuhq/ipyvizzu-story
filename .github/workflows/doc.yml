@@ -1,0 +1,40 @@
+name: Publish documentation
+
+on:
+  workflow_call:
+
+jobs:
+  publish_doc:
+
+    runs-on: ubuntu-latest
+
+      steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure git
+        run: |
+          git config --global user.mail doc@github.com
+          git config --global user.name doc
+
+      - name: Switch to gh-pages branch
+        run: |
+          git branch -f gh-pages
+          git switch gh-pages
+
+      - uses: actions/cache@v3
+        with:
+          path: ./.venv
+          key: venv
+
+      - name: Touch dev environment
+        run: make touch-dev
+
+      - name: Build documentation
+        run: make doc
+
+      - name: Push to gh-pages branch
+        run: |
+          git add docs
+          git commit -am 'docs: update'
+          git push -f origin gh-pages
+        if: ( github.event_name == 'release' && github.event.action == 'published' ) || github.event_name == 'workflow_dispatch'

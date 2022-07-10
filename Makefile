@@ -65,3 +65,6 @@ check-release: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/python -m twine check dist/*.tar.gz dist/*.whl
 
 release: clean-build build-release check-release
+
+doc: $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/index.ipynb
