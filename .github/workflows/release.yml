@@ -13,9 +13,9 @@ jobs:
     - uses: actions/checkout@v2
 
     - uses: actions/cache@v3
-        with:
-          path: ./.venv
-          key: venv
+      with:
+        path: ./.venv
+        key: venv
 
     - name: Touch dev environment
       run: make touch-dev
