@@ -11,8 +11,8 @@ $(DEV_BUILD_FLAG):
 	python3 -m venv $(VIRTUAL_ENV)
 	$(VIRTUAL_ENV)/bin/python -m pip install --upgrade pip
 	$(VIRTUAL_ENV)/bin/pip install -r dev-requirements.txt
-	$(VIRTUAL_ENV)/bin/ipython kernel install --name ".venv" --user
 	$(VIRTUAL_ENV)/bin/python setup.py install
+	$(VIRTUAL_ENV)/bin/ipython kernel install --name ".venv" --user
 	touch $(DEV_BUILD_FLAG)
 
 clean-dev:
@@ -64,4 +64,5 @@ check-release: $(DEV_BUILD_FLAG)
 release: clean-build build-release check-release
 
 doc: $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/bin/ipython kernel install --name ".venv" --user
 	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/index.ipynb
