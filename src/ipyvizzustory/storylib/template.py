@@ -4,8 +4,8 @@
 VIZZU_STORY = "https://vizzuhq.github.io/vizzu-ext-js-story/src/vizzu-player.js"
 
 DISPLAY_TEMPLATE = """
-<div id="{id}">
-    <vizzu-player id="_{id}" controller></vizzu-player>
+<div>
+    <vizzu-player id="{id}" controller></vizzu-player>
     <script type="module">
         import VizzuPlayer from "{vizzu_story}";
 
@@ -17,10 +17,10 @@ DISPLAY_TEMPLATE = """
             }}
         }}
 
-        const vizzuPlayerData_{id} = {vizzu_player_data};
-        const vizzuPlayer_{id} = document.getElementById("_{id}")
-        vizzuPlayer_{id}.slides = vizzuPlayerData_{id};
-        vizzuPlayer_{id}.vizzu.initializing.then(chart => chart.on("plot-axis-label-draw", labelHandler));
+        const vizzuPlayerData = {vizzu_player_data};
+        const vizzuPlayer = document.getElementById("{id}")
+        vizzuPlayer.slides = vizzuPlayerData;
+        vizzuPlayer.vizzu.initializing.then(chart => chart.on("plot-axis-label-draw", labelHandler));
     </script>
 </div>
 """
