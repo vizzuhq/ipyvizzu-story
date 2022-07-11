@@ -6,7 +6,11 @@ from abc import ABC, abstractmethod
 from ipyvizzu import Data, Style
 
 from ipyvizzustory.storylib.story import Story, Slide, Step
-from ipyvizzustory.storylib.template import VIZZU_STORY, DISPLAY_TEMPLATE
+from ipyvizzustory.storylib.template import (
+    VIZZU_STORY,
+    DISPLAY_TEMPLATE,
+    DISPLAY_INDENT,
+)
 
 
 class TestHtml(ABC):
@@ -20,6 +24,7 @@ class TestHtml(ABC):
 
     def get_story(self):
         """A method for returning a test Story."""
+
         story = self.story(data=Data.filter(None))
         story.add_slide(Slide(Step(Data.filter(None))))
         story.add_slide(Slide(Step(Data.filter('record.Function !== "Defense"'))))
@@ -27,6 +32,7 @@ class TestHtml(ABC):
 
     def get_vpd(self):
         """A method for returning a test Vizzu-Player data."""
+
         return (
             "{"
             + '"data": {"filter": null}, '
@@ -36,12 +42,24 @@ class TestHtml(ABC):
             + "]}"
         )
 
+    def get_html(self):
+        """A method for returning a test Story html output."""
+
+        return DISPLAY_TEMPLATE.format(
+            id="1234567",
+            vizzu_story=VIZZU_STORY,
+            vizzu_player_data=self.get_vpd(),
+            chart_features="",
+            chart_events="",
+        )
+
 
 class TestStory(TestHtml, unittest.TestCase):
     """A class for testing Story() class."""
 
     def story(self, *args, **kwargs):
         """A method for returning Chart()."""
+
         return Story(*args, **kwargs)
 
     def test_init_if_no_data_was_passed(self) -> None:
@@ -127,9 +145,61 @@ class TestStory(TestHtml, unittest.TestCase):
         ):
             self.assertEqual(
                 self.get_story().to_html(),
+                self.get_html(),
+            )
+
+    def test_to_html_with_feature(self) -> None:
+        """A method for testing Story().to_html() with feature."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.feature("tooltip", True)
+            story.feature("tooltip", True)
+            self.assertEqual(
+                story.to_html(),
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
+                    chart_features=(
+                        "chart.feature('tooltip', true);"
+                        + f"\n{DISPLAY_INDENT}"
+                        + "chart.feature('tooltip', true);"
+                    ),
+                    chart_events="",
+                ),
+            )
+
+    def test_to_html_with_event(self) -> None:
+        """A method for testing Story().to_html() with event."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            handler = """
+                let Year = parseFloat(event.data.text);
+                if (!isNaN(Year) && Year > 1950 && Year < 2020 && Year % 5 !== 0) {
+                    event.preventDefault();
+                }
+                """
+            story.event("plot-axis-label-draw", handler)
+            story.event("plot-axis-label-draw", handler)
+            self.assertEqual(
+                story.to_html(),
+                DISPLAY_TEMPLATE.format(
+                    id="1234567",
+                    vizzu_story=VIZZU_STORY,
+                    vizzu_player_data=self.get_vpd(),
+                    chart_features="",
+                    chart_events=(
+                        "chart.on('plot-axis-label-draw', "
+                        + f"event => {{{' '.join(handler.split())}}});"
+                        + f"\n{DISPLAY_INDENT}"
+                        + "chart.on('plot-axis-label-draw', "
+                        + f"event => {{{' '.join(handler.split())}}});"
+                    ),
                 ),
             )

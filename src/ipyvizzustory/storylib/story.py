@@ -7,7 +7,11 @@ import uuid
 from ipyvizzu import RawJavaScriptEncoder, Data, Style, Config  # , PlainAnimation
 
 from ipyvizzustory.storylib.animation import DataFilter
-from ipyvizzustory.storylib.template import VIZZU_STORY, DISPLAY_TEMPLATE
+from ipyvizzustory.storylib.template import (
+    VIZZU_STORY,
+    DISPLAY_TEMPLATE,
+    DISPLAY_INDENT,
+)
 
 
 class Step(dict):
@@ -67,6 +71,9 @@ class Story(dict):
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__()
 
+        self._features = []
+        self._events = []
+
         if not data or type(data) != Data:  # pylint: disable=unidiomatic-typecheck
             raise TypeError("Type must be Data.")
         self.update(data.build())
@@ -85,6 +92,16 @@ class Story(dict):
             raise TypeError("Type must be Slide.")
         self["slides"].append(slide)
 
+    def feature(self, name: str, enabled: bool) -> None:
+        """A method for turning on/off a feature of the story."""
+        self._features.append(f"chart.feature('{name}', {json.dumps(enabled)});")
+
+    def event(self, event: str, handler: str) -> None:
+        """A method for creating and turning on an event handler."""
+        self._events.append(
+            f"chart.on('{event}', event => {{{' '.join(handler.split())}}});"
+        )
+
     def to_html(self) -> str:
         """A method for assembling the html code."""
 
@@ -93,4 +110,6 @@ class Story(dict):
             id=uuid.uuid4().hex[:7],
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=vizzu_player_data,
+            chart_features=f"\n{DISPLAY_INDENT}".join(self._features),
+            chart_events=f"\n{DISPLAY_INDENT}".join(self._events),
         )

@@ -3,8 +3,6 @@
 import unittest
 import unittest.mock
 
-from ipyvizzustory.storylib.template import VIZZU_STORY, DISPLAY_TEMPLATE
-
 from ipyvizzustory.py_env.story import Story as PythonStory
 from ipyvizzustory.ipy_env.story import Story as JupyterStory
 from ipyvizzustory.st_env.story import Story as StreamlitStory
@@ -27,11 +25,7 @@ class TestPythonStory(TestHtml, unittest.TestCase):
         ):
             self.assertEqual(
                 self.get_story().play(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                ),
+                self.get_html(),
             )
 
 
@@ -55,11 +49,7 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
                 self.get_story().play()
                 self.assertEqual(
                     output.call_args_list[0].args[0].data,
-                    DISPLAY_TEMPLATE.format(
-                        id="1234567",
-                        vizzu_story=VIZZU_STORY,
-                        vizzu_player_data=self.get_vpd(),
-                    ),
+                    self.get_html(),
                 )
 
     def test_repr_html_(self) -> None:
@@ -70,11 +60,7 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
         ):
             self.assertEqual(
                 self.get_story()._repr_html_(),  # pylint: disable=protected-access
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                ),
+                self.get_html(),
             )
 
 
@@ -95,9 +81,5 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
                 self.get_story().play()
                 self.assertEqual(
                     output.call_args_list[0].args[0],
-                    DISPLAY_TEMPLATE.format(
-                        id="1234567",
-                        vizzu_story=VIZZU_STORY,
-                        vizzu_player_data=self.get_vpd(),
-                    ),
+                    self.get_html(),
                 )
