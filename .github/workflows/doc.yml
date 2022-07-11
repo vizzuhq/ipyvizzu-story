@@ -29,6 +29,9 @@ jobs:
       - name: Touch dev environment
         run: make touch-dev
 
+      - name: Set Jupyter kernel
+        run: make install-kernel
+
       - name: Build documentation
         run: make doc
 
