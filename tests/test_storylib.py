@@ -66,19 +66,19 @@ class TestStory(TestHtml, unittest.TestCase):
         """A method for testing Story().__init__() if no data was passed."""
 
         with self.assertRaises(TypeError):
-            Story()  # pylint: disable=no-value-for-parameter
+            Story()  # type: ignore  # pylint: disable=no-value-for-parameter
 
     def test_init_if_no_data_was_set(self) -> None:
         """A method for testing Story().__init__() if no data was set."""
 
         with self.assertRaises(TypeError):
-            Story(data={})
+            Story(data={})  # type: ignore
 
     def test_init_if_not_valid_data_was_set(self) -> None:
         """A method for testing Story().__init__() if not valid data was set."""
 
         with self.assertRaises(TypeError):
-            Story(data={"filter": None})
+            Story(data={"filter": None})  # type: ignore
 
     def test_init_if_data_was_set(self) -> None:
         """A method for testing Story().__init__() if data was set."""
@@ -91,7 +91,7 @@ class TestStory(TestHtml, unittest.TestCase):
         """A method for testing Story().__init__() if no style was set."""
 
         self.assertEqual(
-            Story(data=Data.filter(None), style={}),
+            Story(data=Data.filter(None), style={}),  # type: ignore
             {"data": {"filter": None}, "slides": []},
         )
 
@@ -99,7 +99,7 @@ class TestStory(TestHtml, unittest.TestCase):
         """A method for testing Story().__init__() if not valid style was set."""
 
         with self.assertRaises(TypeError):
-            Story(data=Data.filter(None), style={"style": None})
+            Story(data=Data.filter(None), style={"style": None})  # type: ignore
 
     def test_init_if_style_was_set(self) -> None:
         """A method for testing Story().__init__() if data was set."""
@@ -114,14 +114,14 @@ class TestStory(TestHtml, unittest.TestCase):
 
         story = Story(data=Data.filter(None))
         with self.assertRaises(TypeError):
-            story.add_slide({})
+            story.add_slide({})  # type: ignore
 
     def test_add_slide_if_not_valid_slide_was_set(self) -> None:
         """A method for testing Story().add_slide() if not valid slide was set."""
 
         story = Story(data=Data.filter(None))
         with self.assertRaises(TypeError):
-            story.add_slide({"filter": None})
+            story.add_slide({"filter": None})  # type: ignore
 
     def test_add_slide_if_slides_were_set(self) -> None:
         """A method for testing Story().add_slide() if slides were set."""

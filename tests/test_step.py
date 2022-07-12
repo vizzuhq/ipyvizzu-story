@@ -55,4 +55,4 @@ class TestStep(unittest.TestCase):
         """A method for testing Step().__init__() if not valid animation was set."""
 
         with self.assertRaises(TypeError):
-            Step(PlainAnimation({}))
+            Step(PlainAnimation({}))  # type: ignore

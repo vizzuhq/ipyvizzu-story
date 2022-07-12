@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from setuptools import setup, find_packages
 
-with open('requirements.txt') as fp:
+with open("requirements.txt") as fp:
     requirements = fp.read().splitlines()
 
 with open("README.md") as fp:
@@ -14,9 +14,10 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="Apache 2",
-    packages=find_packages(where="src", exclude=['__pycache__']),
-    package_dir={'': 'src'},
-    python_requires='>=3.6',
+    packages=find_packages(where="src", exclude=["__pycache__"]),
+    package_dir={"": "src"},
+    package_data={"ipyvizzustory": ["py.typed"]},
+    python_requires=">=3.6",
     install_requires=requirements,
     url="https://github.com/vizzuhq/ipyvizzu-story",
     project_urls={

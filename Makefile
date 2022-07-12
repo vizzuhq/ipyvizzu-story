@@ -1,6 +1,6 @@
 .PHONY: clean \
 	clean-dev update-dev-req install-dev-req install install-kernel touch-dev \
-	check format check-format lint clean-test test-wo-install test \
+	check format check-format lint check-typing clean-test test-wo-install test \
 	clean-doc doc \
 	clean-build build-release check-release release
 
@@ -26,7 +26,7 @@ install-dev-req:
 	python3 -m venv $(VIRTUAL_ENV)
 	$(VIRTUAL_ENV)/bin/python -m pip install --upgrade pip
 	$(VIRTUAL_ENV)/bin/pip install -r dev-requirements.txt
-	$(VIRTUAL_ENV)/bin/pre-commit install
+	$(VIRTUAL_ENV)/bin/pre-commit install --hook-type pre-commit --hook-type pre-push
 
 install:
 	$(VIRTUAL_ENV)/bin/python setup.py install
@@ -49,7 +49,7 @@ $(DEV_BUILD_FLAG):
 
 # ci
 
-check: check-format lint test
+check: check-format lint check-typing test
 
 format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/black src tests docs
@@ -59,6 +59,9 @@ check-format: $(DEV_BUILD_FLAG)
 
 lint: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/pylint src tests
+
+check-typing: $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/bin/mypy src tests
 
 clean-test:
 	rm -rf .coverage

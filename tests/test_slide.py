@@ -14,7 +14,7 @@ class TestSlide(unittest.TestCase):
         """A method for testing Slide().__init__() if not valid step was set."""
 
         with self.assertRaises(TypeError):
-            Slide({"filter": None})
+            Slide({"filter": None})  # type: ignore
 
     def test_init_if_no_step_was_set(self) -> None:
         """A method for testing Slide().__init__() if no step was set."""
@@ -31,7 +31,7 @@ class TestSlide(unittest.TestCase):
 
         slide = Slide()
         with self.assertRaises(TypeError):
-            slide.add_step(None)
+            slide.add_step(None)  # type: ignore
 
     def test_add_step_if_initialized_without_step(self) -> None:
         """A method for testing Slide().add_step() if initialized without step."""

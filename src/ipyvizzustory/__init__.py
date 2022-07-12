@@ -11,7 +11,7 @@ class Environment:
     # pylint: disable=unused-import
 
     @staticmethod
-    def get_story() -> None:
+    def get_story():
         """A static method for importing the appropriate chart for the environment."""
 
         if Environment.is_ipython():  # pragma: no cover
@@ -32,7 +32,7 @@ class Environment:
     def is_ipython():
         """A static method for detecting Jupyter environment."""
         try:
-            from IPython import get_ipython
+            from IPython import get_ipython  # type: ignore
 
             return get_ipython()
         except ImportError:  # pragma: no cover

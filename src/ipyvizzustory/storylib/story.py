@@ -1,6 +1,6 @@
 """A module for working with ipyvizzu-story presentations."""
 
-from typing import Optional, Union
+from typing import Optional, Union, List
 import json
 import uuid
 
@@ -20,7 +20,7 @@ class Step(dict):
     def __init__(
         self,
         *animations: Union[Data, Style, Config],
-        **anim_options: Optional[dict],
+        **anim_options: Optional[Union[str, int, float, dict]],
     ):
         super().__init__()
         if not animations:
@@ -71,8 +71,8 @@ class Story(dict):
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__()
 
-        self._features = []
-        self._events = []
+        self._features: List[str] = []
+        self._events: List[str] = []
 
         if not data or type(data) != Data:  # pylint: disable=unidiomatic-typecheck
             raise TypeError("Type must be Data.")
