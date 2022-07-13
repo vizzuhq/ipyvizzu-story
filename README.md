@@ -79,7 +79,7 @@ story.play()
 
 > [Check out a live example!](https://vizzuhq.github.io/ipyvizzu-story/examples/readme/index.html)
 
-Or check out the source of this example to see a more complex use case:
+Or see a more complex use case:
 
 > [Check out a live complex example!](https://vizzuhq.github.io/ipyvizzu-story/examples/readme_complex/index.html)
 
