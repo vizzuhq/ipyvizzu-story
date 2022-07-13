@@ -82,6 +82,7 @@ clean-doc:
 	rm -rf docs/**/*.html
 
 doc: $(DEV_BUILD_FLAG)
+	cp README.md ./docs/index.md
 	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/index.ipynb
 
 
