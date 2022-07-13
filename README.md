@@ -4,7 +4,7 @@
   </a>
   <p align="center"><b>ipyvizzu - story</b> Extension</p>
   <p align="center">
-    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/examples/readme_complex/index.html">Example</a>
+    <a href="https://vizzuhq.github.io/ipyvizzu-story/examples/readme_complex/index.html">Example</a>
     · <a href="https://github.com/vizzuhq/ipvizzu-story">Repository</a>
   </p>
 </p>
@@ -26,6 +26,8 @@ pip install ipyvizzu-story
 ```
 
 # Usage
+
+![Readme example](https://github.com/vizzuhq/vizzu-ext-js-story/raw/main/assets/readme-example.gif)
 
 Import `ipyvizzu` and `ipyvizzu-story`:
 
@@ -75,11 +77,11 @@ Then play the Story.
 story.play()
 ```
 
-> [Check out a live example!](https://vizzuhq.github.io/ipyvizzu-story/docs/examples/readme/index.html)
+> [Check out a live example!](https://vizzuhq.github.io/ipyvizzu-story/examples/readme/index.html)
 
 Or check out the source of this example to see a more complex use case:
 
-> [Check out a live complex example!](https://vizzuhq.github.io/ipyvizzu-story/docs/examples/readme_complex/index.html)
+> [Check out a live complex example!](https://vizzuhq.github.io/ipyvizzu-story/examples/readme_complex/index.html)
 
 # Contributing
 
