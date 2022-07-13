@@ -17,6 +17,20 @@
 This extension is for the [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) library 
 that allows users to to create presentations with animated data visualisations.
 
+# Installation
+
+ipyvizzu-story requires `ipyvizzu` package.
+
+```sh
+pip install ipyvizzu-story
+```
+
+# Contact
+
+* Join our Slack if you have any questions or comments: [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
+* Drop us a line at hello@vizzuhq.com
+* Follow us on twitter: [https://twitter.com/VizzuHQ](https://twitter.com/VizzuHQ)
+
 # License
 
 Copyright © 2022 [Vizzu Kft.](https://vizzuhq.com).
