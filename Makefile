@@ -83,7 +83,8 @@ clean-doc:
 
 doc: $(DEV_BUILD_FLAG)
 	cp README.md ./docs/index.md
-	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/index.ipynb
+	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/readme/index.ipynb
+	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/readme_complex/index.ipynb
 
 
 
