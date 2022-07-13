@@ -51,7 +51,7 @@ Put the data object into the `Story` constructor. Here you can also set the `Sto
 story = Story(data=data)
 ```
 
-Create the data story by defining a sequence of slides. A slide can be a single chart corresponding to a single [chart.animate()](https://ipyvizzu.vizzuhq.com/tutorial/01_01_intro.html) call from ipvizzu. Or a slide can be a sequence of animation calls, in which case all of these animations will be played until the last one in the sequence, allowing for more complex transitions between slides. Navigation controls beneath the chart will navigate between the slides. You can use the PgUp, and PgDn buttons, left and right arrows to navigate between slides, and the Home and End buttons to jump to the first or last slide.
+Create the data story by defining a sequence of slides. A slide can be a single chart corresponding to a single [chart.animate()](https://ipyvizzu.vizzuhq.com/tutorial/01_01_intro.html) call from ipvizzu. Or a slide can be a sequence of animation calls, in which case all of these animations will be played until the last one in the sequence, allowing for more complex transitions between slides. Navigation controls beneath the chart will navigate between the slides. You can use the PgUp and PgDn buttons, left and right arrows to navigate between slides, and the Home and End buttons to jump to the first or last slide.
 
 On each chart, you can define the chart configuration and style with the same objects as in ipyvizzu. However, you can not modify the underlying data between the slides, only the data filter used.
 
@@ -91,7 +91,7 @@ We welcome contributions to the project, visit our [contributing guide](https://
 
 * Join our Slack if you have any questions or comments: [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
 * Drop us a line at hello@vizzuhq.com
-* Follow us on twitter: [https://twitter.com/VizzuHQ](https://twitter.com/VizzuHQ)
+* Follow us on Twitter: [https://twitter.com/VizzuHQ](https://twitter.com/VizzuHQ)
 
 # License
 
