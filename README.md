@@ -4,8 +4,8 @@
   </a>
   <p align="center"><b>ipyvizzu - story</b> Extension</p>
   <p align="center">
-    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/examples/">Example</a>
-    · <a href="https://github.com/vizzuhq/ipvizzu-story/">Repository</a>
+    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/examples">Example</a>
+    · <a href="https://github.com/vizzuhq/ipvizzu-story">Repository</a>
   </p>
 </p>
 
@@ -24,6 +24,10 @@ ipyvizzu-story requires `ipyvizzu` package.
 ```sh
 pip install ipyvizzu-story
 ```
+
+# Contributing
+
+We welcome contributions to the project, visit our [contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
 
 # Contact
 
