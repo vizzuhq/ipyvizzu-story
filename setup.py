@@ -26,6 +26,10 @@ setup(
     package_data={package: ["py.typed"] for package in packages},
     python_requires=">=3.6",
     install_requires=requirements,
+    extras_require={
+        "jupyter": ["IPython"],
+        "streamlit": ["streamlit"],
+    },
     url="https://github.com/vizzuhq/ipyvizzu-story",
     project_urls={
         "Documentation": "https://github.com/vizzuhq/ipyvizzu-story",
