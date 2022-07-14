@@ -16,13 +16,13 @@ from ipyvizzustory.storylib.template import (
 class TestHtml(ABC):
     """An abstract class for testing Story's html."""
 
-    hex = "123456789"
+    hex: str = "123456789"
 
     @abstractmethod
-    def story(self, *args, **kwargs):
+    def story(self, *args, **kwargs):  # -> Story
         """An abstract method for returning Chart()."""
 
-    def get_story(self):
+    def get_story(self):  # -> Story
         """A method for returning a test Story."""
 
         story = self.story(data=Data.filter(None))
@@ -30,7 +30,7 @@ class TestHtml(ABC):
         story.add_slide(Slide(Step(Data.filter('record.Function !== "Defense"'))))
         return story
 
-    def get_vpd(self):
+    def get_vpd(self) -> str:
         """A method for returning a test Vizzu-Player data."""
 
         return (
@@ -42,7 +42,7 @@ class TestHtml(ABC):
             + "]}"
         )
 
-    def get_html(self):
+    def get_html(self) -> str:
         """A method for returning a test Story html output."""
 
         return DISPLAY_TEMPLATE.format(

@@ -13,7 +13,7 @@ from tests.test_storylib import TestHtml
 class TestPythonStory(TestHtml, unittest.TestCase):
     """A class for testing Story() class in Python environment."""
 
-    def story(self, *args, **kwargs):
+    def story(self, *args, **kwargs) -> PythonStory:
         """A method for returning Chart()."""
         return PythonStory(*args, **kwargs)
 
@@ -32,7 +32,7 @@ class TestPythonStory(TestHtml, unittest.TestCase):
 class TestJupyterStory(TestHtml, unittest.TestCase):
     """A class for testing Story() class in Jupyter environment."""
 
-    def story(self, *args, **kwargs):
+    def story(self, *args, **kwargs) -> JupyterStory:
         """A method for returning Chart()."""
         return JupyterStory(*args, **kwargs)
 
@@ -67,7 +67,7 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
 class TestStreamlitStory(TestHtml, unittest.TestCase):
     """A class for testing Story() class in Streamlit environment."""
 
-    def story(self, *args, **kwargs):
+    def story(self, *args, **kwargs) -> StreamlitStory:
         """A method for returning Chart()."""
         return StreamlitStory(*args, **kwargs)
 

@@ -52,16 +52,16 @@ $(DEV_BUILD_FLAG):
 check: check-format lint check-typing test
 
 format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black src tests docs
+	$(VIRTUAL_ENV)/bin/black src tests docs setup.py
 
 check-format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black --check src tests docs
+	$(VIRTUAL_ENV)/bin/black --check src tests docs setup.py
 
 lint: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/pylint src tests
+	$(VIRTUAL_ENV)/bin/pylint src tests setup.py
 
 check-typing: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/mypy src tests
+	$(VIRTUAL_ENV)/bin/mypy src tests setup.py
 
 clean-test:
 	rm -rf .coverage
@@ -79,10 +79,11 @@ test: $(DEV_BUILD_FLAG) install test-wo-install
 # doc
 
 clean-doc:
+	rm -rf docs/index.md
 	rm -rf docs/**/*.html
 
 doc: $(DEV_BUILD_FLAG)
-	cp README.md ./docs/index.md
+	cp README.md docs/index.md
 	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/readme/index.ipynb
 	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/readme_complex/index.ipynb
 

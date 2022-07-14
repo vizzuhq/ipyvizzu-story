@@ -1,22 +1,29 @@
-#!/usr/bin/env python3
-from setuptools import setup, find_packages
+"""
+ipyvizzu-story
+Create and present animated data stories within data science notebooks.
+"""
 
-with open("requirements.txt") as fp:
+from setuptools import setup, find_packages  # type: ignore
+
+
+with open("requirements.txt", encoding="utf8") as fp:
     requirements = fp.read().splitlines()
 
-with open("README.md") as fp:
+with open("README.md", encoding="utf8") as fp:
     long_description = fp.read()
+
+packages = find_packages(where="src", exclude=["__pycache__"])
 
 setup(
     name="ipyvizzu-story",
     version="0.1.0",
-    description="A presentation extension for ipyvizzu to create presentations with animated data visualisations with ease.",
+    description="Create and present animated data stories within data science notebooks.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="Apache 2",
-    packages=find_packages(where="src", exclude=["__pycache__"]),
+    packages=packages,
     package_dir={"": "src"},
-    package_data={"ipyvizzustory": ["py.typed"]},
+    package_data={package: ["py.typed"] for package in packages},
     python_requires=">=3.6",
     install_requires=requirements,
     url="https://github.com/vizzuhq/ipyvizzu-story",
