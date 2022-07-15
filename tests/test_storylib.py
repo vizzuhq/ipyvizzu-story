@@ -236,8 +236,8 @@ class TestStory(TestHtml, unittest.TestCase):
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             story = self.get_story()
-            story.feature("tooltip", True)
-            story.feature("tooltip", True)
+            story.set_feature("tooltip", True)
+            story.set_feature("tooltip", True)
             self.assertEqual(
                 story.to_html(),
                 DISPLAY_TEMPLATE.format(

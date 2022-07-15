@@ -18,7 +18,7 @@ DISPLAY_TEMPLATE = """
         {chart_size}
         vizzuPlayer.slides = vizzuPlayerData;
         vizzuPlayer.vizzu.initializing.then(chart => {{
-            // story.feature()
+            // story.set_feature()
             {chart_features}
             // story.event()
             {chart_events}
