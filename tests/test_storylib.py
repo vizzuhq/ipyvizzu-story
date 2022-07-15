@@ -49,6 +49,7 @@ class TestHtml(ABC):
             id="1234567",
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=self.get_vpd(),
+            chart_size="",
             chart_features="",
             chart_events="",
         )
@@ -148,6 +149,86 @@ class TestStory(TestHtml, unittest.TestCase):
                 self.get_html(),
             )
 
+    def test_to_html_with_size(self) -> None:
+        """A method for testing Story().to_html() with size."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.set_size(width=None, height=None)
+            self.assertEqual(
+                story.to_html(),
+                DISPLAY_TEMPLATE.format(
+                    id="1234567",
+                    vizzu_story=VIZZU_STORY,
+                    vizzu_player_data=self.get_vpd(),
+                    chart_size="",
+                    chart_features="",
+                    chart_events="",
+                ),
+            )
+
+    def test_to_html_with_size_width(self) -> None:
+        """A method for testing Story().to_html() with size/width."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.set_size(width="800px", height=None)
+            self.assertEqual(
+                story.to_html(),
+                DISPLAY_TEMPLATE.format(
+                    id="1234567",
+                    vizzu_story=VIZZU_STORY,
+                    vizzu_player_data=self.get_vpd(),
+                    chart_size="vizzuPlayer.style.cssText = 'width: 800px;'",
+                    chart_features="",
+                    chart_events="",
+                ),
+            )
+
+    def test_to_html_with_size_height(self) -> None:
+        """A method for testing Story().to_html() with size/height."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.set_size(width=None, height="480px")
+            self.assertEqual(
+                story.to_html(),
+                DISPLAY_TEMPLATE.format(
+                    id="1234567",
+                    vizzu_story=VIZZU_STORY,
+                    vizzu_player_data=self.get_vpd(),
+                    chart_size="vizzuPlayer.style.cssText = 'height: 480px;'",
+                    chart_features="",
+                    chart_events="",
+                ),
+            )
+
+    def test_to_html_with_size_width_and_height(self) -> None:
+        """A method for testing Story().to_html() with size/width and height."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.set_size(width="800px", height="480px")
+            self.assertEqual(
+                story.to_html(),
+                DISPLAY_TEMPLATE.format(
+                    id="1234567",
+                    vizzu_story=VIZZU_STORY,
+                    vizzu_player_data=self.get_vpd(),
+                    chart_size="vizzuPlayer.style.cssText = 'width: 800px;height: 480px;'",
+                    chart_features="",
+                    chart_events="",
+                ),
+            )
+
     def test_to_html_with_feature(self) -> None:
         """A method for testing Story().to_html() with feature."""
 
@@ -163,9 +244,10 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
+                    chart_size="",
                     chart_features=(
                         "chart.feature('tooltip', true);"
-                        + f"\n{DISPLAY_INDENT}"
+                        + f"\n{DISPLAY_INDENT * 3}"
                         + "chart.feature('tooltip', true);"
                     ),
                     chart_events="",
@@ -193,11 +275,12 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
+                    chart_size="",
                     chart_features="",
                     chart_events=(
                         "chart.on('plot-axis-label-draw', "
                         + f"event => {{{' '.join(handler.split())}}});"
-                        + f"\n{DISPLAY_INDENT}"
+                        + f"\n{DISPLAY_INDENT * 3}"
                         + "chart.on('plot-axis-label-draw', "
                         + f"event => {{{' '.join(handler.split())}}});"
                     ),

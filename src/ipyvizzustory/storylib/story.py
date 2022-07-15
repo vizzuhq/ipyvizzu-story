@@ -71,6 +71,8 @@ class Story(dict):
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__()
 
+        self._size: str = ""
+
         self._features: List[str] = []
         self._events: List[str] = []
 
@@ -102,6 +104,15 @@ class Story(dict):
             f"chart.on('{event}', event => {{{' '.join(handler.split())}}});"
         )
 
+    def set_size(self, width: Optional[str], height: Optional[str]) -> None:
+        """A method for setting width/height settings."""
+
+        self._size = ""
+        if any([width is not None, height is not None]):
+            width = "" if width is None else f"width: {width};"
+            height = "" if height is None else f"height: {height};"
+            self._size = f"vizzuPlayer.style.cssText = '{width}{height}'"
+
     def to_html(self) -> str:
         """A method for assembling the html code."""
 
@@ -110,6 +121,7 @@ class Story(dict):
             id=uuid.uuid4().hex[:7],
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=vizzu_player_data,
-            chart_features=f"\n{DISPLAY_INDENT}".join(self._features),
-            chart_events=f"\n{DISPLAY_INDENT}".join(self._events),
+            chart_size=self._size,
+            chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
+            chart_events=f"\n{DISPLAY_INDENT * 3}".join(self._events),
         )
