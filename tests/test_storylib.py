@@ -156,7 +156,7 @@ class TestStory(TestHtml, unittest.TestCase):
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             story = self.get_story()
-            story.size(width=None, height=None)
+            story.set_size(width=None, height=None)
             self.assertEqual(
                 story.to_html(),
                 DISPLAY_TEMPLATE.format(
@@ -176,7 +176,7 @@ class TestStory(TestHtml, unittest.TestCase):
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             story = self.get_story()
-            story.size(width="800px", height=None)
+            story.set_size(width="800px", height=None)
             self.assertEqual(
                 story.to_html(),
                 DISPLAY_TEMPLATE.format(
@@ -196,7 +196,7 @@ class TestStory(TestHtml, unittest.TestCase):
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             story = self.get_story()
-            story.size(width=None, height="480px")
+            story.set_size(width=None, height="480px")
             self.assertEqual(
                 story.to_html(),
                 DISPLAY_TEMPLATE.format(
@@ -216,7 +216,7 @@ class TestStory(TestHtml, unittest.TestCase):
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             story = self.get_story()
-            story.size(width="800px", height="480px")
+            story.set_size(width="800px", height="480px")
             self.assertEqual(
                 story.to_html(),
                 DISPLAY_TEMPLATE.format(

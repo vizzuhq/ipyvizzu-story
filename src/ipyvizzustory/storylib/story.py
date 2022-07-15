@@ -104,7 +104,7 @@ class Story(dict):
             f"chart.on('{event}', event => {{{' '.join(handler.split())}}});"
         )
 
-    def size(self, width: Optional[str], height: Optional[str]) -> None:
+    def set_size(self, width: Optional[str], height: Optional[str]) -> None:
         """A method for setting width/height settings."""
 
         self._size = ""

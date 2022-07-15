@@ -14,7 +14,7 @@ DISPLAY_TEMPLATE = """
 
         const vizzuPlayerData = {vizzu_player_data};
         const vizzuPlayer = document.getElementById("{id}")
-        // story.size()
+        // story.set_size()
         {chart_size}
         vizzuPlayer.slides = vizzuPlayerData;
         vizzuPlayer.vizzu.initializing.then(chart => {{
