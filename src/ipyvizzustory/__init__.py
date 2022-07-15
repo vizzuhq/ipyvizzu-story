@@ -6,8 +6,8 @@ from .storylib.story import Step, Slide
 from .env.py.story import Story as PythonStory
 
 try:
-    import IPython  # type: ignore
     from .env.ipy.story import Story as JupyterStory
+    import IPython  # type: ignore
 
     if not IPython.get_ipython():  # pragma: no cover
         raise ImportError("JupyterStory")
@@ -15,8 +15,8 @@ except ImportError as e:  # pragma: no cover
     JupyterStory = None  # type: ignore
 
 try:
-    import streamlit as st
     from .env.st.story import Story as StreamlitStory
+    import streamlit as st
 
     if not st.scriptrunner.script_run_context.get_script_run_ctx():  # pragma: no cover
         raise ImportError("StreamlitStory")
