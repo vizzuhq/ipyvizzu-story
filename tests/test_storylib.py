@@ -267,8 +267,8 @@ class TestStory(TestHtml, unittest.TestCase):
                     event.preventDefault();
                 }
                 """
-            story.event("plot-axis-label-draw", handler)
-            story.event("plot-axis-label-draw", handler)
+            story.add_event("plot-axis-label-draw", handler)
+            story.add_event("plot-axis-label-draw", handler)
             self.assertEqual(
                 story.to_html(),
                 DISPLAY_TEMPLATE.format(
