@@ -94,7 +94,7 @@ class Story(dict):
             raise TypeError("Type must be Slide.")
         self["slides"].append(slide)
 
-    def feature(self, name: str, enabled: bool) -> None:
+    def set_feature(self, name: str, enabled: bool) -> None:
         """A method for turning on/off a feature of the story."""
         self._features.append(f"chart.feature('{name}', {json.dumps(enabled)});")
 
