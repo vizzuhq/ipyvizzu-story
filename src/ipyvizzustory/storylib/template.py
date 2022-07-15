@@ -14,13 +14,13 @@ DISPLAY_TEMPLATE = """
 
         const vizzuPlayerData = {vizzu_player_data};
         const vizzuPlayer = document.getElementById("{id}")
-        // size
-        {size}
+        // story.size()
+        {chart_size}
         vizzuPlayer.slides = vizzuPlayerData;
         vizzuPlayer.vizzu.initializing.then(chart => {{
-            // chart.feature()
+            // story.feature()
             {chart_features}
-            // chart.on()
+            // story.event()
             {chart_events}
         }});
     </script>

@@ -121,7 +121,7 @@ class Story(dict):
             id=uuid.uuid4().hex[:7],
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=vizzu_player_data,
-            size=self._size,
+            chart_size=self._size,
             chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
             chart_events=f"\n{DISPLAY_INDENT * 3}".join(self._events),
         )

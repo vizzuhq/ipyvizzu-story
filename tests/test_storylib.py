@@ -49,7 +49,7 @@ class TestHtml(ABC):
             id="1234567",
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=self.get_vpd(),
-            size="",
+            chart_size="",
             chart_features="",
             chart_events="",
         )
@@ -163,7 +163,7 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
-                    size="",
+                    chart_size="",
                     chart_features="",
                     chart_events="",
                 ),
@@ -183,7 +183,7 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
-                    size="vizzuPlayer.style.cssText = 'width: 800px;'",
+                    chart_size="vizzuPlayer.style.cssText = 'width: 800px;'",
                     chart_features="",
                     chart_events="",
                 ),
@@ -203,7 +203,7 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
-                    size="vizzuPlayer.style.cssText = 'height: 480px;'",
+                    chart_size="vizzuPlayer.style.cssText = 'height: 480px;'",
                     chart_features="",
                     chart_events="",
                 ),
@@ -223,7 +223,7 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
-                    size="vizzuPlayer.style.cssText = 'width: 800px;height: 480px;'",
+                    chart_size="vizzuPlayer.style.cssText = 'width: 800px;height: 480px;'",
                     chart_features="",
                     chart_events="",
                 ),
@@ -244,7 +244,7 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
-                    size="",
+                    chart_size="",
                     chart_features=(
                         "chart.feature('tooltip', true);"
                         + f"\n{DISPLAY_INDENT * 3}"
@@ -275,7 +275,7 @@ class TestStory(TestHtml, unittest.TestCase):
                     id="1234567",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
-                    size="",
+                    chart_size="",
                     chart_features="",
                     chart_events=(
                         "chart.on('plot-axis-label-draw', "
