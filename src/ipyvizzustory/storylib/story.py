@@ -65,13 +65,45 @@ class Slide(list):
         self.append(step)
 
 
+class StorySize:
+    """A class for representing a story's size."""
+
+    def __init__(self, width: Optional[str] = None, height: Optional[str] = None):
+        self._width = width
+        self._height = height
+
+        self._style = ""
+        if any([width is not None, height is not None]):
+            width = "" if width is None else f"width: {width};"
+            height = "" if height is None else f"height: {height};"
+            self._style = f"vizzuPlayer.style.cssText = '{width}{height}'"
+
+    @property
+    def width(self) -> Optional[str]:
+        """A property for storing story's width."""
+
+        return self._width
+
+    @property
+    def height(self) -> Optional[str]:
+        """A property for storing story's height."""
+
+        return self._height
+
+    @property
+    def style(self) -> str:
+        """A property for storing story's height."""
+
+        return self._style
+
+
 class Story(dict):
     """A class for representing a presentation story."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
         super().__init__()
 
-        self._size: str = ""
+        self._size: StorySize = StorySize()
 
         self._features: List[str] = []
         self._events: List[str] = []
@@ -104,14 +136,12 @@ class Story(dict):
             f"chart.on('{event}', event => {{{' '.join(handler.split())}}});"
         )
 
-    def set_size(self, width: Optional[str], height: Optional[str]) -> None:
+    def set_size(
+        self, width: Optional[str] = None, height: Optional[str] = None
+    ) -> None:
         """A method for setting width/height settings."""
 
-        self._size = ""
-        if any([width is not None, height is not None]):
-            width = "" if width is None else f"width: {width};"
-            height = "" if height is None else f"height: {height};"
-            self._size = f"vizzuPlayer.style.cssText = '{width}{height}'"
+        self._size = StorySize(width=width, height=height)
 
     def to_html(self) -> str:
         """A method for assembling the html code."""
@@ -121,7 +151,7 @@ class Story(dict):
             id=uuid.uuid4().hex[:7],
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=vizzu_player_data,
-            chart_size=self._size,
+            chart_size=self._size.style,
             chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
             chart_events=f"\n{DISPLAY_INDENT * 3}".join(self._events),
         )

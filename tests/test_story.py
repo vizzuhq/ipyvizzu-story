@@ -71,6 +71,27 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
         """A method for returning Chart()."""
         return StreamlitStory(*args, **kwargs)
 
+    def test_set_size_with_not_int(self) -> None:
+        """A method for testing Story().set_size() with not int."""
+
+        story = self.get_story()
+        with self.assertRaises(ValueError):
+            story.set_size(width="800px", height="480px")
+
+    def test_set_size_with_not_int_width(self) -> None:
+        """A method for testing Story().set_size() with not int width."""
+
+        story = self.get_story()
+        with self.assertRaises(ValueError):
+            story.set_size(width="800px", height=480)
+
+    def test_set_size_with_not_int_height(self) -> None:
+        """A method for testing Story().set_size() with not int height."""
+
+        story = self.get_story()
+        with self.assertRaises(ValueError):
+            story.set_size(width=800, height="480px")
+
     def test_play(self) -> None:
         """A method for testing Story().play()."""
 
@@ -78,8 +99,10 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             with unittest.mock.patch("ipyvizzustory.env.st.story.html") as output:
-                self.get_story().play()
+                story = self.get_story()
+                story.set_size(width=800, height=480)
+                story.play()
                 self.assertEqual(
                     output.call_args_list[0].args[0],
-                    self.get_html(),
+                    self.get_html_with_size(),
                 )

@@ -54,6 +54,18 @@ class TestHtml(ABC):
             chart_events="",
         )
 
+    def get_html_with_size(self) -> str:
+        """A method for returning a test Story html output with size values."""
+
+        return DISPLAY_TEMPLATE.format(
+            id="1234567",
+            vizzu_story=VIZZU_STORY,
+            vizzu_player_data=self.get_vpd(),
+            chart_size="vizzuPlayer.style.cssText = 'width: 800px;height: 480px;'",
+            chart_features="",
+            chart_events="",
+        )
+
 
 class TestStory(TestHtml, unittest.TestCase):
     """A class for testing Story() class."""
@@ -219,14 +231,7 @@ class TestStory(TestHtml, unittest.TestCase):
             story.set_size(width="800px", height="480px")
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="vizzuPlayer.style.cssText = 'width: 800px;height: 480px;'",
-                    chart_features="",
-                    chart_events="",
-                ),
+                self.get_html_with_size(),
             )
 
     def test_to_html_with_feature(self) -> None:
