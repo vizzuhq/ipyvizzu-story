@@ -98,7 +98,7 @@ class Story(dict):
         """A method for turning on/off a feature of the story."""
         self._features.append(f"chart.feature('{name}', {json.dumps(enabled)});")
 
-    def event(self, event: str, handler: str) -> None:
+    def add_event(self, event: str, handler: str) -> None:
         """A method for creating and turning on an event handler."""
         self._events.append(
             f"chart.on('{event}', event => {{{' '.join(handler.split())}}});"

@@ -20,7 +20,7 @@ DISPLAY_TEMPLATE = """
         vizzuPlayer.vizzu.initializing.then(chart => {{
             // story.feature()
             {chart_features}
-            // story.event()
+            // story.add_event()
             {chart_events}
         }});
     </script>
