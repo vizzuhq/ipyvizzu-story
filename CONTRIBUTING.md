@@ -72,7 +72,7 @@ make check-typing
 
 #### Testing
 
-The ipyvizzu-story project is tested with `unittest` testing framework and .
+The ipyvizzu-story project is tested with `unittest` testing framework.
 
 Run the `test` make target to install ipyvizzu-story into your virtual environmnt and run the tests.
 
