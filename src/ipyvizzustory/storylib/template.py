@@ -9,7 +9,7 @@ DISPLAY_TEMPLATE = """
 <div>
     <vizzu-player id="{id}" controller></vizzu-player>
     <script type="module">
-        import VizzuPlayer from "{vizzu_story}";
+        import VizzuPlayer, {{ Vizzu as lib }} from "{vizzu_story}";
 
 
         const vizzuPlayerData = {vizzu_player_data};
