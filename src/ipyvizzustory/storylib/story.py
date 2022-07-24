@@ -1,6 +1,7 @@
 """A module for working with ipyvizzu-story presentations."""
 
 from typing import Optional, Union, List
+from os import PathLike
 import json
 import uuid
 
@@ -155,3 +156,9 @@ class Story(dict):
             chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
             chart_events=f"\n{DISPLAY_INDENT * 3}".join(self._events),
         )
+
+    def export_to_html(self, filename: PathLike) -> None:
+        """A method for exporting the story into html file."""
+
+        with open(filename, "w", encoding="utf8") as file_desc:
+            file_desc.write(self.to_html())

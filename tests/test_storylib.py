@@ -2,6 +2,8 @@
 
 import unittest
 import unittest.mock
+import os
+import glob
 from abc import ABC, abstractmethod
 from ipyvizzu import Data, Style
 
@@ -67,13 +69,8 @@ class TestHtml(ABC):
         )
 
 
-class TestStory(TestHtml, unittest.TestCase):
-    """A class for testing Story() class."""
-
-    def story(self, *args, **kwargs):
-        """A method for returning Chart()."""
-
-        return Story(*args, **kwargs)
+class TestStoryInit(unittest.TestCase):
+    """A class for testing Story() class' __init__()."""
 
     def test_init_if_no_data_was_passed(self) -> None:
         """A method for testing Story().__init__() if no data was passed."""
@@ -122,6 +119,10 @@ class TestStory(TestHtml, unittest.TestCase):
             {"data": {"filter": None}, "style": None, "slides": []},
         )
 
+
+class TestStoryAddSlide(unittest.TestCase):
+    """A class for testing Story() class' add_slide()."""
+
     def test_add_slide_if_no_slide_was_set(self) -> None:
         """A method for testing Story().add_slide() if no slide was set."""
 
@@ -149,6 +150,39 @@ class TestStory(TestHtml, unittest.TestCase):
                 "slides": [[{"filter": None}], [{"filter": None}]],
             },
         )
+
+
+class TestStoryHtml(TestHtml, unittest.TestCase):
+    """A class for testing Story() class' html releated methods."""
+
+    def setUp(self):
+        self.test_dir = os.path.dirname(os.path.realpath(__file__))
+
+    def tearDown(self):
+        file_list = glob.glob(self.test_dir + "/.test.*")
+        for file_path in file_list:
+            os.remove(file_path)
+
+    def story(self, *args, **kwargs):
+        """A method for returning Chart()."""
+
+        return Story(*args, **kwargs)
+
+    def test_export_to_html(self) -> None:
+        """A method for testing Story().export_to_html()."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            test_html = self.test_dir + "/.test.test_export_to_html.html"
+            story = self.get_story()
+            story.export_to_html(test_html)
+            with open(test_html, "r", encoding="utf8") as file_desc:
+                test_html_content = file_desc.read()
+            self.assertEqual(
+                test_html_content,
+                self.get_html(),
+            )
 
     def test_to_html(self) -> None:
         """A method for testing Story().to_html()."""
