@@ -16,7 +16,7 @@ packages = find_packages(where="src", exclude=["__pycache__"])
 
 setup(
     name="ipyvizzu-story",
-    version="0.2.1",
+    version="0.3.0",
     description="Create and present animated data stories within data science notebooks.",
     long_description=long_description,
     long_description_content_type="text/markdown",
