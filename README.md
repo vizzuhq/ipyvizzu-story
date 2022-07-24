@@ -64,7 +64,7 @@ slide2 = Slide(
 story.play()
 ```
 
-# Environments
+# Environment support
 
 ipyvizzu-story can be used in a wide variety of environments, visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/3.-Environments) site for more details.
 
