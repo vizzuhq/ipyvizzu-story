@@ -15,7 +15,7 @@
 
 # About The Extension
 
-ipyvizzu-story is an extension of [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create interactive presentations from the animated data visualizations built with ipyizzu right within the data science notebook of their choice.
+ipyvizzu-story is an extension of [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create interactive presentations from the animated data visualizations built with ipyvizzu right within the data science notebook of their choice.
 The extension provides a widget that contains the presentation and adds controls for navigating between slides - predefined stages within the story being presented.
 
 # Installation
@@ -46,7 +46,7 @@ data.add_series("Bar", [15, 32, 12])
 data.add_series("Baz", [5, 3, 2])
 ```
 
-Put the data object into the `Story` constructor. Here you can also set the `Story` objects `style` property to set the chart style used for the whole story.
+Put the data object into the `Story` constructor. Here you can also set the `Story` object's `style` property to set the chart style used for the whole story.
 
 ```python
 story = Story(data=data)
@@ -92,7 +92,7 @@ We welcome contributions to the project, visit our [contributing guide](https://
 
 * Join our Slack if you have any questions or comments: [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
 * Drop us a line at hello@vizzuhq.com
-* Follow us on Twitter: [https://twitter.com/VizzuHQ](https://twitter.com/VizzuHQ)
+* Follow us on Twitter: [VizzuHQ](https://twitter.com/VizzuHQ)
 
 # License
 
