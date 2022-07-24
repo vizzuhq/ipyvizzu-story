@@ -65,7 +65,7 @@ story.play()
 
 # Contributing
 
-We welcome contributions to the project, visit our [contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
+We welcome contributions to the project, visit our contributing [guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
 
 # Contact
 
