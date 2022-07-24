@@ -20,7 +20,7 @@ The extension provides a widget that contains the presentation and adds controls
 
 # Installation
 
-ipyvizzu-story requires [ipyvizzu](https://pypi.org/project/ipyvizzu) package.
+Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/Tutorial#installation) site for more details about installation.
 
 ```sh
 pip install ipyvizzu-story
