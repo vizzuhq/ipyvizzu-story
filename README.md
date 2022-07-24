@@ -4,7 +4,8 @@
   </a>
   <p align="center"><b>ipyvizzu - story</b> Extension</p>
   <p align="center">
-    <a href="https://vizzuhq.github.io/ipyvizzu-story/examples/readme_complex/index.html">Example</a>
+    <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/Tutorial">Tutorial</a>
+    · <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/Examples">Examples</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
 </p>
