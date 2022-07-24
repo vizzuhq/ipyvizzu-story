@@ -7,5 +7,6 @@ dist
 
 htmlcov
 .coverage
+.test.*
 
 .venv
