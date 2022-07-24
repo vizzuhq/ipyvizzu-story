@@ -28,7 +28,9 @@ pip install ipyvizzu-story
 
 # Usage
 
-![Readme example](https://github.com/vizzuhq/vizzu-ext-js-story/raw/main/assets/readme-example.gif)
+<p align="center">
+  <img src="https://github.com/vizzuhq/vizzu-ext-js-story/raw/main/assets/readme-example.gif" alt="ipyvizzu" />
+</p>
 
 Import `ipyvizzu` and `ipyvizzu-story`:
 
