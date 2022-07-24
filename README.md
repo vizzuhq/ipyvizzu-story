@@ -30,7 +30,7 @@ pip install ipyvizzu-story
 
 You can create the story below with the following code snippet.
 
-Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/Tutorial#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our [example gallery](https://github.com/vizzuhq/ipyvizzu-story/wiki/Examples).
+Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/Tutorial#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://github.com/vizzuhq/ipyvizzu-story/wiki/Examples).
 
 <p align="center">
   <img src="https://github.com/vizzuhq/vizzu-ext-js-story/raw/main/assets/readme-example.gif" alt="ipyvizzu" />
