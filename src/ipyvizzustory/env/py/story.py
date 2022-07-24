@@ -14,6 +14,6 @@ class Story(StoryLib):
         super().__init__(data=data, style=style)
 
     def play(self) -> str:
-        """A method for displaying the html code."""
+        """A method for returning the html code."""
 
         return self.to_html()
