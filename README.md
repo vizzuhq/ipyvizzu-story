@@ -4,8 +4,8 @@
   </a>
   <p align="center"><b>ipyvizzu - story</b> Extension</p>
   <p align="center">
-    <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/Tutorial">Tutorial</a>
-    · <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/Examples">Examples</a>
+    <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial">Tutorial</a>
+    · <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples">Examples</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
 </p>
@@ -21,7 +21,7 @@ The extension provides a widget that contains the presentation and adds controls
 
 # Installation
 
-Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/Tutorial#installation) site for more details about installation.
+Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#installation) site for more details about installation.
 
 ```sh
 pip install ipyvizzu-story
@@ -31,7 +31,7 @@ pip install ipyvizzu-story
 
 You can create the story below with the following code snippet.
 
-Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/Tutorial#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://github.com/vizzuhq/ipyvizzu-story/wiki/Examples).
+Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples).
 
 <p align="center">
   <img src="https://github.com/vizzuhq/vizzu-ext-js-story/raw/main/assets/readme-example.gif" alt="ipyvizzu" />
