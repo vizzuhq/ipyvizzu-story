@@ -1,4 +1,8 @@
-"""Python integration of Vizzu-Story."""
+"""
+.. include:: ../../README.md
+
+Python integration of Vizzu-Story.
+"""
 
 
 from .storylib.story import Step, Slide

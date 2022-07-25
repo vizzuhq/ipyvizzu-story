@@ -1,4 +1,4 @@
-"""A module for working with ipyvizzu-story presentations."""
+"""A module for working with presentation stories in Streamlit environment."""
 
 from typing import Optional
 
@@ -13,20 +13,41 @@ class Story(StoryLib):
     """A class for representing a presentation story in Streamlit environment."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
+        """
+        Presentation Story constructor.
+
+        Args:
+            data: Data set for the whole presentation story.
+                After initialization `data` can not be modified,
+                but it can be filtered.
+            style (optional): Style settings for the presentation story.
+                `style` can be changed at each presentation step.
+        """
+
         super().__init__(data=data, style=style)
         self.set_size(800, 480)
 
     def set_size(  # type: ignore  # pylint: disable=signature-differs
         self, width: int, height: int
     ) -> None:
-        """A method for overwriting StoryLib().set_size() method."""
+        """
+        A method for overwriting `ipyvizzustory.storylib.story.Story.set_size()` method.
+        In Streamlit environment `width` and `height` must be specified in pixels.
+
+        Args:
+            width: Width of the presentation story in pixels.
+            height: Height of the presentation story in pixels.
+
+        Raises:
+            ValueError: If `width` or `height` is not instance of `int`.
+        """
 
         if any([not isinstance(width, int), not isinstance(height, int)]):
             raise ValueError("width and height should be in pixels as int")
         super().set_size(width=str(width) + "px", height=str(height) + "px")
 
     def play(self) -> None:
-        """A method for displaying the html code."""
+        """A method for displaying the html code in Streamlit environment."""
 
         html(
             self.to_html(),
