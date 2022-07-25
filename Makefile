@@ -79,13 +79,14 @@ test: $(DEV_BUILD_FLAG) install test-wo-install
 # doc
 
 clean-doc:
-	rm -rf docs/index.md
-	rm -rf docs/**/*.html
+	rm -rf docs/ipyvizzustory
+	rm -rf docs/*.js
+	rm -rf docs/*.html
+	rm -rf docs/**/**/*.html
 
 doc: $(DEV_BUILD_FLAG)
-	cp README.md docs/index.md
-	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/readme/index.ipynb
-	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/readme_complex/index.ipynb
+	$(VIRTUAL_ENV)/bin/pdoc --docformat google src/ipyvizzustory -o docs
+	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/**/*.ipynb
 
 
 

@@ -6,5 +6,6 @@ black[jupyter]
 pylint
 mypy
 coverage
+pdoc
 notebook
 streamlit
