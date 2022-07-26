@@ -6,6 +6,7 @@
   <p align="center">
     <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial">Tutorial</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples">Examples</a>
+    · <a href="https://vizzuhq.github.io/ipyvizzu-story/ipyvizzustory.html#reference">Reference</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
 </p>

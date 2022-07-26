@@ -1,4 +1,23 @@
-"""Python integration of Vizzu-Story."""
+"""
+.. include:: ../../README.md
+
+# Reference
+
+Code reference of ipyvizzu-story. It consists of two main parts:
+
+* [storylib](./ipyvizzustory/storylib.html): environment independent modules
+* [env](./ipyvizzustory/env.html): environment dependent modules
+
+ipyvizzustory package tries to figure out the environment and import the correct type of `Story`,
+however `Story` could be imported with full path.
+
+ipyvizzustory package imports the following objects in `__init__.py`:
+
+* `Step` and `Slide` from `ipyvizzustory.storylib.story`
+* `Story` from `ipyvizzustory.env.py.story` or
+    `ipyvizzustory.env.ipy.story` or
+    `ipyvizzustory.env.st.story`
+"""
 
 
 from .storylib.story import Step, Slide
@@ -25,7 +44,14 @@ except ImportError:  # pragma: no cover
 
 
 def get_story():
-    """A method for returning the appropriate Story for the environment."""
+    """
+    A method for returning the appropriate Story for the environment.
+
+    Returns:
+        Union[ipyvizzustory.env.py.story.Story,
+            ipyvizzustory.env.ipy.story.Story,
+            ipyvizzustory.env.st.story.Story]: The appropriate `Story` for the environment.
+    """
 
     return JupyterStory or StreamlitStory or PythonStory
 
