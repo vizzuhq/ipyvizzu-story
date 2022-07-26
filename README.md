@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/vizzuhq/vizzu-lib">
-    <img src="https://github.com/vizzuhq/ipyvizzu-story/raw/main/docs/examples/demo/ipyvizzu-story-demo.gif" alt="ipyvizzu-story demo" />
+    <img src="https://github.com/vizzuhq/ipyvizzu-story/raw/main/docs/examples/demo/ipyvizzu-story_example.gif" alt="ipyvizzu-story demo" />
   </a>
   <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook</p>
   <p align="center">
