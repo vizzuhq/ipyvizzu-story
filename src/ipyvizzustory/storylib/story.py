@@ -1,4 +1,4 @@
-"""A module for working with ipyvizzu-story presentations."""
+"""A module for working with presentation stories."""
 
 from typing import Optional, Union, List
 from os import PathLike
@@ -23,6 +23,22 @@ class Step(dict):
         *animations: Union[Data, Style, Config],
         **anim_options: Optional[Union[str, int, float, dict]],
     ):
+        """
+        Step constructor.
+
+        Note:
+            Do not set `anim_options` argument, it will raise `NotImplementedError` error.
+
+        Args:
+            *animations: List of `ipyvizzu.Data`, `ipyvizzu.Config` and `ipyvizzu.Style` objects.
+                A `Step` can contain each of the above once.
+            **anim_options (optional): Animation options such as duration.
+
+        Raises:
+            ValueError: If `animations` are not set.
+            NotImplementedError: If `anim_options` are set.
+        """
+
         super().__init__()
         if not animations:
             raise ValueError("No animation was set.")
@@ -51,15 +67,30 @@ class Step(dict):
 
 
 class Slide(list):
-    """A class for representing a slide of a story."""
+    """A class for representing a slide of a presentation story."""
 
     def __init__(self, step: Optional[Step] = None):
+        """
+        Slide constructor.
+
+        Args:
+            step (optional): The first step can also be added to the slide in the constructor.
+        """
+
         super().__init__()
         if step:
             self.add_step(step)
 
     def add_step(self, step: Step) -> None:
-        """A method for adding a step for the slide."""
+        """
+        A method for adding a step for the slide.
+
+        Args:
+            step: The next step of the slide.
+
+        Raises:
+            TypeError: If the type of the `step` is not `Step`.
+        """
 
         if not step or type(step) != Step:  # pylint: disable=unidiomatic-typecheck
             raise TypeError("Type must be Step.")
@@ -67,9 +98,16 @@ class Slide(list):
 
 
 class StorySize:
-    """A class for representing a story's size."""
+    """A class for representing the size of a presentation story."""
 
     def __init__(self, width: Optional[str] = None, height: Optional[str] = None):
+        """
+        StorySize constructor.
+
+        Args:
+            width (optional): The width of a presentation story.
+            height (optional): The height of a presentation story.
+        """
         self._width = width
         self._height = height
 
@@ -81,19 +119,24 @@ class StorySize:
 
     @property
     def width(self) -> Optional[str]:
-        """A property for storing story's width."""
+        """A property for returning the width of a presentation story."""
 
         return self._width
 
     @property
     def height(self) -> Optional[str]:
-        """A property for storing story's height."""
+        """A property for returning the height of a presentation story."""
 
         return self._height
 
     @property
     def style(self) -> str:
-        """A property for storing story's height."""
+        """
+        A property for returning the cssText width and height of a presentation story.
+
+        Note:
+            If `width` and `height` are not set it returns an empty string.
+        """
 
         return self._style
 
@@ -102,6 +145,21 @@ class Story(dict):
     """A class for representing a presentation story."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
+        """
+        Presentation Story constructor.
+
+        Args:
+            data: Data set for the whole presentation story.
+                After initialization `data` can not be modified,
+                but it can be filtered.
+            style (optional): Style settings for the presentation story.
+                `style` can be changed at each presentation step.
+
+        Raises:
+            TypeError: If the type of the `data` is not `ipyvizzu.Data`.
+            TypeError: If the type of the `style` is not `ipyvizzu.Style`.
+        """
+
         super().__init__()
 
         self._size: StorySize = StorySize()
@@ -121,18 +179,40 @@ class Story(dict):
         self["slides"] = []
 
     def add_slide(self, slide: Slide) -> None:
-        """A method for adding a slide for the story."""
+        """
+        A method for adding a slide for the story.
+
+        Args:
+            slide: The next slide of the story.
+
+        Raises:
+            TypeError: If the type of the `slide` is not `Slide`.
+        """
 
         if not slide or type(slide) != Slide:  # pylint: disable=unidiomatic-typecheck
             raise TypeError("Type must be Slide.")
         self["slides"].append(slide)
 
     def set_feature(self, name: str, enabled: bool) -> None:
-        """A method for turning on/off a feature of the story."""
+        """
+        A method for enabling or disabling a feature of the story.
+
+        Args:
+            name: The name of the feature.
+            enabled: True if enabled or False if disabled.
+        """
+
         self._features.append(f"chart.feature('{name}', {json.dumps(enabled)});")
 
     def add_event(self, event: str, handler: str) -> None:
-        """A method for creating and turning on an event handler."""
+        """
+        A method for creating and turning on an event handler.
+
+        Args:
+            event: The name of the event.
+            handler: The handler JavaScript expression as string.
+        """
+
         self._events.append(
             f"chart.on('{event}', event => {{{' '.join(handler.split())}}});"
         )
@@ -140,12 +220,23 @@ class Story(dict):
     def set_size(
         self, width: Optional[str] = None, height: Optional[str] = None
     ) -> None:
-        """A method for setting width/height settings."""
+        """
+        A method for setting width/height settings.
+
+        Args:
+            width (optional): The width of the presentation story.
+            height (optional): The height of the presentation story.
+        """
 
         self._size = StorySize(width=width, height=height)
 
     def to_html(self) -> str:
-        """A method for assembling the html code."""
+        """
+        A method for assembling the html code.
+
+        Returns:
+            The assembled html code as string.
+        """
 
         vizzu_player_data = f"{json.dumps(self, cls=RawJavaScriptEncoder)}"
         return DISPLAY_TEMPLATE.format(
@@ -158,7 +249,12 @@ class Story(dict):
         )
 
     def export_to_html(self, filename: PathLike) -> None:
-        """A method for exporting the story into html file."""
+        """
+        A method for exporting the story into html file.
+
+        Args:
+            filename: The path of the target html file.
+        """
 
         with open(filename, "w", encoding="utf8") as file_desc:
             file_desc.write(self.to_html())
