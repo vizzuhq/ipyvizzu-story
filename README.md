@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://github.com/vizzuhq/vizzu-lib">
-    <img src="https://github.com/vizzuhq/vizzu-lib-doc/raw/main/docs/readme/infinite-60.gif" alt="Vizzu" />
+    <img src="https://github.com/vizzuhq/ipyvizzu-story/raw/main/docs/examples/demo/ipyvizzu-story-demo.gif" alt="ipyvizzu-story demo" />
   </a>
-  <p align="center"><b>ipyvizzu - story</b> Extension</p>
+  <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook</p>
   <p align="center">
     <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial">Tutorial</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples">Examples</a>
@@ -17,22 +17,20 @@
 
 # About The Extension
 
-ipyvizzu-story is an extension of [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create interactive presentations from the animated data visualizations built with ipyvizzu right within the data science notebook of their choice.
-The extension provides a widget that contains the presentation and adds controls for navigating between slides - predefined stages within the story being presented.
+ipyvizzu-story is an extension of [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create interactive presentations within the data science notebook of their choice.
+The extension provides a widget that contains the presentation and adds controls for navigating between slides - predefined stages within the story being presented. Navigation also works with keyboard shortcuts - arrow keys, PgUp, PgDn, Home, End - and you can also use a clicker to switch between the slides.
+Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you to start from the [ipyvizzu repo](https://github.com/vizzuhq/ipyvizzu) if you're interested in building animated charts but not necessarly presenting them live or to share your presentation as an HTML file.
 
 # Installation
-
-Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#installation) site for more details about installation.
 
 ```sh
 pip install ipyvizzu-story
 ```
+Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#installation) site for more details about installation.
 
 # Usage
 
 You can create the story below with the following code snippet.
-
-Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples).
 
 <p align="center">
   <img src="https://github.com/vizzuhq/vizzu-ext-js-story/raw/main/assets/readme-example.gif" alt="ipyvizzu" />
@@ -64,6 +62,7 @@ slide2 = Slide(
 
 story.play()
 ```
+Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples).
 
 # Environment support
 
