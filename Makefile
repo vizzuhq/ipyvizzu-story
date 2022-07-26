@@ -1,6 +1,6 @@
 .PHONY: clean \
 	clean-dev update-dev-req install-dev-req install install-kernel touch-dev \
-	check format check-format lint check-typing clean-test test-wo-install test \
+	check format check-format lint check-typing test-wo-install test \
 	clean-doc doc \
 	clean-build build-release check-release release
 
@@ -10,7 +10,7 @@ DEV_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_BUILD_FLAG
 
 
 
-clean: clean-dev clean-test clean-doc clean-build
+clean: clean-dev clean-doc clean-build
 
 
 
@@ -63,14 +63,11 @@ lint: $(DEV_BUILD_FLAG)
 check-typing: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/mypy src tests setup.py
 
-clean-test:
-	rm -rf .coverage
-	rm -rf htmlcov
-
 test-wo-install: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/coverage run --branch --source ipyvizzustory -m unittest discover tests
-	$(VIRTUAL_ENV)/bin/coverage html
-	$(VIRTUAL_ENV)/bin/coverage report -m --fail-under=100
+	mkdir -p docs/coverage
+	$(VIRTUAL_ENV)/bin/coverage run --data-file docs/coverage/.coverage --branch --source ipyvizzustory -m unittest discover tests
+	$(VIRTUAL_ENV)/bin/coverage html --data-file docs/coverage/.coverage -d docs/coverage
+	$(VIRTUAL_ENV)/bin/coverage report --data-file docs/coverage/.coverage -m --fail-under=100
 
 test: $(DEV_BUILD_FLAG) install test-wo-install
 
@@ -79,10 +76,11 @@ test: $(DEV_BUILD_FLAG) install test-wo-install
 # doc
 
 clean-doc:
+	rm -rf docs/coverage
 	rm -rf docs/ipyvizzustory
-	rm -rf docs/*.js
-	rm -rf docs/*.html
-	rm -rf docs/**/**/*.html
+	rm -rf `find docs -name '*.html'`
+	rm -rf `find docs -name '*.js'`
+	rm -rf `find docs -name '.ipynb_checkpoints'`
 
 doc: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/pdoc --docformat google src/ipyvizzustory -o docs
@@ -95,8 +93,8 @@ doc: $(DEV_BUILD_FLAG)
 clean-build:
 	rm -rf build
 	rm -rf dist
-	rm -rf **/*.egg-info
-	rm -rf **/__pycache__
+	rm -rf `find docs -name '*.egg-info'`
+	rm -rf `find docs -name '__pycache__'`
 
 build-release: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/python -m build
