@@ -47,7 +47,7 @@ class Story(StoryLib):
         super().set_size(width=str(width) + "px", height=str(height) + "px")
 
     def play(self) -> None:
-        """A method for displaying the html code in Streamlit environment."""
+        """A method for displaying the assembled html code in Streamlit environment."""
 
         html(
             self.to_html(),
