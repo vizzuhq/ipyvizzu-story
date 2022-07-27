@@ -14,7 +14,6 @@
 [![PyPI version](https://badge.fury.io/py/ipyvizzu-story.svg)](https://badge.fury.io/py/ipyvizzu-story)
 [![CI-CD](https://github.com/vizzuhq/ipyvizzu-story/actions/workflows/cicd.yml/badge.svg?branch=main)](https://github.com/vizzuhq/ipyvizzu-story/actions/workflows/cicd.yml)
 
-
 # About The Extension
 
 ipyvizzu-story is an extension of [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create interactive presentations within the data science notebook of their choice.
@@ -29,6 +28,8 @@ pip install ipyvizzu-story
 Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#installation) site for more details about installation.
 
 # Usage
+
+You can check the code behind the animation on the top of the page in [HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.html) or download it as an [ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb)
 
 You can create the story below with the following code snippet.
 
