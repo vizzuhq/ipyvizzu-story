@@ -93,8 +93,8 @@ doc: $(DEV_BUILD_FLAG)
 clean-build:
 	rm -rf build
 	rm -rf dist
-	rm -rf `find docs -name '*.egg-info'`
-	rm -rf `find docs -name '__pycache__'`
+	rm -rf `find . -name '*.egg-info'`
+	rm -rf `find . -name '__pycache__'`
 
 build-release: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/python -m build
