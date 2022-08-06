@@ -23,10 +23,7 @@ update-dev-req: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/pip-compile --upgrade dev-requirements.in
 
 install-dev-req:
-	python3 -m venv $(VIRTUAL_ENV)
-	$(VIRTUAL_ENV)/bin/python -m pip install --upgrade pip
 	$(VIRTUAL_ENV)/bin/pip install -r dev-requirements.txt
-	$(VIRTUAL_ENV)/bin/pre-commit install --hook-type pre-commit --hook-type pre-push
 
 install:
 	$(VIRTUAL_ENV)/bin/python setup.py install
@@ -40,9 +37,12 @@ touch-dev:
 dev: $(DEV_BUILD_FLAG)
 
 $(DEV_BUILD_FLAG):
-	$(MAKE) -f Makefile install-dev-req
+	python3 -m venv $(VIRTUAL_ENV)
+	$(VIRTUAL_ENV)/bin/python -m pip install --upgrade pip
 	$(MAKE) -f Makefile install
+	$(MAKE) -f Makefile install-dev-req
 	$(MAKE) -f Makefile install-kernel
+	$(VIRTUAL_ENV)/bin/pre-commit install --hook-type pre-commit --hook-type pre-push
 	$(MAKE) -f Makefile touch-dev
 
 
