@@ -14,7 +14,7 @@ def gen_index(root: Path) -> None:
         root: The path of the root directory.
     """
 
-    index = root / "assets" / "docs" / "index.md"
+    index = root / "docs" / "index.md"
     copy(root / "README.md", index)
 
     with open(index, "rt", encoding="utf8") as f_index:
@@ -48,7 +48,7 @@ def run_mkdocs(root: Path, mkdocs: str) -> None:
         "-f",
         str(root / "tools" / "mkdocs" / "mkdocs.yml"),
         "-d",
-        "../../docs",
+        "../../site",
     ]
     with subprocess.Popen(command, stdout=subprocess.PIPE) as process:
         output_str, error_str = "", ""

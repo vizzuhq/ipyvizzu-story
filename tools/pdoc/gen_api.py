@@ -28,7 +28,7 @@ def run_pdoc(root: Path, pdoc: str) -> None:
         "google",
         str(root / "src" / "ipyvizzustory"),
         "-o",
-        str(root / "assets" / "docs" / "api"),
+        str(root / "docs" / "api"),
     ]
     with subprocess.Popen(command, stdout=subprocess.PIPE) as process:
         output_str, error_str = "", ""
@@ -42,7 +42,7 @@ def run_pdoc(root: Path, pdoc: str) -> None:
                 f"pdoc failed {process.returncode} {output_str} {error_str}"
             )
 
-    os.remove(root / "assets" / "docs" / "api" / "index.html")
+    os.remove(root / "docs" / "api" / "index.html")
 
 
 root_path = Path(__file__).parent / ".." / ".."

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/vizzuhq/vizzu-lib">
-    <img src="https://github.com/vizzuhq/ipyvizzu-story/raw/main/assets/docs/examples/demo/ipyvizzu-story_example.gif" alt="ipyvizzu-story demo" />
+    <img src="https://github.com/vizzuhq/ipyvizzu-story/raw/main/docs/examples/demo/ipyvizzu-story_example.gif" alt="ipyvizzu-story demo" />
   </a>
   <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook</p>
   <p align="center">
@@ -26,7 +26,7 @@ Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you 
 ```sh
 pip install ipyvizzu-story
 ```
-Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#installation) for more details about installation.
+Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#installation) site for more details about installation.
 
 # Usage
 
@@ -64,11 +64,11 @@ slide2 = Slide(
 
 story.play()
 ```
-Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#Usage) for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://vizzuhq.github.io/ipyvizzu-story/examples.html).
+Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#Usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://vizzuhq.github.io/ipyvizzu-story/examples.html).
 
 # Environment support
 
-ipyvizzu-story can be used in a wide variety of environments, visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/environments.html) for more details.
+ipyvizzu-story can be used in a wide variety of environments, visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/environments.html) site for more details.
 
 # Contributing
 
