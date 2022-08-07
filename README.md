@@ -15,20 +15,22 @@
 [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ipyvizzu-story.svg)](https://anaconda.org/conda-forge/ipyvizzu-story)
 [![CI-CD](https://github.com/vizzuhq/ipyvizzu-story/actions/workflows/cicd.yml/badge.svg?branch=main)](https://github.com/vizzuhq/ipyvizzu-story/actions/workflows/cicd.yml)
 
-# About The Extension
+# ipyvizzu-story
+
+## About The Extension
 
 ipyvizzu-story is an extension of [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create interactive presentations within the data science notebook of their choice.
 The extension provides a widget that contains the presentation and adds controls for navigating between slides - predefined stages within the story being presented. Navigation also works with keyboard shortcuts - arrow keys, PgUp, PgDn, Home, End - and you can also use a clicker to switch between the slides.
 Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you to start from the [ipyvizzu repo](https://github.com/vizzuhq/ipyvizzu) if you're interested in building animated charts but not necessarly presenting them live or to share your presentation as an HTML file.
 
-# Installation
+## Installation
 
 ```sh
 pip install ipyvizzu-story
 ```
 Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/installation.html) site for more details about installation.
 
-# Usage
+## Usage
 
 You can check the code behind the animation on the top of the page in [HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.html) or download it as an [ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb)
 
@@ -64,23 +66,23 @@ slide2 = Slide(
 
 story.play()
 ```
-Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#Usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://vizzuhq.github.io/ipyvizzu-story/docs/examples.html).
+Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our [example gallery](https://vizzuhq.github.io/ipyvizzu-story/docs/examples.html).
 
-# Environment support
+## Environment support
 
 ipyvizzu-story can be used in a wide variety of environments, visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/environments.html) site for more details.
 
-# Contributing
+## Contributing
 
-We welcome contributions to the project, visit our contributing [guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
+We welcome contributions to the project, visit our [contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
 
-# Contact
+## Contact
 
 * Join our Slack if you have any questions or comments: [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
 * Drop us a line at hello@vizzuhq.com
 * Follow us on Twitter: [VizzuHQ](https://twitter.com/VizzuHQ)
 
-# License
+## License
 
 Copyright © 2022 [Vizzu Kft.](https://vizzuhq.com).
 

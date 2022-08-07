@@ -2,7 +2,7 @@
 
 ipyvizzu-story requires [ipyvizzu](https://pypi.org/project/ipyvizzu) package.
 
-# pypi
+## pypi
 
 Run the following command to install ipyvizzu-story or the second command below to upgrade it.
 
@@ -28,7 +28,7 @@ If you want to install Streamlit as a dependency, install ipyvizzu-story with th
 pip install ipyvizzu-story[streamlit]
 ```
 
-# conda / mamba
+## conda / mamba
 
 Installing `ipyvizzu-story` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 

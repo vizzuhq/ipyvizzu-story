@@ -1,7 +1,5 @@
 # Tutorial
 
-<a id="Usage"></a>
-
 ## Usage
 
 **Note:** ipyvizzu-story uses vizzu and vizzu-story javascript packages and loads them from jsDelivr CDN. If you get a vizzu or vizzu-story releated error in your browser console, please clean your browser cache, because an older version of these could be stored in your browser.
@@ -77,9 +75,7 @@ Then play the Story.
 story.play()
 ```
 
-For live examples check out our example [gallery](examples.html)!
-
-<a id="Export"></a>
+For live examples check out our [example gallery](examples.html)!
 
 ## Export
 

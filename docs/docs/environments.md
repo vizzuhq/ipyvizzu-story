@@ -2,8 +2,6 @@
 
 You can use ipyvizzu-story in Jupyter, Streamlit or Python environments. ipyvizzu-story tries to figure out the environment and import the correct type of Story, however Story could be imported with full path.
 
-<a id="Jupyter"></a>
-
 ## Jupyter/IPython
 
 In Jupyter/IPython environment, ipyvizzu-story can display and export the created html code.
@@ -48,8 +46,6 @@ story.export_to_html(filename="mystory.html")
 
 After [installing](installation.html) ipyvizzu-story,
 place the above code in a Jupyter Notebook cell.
-
-<a id="Streamlit"></a>
 
 ## Streamlit
 
@@ -97,8 +93,6 @@ place the above code in a file (for example called `ipyvizzustory_example.py`) a
 ```sh
 streamlit run ipyvizzustory_example.py
 ```
-
-<a id="Python"></a>
 
 ## Python
 
