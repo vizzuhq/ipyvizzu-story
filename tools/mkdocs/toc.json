@@ -8,6 +8,13 @@
     {
         "nav": [
             "Docs",
+            "Installation"
+        ],
+        "md": "docs/installation.md"
+    },
+    {
+        "nav": [
+            "Docs",
             "Tutorial"
         ],
         "md": "docs/tutorial.md"

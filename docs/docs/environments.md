@@ -46,7 +46,7 @@ story.play()  # or just `story` if you would like to use `_repr_html_`
 story.export_to_html(filename="mystory.html")
 ```
 
-After [installing](tutorial.html#Installation) ipyvizzu-story,
+After [installing](installation.html) ipyvizzu-story,
 place the above code in a Jupyter Notebook cell.
 
 <a id="Streamlit"></a>
@@ -91,7 +91,7 @@ story.play()
 story.export_to_html(filename="mystory.html")
 ```
 
-After [installing](tutorial.html#Installation) ipyvizzu-story,
+After [installing](installation.html) ipyvizzu-story,
 place the above code in a file (for example called `ipyvizzustory_example.py`) and run the following command:
 
 ```sh
@@ -134,7 +134,7 @@ story.add_slide(slide2)
 story.export_to_html(filename="mystory.html")
 ```
 
-After [installing](tutorial.html#Installation) ipyvizzu-story,
+After [installing](installation.html) ipyvizzu-story,
 place the above code in a file (for example called `ipyvizzustory_example.py`) and run the following command:
 
 ```sh

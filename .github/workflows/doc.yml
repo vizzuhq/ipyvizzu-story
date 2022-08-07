@@ -54,6 +54,7 @@ jobs:
       
     permissions:
       id-token: write
+      pages: write
       contents: read
     
     runs-on: ubuntu-20.04

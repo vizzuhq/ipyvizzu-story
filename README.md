@@ -26,7 +26,7 @@ Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you 
 ```sh
 pip install ipyvizzu-story
 ```
-Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#installation) site for more details about installation.
+Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/installation.html) site for more details about installation.
 
 # Usage
 
