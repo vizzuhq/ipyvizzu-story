@@ -37,7 +37,7 @@ jobs:
 
       - name: Push to gh-pages branch
         run: |
-          git add site
+          git add docs
           git commit -am 'docs: update'
           git push -f origin gh-pages
         if: ( github.event_name == 'release' && github.event.action == 'published' ) || github.event_name == 'workflow_dispatch'
