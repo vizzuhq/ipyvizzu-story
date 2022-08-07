@@ -52,16 +52,16 @@ $(DEV_BUILD_FLAG):
 check: check-format lint check-typing test
 
 format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black src tests docs setup.py
+	$(VIRTUAL_ENV)/bin/black src tests docs tools setup.py
 
 check-format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black --check src tests docs setup.py
+	$(VIRTUAL_ENV)/bin/black --check src tests docs tools setup.py
 
 lint: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/pylint src tests setup.py
+	$(VIRTUAL_ENV)/bin/pylint src tests tools setup.py
 
 check-typing: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/mypy src tests setup.py
+	$(VIRTUAL_ENV)/bin/mypy src tests tools setup.py
 
 test-wo-install: $(DEV_BUILD_FLAG)
 	mkdir -p docs/coverage
@@ -76,15 +76,15 @@ test: $(DEV_BUILD_FLAG) install test-wo-install
 # doc
 
 clean-doc:
+	rm -rf site
 	rm -rf docs/coverage
-	rm -rf docs/ipyvizzustory
-	rm -rf `find docs -name '*.html'`
-	rm -rf `find docs -name '*.js'`
+	rm -rf docs/api
 	rm -rf `find docs -name '.ipynb_checkpoints'`
 
 doc: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/pdoc --docformat google src/ipyvizzustory -o docs
-	$(VIRTUAL_ENV)/bin/jupyter nbconvert --to html --template classic --execute ./docs/examples/**/*.ipynb
+	$(VIRTUAL_ENV)/bin/python tools/pdoc/gen_api.py $(VIRTUAL_ENV)/bin/pdoc
+	$(VIRTUAL_ENV)/bin/python tools/mkdocs/gen_mkdocs.py $(VIRTUAL_ENV)/bin/mkdocs
+	$(VIRTUAL_ENV)/bin/python tools/jupyter/gen_examples.py $(VIRTUAL_ENV)/bin/jupyter
 
 
 

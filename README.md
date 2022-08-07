@@ -4,8 +4,8 @@
   </a>
   <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook</p>
   <p align="center">
-    <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial">Tutorial</a>
-    · <a href="https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples">Examples</a>
+    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html">Tutorial</a>
+    · <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/examples.html">Examples</a>
     · <a href="https://vizzuhq.github.io/ipyvizzu-story/ipyvizzustory.html#reference">Reference</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
@@ -26,7 +26,7 @@ Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you 
 ```sh
 pip install ipyvizzu-story
 ```
-Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#installation) site for more details about installation.
+Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#installation) site for more details about installation.
 
 # Usage
 
@@ -64,11 +64,11 @@ slide2 = Slide(
 
 story.play()
 ```
-Visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/1.-Tutorial#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://github.com/vizzuhq/ipyvizzu-story/wiki/2.-Examples).
+Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#Usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://vizzuhq.github.io/ipyvizzu-story/examples.html).
 
 # Environment support
 
-ipyvizzu-story can be used in a wide variety of environments, visit our [wiki](https://github.com/vizzuhq/ipyvizzu-story/wiki/3.-Environments) site for more details.
+ipyvizzu-story can be used in a wide variety of environments, visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/environments.html) site for more details.
 
 # Contributing
 

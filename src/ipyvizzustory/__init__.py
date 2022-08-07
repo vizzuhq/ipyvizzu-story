@@ -1,9 +1,5 @@
 """
-.. include:: ../../README.md
-
-# Reference
-
-Code reference of ipyvizzu-story. It consists of two main parts:
+ipyvizzu-story package consists of two main parts:
 
 * [storylib](./ipyvizzustory/storylib.html): environment independent modules
 * [env](./ipyvizzustory/env.html): environment dependent modules
