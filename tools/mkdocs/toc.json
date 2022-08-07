@@ -1,0 +1,28 @@
+[
+    {
+        "nav": [
+            "Home"
+        ],
+        "md": "index.md"
+    },
+    {
+        "nav": [
+            "Docs",
+            "Tutorial"
+        ],
+        "md": "docs/tutorial.md"
+    },
+    {
+        "nav": [
+            "Docs",
+            "Environments"
+        ],
+        "md": "docs/environments.md"
+    },
+    {
+        "nav": [
+            "Examples"
+        ],
+        "md": "docs/examples.md"
+    }
+]

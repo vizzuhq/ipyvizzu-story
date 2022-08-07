@@ -5,7 +5,9 @@ build
 dist
 *.egg-info
 
-coverage
+docs/index.md
+docs/coverage
+docs/api
 .test.*
 
 .venv

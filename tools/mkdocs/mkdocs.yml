@@ -1,0 +1,22 @@
+site_name: ipyvizzu-story
+docs_dir: ../../docs
+
+repo_url: https://github.com/vizzuhq/ipyvizzu-story
+edit_uri: ""
+
+use_directory_urls: false
+
+theme:
+  name: material
+  logo: assets/home.png
+
+markdown_extensions:
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - gen-files:
+      scripts:
+        - tools/mkdocs/gen_files.py
+  - literate-nav:
+      nav_file: toc.md

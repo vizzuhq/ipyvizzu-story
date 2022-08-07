@@ -7,5 +7,9 @@ pylint
 mypy
 coverage
 pdoc
+mkdocs
+mkdocs-material
+mkdocs-gen-files
+mkdocs-literate-nav
 notebook
 streamlit
