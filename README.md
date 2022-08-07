@@ -64,7 +64,7 @@ slide2 = Slide(
 
 story.play()
 ```
-Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#Usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://vizzuhq.github.io/ipyvizzu-story/examples.html).
+Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#Usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our example [gallery](https://vizzuhq.github.io/ipyvizzu-story/docs/examples.html).
 
 # Environment support
 
