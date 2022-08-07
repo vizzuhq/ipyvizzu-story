@@ -3,11 +3,6 @@ name: Publish documentation
 on:
   workflow_call:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   publish_doc:
 
