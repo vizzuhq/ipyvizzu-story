@@ -51,6 +51,8 @@ jobs:
 
     if: ( github.event_name == 'release' && github.event.action == 'published' ) || github.event_name == 'workflow_dispatch'
     
+    needs: publish_doc
+    
     environment:
       name: gh-pages
       url: ${{ steps.deployment.outputs.page_url }}
