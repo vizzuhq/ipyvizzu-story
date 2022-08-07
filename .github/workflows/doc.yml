@@ -3,6 +3,11 @@ name: Publish documentation
 on:
   workflow_call:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   publish_doc:
 
@@ -41,3 +46,30 @@ jobs:
           git commit -am 'docs: update'
           git push -f origin gh-pages
         if: ( github.event_name == 'release' && github.event.action == 'published' ) || github.event_name == 'workflow_dispatch'
+
+  deploy_doc:
+
+    if: ( github.event_name == 'release' && github.event.action == 'published' ) || github.event_name == 'workflow_dispatch'
+    
+    environment:
+      name: gh-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    runs-on: ubuntu-20.04
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
