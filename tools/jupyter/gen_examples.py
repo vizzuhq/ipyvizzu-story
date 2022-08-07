@@ -14,8 +14,8 @@ def copy_examples(root: Path) -> None:
         root: The path of the root directory.
     """
 
-    src = root / "docs" / "examples"
-    dst = root / "site" / "examples"
+    src = root / "assets" / "docs" / "examples"
+    dst = root / "docs" / "examples"
     if dst.exists():
         rmtree(dst)
     copytree(src, dst)
@@ -43,7 +43,7 @@ def run_nbconvert(root: Path, jupyter: str) -> None:
         "--template",
         "classic",
         "--execute",
-        str(root / "site" / "examples") + "/**/*.ipynb",
+        str(root / "docs" / "examples") + "/**/*.ipynb",
     ]
     with subprocess.Popen(command, stdout=subprocess.PIPE) as process:
         output_str, error_str = "", ""

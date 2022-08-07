@@ -52,10 +52,10 @@ $(DEV_BUILD_FLAG):
 check: check-format lint check-typing test
 
 format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black src tests docs tools setup.py
+	$(VIRTUAL_ENV)/bin/black src tests assets/docs/examples tools setup.py
 
 check-format: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/black --check src tests docs tools setup.py
+	$(VIRTUAL_ENV)/bin/black --check src tests assets/docs/examples tools setup.py
 
 lint: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/pylint src tests tools setup.py
@@ -64,10 +64,10 @@ check-typing: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/mypy src tests tools setup.py
 
 test-wo-install: $(DEV_BUILD_FLAG)
-	mkdir -p docs/coverage
-	$(VIRTUAL_ENV)/bin/coverage run --data-file docs/coverage/.coverage --branch --source ipyvizzustory -m unittest discover tests
-	$(VIRTUAL_ENV)/bin/coverage html --data-file docs/coverage/.coverage -d docs/coverage
-	$(VIRTUAL_ENV)/bin/coverage report --data-file docs/coverage/.coverage -m --fail-under=100
+	mkdir -p assets/docs/coverage
+	$(VIRTUAL_ENV)/bin/coverage run --data-file assets/docs/coverage/.coverage --branch --source ipyvizzustory -m unittest discover tests
+	$(VIRTUAL_ENV)/bin/coverage html --data-file assets/docs/coverage/.coverage -d assets/docs/coverage
+	$(VIRTUAL_ENV)/bin/coverage report --data-file assets/docs/coverage/.coverage -m --fail-under=100
 
 test: $(DEV_BUILD_FLAG) install test-wo-install
 
@@ -76,10 +76,10 @@ test: $(DEV_BUILD_FLAG) install test-wo-install
 # doc
 
 clean-doc:
-	rm -rf site
-	rm -rf docs/coverage
-	rm -rf docs/api
-	rm -rf `find docs -name '.ipynb_checkpoints'`
+	rm -rf docs
+	rm -rf assets/docs/coverage
+	rm -rf assets/docs/api
+	rm -rf `find assets/docs/examples -name '.ipynb_checkpoints'`
 
 doc: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/bin/python tools/pdoc/gen_api.py $(VIRTUAL_ENV)/bin/pdoc

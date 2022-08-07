@@ -1,5 +1,5 @@
 site_name: ipyvizzu-story
-docs_dir: ../../docs
+docs_dir: ../../assets/docs
 
 repo_url: https://github.com/vizzuhq/ipyvizzu-story
 edit_uri: ""
