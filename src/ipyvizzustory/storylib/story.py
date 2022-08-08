@@ -32,7 +32,7 @@ class Step(dict):
         Args:
             *animations: List of `ipyvizzu.Data`, `ipyvizzu.Config` and `ipyvizzu.Style` objects.
                 A `Step` can contain each of the above once.
-            **anim_options (optional): Animation options such as duration.
+            **anim_options: Animation options such as duration.
 
         Raises:
             ValueError: If `animations` are not set.
@@ -74,7 +74,7 @@ class Slide(list):
         Slide constructor.
 
         Args:
-            step (optional): The first step can also be added to the slide in the constructor.
+            step: The first step can also be added to the slide in the constructor.
         """
 
         super().__init__()
@@ -105,8 +105,8 @@ class StorySize:
         StorySize constructor.
 
         Args:
-            width (optional): The width of a presentation story.
-            height (optional): The height of a presentation story.
+            width: The width of a presentation story.
+            height: The height of a presentation story.
         """
         self._width = width
         self._height = height
@@ -119,23 +119,36 @@ class StorySize:
 
     @property
     def width(self) -> Optional[str]:
-        """A property for returning the width of a presentation story."""
+        """
+        A property for storing the width of a presentation story.
+
+        Returns:
+            The width of a presentation story.
+        """
 
         return self._width
 
     @property
     def height(self) -> Optional[str]:
-        """A property for returning the height of a presentation story."""
+        """
+        A property for storing the height of a presentation story.
+
+        Returns:
+            The height of a presentation story.
+        """
 
         return self._height
 
     @property
     def style(self) -> str:
         """
-        A property for returning the cssText width and height of a presentation story.
+        A property for storing the style of a presentation story.
 
         Note:
             If `width` and `height` are not set it returns an empty string.
+
+        Returns:
+            The cssText width and height of a presentation story.
         """
 
         return self._style
@@ -152,7 +165,7 @@ class Story(dict):
             data: Data set for the whole presentation story.
                 After initialization `data` can not be modified,
                 but it can be filtered.
-            style (optional): Style settings for the presentation story.
+            style: Style settings for the presentation story.
                 `style` can be changed at each presentation step.
 
         Raises:
@@ -224,8 +237,8 @@ class Story(dict):
         A method for setting width/height settings.
 
         Args:
-            width (optional): The width of the presentation story.
-            height (optional): The height of the presentation story.
+            width: The width of the presentation story.
+            height: The height of the presentation story.
         """
 
         self._size = StorySize(width=width, height=height)

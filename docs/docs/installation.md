@@ -14,7 +14,7 @@ pip install ipyvizzu-story
 pip install -U ipyvizzu-story
 ```
 
-You can use ipyvizzu-story in Jupyter, Streamlit or Python [environments](environments.html).
+You can use ipyvizzu-story in Jupyter, Streamlit or Python (see [Environments chapter](environments.md) of our documentation site).
 
 If you want to install IPython as a dependency, install ipyvizzu-story with the following command.
 

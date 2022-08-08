@@ -1,63 +1,127 @@
-"""A module for generating navigation of the site."""
+"""Generate the code reference pages and navigation."""
+
+# pylint: disable=too-few-public-methods
 
 from pathlib import Path
-import json
+from typing import Union
+import re
 
+import yaml
 import mkdocs_gen_files  # type: ignore
 
 
-def gen_toc_nav(root: Path) -> None:
-    """
-    A method for generating navigation of the table of content.
+class MkdocsConfig:
+    """A class for working with mkdocs configuration."""
 
-    Args:
-        root: The path of the root directory.
-    """
+    @staticmethod
+    def load() -> dict:
+        """
+        A method for loading mkdocs configuration.
 
-    mkdocs = root / "tools" / "mkdocs"
+        Returns:
+            A dictionary that contains the mkdocs configuration.
+        """
 
-    with open(mkdocs / "toc.json", encoding="utf8") as f_json:
-        toc = json.load(f_json)
-        for item in toc:
-            nav[item["nav"]] = item["md"]
-
-
-def gen_api_nav(root: Path) -> None:
-    """
-    A method for generating navigation of the generated api documentation.
-
-    Args:
-        root: The path of the root directory.
-    """
-
-    api = root / "docs" / "api"
-
-    for html in api.glob("**/*.html"):
-        with open(html, encoding="utf8") as f_html:
-            content = f_html.read()
-            with mkdocs_gen_files.open(
-                html.relative_to(api).with_suffix(".md"), "w"
-            ) as f_md:
-                print(content, file=f_md)
-                parts = str(html.with_suffix("")).split("/")
-                parts = parts[6:]
-                parts.insert(0, "API")
-                nav[parts] = html.relative_to(api).with_suffix(".md")
+        with open(Path(__file__).parent / "mkdocs.yml", "rt", encoding="utf8") as f_yml:
+            return yaml.load(f_yml, Loader=yaml.FullLoader)
 
 
-def write_nav() -> None:
-    """A method for writing navigation into toc.md."""
+class Index:
+    """A class for creating index file from README."""
 
-    with mkdocs_gen_files.open("toc.md", "w") as f_nav:
-        f_nav.writelines(nav.build_literate_nav())
+    @staticmethod
+    def generate(readme: Path) -> None:
+        """A method for generating the index file."""
+
+        with open(readme, "rt", encoding="utf8") as f_readme:
+            content = f_readme.read()
+
+        content = re.sub(
+            r"\[([^]]*)\]\((https://vizzuhq.github.io/ipyvizzu-story/)([^]]*)(.html)([^]]*)?\)",
+            r"[\1](\3.md\5)",
+            content,
+        )
+
+        content = content.replace("https://vizzuhq.github.io/ipyvizzu-story/", "")
+
+        with mkdocs_gen_files.open("index.md", "w") as f_index:
+            f_index.write(content)
 
 
-root_path = Path(__file__).parent / ".." / ".."
-"""The path of the root directory."""
+class SectionIndex:
+    """A class for creating section index files."""
 
-nav = mkdocs_gen_files.Nav()
-"""Mkdocs navigation object."""
+    @staticmethod
+    def _write_index_file(file: str, toc: list) -> None:
+        """
+        A method for writing table of contents into a section index file.
 
-gen_toc_nav(root=root_path)
-gen_api_nav(root=root_path)
-write_nav()
+        Args:
+            file: The section index file.
+            toc: Items of the table of contents.
+        """
+
+        with mkdocs_gen_files.open(file, "w") as f_index:
+            for item in toc:
+                for key in item:
+                    link = Path(item[key]).relative_to(Path(file).parent)
+                    f_index.write(f"* [{key}]({link})\n")
+
+    @staticmethod
+    def generate(nav_item: Union[list, dict, str]) -> None:
+        """
+        A method for creating section indices for the navigation.
+
+        Args:
+            nav_item: Part of the navigation.
+        """
+
+        if isinstance(nav_item, list):
+            if (
+                nav_item
+                and isinstance(nav_item[0], str)
+                and nav_item[0].endswith("index.md")
+            ):
+                SectionIndex._write_index_file(file=nav_item[0], toc=nav_item[1:])
+            for item in nav_item:
+                SectionIndex.generate(nav_item=item)
+        elif isinstance(nav_item, dict):
+            for key in nav_item:
+                SectionIndex.generate(nav_item=nav_item[key])
+
+
+class Api:
+    """A class for creating api code reference."""
+
+    @staticmethod
+    def generate(folder: str):
+        """A method for generate api code reference."""
+        for path in sorted(Path("src").rglob("*.py")):
+            module_path = path.relative_to("src").with_suffix("")
+
+            doc_path = path.relative_to("src").with_suffix(".md")
+            full_doc_path = Path(folder, doc_path)
+
+            parts = tuple(module_path.parts)
+
+            if parts[-1] == "__init__":
+                parts = parts[:-1]
+                doc_path = doc_path.with_name("index.md")
+                full_doc_path = full_doc_path.with_name("index.md")
+            elif parts[-1] == "__main__":
+                continue
+
+            with mkdocs_gen_files.open(full_doc_path, "w") as f_md:
+                item = ".".join(parts)
+                f_md.write(f"::: {item}")
+
+            mkdocs_gen_files.set_edit_path(full_doc_path, path)
+
+
+config = MkdocsConfig.load()
+
+SectionIndex.generate(nav_item=config["nav"])
+
+Api.generate("api")
+
+Index.generate(readme=Path(__file__).parent / ".." / ".." / "README.md")

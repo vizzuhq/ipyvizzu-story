@@ -78,13 +78,10 @@ test: $(DEV_BUILD_FLAG) install test-wo-install
 clean-doc:
 	rm -rf site
 	rm -rf docs/coverage
-	rm -rf docs/api
 	rm -rf `find docs -name '.ipynb_checkpoints'`
 
 doc: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/python tools/pdoc/gen_api.py $(VIRTUAL_ENV)/bin/pdoc
-	$(VIRTUAL_ENV)/bin/python tools/mkdocs/gen_mkdocs.py $(VIRTUAL_ENV)/bin/mkdocs
-	$(VIRTUAL_ENV)/bin/python tools/jupyter/gen_examples.py $(VIRTUAL_ENV)/bin/jupyter
+	$(VIRTUAL_ENV)/bin/python tools/mkdocs/run_mkdocs.py $(VIRTUAL_ENV)/bin/mkdocs
 
 
 

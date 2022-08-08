@@ -15,8 +15,35 @@ markdown_extensions:
 
 plugins:
   - search
+  - section-index
+  - autorefs
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [../../src]
+          options:
+            members_order: source
+            show_root_heading: True
+            show_root_members_full_path: True
+            show_submodules: True
+  - mkdocs-jupyter:
+      execute: True
+      execute_ignore: "demo/*.ipynb"
+      ignore_h1_titles: True
   - gen-files:
       scripts:
         - tools/mkdocs/gen_files.py
-  - literate-nav:
-      nav_file: toc.md
+  - literate-nav
+
+nav:
+  - Home: index.md
+  - Docs:
+      - docs/index.md
+      - Installation: docs/installation.md
+      - Tutorial: docs/tutorial.md
+      - Environments: docs/environments.md
+  - Examples:
+      - examples/index.md
+      - Basic example: examples/basic/basic.ipynb
+      - Complex example: examples/complex/complex.ipynb
+  - API: api/ipyvizzustory/

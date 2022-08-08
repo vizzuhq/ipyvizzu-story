@@ -20,7 +20,7 @@ class Story(StoryLib):
             data: Data set for the whole presentation story.
                 After initialization `data` can not be modified,
                 but it can be filtered.
-            style (optional): Style settings for the presentation story.
+            style: Style settings for the presentation story.
                 `style` can be changed at each presentation step.
         """
 
