@@ -30,7 +30,7 @@ plugins:
             show_submodules: True
   - mkdocs-jupyter:
       execute: True
-      execute_ignore: "demo/*.ipynb"
+      ignore: ["demo/*.ipynb"]
       ignore_h1_titles: True
   - gen-files:
       scripts:
