@@ -70,7 +70,6 @@ clean-test:
 	rm -rf `find docs -name '.test.*'`
 
 test-wo-install: $(DEV_BUILD_FLAG)
-	mkdir -p docs/coverage
 	$(VIRTUAL_ENV)/bin/coverage run --data-file tests/coverage/.coverage --branch --source ipyvizzustory -m unittest discover tests
 	$(VIRTUAL_ENV)/bin/coverage html --data-file tests/coverage/.coverage -d tests/coverage
 	$(VIRTUAL_ENV)/bin/coverage report --data-file tests/coverage/.coverage -m --fail-under=100
