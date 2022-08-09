@@ -16,7 +16,7 @@ packages = find_packages(where="src", exclude=["__pycache__"])
 
 setup(
     name="ipyvizzu-story",
-    version="0.3.2",
+    version="0.4.0",
     description="Animated Chart Presentation in Jupyter Notebook.",
     long_description=long_description,
     long_description_content_type="text/markdown",
