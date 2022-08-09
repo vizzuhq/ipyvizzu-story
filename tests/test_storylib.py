@@ -184,6 +184,17 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                 self.get_html(),
             )
 
+    def test_repr_html(self) -> None:
+        """A method for testing Story()._repr_html_()."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            self.assertEqual(
+                self.get_story()._repr_html_(),  # pylint: disable=protected-access
+                self.get_html(),
+            )
+
     def test_to_html(self) -> None:
         """A method for testing Story().to_html()."""
 

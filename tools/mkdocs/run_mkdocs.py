@@ -3,48 +3,25 @@
 import subprocess
 import sys
 from pathlib import Path
-from shutil import copy
 
 
-def gen_index(root: Path) -> None:
-    """
-    A method for generating the index file.
-
-    Args:
-        root: The path of the root directory.
-    """
-
-    index = root / "docs" / "index.md"
-    copy(root / "README.md", index)
-
-    with open(index, "rt", encoding="utf8") as f_index:
-        index_content = f_index.read()
-
-    index_content = index_content.replace(
-        "https://vizzuhq.github.io/ipyvizzu-story/", ""
-    )
-
-    with open(index, "wt", encoding="utf8") as f_index:
-        f_index.write(index_content)
-
-
-def run_mkdocs(root: Path, mkdocs: str) -> None:
+def run_mkdocs(mkdocs: str) -> None:
     """
     A method for running mkdocs build.
 
     Args:
-        root: The path of the root directory.
         mkdocs: The path of mkdocs.
 
     Raises:
         RuntimeError: If mkdocs return code is not 0.
     """
 
-    # pylint: disable=duplicate-code
+    root = Path(__file__).parent / ".." / ".."
 
     command = [
         str(root / mkdocs),
         "build",
+        "-s",
         "-f",
         str(root / "tools" / "mkdocs" / "mkdocs.yml"),
         "-d",
@@ -63,8 +40,4 @@ def run_mkdocs(root: Path, mkdocs: str) -> None:
             )
 
 
-root_path = Path(__file__).parent / ".." / ".."
-"""The path of the root directory."""
-
-gen_index(root=root_path)
-run_mkdocs(root=root_path, mkdocs=sys.argv[1])
+run_mkdocs(mkdocs=sys.argv[1])

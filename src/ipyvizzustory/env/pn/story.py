@@ -1,8 +1,9 @@
-"""A module for working with presentation stories in Streamlit environment."""
+"""A module for working with presentation stories in Panel environment."""
 
 from typing import Optional
 
-from streamlit.components.v1 import html
+import panel as pn
+from panel.pane import HTML
 
 from ipyvizzu import Data, Style
 
@@ -10,7 +11,7 @@ from ipyvizzustory.storylib.story import Story as StoryLib
 
 
 class Story(StoryLib):
-    """A class for representing a presentation story in Streamlit environment."""
+    """A class for representing a presentation story in Panel environment."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
         """
@@ -25,32 +26,32 @@ class Story(StoryLib):
         """
 
         super().__init__(data=data, style=style)
-        self.set_size(800, 480)
 
-    def set_size(  # type: ignore  # pylint: disable=signature-differs
-        self, width: int, height: int
-    ) -> None:
+    def play(self, width: int = 800, height: int = 480) -> None:
         """
-        A method for overwriting `ipyvizzustory.storylib.story.Story.set_size()` method.
-        In Streamlit environment `width` and `height` must be specified in pixels.
+        A method for displaying the assembled html code in Panel environment.
 
         Args:
             width: Width of the presentation story in pixels.
             height: Height of the presentation story in pixels.
 
         Raises:
+            ValueError: If size is already set.
             ValueError: If `width` or `height` is not instance of `int`.
         """
 
+        if self._size.style:
+            raise ValueError("size is already set")
+
         if any([not isinstance(width, int), not isinstance(height, int)]):
             raise ValueError("width and height should be in pixels as int")
-        super().set_size(width=str(width) + "px", height=str(height) + "px")
 
-    def play(self) -> None:
-        """A method for displaying the assembled html code in Streamlit environment."""
+        self.set_size(width=str(width) + "px", height=str(height) + "px")
 
-        html(
-            self.to_html(),
-            width=int(self._size.width[:-2]),  # type: ignore
-            height=int(self._size.height[:-2]),  # type: ignore
+        pn.extension(sizing_mode="stretch_width", template="fast")
+
+        pn.state.template.param.update(  # type: ignore
+            title="ipyvizzu-story",
         )
+
+        HTML(self.to_html(), height=height + 10, sizing_mode="stretch_both").servable()

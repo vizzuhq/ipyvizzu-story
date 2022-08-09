@@ -1,8 +1,8 @@
 """
 ipyvizzu-story package consists of two main parts:
 
-* [storylib](./ipyvizzustory/storylib.html): environment independent modules
-* [env](./ipyvizzustory/env.html): environment dependent modules
+* ipyvizzustory.storylib: environment independent modules
+* ipyvizzustory.env: environment dependent modules
 
 ipyvizzustory package tries to figure out the environment and import the correct type of `Story`,
 however `Story` could be imported with full path.
@@ -44,10 +44,9 @@ def get_story():
     A method for returning the appropriate Story for the environment.
 
     Returns:
-        Union[ipyvizzustory.env.py.story.Story,
-            ipyvizzustory.env.ipy.story.Story,
-            ipyvizzustory.env.st.story.Story]: The appropriate `Story` for the environment.
-    """
+        (Union[ipyvizzustory.env.py.story.Story, ipyvizzustory.env.ipy.story.Story, ipyvizzustory.env.st.story.Story]):
+            The appropriate `Story` for the environment.
+    """  # pylint: disable=line-too-long
 
     return JupyterStory or StreamlitStory or PythonStory
 

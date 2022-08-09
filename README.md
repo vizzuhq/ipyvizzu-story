@@ -4,9 +4,9 @@
   </a>
   <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook</p>
   <p align="center">
-    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html">Tutorial</a>
-    · <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/examples.html">Examples</a>
-    · <a href="https://vizzuhq.github.io/ipyvizzu-story/ipyvizzustory.html#reference">Reference</a>
+    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/index.html">Documentation</a>
+    · <a href="https://vizzuhq.github.io/ipyvizzu-story/examples/index.html">Examples</a>
+    · <a href="https://vizzuhq.github.io/ipyvizzu-story/api/ipyvizzustory/index.html">Reference</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
 </p>
@@ -28,11 +28,11 @@ Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you 
 ```sh
 pip install ipyvizzu-story
 ```
-Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/installation.html) site for more details about installation.
+Visit [Installation chapter](https://vizzuhq.github.io/ipyvizzu-story/docs/installation.html) of our documentation site for more details about installation.
 
 ## Usage
 
-You can check the code behind the animation on the top of the page in [HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.html) or download it as an [ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb)
+You can check the code behind the animation on the top of the page in [HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/complex/complex.ipynb) or download it as an [ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb).
 
 You can create the story below with the following code snippet.
 
@@ -66,15 +66,15 @@ slide2 = Slide(
 
 story.play()
 ```
-Visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/tutorial.html#usage) site for more details and a step-by-step tutorial into ipyvizzu-story or check out our [example gallery](https://vizzuhq.github.io/ipyvizzu-story/docs/examples.html).
+Visit our [Documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/index.html) for more details and a step-by-step tutorial into ipyvizzu-story or check out our [Example gallery](https://vizzuhq.github.io/ipyvizzu-story/examples/index.html).
 
 ## Environment support
 
-ipyvizzu-story can be used in a wide variety of environments, visit our [documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/environments.html) site for more details.
+ipyvizzu-story can be used in a wide variety of environments, visit [Environments chapter](https://vizzuhq.github.io/ipyvizzu-story/docs/environments.html) of our documentation site for more details.
 
 ## Contributing
 
-We welcome contributions to the project, visit our [contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
+We welcome contributions to the project, visit our [Contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
 
 ## Contact
 

@@ -3,9 +3,12 @@
 import unittest
 import unittest.mock
 
+from ddt import ddt, data  # type: ignore
+
 from ipyvizzustory.env.py.story import Story as PythonStory
 from ipyvizzustory.env.ipy.story import Story as JupyterStory
 from ipyvizzustory.env.st.story import Story as StreamlitStory
+from ipyvizzustory.env.pn.story import Story as PanelStory
 
 from tests.test_storylib import TestHtml
 
@@ -64,33 +67,26 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
             )
 
 
+@ddt
 class TestStreamlitStory(TestHtml, unittest.TestCase):
     """A class for testing Story() class in Streamlit environment."""
 
     def story(self, *args, **kwargs) -> StreamlitStory:
         """A method for returning Chart()."""
+
         return StreamlitStory(*args, **kwargs)
 
-    def test_set_size_with_not_int(self) -> None:
-        """A method for testing Story().set_size() with not int."""
+    @data(
+        {"width": "800", "height": 480},
+        {"width": 800, "height": "480"},
+        {"width": "800", "height": "480"},
+    )
+    def test_set_size_if_width_or_height_is_not_int(self, value: dict) -> None:
+        """A method for testing Story().set_size() if width or height is not int."""
 
         story = self.get_story()
         with self.assertRaises(ValueError):
-            story.set_size(width="800px", height="480px")
-
-    def test_set_size_with_not_int_width(self) -> None:
-        """A method for testing Story().set_size() with not int width."""
-
-        story = self.get_story()
-        with self.assertRaises(ValueError):
-            story.set_size(width="800px", height=480)
-
-    def test_set_size_with_not_int_height(self) -> None:
-        """A method for testing Story().set_size() with not int height."""
-
-        story = self.get_story()
-        with self.assertRaises(ValueError):
-            story.set_size(width=800, height="480px")
+            story.set_size(**value)
 
     def test_play(self) -> None:
         """A method for testing Story().play()."""
@@ -101,6 +97,52 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
             with unittest.mock.patch("ipyvizzustory.env.st.story.html") as output:
                 story = self.get_story()
                 story.set_size(width=800, height=480)
+                story.play()
+                self.assertEqual(
+                    output.call_args_list[0].args[0],
+                    self.get_html_with_size(),
+                )
+
+
+@ddt
+class TestPanelStory(TestHtml, unittest.TestCase):
+    """A class for testing Story() class in Panel environment."""
+
+    def story(self, *args, **kwargs) -> PanelStory:
+        """A method for returning Chart()."""
+
+        return PanelStory(*args, **kwargs)
+
+    @data({"width": "800"}, {"height": "480"}, {"width": "800", "height": "480"})
+    def test_play_if_width_or_height_is_not_int(self, value: dict) -> None:
+        """A method for testing Story().play() if width or height is not int."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            with self.assertRaises(ValueError):
+                story.play(**value)
+
+    def test_play_if_style_is_already_set(self) -> None:
+        """A method for testing Story().play() if style is already set."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.set_size(width=800, height=480)
+            with self.assertRaises(ValueError):
+                story.play()
+
+    def test_play(self) -> None:
+        """A method for testing Story().play()."""
+
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            with unittest.mock.patch("ipyvizzustory.env.pn.story.HTML") as output:
+                story = self.get_story()
                 story.play()
                 self.assertEqual(
                     output.call_args_list[0].args[0],
