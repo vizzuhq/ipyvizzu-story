@@ -14,7 +14,7 @@ pip install ipyvizzu-story
 pip install -U ipyvizzu-story
 ```
 
-You can use ipyvizzu-story in Jupyter, Streamlit or Python (see [Environments chapter](environments.md) of our documentation site).
+You can use ipyvizzu-story in Jupyter, Streamlit, Panel or Python (see [Environments chapter](environments.md) of our documentation site).
 
 If you want to install IPython as a dependency, install ipyvizzu-story with the following command.
 
@@ -26,6 +26,12 @@ If you want to install Streamlit as a dependency, install ipyvizzu-story with th
 
 ```sh
 pip install ipyvizzu-story[streamlit]
+```
+
+If you want to install Panel as a dependency, install ipyvizzu-story with the following command.
+
+```sh
+pip install ipyvizzu-story[panel]
 ```
 
 ## conda / mamba

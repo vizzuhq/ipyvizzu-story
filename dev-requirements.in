@@ -5,6 +5,7 @@ black
 black[jupyter]
 pylint
 mypy
+ddt
 coverage
 mkdocs
 mkdocstrings[python]
@@ -18,3 +19,4 @@ pyyaml
 types-pyyaml
 notebook
 streamlit
+panel

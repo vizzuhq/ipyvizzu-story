@@ -243,6 +243,9 @@ class Story(dict):
 
         self._size = StorySize(width=width, height=height)
 
+    def _repr_html_(self) -> str:
+        return self.to_html()
+
     def to_html(self) -> str:
         """
         A method for assembling the html code.

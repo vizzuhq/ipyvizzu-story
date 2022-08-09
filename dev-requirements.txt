@@ -27,9 +27,12 @@ black[jupyter]==22.6.0
 bleach==5.0.1
     # via
     #   nbconvert
+    #   panel
     #   readme-renderer
 blinker==1.5
     # via streamlit
+bokeh==2.4.3
+    # via panel
 build==0.8.0
     # via pip-tools
 cachetools==5.2.0
@@ -56,6 +59,8 @@ coverage==6.4.3
     # via -r dev-requirements.in
 cryptography==37.0.4
     # via secretstorage
+ddt==1.5.0
+    # via -r dev-requirements.in
 debugpy==1.6.2
     # via ipykernel
 decorator==5.1.1
@@ -127,6 +132,7 @@ jeepney==0.8.0
 jinja2==3.1.2
     # via
     #   altair
+    #   bokeh
     #   mkdocs
     #   mkdocs-material
     #   mkdocstrings
@@ -164,6 +170,7 @@ markdown==3.3.7
     #   mkdocs-autorefs
     #   mkdocs-material
     #   mkdocstrings
+    #   panel
     #   pymdown-extensions
 markdown-it-py==2.1.0
     # via
@@ -255,12 +262,14 @@ notebook==6.4.12
 numpy==1.23.1
     # via
     #   altair
+    #   bokeh
     #   pandas
     #   pyarrow
     #   pydeck
     #   streamlit
 packaging==21.3
     # via
+    #   bokeh
     #   build
     #   ipykernel
     #   mkdocs
@@ -272,6 +281,13 @@ pandas==1.4.3
     #   streamlit
 pandocfilters==1.5.0
     # via nbconvert
+panel==0.13.1
+    # via -r dev-requirements.in
+param==1.12.2
+    # via
+    #   panel
+    #   pyct
+    #   pyviz-comms
 parso==0.8.3
     # via jedi
 pathspec==0.9.0
@@ -283,7 +299,9 @@ pexpect==4.8.0
 pickleshare==0.7.5
     # via ipython
 pillow==9.2.0
-    # via streamlit
+    # via
+    #   bokeh
+    #   streamlit
 pip-tools==6.8.0
     # via -r dev-requirements.in
 pkginfo==1.8.3
@@ -313,6 +331,8 @@ pyarrow==9.0.0
     # via streamlit
 pycparser==2.21
     # via cffi
+pyct==0.4.8
+    # via panel
 pydeck==0.7.1
     # via streamlit
 pygments==2.12.0
@@ -345,9 +365,12 @@ pytz==2022.1
     # via pandas
 pytz-deprecation-shim==0.1.0.post0
     # via tzlocal
+pyviz-comms==2.2.0
+    # via panel
 pyyaml==6.0
     # via
     #   -r dev-requirements.in
+    #   bokeh
     #   jupytext
     #   mkdocs
     #   pre-commit
@@ -363,6 +386,7 @@ readme-renderer==36.0
     # via twine
 requests==2.28.1
     # via
+    #   panel
     #   requests-toolbelt
     #   streamlit
     #   twine
@@ -417,11 +441,14 @@ toolz==0.12.0
     # via altair
 tornado==6.2
     # via
+    #   bokeh
     #   ipykernel
     #   jupyter-client
     #   notebook
     #   streamlit
     #   terminado
+tqdm==4.64.0
+    # via panel
 traitlets==5.3.0
     # via
     #   ipykernel
@@ -443,7 +470,9 @@ typing-extensions==4.3.0
     # via
     #   astroid
     #   black
+    #   bokeh
     #   mypy
+    #   panel
     #   pylint
     #   streamlit
 tzdata==2022.1
