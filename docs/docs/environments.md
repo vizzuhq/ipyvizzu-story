@@ -4,16 +4,14 @@ You can use ipyvizzu-story in Jupyter, Streamlit, Panel or Python environments. 
 
 ## Jupyter/IPython
 
-In Jupyter/IPython environment, ipyvizzu-story can display and export the created html code.
-
-You can also use `Story._repr_html_()` method to display your story.
-
-In some of the Jupyter/IPython environments you need to set the width and height of your Story in pixels in order to display the story correctly.
+In Jupyter/IPython environment, ipyvizzu-story can display and export the created story.
 
 ```python
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
-from ipyvizzustory import Story  # from ipyvizzustory.env.ipy.story import Story
+
+from ipyvizzustory import Story  # or
+# from ipyvizzustory.env.ipy.story import Story
 
 
 data = Data()
@@ -36,27 +34,52 @@ slide2 = Slide(
     )
 )
 story.add_slide(slide2)
+```
 
-# story.set_size(width="800px", height="480px")
+You can change the CSS style width and height parameters of your story with the `set_size` method.
 
-story.play()  # or just `story` if you would like to use `_repr_html_`
+Note: In some of the Jupyter/IPython environments, the width and height must be set in pixels to display the story correctly.
 
+```python
+story.set_size(width="800px", height="480px")
+```
+
+You can export your pure story into a html file with the `export_to_html` method.
+
+```python
 story.export_to_html(filename="mystory.html")
 ```
 
-After installing ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
-place the above code in a Jupyter Notebook cell.
+You can display your story with the `play` method,
+
+```python
+story.play()
+```
+
+or you can also use the `_repr_html_` method.
+
+```python
+story
+```
+
+Install ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
+
+```sh
+pip install ipyvizzu-story[jupyter]
+```
+
+and place the above codes in a Jupyter Notebook cell in order to try it.
 
 ## Streamlit
 
-In Streamlit environment, ipyvizzu-story can display and export the created html code.
-
-You need to set the width and height of your Story in pixels as int.
+In Streamlit environment, ipyvizzu-story can display and export the created story.
 
 ```python
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
-from ipyvizzustory import Story  # from ipyvizzustory.env.st.story import Story
+
+from ipyvizzustory import Story  # or
+# from ipyvizzustory.env.st.story import Story
 
 
 data = Data()
@@ -79,16 +102,34 @@ slide2 = Slide(
     )
 )
 story.add_slide(slide2)
+```
 
+Note: In Streamlit environment you need to set the width and height of your story in pixels as int.
+
+```python
 story.set_size(width=800, height=480)
+```
 
-story.play()
+You can export your pure story into a html file with the `export_to_html` method.
 
+```python
 story.export_to_html(filename="mystory.html")
 ```
 
-After installing ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
-place the above code in a file (for example called `ipyvizzustory_example.py`) and run the following command:
+You can display your story with the `play` method.
+
+```python
+story.play()
+```
+
+Install ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
+
+```sh
+pip install ipyvizzu-story[streamlit]
+```
+
+and place the above code in a file (for example called `ipyvizzustory_example.py`)
+and run the following command in order to try it.
 
 ```sh
 streamlit run ipyvizzustory_example.py
@@ -96,7 +137,7 @@ streamlit run ipyvizzustory_example.py
 
 ## Panel
 
-In Panel environment, ipyvizzu-story can display and export the created html code.
+In Panel environment, ipyvizzu-story can display and export the created story.
 
 ```python
 from ipyvizzu import Data, Config
@@ -124,33 +165,50 @@ slide2 = Slide(
     )
 )
 story.add_slide(slide2)
-
-story.export_to_html(filename="mystory.html")
-
-# ...
 ```
 
-If you would like to try ipyvizzu-story in Panel without customizing it,
-we have configured a working environment in the `play` method
+Note: In Panel environment if you want to use the `play` method,
+you need to set the width and height of your story in pixels.
 
 ```python
-# ...
-
-story.play(width=800, height=480)
+story.set_size(width="800px", height="480px")
 ```
 
-or you can configure and use your own.
-In that case instead of `play` you should use the `_repr_html_` method of the `Story`.
+You can export your pure story into a html file with the `export_to_html` method.
+
+```python
+story.export_to_html(filename="mystory.html")
+```
+
+You can display your story with the `play` method,
+
+```python
+story.play()
+```
+
+or you can customize the Panel environment before displaying your story,
 
 ```python
 import panel as pn
 
 # ...
 
-story_width = "800px"
-story_height = "480px"
+pn.extension(sizing_mode="stretch_width", template="fast")
 
-story.set_size(width=story_width, height=story_height)
+pn.state.template.param.update(
+    title="ipyvizzu-story",
+)
+
+story.play()
+```
+
+or if you would like to customize it completely,
+you can do it with the `_repr_html_` method.
+
+```python
+import panel as pn
+
+# ...
 
 pn.extension(sizing_mode="stretch_width", template="fast")
 
@@ -160,13 +218,19 @@ pn.state.template.param.update(
 
 pn.pane.HTML(
     story,
-    height=int(story_height[:-2]) + 10,
+    height=500,
     sizing_mode="stretch_both"
 ).servable()
 ```
 
-After installing ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
-place the above code in a file (for example called `ipyvizzustory_example.py`) and run the following command:
+Install ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
+
+```sh
+pip install ipyvizzu-story[panel]
+```
+
+and place the above code in a file (for example called `ipyvizzustory_example.py`)
+and run the following command in order to try it.
 
 ```sh
 panel serve ipyvizzustory_example.py --autoreload
@@ -174,12 +238,15 @@ panel serve ipyvizzustory_example.py --autoreload
 
 ## Python
 
-In basic Python environment, ipyvizzu-story can not display the created html code, but it can export it to an html file.
+In Python environment, ipyvizzu-story can can export the created story to an html file.
+
+Note: In Python environment ipyvizzu-story can not display the created story.
 
 ```python
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
-from ipyvizzustory import Story  # from ipyvizzustory.env.py.story import Story
+from ipyvizzustory import Story  # or
+# from ipyvizzustory.env.py.story import Story
 
 
 data = Data()
@@ -206,8 +273,14 @@ story.add_slide(slide2)
 story.export_to_html(filename="mystory.html")
 ```
 
-After installing ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
-place the above code in a file (for example called `ipyvizzustory_example.py`) and run the following command:
+Install ipyvizzu-story (see [Installation chapter](installation.md) of our documentation site),
+
+```sh
+pip install ipyvizzu-story
+```
+
+and place the above code in a file (for example called `ipyvizzustory_example.py`)
+and run the following command in order to try it.
 
 ```sh
 python3 ipyvizzustory_example.py

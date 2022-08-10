@@ -110,17 +110,17 @@ class TestPanelStory(TestHtml, unittest.TestCase):
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             story = self.get_story()
+            story.set_size(**value)
             with self.assertRaises(ValueError):
-                story.play(**value)
+                story.play()
 
-    def test_play_if_style_is_already_set(self) -> None:
-        """A method for testing Story().play() if style is already set."""
+    def test_play_if_style_was_not_set(self) -> None:
+        """A method for testing Story().play() if style was not set."""
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
             story = self.get_story()
-            story.set_size(width=800, height=480)
             with self.assertRaises(ValueError):
                 story.play()
 
@@ -132,6 +132,7 @@ class TestPanelStory(TestHtml, unittest.TestCase):
         ):
             with unittest.mock.patch("ipyvizzustory.env.pn.story.HTML") as output:
                 story = self.get_story()
+                story.set_size(width="800px", height="480px")
                 story.play()
                 self.assertEqual(
                     output.call_args_list[0].args[0],

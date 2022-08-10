@@ -2,12 +2,11 @@
 
 from typing import Optional
 
-import panel as pn
 from panel.pane import HTML
 
 from ipyvizzu import Data, Style
 
-from ipyvizzustory.storylib.story import Story as StoryLib
+from ipyvizzustory.storylib.story import StorySize, Story as StoryLib
 
 
 class Story(StoryLib):
@@ -27,31 +26,24 @@ class Story(StoryLib):
 
         super().__init__(data=data, style=style)
 
-    def play(self, width: int = 800, height: int = 480) -> None:
+    def play(self) -> None:
         """
         A method for displaying the assembled html code in Panel environment.
 
-        Args:
-            width: Width of the presentation story in pixels.
-            height: Height of the presentation story in pixels.
-
         Raises:
-            ValueError: If size is already set.
-            ValueError: If `width` or `height` is not instance of `int`.
+            ValueError: If `width` or `height` is not in pixel.
         """
 
-        if self._size.style:
-            raise ValueError("size is already set")
+        if any(
+            [
+                not StorySize.is_pixel(self._size.width),
+                not StorySize.is_pixel(self._size.height),
+            ]
+        ):
+            raise ValueError("width and height should be in pixels")
 
-        if any([not isinstance(width, int), not isinstance(height, int)]):
-            raise ValueError("width and height should be in pixels as int")
-
-        self.set_size(width=str(width) + "px", height=str(height) + "px")
-
-        pn.extension(sizing_mode="stretch_width", template="fast")
-
-        pn.state.template.param.update(  # type: ignore
-            title="ipyvizzu-story",
-        )
-
-        HTML(self.to_html(), height=height + 10, sizing_mode="stretch_both").servable()
+        HTML(
+            self.to_html(),
+            width=int(self._size.width[:-2]),  # type: ignore
+            height=int(self._size.height[:-2]),  # type: ignore
+        ).servable()
