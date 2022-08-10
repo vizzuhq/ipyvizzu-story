@@ -1,6 +1,6 @@
 """A module for working with presentation stories."""
 
-from typing import Optional, Union, List
+from typing import Optional, Union, List, Any
 from os import PathLike
 import json
 import uuid
@@ -152,6 +152,24 @@ class StorySize:
         """
 
         return self._style
+
+    @staticmethod
+    def is_pixel(value: Any) -> bool:
+        """
+        A static method for checking the type of the given value.
+
+        Args:
+            value: The value to check.
+
+        Returns:
+            True if the value is pixel, False otherwise.
+        """
+
+        value_is_pixel = False
+        if isinstance(value, str):
+            if value.endswith("px"):
+                value_is_pixel = value[:-2].isnumeric()
+        return value_is_pixel
 
 
 class Story(dict):

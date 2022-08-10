@@ -25,7 +25,6 @@ class Story(StoryLib):
         """
 
         super().__init__(data=data, style=style)
-        self.set_size(800, 480)
 
     def set_size(  # type: ignore  # pylint: disable=signature-differs
         self, width: int, height: int
