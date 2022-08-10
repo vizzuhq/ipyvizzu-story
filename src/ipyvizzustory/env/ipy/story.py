@@ -26,9 +26,6 @@ class Story(StoryLib):
 
         super().__init__(data=data, style=style)
 
-    def _repr_html_(self) -> str:
-        return self.to_html()
-
     def play(self) -> None:
         """A method for displaying the assembled html code in Jupyter/IPython environment."""
 
