@@ -63,6 +63,7 @@ slide2 = Slide(
         Config({"color": "Foo", "x": "Baz", "geometry": "circle"}),
     )
 )
+story.add_slide(slide2)
 
 story.play()
 ```
