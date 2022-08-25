@@ -32,6 +32,7 @@ plugins:
       execute: True
       ignore: ["demo/*.ipynb"]
       ignore_h1_titles: True
+      include_source: True
   - gen-files:
       scripts:
         - tools/mkdocs/gen_files.py
