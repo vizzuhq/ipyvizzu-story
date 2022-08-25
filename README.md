@@ -32,7 +32,7 @@ Visit [Installation chapter](https://vizzuhq.github.io/ipyvizzu-story/docs/insta
 
 ## Usage
 
-You can check the code behind the animation on the top of the page in [HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/complex/complex.ipynb) or download it as an [ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb).
+You can check the code behind the animation on the top of the page in [HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/complex/complex.html) or download it as an [ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb).
 
 You can create the story below with the following code snippet.
 
