@@ -3,7 +3,7 @@
 # pylint: disable=too-few-public-methods
 
 from pathlib import Path
-from typing import Union
+from typing import Union, List
 import re
 
 import yaml
@@ -30,19 +30,33 @@ class Index:
     """A class for creating index file from README."""
 
     @staticmethod
-    def generate(readme: Path) -> None:
-        """A method for generating the index file."""
+    def generate(readme: Path, site: str, ipynbs: List[str]) -> None:
+        """
+        A method for generating the index file.
+
+        Args:
+            readme: README.md path.
+            site: Site url.
+            ipynbs: List of html links that are ipynb files.
+        """
 
         with open(readme, "rt", encoding="utf8") as f_readme:
             content = f_readme.read()
 
-        content = re.sub(
-            r"\[([^]]*)\]\((https://vizzuhq.github.io/ipyvizzu-story/)([^]]*)(.html)([^]]*)?\)",
-            r"[\1](\3.md\5)",
+        for match in re.finditer(
+            rf"\[([^]]*)\]\(({site}/)([^]]*)(.html)([^]]*)?\)",
             content,
-        )
+        ):
+            if match[0] in ipynbs:
+                content = content.replace(
+                    match[0], f"[{match[1]}]({match[3]}.ipynb{match[5]})"
+                )
+            else:
+                content = content.replace(
+                    match[0], f"[{match[1]}]({match[3]}.md{match[5]})"
+                )
 
-        content = content.replace("https://vizzuhq.github.io/ipyvizzu-story/", "")
+        content = content.replace(f"{site}/", "")
 
         with mkdocs_gen_files.open("index.md", "w") as f_index:
             f_index.write(content)
@@ -94,8 +108,14 @@ class Api:
     """A class for creating api code reference."""
 
     @staticmethod
-    def generate(folder: str):
-        """A method for generate api code reference."""
+    def generate(folder: str) -> None:
+        """
+        A method for generate api code reference.
+
+        Args:
+            folder: API destination folder.
+        """
+
         for path in sorted(Path("src").rglob("*.py")):
             module_path = path.relative_to("src").with_suffix("")
 
@@ -120,8 +140,18 @@ class Api:
 
 config = MkdocsConfig.load()
 
+site_url = config["site_url"]
+if site_url.endswith("/"):
+    site_url = site_url[:-1]
+
+index_ipynbs = [f"[HTML]({site_url}/examples/complex/complex.html)"]
+
 SectionIndex.generate(nav_item=config["nav"])
 
 Api.generate("api")
 
-Index.generate(readme=Path(__file__).parent / ".." / ".." / "README.md")
+Index.generate(
+    readme=Path(__file__).parent / ".." / ".." / "README.md",
+    site=site_url,
+    ipynbs=index_ipynbs,
+)
