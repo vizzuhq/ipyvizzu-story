@@ -32,8 +32,13 @@ except ImportError as e:  # pragma: no cover
 try:
     from .env.st.story import Story as StreamlitStory
     import streamlit as st
+    
+    if hasattr(st, "runtime"):
+        ctx = st.runtime.scriptrunner.get_script_run_ctx() # pragma: no cover
+    else:
+        ctx = st.scriptrunner.script_run_context.get_script_run_ctx() # pragma: no cover
 
-    if not st.scriptrunner.script_run_context.get_script_run_ctx():  # pragma: no cover
+    if not ctx:
         raise ImportError("StreamlitStory")
 except ImportError:  # pragma: no cover
     StreamlitStory = None  # type: ignore
