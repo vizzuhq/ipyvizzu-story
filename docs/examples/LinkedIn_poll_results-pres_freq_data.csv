@@ -1,0 +1,21 @@
+Group,Group number,Answer,Vote percentage [%],Vote count,GroupVote count,GroupVote percentage [%],Answer percentage [%]
+"Data Analytics, Data Science, Business Analytics...",Group 5,2 or more per month,39,27,70,39.0,3.8
+Python Developers Community (moderated),Group 4,2 or more per month,44,191,433,44.0,27
+"Data Scientist, Data Analyst and Data Engineer",Group 3,2 or more per month,47,66,141,47.0,9.3
+"Artificial Intelligence, Digital Transformation...",Group 2,2 or more per month,55,6,11,55.0,0.8
+"AI & ML  - Analytics , Data Science...",Group 1,2 or more per month,56,29,52,56.0,4.1
+"Data Analytics, Data Science, Business Analytics...",Group 5,1 per month,31,22,70,31.0,3.1
+Python Developers Community (moderated),Group 4,1 per month,24,104,433,24.0,14.7
+"Data Scientist, Data Analyst and Data Engineer",Group 3,1 per month,20,28,141,20.0,4
+"Artificial Intelligence, Digital Transformation...",Group 2,1 per month,18,2,11,18.0,0.3
+"AI & ML  - Analytics , Data Science...",Group 1,1 per month,12,6,52,12.0,0.8
+"Data Analytics, Data Science, Business Analytics...",Group 5,1-2 per quarter,14,10,70,14.0,1.4
+Python Developers Community (moderated),Group 4,1-2 per quarter,13,56,433,13.0,7.9
+"Data Scientist, Data Analyst and Data Engineer",Group 3,1-2 per quarter,16,23,141,16.0,3.3
+"Artificial Intelligence, Digital Transformation...",Group 2,1-2 per quarter,18,2,11,18.0,0.3
+"AI & ML  - Analytics , Data Science...",Group 1,1-2 per quarter,17,9,52,17.0,1.3
+"Data Analytics, Data Science, Business Analytics...",Group 5,Never,16,11,70,16.0,1.6
+Python Developers Community (moderated),Group 4,Never,19,82,433,19.0,11.6
+"Data Scientist, Data Analyst and Data Engineer",Group 3,Never,17,24,141,17.0,3.4
+"Artificial Intelligence, Digital Transformation...",Group 2,Never,9,1,11,9.0,0.1
+"AI & ML  - Analytics , Data Science...",Group 1,Never,15,8,52,15.0,1.1
