@@ -35,7 +35,7 @@ plugins:
       include_source: True
   - gen-files:
       scripts:
-        - tools/mkdocs/gen_files.py
+        - gen_files.py
   - literate-nav
 
 nav:

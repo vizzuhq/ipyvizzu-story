@@ -85,7 +85,7 @@ clean-doc:
 	rm -rf `find docs -name '.ipynb_checkpoints'`
 
 doc: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/bin/python tools/mkdocs/run_mkdocs.py $(VIRTUAL_ENV)/bin/mkdocs
+	$(VIRTUAL_ENV)/bin/mkdocs build -s -f ./tools/mkdocs/mkdocs.yml -d ../../site
 
 
 
