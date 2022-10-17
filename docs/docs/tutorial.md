@@ -79,8 +79,16 @@ For live examples check out our [Example gallery](../examples/index.md)!
 
 ## Export
 
-You can export your story to an html file, just place the following code after your story.
+You can export your story to an html file, just place the following code after your story
 
 ```python
 story.export_to_html(filename="mystory.html")
+```
+
+or you can get the html story as a string with the following command:
+
+```python
+html = story.to_html()
+
+print(html)
 ```
