@@ -75,11 +75,34 @@ class SectionIndex:
             toc: Items of the table of contents.
         """
 
-        with mkdocs_gen_files.open(file, "w") as f_index:
+        with mkdocs_gen_files.open(file, "a") as f_index:
+
+            # pylint: disable=too-many-nested-blocks
+
             for item in toc:
-                for key in item:
-                    link = Path(item[key]).relative_to(Path(file).parent)
-                    f_index.write(f"* [{key}]({link})\n")
+                is_set = False
+                if isinstance(item, str):
+                    parts = item.split("/")
+                    part = parts[-1].replace(".md", "").capitalize()
+                    link = Path(item).relative_to(Path(file).parent)
+                    f_index.write(f"* [{part}]({link})\n")
+                    is_set = True
+                elif isinstance(item, dict):
+                    for key in item:
+                        if isinstance(item[key], str):
+                            link = Path(item[key]).relative_to(Path(file).parent)
+                            f_index.write(f"* [{key}]({link})\n")
+                            is_set = True
+                        elif item[key] and isinstance(item[key], list):
+                            if isinstance(item[key][0], str):
+                                if item[key][0].endswith("index.md"):
+                                    link = Path(item[key][0]).relative_to(
+                                        Path(file).parent
+                                    )
+                                    f_index.write(f"* [{key}]({link})\n")
+                                    is_set = True
+                if not is_set:
+                    raise NotImplementedError(f"{item}")
 
     @staticmethod
     def generate(nav_item: Union[list, dict, str]) -> None:
