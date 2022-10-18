@@ -12,7 +12,13 @@ You can use ipyvizzu-story in Colab with the following restrictions:
 - [x] Export the Story into a html file
 - [x] Get the html story as a string
 
-*fullscreen button is disabled, use the built-in `view output fullscreen` option instead
+*Colab disables the fullscreen button, use the built-in `view output fullscreen` option instead
+
+Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site).
+
+```python
+!pip install ipyvizzu-story[jupyter]
+```
 
 ```python
 from ipyvizzu import Data, Config
@@ -46,7 +52,7 @@ story.add_slide(slide2)
 
 You can change the CSS style width and height parameters of your story with the `set_size` method.
 
-Note: In Collab, the Story appears too large by default, so it is recommended to set the size.
+Note: In Colab, the Story appears too large by default, so it is recommended to set the size.
 
 ```python
 story.set_size(width="800px", height="480px")
@@ -78,10 +84,4 @@ or you can also use the `_repr_html_` method.
 story
 ```
 
-Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site),
-
-```sh
-!pip install ipyvizzu-story[jupyter]
-```
-
-and place the above code in a file (for example called `ipyvizzustory_example.ipynb`) in order to try it.
+Place the above code in a file (for example called `ipyvizzustory_example.ipynb`) in order to try it.

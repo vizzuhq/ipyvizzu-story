@@ -1,21 +1,25 @@
-# Jupyter Notebook
+# Mode
 
-You can use ipyvizzu-story in Jupyter Notebook with the following restrictions:
+You can use ipyvizzu-story in Mode with the following restrictions:
 
 - [x] Display the created Story (`play` method)
 - [x] Display the created Story (`_repr_html_` method)
-- [x] Use fullscreen
+- [ ] Use fullscreen *
 - [x] Use navigation buttons
 
 - [x] Set width/height of the Story
 
-- [x] Export the Story into a html file
+- [ ] Export the Story into a html file **
 - [x] Get the html story as a string
+
+*Mode disables the fullscreen button
+
+**Mode does not provide a download option for the created file
 
 Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site).
 
-```sh
-pip install ipyvizzu-story[jupyter]
+```python
+!pip install ipyvizzu-story[jupyter] -t "/tmp" > /dev/null 2>&1
 ```
 
 ```python
@@ -54,13 +58,7 @@ You can change the CSS style width and height parameters of your story with the 
 story.set_size(width="800px", height="480px")
 ```
 
-You can export your pure story into a html file with the `export_to_html` method
-
-```python
-story.export_to_html(filename="mystory.html")
-```
-
-or you can get the html story as a string with the `to_html` method:
+You can get the html story as a string with the `to_html` method:
 
 ```python
 html = story.to_html()
@@ -80,9 +78,4 @@ or you can also use the `_repr_html_` method.
 story
 ```
 
-Place the above code in a file (for example called `ipyvizzustory_example.ipynb`)
-and run the following command in order to try it.
-
-```sh
-jupyter notebook
-```
+Place the above code in a Python Notebook in order to try it.

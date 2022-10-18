@@ -14,6 +14,12 @@ You can use ipyvizzu-story in Panel with the following restrictions:
 
 *for example, used in `pn.pane.HTML` method
 
+Install ipyvizzu-story (see [Installation chapter](../installation.md) of our documentation site).
+
+```sh
+pip install ipyvizzu-story[panel]
+```
+
 ```python
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
@@ -106,13 +112,7 @@ pn.pane.HTML(
 ).servable()
 ```
 
-Install ipyvizzu-story (see [Installation chapter](../installation.md) of our documentation site),
-
-```sh
-pip install ipyvizzu-story[panel]
-```
-
-and place the above code in a file (for example called `ipyvizzustory_example.py`)
+Place the above code in a file (for example called `ipyvizzustory_example.py`)
 and run the following command in order to try it.
 
 ```sh

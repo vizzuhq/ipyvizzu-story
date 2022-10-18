@@ -1,10 +1,10 @@
-# Jupyter Notebook
+# Kaggle
 
-You can use ipyvizzu-story in Jupyter Notebook with the following restrictions:
+You can use ipyvizzu-story in Kaggle with the following restrictions:
 
 - [x] Display the created Story (`play` method)
 - [x] Display the created Story (`_repr_html_` method)
-- [x] Use fullscreen
+- [ ] Use fullscreen *
 - [x] Use navigation buttons
 
 - [x] Set width/height of the Story
@@ -12,10 +12,12 @@ You can use ipyvizzu-story in Jupyter Notebook with the following restrictions:
 - [x] Export the Story into a html file
 - [x] Get the html story as a string
 
+*Kaggle disables the fullscreen button
+
 Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site).
 
-```sh
-pip install ipyvizzu-story[jupyter]
+```python
+!pip install ipyvizzu-story[jupyter]
 ```
 
 ```python
@@ -80,9 +82,4 @@ or you can also use the `_repr_html_` method.
 story
 ```
 
-Place the above code in a file (for example called `ipyvizzustory_example.ipynb`)
-and run the following command in order to try it.
-
-```sh
-jupyter notebook
-```
+Place the above code in a file (for example called `ipyvizzustory_example.ipynb`) in order to try it.

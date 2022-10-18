@@ -1,6 +1,6 @@
-# Jupyter Notebook
+# Voilà
 
-You can use ipyvizzu-story in Jupyter Notebook with the following restrictions:
+You can use ipyvizzu-story in Voilà with the following restrictions:
 
 - [x] Display the created Story (`play` method)
 - [x] Display the created Story (`_repr_html_` method)
@@ -84,5 +84,5 @@ Place the above code in a file (for example called `ipyvizzustory_example.ipynb`
 and run the following command in order to try it.
 
 ```sh
-jupyter notebook
+voila ipyvizzustory_example.ipynb
 ```

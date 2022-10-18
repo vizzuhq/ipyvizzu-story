@@ -12,6 +12,12 @@ You can use ipyvizzu-story in VSCode with the following restrictions:
 - [x] Export the Story into a html file
 - [x] Get the html story as a string
 
+Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site).
+
+```sh
+pip install ipyvizzu-story[jupyter]
+```
+
 ```python
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
@@ -74,10 +80,4 @@ or you can also use the `_repr_html_` method.
 story
 ```
 
-Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site),
-
-```sh
-pip install ipyvizzu-story[jupyter]
-```
-
-and place the above code in a file (for example called `ipyvizzustory_example.ipynb`) in order to try it.
+Place the above code in a file (for example called `ipyvizzustory_example.ipynb`) in order to try it.

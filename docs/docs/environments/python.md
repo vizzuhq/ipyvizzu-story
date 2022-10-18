@@ -14,6 +14,12 @@ You can use ipyvizzu-story in Python with the following restrictions:
 
 *can only be used in the exported html file.
 
+Install ipyvizzu-story (see [Installation chapter](../installation.md) of our documentation site).
+
+```sh
+pip install ipyvizzu-story
+```
+
 ```python
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
@@ -57,13 +63,7 @@ html = story.to_html()
 print(html)
 ```
 
-Install ipyvizzu-story (see [Installation chapter](../installation.md) of our documentation site),
-
-```sh
-pip install ipyvizzu-story
-```
-
-and place the above code in a file (for example called `ipyvizzustory_example.py`)
+Place the above code in a file (for example called `ipyvizzustory_example.py`)
 and run the following command in order to try it.
 
 ```sh

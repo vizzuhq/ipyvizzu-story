@@ -14,6 +14,12 @@ You can use ipyvizzu-story in Streamlit with the following restrictions:
 
 *mandatory
 
+Install ipyvizzu-story (see [Installation chapter](../installation.md) of our documentation site),
+
+```sh
+pip install ipyvizzu-story[streamlit]
+```
+
 ```python
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
@@ -70,13 +76,7 @@ You can display your story with the `play` method.
 story.play()
 ```
 
-Install ipyvizzu-story (see [Installation chapter](../installation.md) of our documentation site),
-
-```sh
-pip install ipyvizzu-story[streamlit]
-```
-
-and place the above code in a file (for example called `ipyvizzustory_example.py`)
+Place the above code in a file (for example called `ipyvizzustory_example.py`)
 and run the following command in order to try it.
 
 ```sh
