@@ -75,34 +75,53 @@ class SectionIndex:
             toc: Items of the table of contents.
         """
 
+        for item in toc:
+            if isinstance(item, str):
+                SectionIndex._write_str_index(file, item)
+            elif isinstance(item, dict):
+                SectionIndex._write_dict_index(file, item)
+            else:
+                raise NotImplementedError(f"{item}")
+
+    @staticmethod
+    def _write_str_index(file: str, item: str) -> None:
+        """
+        A method for writing an str toc item into a section index file.
+
+        Args:
+            file: The section index file.
+            item: Item of the table of contents.
+        """
+
         with mkdocs_gen_files.open(file, "a") as f_index:
+            parts = item.split("/")
+            part = parts[-1].replace(".md", "").capitalize()
+            link = Path(item).relative_to(Path(file).parent)
+            f_index.write(f"* [{part}]({link})\n")
 
-            # pylint: disable=too-many-nested-blocks
+    @staticmethod
+    def _write_dict_index(file: str, item: dict) -> None:
+        """
+        A method for writing a dict toc item into a section index file.
 
-            for item in toc:
-                is_set = False
-                if isinstance(item, str):
-                    parts = item.split("/")
-                    part = parts[-1].replace(".md", "").capitalize()
-                    link = Path(item).relative_to(Path(file).parent)
-                    f_index.write(f"* [{part}]({link})\n")
-                    is_set = True
-                elif isinstance(item, dict):
-                    for key in item:
-                        if isinstance(item[key], str):
-                            link = Path(item[key]).relative_to(Path(file).parent)
+        Args:
+            file: The section index file.
+            item: Item of the table of contents.
+        """
+
+        with mkdocs_gen_files.open(file, "a") as f_index:
+            for key in item:
+                if isinstance(item[key], str):
+                    link = Path(item[key]).relative_to(Path(file).parent)
+                    f_index.write(f"* [{key}]({link})\n")
+                    continue
+                if item[key] and isinstance(item[key], list):
+                    if isinstance(item[key][0], str):
+                        if item[key][0].endswith("index.md"):
+                            link = Path(item[key][0]).relative_to(Path(file).parent)
                             f_index.write(f"* [{key}]({link})\n")
-                            is_set = True
-                        elif item[key] and isinstance(item[key], list):
-                            if isinstance(item[key][0], str):
-                                if item[key][0].endswith("index.md"):
-                                    link = Path(item[key][0]).relative_to(
-                                        Path(file).parent
-                                    )
-                                    f_index.write(f"* [{key}]({link})\n")
-                                    is_set = True
-                if not is_set:
-                    raise NotImplementedError(f"{item}")
+                            continue
+                raise NotImplementedError(f"{item}")
 
     @staticmethod
     def generate(nav_item: Union[list, dict, str]) -> None:
