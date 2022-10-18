@@ -71,7 +71,7 @@ Visit our [Documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/ind
 
 ## Environment support
 
-ipyvizzu-story can be used in a wide variety of environments, visit [Environments chapter](https://vizzuhq.github.io/ipyvizzu-story/docs/environments.html) of our documentation site for more details.
+ipyvizzu-story can be used in a wide variety of environments, visit [Environments chapter](https://vizzuhq.github.io/ipyvizzu-story/docs/environments/index.html) of our documentation site for more details.
 
 ## Contributing
 
