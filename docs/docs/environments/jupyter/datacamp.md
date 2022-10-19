@@ -14,7 +14,7 @@ You can use ipyvizzu-story in DataCamp with the following restrictions:
 
 *It does not work in the default editor, switch to the JupyterLab-style editor
 
-*DataCamp disables the fullscreen button
+**DataCamp disables the fullscreen button
 
 Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site).
 
