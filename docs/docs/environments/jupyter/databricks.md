@@ -13,6 +13,7 @@ You can use ipyvizzu-story in Databricks with the following restrictions:
 - [x] Get the html story as a string
 
 *mandatory
+
 **ipyvizzu-story works in the exported html which was made with the `export_to_html` method,
 but currently does not work in the Databricks build-in published html.
 
@@ -61,7 +62,7 @@ story.set_size(width="800px", height="480px")
 ```
 
 You can export your pure story into a html file with the `export_to_html` method
-(where databricks_unique_id is your unique id which can be found after `?o=` in the url)
+(where `databricks_unique_id` is your unique id which can be found after `?o=` in the url)
 
 ```python
 databricks_unique_id = "000000000000000"
