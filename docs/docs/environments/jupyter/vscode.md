@@ -10,28 +10,56 @@ You can use ipyvizzu-story in VSCode with the following restrictions:
 - [x] Set width/height of the Story
 
 - [x] Export the Story into a html file
-- [x] Get the html story as a string
+- [x] Get the html Story as a string
 
-Install ipyvizzu-story (see [Installation chapter](../../installation.md) of our documentation site).
+## Installation
+
+Install ipyvizzu-story (for more information see [Installation chapter](../../installation.md) of our documentation site).
 
 ```sh
 pip install ipyvizzu-story[jupyter]
 ```
 
+## Example
+
+Below you can see an example that you can try in VSCode.
+For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
+
 ```python
+# import ipyvizzu and ipyvizzu-story
+
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory import Story  # or
 # from ipyvizzustory.env.ipy.story import Story
+```
 
+```python
+# create data and initialize Story with the created data
 
 data = Data()
 data.add_series("Foo", ["Alice", "Bob", "Ted"])
 data.add_series("Bar", [15, 32, 12])
 data.add_series("Baz", [5, 3, 2])
 
+# you can also add data with pandas
+
+# import pandas as pd
+#
+# data = Data()
+# df = pd.read_csv(
+#     "https://raw.githubusercontent.com/" +
+#     "vizzuhq/ipyvizzu-story/main/" +
+#     "docs/examples/basic/basic.csv"
+# )
+# data.add_data_frame(df)
+
 story = Story(data=data)
+```
+
+```python
+# create Slides and Steps and add them to the Story
 
 slide1 = Slide(
     Step(
@@ -48,36 +76,35 @@ slide2 = Slide(
 story.add_slide(slide2)
 ```
 
-You can change the CSS style width and height parameters of your story with the `set_size` method.
-
 ```python
+# you can set the width and height (CSS style)
+
 story.set_size(width="800px", height="480px")
 ```
 
-You can export your pure story into a html file with the `export_to_html` method
-
 ```python
+# you can export the Story into a html file
+
 story.export_to_html(filename="mystory.html")
-```
 
-or you can get the html story as a string with the `to_html` method:
+# or you can get the html Story as a string
 
-```python
 html = story.to_html()
-
 print(html)
 ```
 
-You can display your story with the `play` method,
-
 ```python
+# you can display the Story with the `play` method
+
 story.play()
 ```
 
-or you can also use the `_repr_html_` method.
-
 ```python
-story
+# or you can also use the `_repr_html_` method.
+
+# story
 ```
 
-Place the above code in a file (for example called `ipyvizzustory_example.ipynb`) in order to try it.
+## Try it!
+
+Place the above code in a notebook in order to try it.
