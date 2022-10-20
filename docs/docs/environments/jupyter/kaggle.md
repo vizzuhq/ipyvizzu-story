@@ -109,4 +109,4 @@ story.play()
 
 ## Try it!
 
-Place the above code in a notebook in order to try it.
+Place the above code in a notebook in order to try it. [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)

@@ -112,4 +112,4 @@ story.play()
 
 ## Try it!
 
-Place the above code in a notebook in order to try it.
+Place the above code in a notebook in order to try it. [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VnmuPHm7Ynk6aZiWN0QcnIqGGW5ODnFf?usp=sharing)
