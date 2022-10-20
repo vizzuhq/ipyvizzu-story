@@ -58,6 +58,7 @@ nav:
               - JupyterLab: docs/environments/jupyter/jupyterlab.md
               - JupyterLite: docs/environments/jupyter/jupyterlite.md
               - docs/environments/jupyter/kaggle.md
+              - Mercury (mljar): docs/environments/jupyter/mercury.md
               - docs/environments/jupyter/mode.md
               - docs/environments/jupyter/noteable.md
               - Voilà: docs/environments/jupyter/voila.md
