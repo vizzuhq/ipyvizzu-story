@@ -9,13 +9,10 @@ You can use ipyvizzu-story in Databricks with the following restrictions:
 
 - [x] Set width/height of the Story *
 
-- [x] Export the Story into a html file **
+- [x] Export the Story into a html file
 - [x] Get the html Story as a string
 
 *mandatory
-
-**ipyvizzu-story works in the exported html which was made with the `export_to_html` method,
-but currently does not work in the Databricks build-in published html.
 
 ## Installation
 
