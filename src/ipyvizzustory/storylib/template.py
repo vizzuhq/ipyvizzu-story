@@ -1,7 +1,7 @@
 """A module for storing the html templates."""
 
 
-VIZZU_STORY = "https://cdn.jsdelivr.net/npm/vizzu-story@~0.2.0/dist/vizzu-story.min.js"
+VIZZU_STORY = "https://cdn.jsdelivr.net/npm/vizzu-story@0.2/dist/vizzu-story.min.js"
 """str: A variable for storing the default url of vizzu-story package."""
 
 DISPLAY_INDENT = "    "
