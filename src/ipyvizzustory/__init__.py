@@ -1,4 +1,6 @@
 """
+Animated Chart Presentation in Jupyter Notebook and in many other environments.
+
 ipyvizzu-story package consists of two main parts:
 
 * ipyvizzustory.storylib: environment independent modules

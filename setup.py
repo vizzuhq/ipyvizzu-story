@@ -1,6 +1,6 @@
 """
 ipyvizzu-story
-Animated Chart Presentation in Jupyter Notebook.
+Animated Chart Presentation in Jupyter Notebook and in many other environments.
 """
 
 from setuptools import setup, find_packages  # type: ignore
@@ -17,7 +17,7 @@ packages = find_packages(where="src", exclude=["__pycache__"])
 setup(
     name="ipyvizzu-story",
     version="0.5.0",
-    description="Animated Chart Presentation in Jupyter Notebook.",
+    description="Animated Chart Presentation in Jupyter Notebook and in many other environments.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="Apache 2",

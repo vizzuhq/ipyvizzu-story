@@ -2,7 +2,7 @@
   <a href="https://github.com/vizzuhq/ipyvizzu-story">
     <img src="https://github.com/vizzuhq/ipyvizzu-story/raw/main/docs/examples/demo/ipyvizzu-story.gif" alt="ipyvizzu-story" />
   </a>
-  <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook</p>
+  <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook and in many other environments</p>
   <p align="center">
     <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/index.html">Documentation</a>
     · <a href="https://vizzuhq.github.io/ipyvizzu-story/examples/index.html">Examples</a>
