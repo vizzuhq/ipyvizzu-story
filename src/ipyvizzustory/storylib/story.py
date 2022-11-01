@@ -37,6 +37,13 @@ class Step(dict):
         Raises:
             ValueError: If `animations` are not set.
             NotImplementedError: If `anim_options` are set.
+
+        Example:
+            Initialize a step with a `ipyvizzu.Config` object:
+
+                step = Step(
+                    Config({"x": "Foo", "y": "Bar"})
+                )
         """
 
         super().__init__()
@@ -75,6 +82,19 @@ class Slide(list):
 
         Args:
             step: The first step can also be added to the slide in the constructor.
+
+        Example:
+            Initialize a slide without step:
+
+                slide = Slide()
+
+            Initialize a slide with a step:
+
+                slide = Slide(
+                    Step(
+                        Config({"x": "Foo", "y": "Bar"})
+                    )
+                )
         """
 
         super().__init__()
@@ -89,7 +109,23 @@ class Slide(list):
             step: The next step of the slide.
 
         Raises:
-            TypeError: If the type of the `step` is not `Step`.
+            TypeError: If the type of the `step` is not
+                [Step][ipyvizzustory.storylib.story.Step].
+
+        Example:
+            Add steps to a slide:
+
+                slide = Slide()
+                slide.add_step(
+                    Step(
+                        Config({"x": "Foo", "y": "Bar"})
+                    )
+                )
+                slide.add_step(
+                    Step(
+                        Config({"color": "Foo", "x": "Baz", "geometry": "circle"})
+                    )
+                )
         """
 
         if not step or type(step) != Step:  # pylint: disable=unidiomatic-typecheck
@@ -189,6 +225,16 @@ class Story(dict):
         Raises:
             TypeError: If the type of the `data` is not `ipyvizzu.Data`.
             TypeError: If the type of the `style` is not `ipyvizzu.Style`.
+
+        Example:
+            Initialize a story with data and without style:
+
+                data = Data()
+                data.add_series("Foo", ["Alice", "Bob", "Ted"])
+                data.add_series("Bar", [15, 32, 12])
+                data.add_series("Baz", [5, 3, 2])
+
+                story = Story(data=data)
         """
 
         super().__init__()
@@ -217,7 +263,19 @@ class Story(dict):
             slide: The next slide of the story.
 
         Raises:
-            TypeError: If the type of the `slide` is not `Slide`.
+            TypeError: If the type of the `slide` is not
+                [Slide][ipyvizzustory.storylib.story.Slide].
+
+        Example:
+            Add a slide to the story:
+
+                story.add_slide(
+                    Slide(
+                        Step(
+                            Config({"x": "Foo", "y": "Bar"})
+                        )
+                    )
+                )
         """
 
         if not slide or type(slide) != Slide:  # pylint: disable=unidiomatic-typecheck
@@ -231,6 +289,11 @@ class Story(dict):
         Args:
             name: The name of the feature.
             enabled: `True` if enabled or `False` if disabled.
+
+        Example:
+            Set a feature of the story, for example enable the tooltip:
+
+                story.set_feature("tooltip", True)
         """
 
         self._features.append(f"chart.feature('{name}', {json.dumps(enabled)});")
@@ -242,6 +305,11 @@ class Story(dict):
         Args:
             event: The type of the event.
             handler: The handler JavaScript expression as string.
+
+        Example:
+            Add an event handler to the story:
+
+                story.add_event("click", "alert(JSON.stringify(event.data));")
         """
 
         self._events.append(
@@ -257,6 +325,11 @@ class Story(dict):
         Args:
             width: The width of the presentation story.
             height: The height of the presentation story.
+
+        Example:
+            Change the size of the story:
+
+                story.set_size("100%", "400px")
         """
 
         self._size = StorySize(width=width, height=height)
