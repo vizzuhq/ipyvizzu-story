@@ -180,20 +180,29 @@ class Api:
             mkdocs_gen_files.set_edit_path(full_doc_path, path)
 
 
-config = MkdocsConfig.load()
+def main() -> None:
+    """
+    The main method.
+    It prepares files for the documentation site.
+    """
 
-site_url = config["site_url"]
-if site_url.endswith("/"):
-    site_url = site_url[:-1]
+    config = MkdocsConfig.load()
 
-index_ipynbs = [f"[HTML]({site_url}/examples/complex/complex.html)"]
+    site_url = config["site_url"]
+    if site_url.endswith("/"):
+        site_url = site_url[:-1]
 
-SectionIndex.generate(nav_item=config["nav"])
+    index_ipynbs = [f"[HTML]({site_url}/examples/complex/complex.html)"]
 
-Api.generate("api")
+    SectionIndex.generate(nav_item=config["nav"])
 
-Index.generate(
-    readme=Path(__file__).parent / ".." / ".." / "README.md",
-    site=site_url,
-    ipynbs=index_ipynbs,
-)
+    Api.generate("api")
+
+    Index.generate(
+        readme=Path(__file__).parent / ".." / ".." / "README.md",
+        site=site_url,
+        ipynbs=index_ipynbs,
+    )
+
+
+main()

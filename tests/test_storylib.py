@@ -16,16 +16,22 @@ from ipyvizzustory.storylib.template import (
 
 
 class TestHtml(ABC):
-    """An abstract class for testing Story's html."""
+    """An abstract class for testing story html output."""
 
     hex: str = "123456789"
+    """A number for mocking uuid."""
 
     @abstractmethod
     def story(self, *args, **kwargs):  # -> Story
-        """An abstract method for returning Chart()."""
+        """An abstract method for returning a story instance."""
 
     def get_story(self):  # -> Story
-        """A method for returning a test Story."""
+        """
+        A method for returning a test story instance.
+
+        Returns:
+            (Story): A test story instance.
+        """
 
         story = self.story(data=Data.filter(None))
         story.add_slide(Slide(Step(Data.filter(None))))
@@ -33,7 +39,12 @@ class TestHtml(ABC):
         return story
 
     def get_vpd(self) -> str:
-        """A method for returning a test Vizzu-Player data."""
+        """
+        A method for returning a test Vizzu-Player data.
+
+        Returns:
+            A test data.
+        """
 
         return (
             "{"
@@ -45,7 +56,12 @@ class TestHtml(ABC):
         )
 
     def get_html(self) -> str:
-        """A method for returning a test Story html output."""
+        """
+        A method for returning a test story html output.
+
+        Returns:
+            A test html output.
+        """
 
         return DISPLAY_TEMPLATE.format(
             id="1234567",
@@ -57,7 +73,12 @@ class TestHtml(ABC):
         )
 
     def get_html_with_size(self) -> str:
-        """A method for returning a test Story html output with size values."""
+        """
+        A method for returning a test story html output with size values.
+
+        Returns:
+            A test html output.
+        """
 
         return DISPLAY_TEMPLATE.format(
             id="1234567",
@@ -70,35 +91,60 @@ class TestHtml(ABC):
 
 
 class TestStoryInit(unittest.TestCase):
-    """A class for testing Story() class' __init__()."""
+    """A class for testing Story. __init__ method."""
 
     def test_init_if_no_data_was_passed(self) -> None:
-        """A method for testing Story().__init__() if no data was passed."""
+        """
+        A method for testing Story.__init__ method if no data was passed.
+
+        Raises:
+            AssertionError: If TypeError is not occurred.
+        """
 
         with self.assertRaises(TypeError):
             Story()  # type: ignore  # pylint: disable=no-value-for-parameter
 
     def test_init_if_no_data_was_set(self) -> None:
-        """A method for testing Story().__init__() if no data was set."""
+        """
+        A method for testing Story.__init__ method if no data was set.
+
+        Raises:
+            AssertionError: If TypeError is not occurred.
+        """
 
         with self.assertRaises(TypeError):
             Story(data={})  # type: ignore
 
     def test_init_if_not_valid_data_was_set(self) -> None:
-        """A method for testing Story().__init__() if not valid data was set."""
+        """
+        A method for testing Story.__init__ method if not valid data was set.
+
+        Raises:
+            AssertionError: If TypeError is not occurred.
+        """
 
         with self.assertRaises(TypeError):
             Story(data={"filter": None})  # type: ignore
 
     def test_init_if_data_was_set(self) -> None:
-        """A method for testing Story().__init__() if data was set."""
+        """
+        A method for testing Story.__init__ method if data was set.
+
+        Raises:
+            AssertionError: If the story dict is not correct.
+        """
 
         self.assertEqual(
             Story(data=Data.filter(None)), {"data": {"filter": None}, "slides": []}
         )
 
     def test_init_if_no_style_was_set(self) -> None:
-        """A method for testing Story().__init__() if no style was set."""
+        """
+        A method for testing Story.__init__ method if no style was set.
+
+        Raises:
+            AssertionError: If the story dict is not correct.
+        """
 
         self.assertEqual(
             Story(data=Data.filter(None), style={}),  # type: ignore
@@ -106,13 +152,23 @@ class TestStoryInit(unittest.TestCase):
         )
 
     def test_init_if_not_valid_style_was_set(self) -> None:
-        """A method for testing Story().__init__() if not valid style was set."""
+        """
+        A method for testing Story.__init__ method if not valid style was set.
+
+        Raises:
+            AssertionError: If TypeError is not occurred.
+        """
 
         with self.assertRaises(TypeError):
             Story(data=Data.filter(None), style={"style": None})  # type: ignore
 
     def test_init_if_style_was_set(self) -> None:
-        """A method for testing Story().__init__() if data was set."""
+        """
+        A method for testing Story.__init__ method if data was set.
+
+        Raises:
+            AssertionError: If the story dict is not correct.
+        """
 
         self.assertEqual(
             Story(data=Data.filter(None), style=Style(None)),
@@ -121,24 +177,39 @@ class TestStoryInit(unittest.TestCase):
 
 
 class TestStoryAddSlide(unittest.TestCase):
-    """A class for testing Story() class' add_slide()."""
+    """A class for testing Story.add_slide method."""
 
     def test_add_slide_if_no_slide_was_set(self) -> None:
-        """A method for testing Story().add_slide() if no slide was set."""
+        """
+        A method for testing Story.add_slide method if no slide was set.
+
+        Raises:
+            AssertionError: If TypeError is not occurred.
+        """
 
         story = Story(data=Data.filter(None))
         with self.assertRaises(TypeError):
             story.add_slide({})  # type: ignore
 
     def test_add_slide_if_not_valid_slide_was_set(self) -> None:
-        """A method for testing Story().add_slide() if not valid slide was set."""
+        """
+        A method for testing Story.add_slide method if not valid slide was set.
+
+        Raises:
+            AssertionError: If TypeError is not occurred.
+        """
 
         story = Story(data=Data.filter(None))
         with self.assertRaises(TypeError):
             story.add_slide({"filter": None})  # type: ignore
 
     def test_add_slide_if_slides_were_set(self) -> None:
-        """A method for testing Story().add_slide() if slides were set."""
+        """
+        A method for testing Story.add_slide method if slides were set.
+
+        Raises:
+            AssertionError: If the story dict is not correct.
+        """
 
         story = Story(data=Data.filter(None))
         story.add_slide(Slide(Step(Data.filter(None))))
@@ -153,7 +224,7 @@ class TestStoryAddSlide(unittest.TestCase):
 
 
 class TestStoryHtml(TestHtml, unittest.TestCase):
-    """A class for testing Story() class' html releated methods."""
+    """A class for testing story html releated methods."""
 
     def setUp(self):
         self.test_dir = os.path.dirname(os.path.realpath(__file__))
@@ -164,12 +235,26 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             os.remove(file_path)
 
     def story(self, *args, **kwargs):
-        """A method for returning Chart()."""
+        """
+        A method for returning a story instance.
+
+        Args:
+            *args: Non-keyword arguments.
+            **kwargs: Keyword arguments.
+
+        Returns:
+            A story instance initialized with the given `args` and `kwargs`.
+        """
 
         return Story(*args, **kwargs)
 
     def test_export_to_html(self) -> None:
-        """A method for testing Story().export_to_html()."""
+        """
+        A method for testing Story.export_to_html method.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -185,7 +270,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_repr_html(self) -> None:
-        """A method for testing Story()._repr_html_()."""
+        """
+        A method for testing Story._repr_html_ method.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -196,7 +286,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_to_html(self) -> None:
-        """A method for testing Story().to_html()."""
+        """
+        A method for testing Story.to_html method.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -207,7 +302,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_to_html_with_size(self) -> None:
-        """A method for testing Story().to_html() with size."""
+        """
+        A method for testing Story.to_html method with size.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -227,7 +327,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_to_html_with_size_width(self) -> None:
-        """A method for testing Story().to_html() with size/width."""
+        """
+        A method for testing Story.to_html method with size/width.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -247,7 +352,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_to_html_with_size_height(self) -> None:
-        """A method for testing Story().to_html() with size/height."""
+        """
+        A method for testing Story.to_html method with size/height.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -267,7 +377,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_to_html_with_size_width_and_height(self) -> None:
-        """A method for testing Story().to_html() with size/width and height."""
+        """
+        A method for testing Story.to_html method with size/width and height.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -280,7 +395,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_to_html_with_feature(self) -> None:
-        """A method for testing Story().to_html() with feature."""
+        """
+        A method for testing Story.to_html method with feature.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -305,7 +425,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             )
 
     def test_to_html_with_event(self) -> None:
-        """A method for testing Story().to_html() with event."""
+        """
+        A method for testing Story.to_html method with event.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self

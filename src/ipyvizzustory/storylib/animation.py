@@ -8,14 +8,14 @@ class DataFilter(Data):
 
     def build(self) -> dict:
         """
-        A method for overwriting `ipyvizzu.Data.build()` method.
+        A method for overwriting `ipyvizzu.Data.build` method.
         Data initialized with a `DataFilter` must contain only a filter.
 
         Returns:
             A dictionary contains the filter key with the filter expression.
 
         Raises:
-            ValueError: If `DataFilter` does not contain filter or contains anything else.
+            ValueError: If `DataFilter` does not contain a filter or contains anything else.
         """
 
         if len(self.keys()) != 1 or "filter" not in self:

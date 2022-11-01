@@ -162,7 +162,7 @@ class StorySize:
             value: The value to check.
 
         Returns:
-            True if the value is pixel, False otherwise.
+            `True` if the value is pixel, `False` otherwise.
         """
 
         value_is_pixel = False
@@ -230,7 +230,7 @@ class Story(dict):
 
         Args:
             name: The name of the feature.
-            enabled: True if enabled or False if disabled.
+            enabled: `True` if enabled or `False` if disabled.
         """
 
         self._features.append(f"chart.feature('{name}', {json.dumps(enabled)});")
@@ -240,7 +240,7 @@ class Story(dict):
         A method for creating and turning on an event handler.
 
         Args:
-            event: The name of the event.
+            event: The type of the event.
             handler: The handler JavaScript expression as string.
         """
 

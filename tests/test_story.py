@@ -14,14 +14,29 @@ from tests.test_storylib import TestHtml
 
 
 class TestPythonStory(TestHtml, unittest.TestCase):
-    """A class for testing Story() class in Python environment."""
+    """A class for testing Story class in Python environment."""
 
     def story(self, *args, **kwargs) -> PythonStory:
-        """A method for returning Chart()."""
+        """
+        A method for returning a story instance.
+
+        Args:
+            *args: Non-keyword arguments.
+            **kwargs: Keyword arguments.
+
+        Returns:
+            A story instance initialized with the given `args` and `kwargs`.
+        """
+
         return PythonStory(*args, **kwargs)
 
     def test_play(self) -> None:
-        """A method for testing Story().play()."""
+        """
+        A method for testing Story.play method.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -33,14 +48,29 @@ class TestPythonStory(TestHtml, unittest.TestCase):
 
 
 class TestJupyterStory(TestHtml, unittest.TestCase):
-    """A class for testing Story() class in Jupyter environment."""
+    """A class for testing Story class in Jupyter environment."""
 
     def story(self, *args, **kwargs) -> JupyterStory:
-        """A method for returning Chart()."""
+        """
+        A method for returning a story instance.
+
+        Args:
+            *args: Non-keyword arguments.
+            **kwargs: Keyword arguments.
+
+        Returns:
+            A story instance initialized with the given `args` and `kwargs`.
+        """
+
         return JupyterStory(*args, **kwargs)
 
     def test_play(self) -> None:
-        """A method for testing Story().play()."""
+        """
+        A method for testing Story.play method.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4",
@@ -58,10 +88,19 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
 
 @ddt
 class TestStreamlitStory(TestHtml, unittest.TestCase):
-    """A class for testing Story() class in Streamlit environment."""
+    """A class for testing Story class in Streamlit environment."""
 
     def story(self, *args, **kwargs) -> StreamlitStory:
-        """A method for returning Chart()."""
+        """
+        A method for returning a story instance.
+
+        Args:
+            *args: Non-keyword arguments.
+            **kwargs: Keyword arguments.
+
+        Returns:
+            A story instance initialized with the given `args` and `kwargs`.
+        """
 
         return StreamlitStory(*args, **kwargs)
 
@@ -71,14 +110,24 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
         {"width": "800", "height": "480"},
     )
     def test_set_size_if_width_or_height_is_not_int(self, value: dict) -> None:
-        """A method for testing Story().set_size() if width or height is not int."""
+        """
+        A method for testing Story.set_size method if width or height is not int.
+
+        Raises:
+            AssertionError: If ValueError is not occurred.
+        """
 
         story = self.get_story()
         with self.assertRaises(ValueError):
             story.set_size(**value)
 
     def test_play(self) -> None:
-        """A method for testing Story().play()."""
+        """
+        A method for testing Story.play method.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -95,16 +144,30 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
 
 @ddt
 class TestPanelStory(TestHtml, unittest.TestCase):
-    """A class for testing Story() class in Panel environment."""
+    """A class for testing Story class in Panel environment."""
 
     def story(self, *args, **kwargs) -> PanelStory:
-        """A method for returning Chart()."""
+        """
+        A method for returning a story instance.
+
+        Args:
+            *args: Non-keyword arguments.
+            **kwargs: Keyword arguments.
+
+        Returns:
+            A story instance initialized with the given `args` and `kwargs`.
+        """
 
         return PanelStory(*args, **kwargs)
 
     @data({"width": "800"}, {"height": "480"}, {"width": "800", "height": "480"})
     def test_play_if_width_or_height_is_not_int(self, value: dict) -> None:
-        """A method for testing Story().play() if width or height is not int."""
+        """
+        A method for testing Story.play method if width or height is not int.
+
+        Raises:
+            AssertionError: If ValueError is not occurred.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -115,7 +178,12 @@ class TestPanelStory(TestHtml, unittest.TestCase):
                 story.play()
 
     def test_play_if_style_was_not_set(self) -> None:
-        """A method for testing Story().play() if style was not set."""
+        """
+        A method for testing Story.play method if style was not set.
+
+        Raises:
+            AssertionError: If ValueError is not occurred.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -125,7 +193,12 @@ class TestPanelStory(TestHtml, unittest.TestCase):
                 story.play()
 
     def test_play(self) -> None:
-        """A method for testing Story().play()."""
+        """
+        A method for testing Story.play method.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
 
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self

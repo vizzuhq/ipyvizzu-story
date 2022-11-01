@@ -30,7 +30,8 @@ class Story(StoryLib):
         self, width: int, height: int
     ) -> None:
         """
-        A method for overwriting `ipyvizzustory.storylib.story.Story.set_size()` method.
+        A method for overwriting
+        [storylib.story.Story.set_size][ipyvizzustory.storylib.story.Story.set_size] method.
         In Streamlit environment `width` and `height` must be specified in pixels.
 
         Args:

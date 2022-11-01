@@ -8,10 +8,15 @@ from ipyvizzustory.storylib.animation import DataFilter
 
 
 class TestDataFilter(unittest.TestCase):
-    """A class for testing DataFilter() class."""
+    """A class for testing DataFilter class."""
 
     def test_build_if_not_filter_was_set(self) -> None:
-        """A method for testing DataFilter().build() if no filter was set."""
+        """
+        A method for testing DataFilter.build method if no filter was set.
+
+        Raises:
+            AssertionError: If KeyError is not occurred.
+        """
 
         data = Data()
         data.add_dimension("Genres", ["Pop", "Rock"])
@@ -21,7 +26,12 @@ class TestDataFilter(unittest.TestCase):
             DataFilter(data).build()
 
     def test_build_if_not_only_filter_was_set(self) -> None:
-        """A method for testing DataFilter().build() if not only filter was set."""
+        """
+        A method for testing DataFilter.build method if not only filter was set.
+
+        Raises:
+            AssertionError: If KeyError is not occurred.
+        """
 
         data = Data.filter(None)
         data.add_dimension("Genres", ["Pop", "Rock"])
@@ -31,7 +41,12 @@ class TestDataFilter(unittest.TestCase):
             DataFilter(data).build()
 
     def test_build_if_filter_was_set(self) -> None:
-        """A method for testing DataFilter().build() if filter was set."""
+        """
+        A method for testing DataFilter.build method if filter was set.
+
+        Raises:
+            AssertionError: If the built value is not correct.
+        """
 
         data = Data.filter(None)
         self.assertEqual(DataFilter(data).build(), {"filter": None})
