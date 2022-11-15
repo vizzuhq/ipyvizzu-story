@@ -97,7 +97,7 @@ gitdb==4.0.9
     # via gitpython
 gitpython==3.1.29
     # via streamlit
-griffe==0.24.0
+griffe==0.23.0
     # via mkdocstrings-python
 identify==2.5.8
     # via pre-commit
@@ -240,7 +240,7 @@ mkdocstrings[python]==0.19.0
     # via
     #   -r dev-requirements.in
     #   mkdocstrings-python
-mkdocstrings-python==0.8.0
+mkdocstrings-python==0.7.1
     # via mkdocstrings
 more-itertools==9.0.0
     # via jaraco-classes
