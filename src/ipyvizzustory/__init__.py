@@ -55,7 +55,7 @@ def get_story():
             The appropriate `Story` for the environment.
     """  # pylint: disable=line-too-long
 
-    return JupyterStory or StreamlitStory or PythonStory
+    return JupyterStory or StreamlitStory or PythonStory  # type: ignore
 
 
 Story = get_story()
