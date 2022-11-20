@@ -6,7 +6,7 @@ on:
 jobs:
   publish_doc:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -57,7 +57,7 @@ jobs:
       pages: write
       contents: read
     
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
 
