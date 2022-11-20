@@ -43,7 +43,7 @@ plugins:
 
 nav:
   - Home: index.md
-  - Docs:
+  - Documentation:
       - docs/index.md
       - Installation: docs/installation.md
       - Tutorial: docs/tutorial.md
