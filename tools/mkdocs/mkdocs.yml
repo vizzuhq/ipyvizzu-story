@@ -70,4 +70,4 @@ nav:
       - examples/index.md
       - Basic example: examples/basic/basic.ipynb
       - Complex example: examples/complex/complex.ipynb
-  - API: api/ipyvizzustory/
+  - Reference: reference/ipyvizzustory/

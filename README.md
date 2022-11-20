@@ -4,9 +4,10 @@
   </a>
   <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook and in many other environments</p>
   <p align="center">
-    <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/index.html">Documentation</a>
+    <a href="https://vizzuhq.github.io/ipyvizzu-story/">Site</a>
+    · <a href="https://vizzuhq.github.io/ipyvizzu-story/docs/index.html">Documentation</a>
     · <a href="https://vizzuhq.github.io/ipyvizzu-story/examples/index.html">Examples</a>
-    · <a href="https://vizzuhq.github.io/ipyvizzu-story/api/ipyvizzustory/index.html">Reference</a>
+    · <a href="https://vizzuhq.github.io/ipyvizzu-story/reference/ipyvizzustory/index.html">Reference</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
 </p>

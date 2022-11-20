@@ -146,16 +146,16 @@ class SectionIndex:
                 SectionIndex.generate(nav_item=nav_item[key])
 
 
-class Api:
-    """A class for creating api code reference."""
+class Reference:
+    """A class for creating code reference."""
 
     @staticmethod
     def generate(folder: str) -> None:
         """
-        A method for generate api code reference.
+        A method for generate code reference.
 
         Args:
-            folder: API destination folder.
+            folder: Reference destination folder.
         """
 
         for path in sorted(Path("src").rglob("*.py")):
@@ -194,7 +194,7 @@ def main() -> None:
 
     SectionIndex.generate(nav_item=config["nav"])
 
-    Api.generate("api")
+    Reference.generate("reference")
 
     Index.generate(
         readme=Path(__file__).parent / ".." / ".." / "README.md",
