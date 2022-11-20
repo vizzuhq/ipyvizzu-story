@@ -1,0 +1,13 @@
+name: Site
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  init:
+    uses: ./.github/workflows/init.yml
+
+  doc:
+    uses: ./.github/workflows/doc.yml
+    needs: init
