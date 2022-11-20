@@ -10,7 +10,8 @@ use_directory_urls: false
 theme:
   name: material
   custom_dir: ./overrides
-  logo: assets/home.png
+  icon:
+    logo: material/home
 
 markdown_extensions:
   - pymdownx.superfences
