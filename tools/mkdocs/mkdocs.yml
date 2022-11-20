@@ -1,15 +1,15 @@
 site_name: ipyvizzu-story
 site_url: https://vizzuhq.github.io/ipyvizzu-story/
-docs_dir: ../../docs
 
+docs_dir: ../../docs
 
 repo_url: https://github.com/vizzuhq/ipyvizzu-story
 edit_uri: ""
-
 use_directory_urls: false
 
 theme:
   name: material
+  custom_dir: ./overrides
   logo: assets/home.png
 
 markdown_extensions:
