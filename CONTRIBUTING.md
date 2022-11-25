@@ -16,6 +16,9 @@ Run the `dev` make target to set up your environment.
 make dev
 ```
 
+**Note:** If you are using Windows, you need to install `GNU make` to use `make` commands.
+If you are using `Chocolatey`, you can easily install it with `choco install make`.
+
 **Note:** The `dev` make target is going to set up pre-commit and pre-push hooks into your local git repository. Pre-commit hook is going to format the code with `black` and pre-push hook is going to run the CI steps.
 
 Run the `clean` make target to clear your environment.
