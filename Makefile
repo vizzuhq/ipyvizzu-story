@@ -127,7 +127,7 @@ ifeq ($(OS_TYPE), windows)
 	if exist build ( rd /s /q build )
 	if exist dist ( rd /s /q dist )
 	for /d /r src %%d in (*.egg-info) do @if exist "%%d" rd /s /q "%%d"
-	for /d /r docs %%d in (__pycache__) do @if exist "%%d" rd /s /q "%%d"
+	for /d /r . %%d in (__pycache__) do @if exist "%%d" rd /s /q "%%d"
 else
 	rm -rf build
 	rm -rf dist
