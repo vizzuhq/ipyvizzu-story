@@ -190,7 +190,7 @@ def main() -> None:
     if site_url.endswith("/"):
         site_url = site_url[:-1]
 
-    index_ipynbs = [f"[HTML]({site_url}/examples/complex/complex.html)"]
+    index_ipynbs: List[str] = [f"[HTML]({site_url}/examples/complex/complex.html)"]
 
     SectionIndex.generate(nav_item=config["nav"])
 
