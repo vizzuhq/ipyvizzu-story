@@ -45,8 +45,8 @@ nav:
   - Home: index.md
   - Documentation:
       - docs/index.md
-      - Installation: docs/installation.md
-      - Tutorial: docs/tutorial.md
+      - docs/installation.md
+      - docs/tutorial.md
       - Environments:
           - docs/environments/index.md
           - Jupyter/IPython:
