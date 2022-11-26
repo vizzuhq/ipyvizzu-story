@@ -14,16 +14,23 @@ You can use ipyvizzu-story in VSCode with the following restrictions:
 
 ## Installation
 
-Install ipyvizzu-story (for more information see [Installation chapter](../../installation.md) of our documentation site).
+Run the following command in your command line
 
 ```sh
 pip install ipyvizzu-story[jupyter]
 ```
 
+or place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../installation.md) of our documentation site).
+
+```python
+!pip install ipyvizzu-story[jupyter]
+```
+
 ## Example
 
-Below you can see an example that you can try in VSCode.
-For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
+Below you can see an example, place the following code blocks into a python file in order to try it in VSCode.
+
+For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../tutorial.md) of our documentation site.
 
 ```python
 # import ipyvizzu and ipyvizzu-story
@@ -107,4 +114,4 @@ story.play()
 
 ## Try it!
 
-Place the above code in a notebook in order to try it.
+Place the above code blocks into notebook cells in order to try it.

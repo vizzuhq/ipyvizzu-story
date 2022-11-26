@@ -18,7 +18,7 @@ You can use ipyvizzu-story in Deepnote with the following restrictions:
 
 ## Installation
 
-Install ipyvizzu-story (for more information see [Installation chapter](../../installation.md) of our documentation site).
+Place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../installation.md) of our documentation site).
 
 ```python
 !pip install ipyvizzu-story[jupyter]
@@ -26,8 +26,9 @@ Install ipyvizzu-story (for more information see [Installation chapter](../../in
 
 ## Example
 
-Below you can see an example that you can try in Deepnote.
-For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
+Below you can see an example, place the following code blocks into notebook cells in order to try it in Deepnote.
+
+For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../tutorial.md) of our documentation site.
 
 ```python
 # import ipyvizzu and ipyvizzu-story
@@ -112,4 +113,4 @@ story.play()
 
 ## Try it!
 
-Place the above code in a notebook in order to try it. [![View in Deepnote](https://deepnote.com/static/buttons/view-in-deepnote.svg)](https://deepnote.com/workspace/david-andras-vegh-bc03-79fd3a98-abaf-40c0-8b52-9f3e438a73fc/project/ipyvizzu-story-demo-11b5d5eb-7f68-44c4-b1a7-347fde1a8f64)
+Place the above code blocks into notebook cells in order to try it. [![View in Deepnote](https://deepnote.com/static/buttons/view-in-deepnote.svg)](https://deepnote.com/workspace/david-andras-vegh-bc03-79fd3a98-abaf-40c0-8b52-9f3e438a73fc/project/ipyvizzu-story-demo-11b5d5eb-7f68-44c4-b1a7-347fde1a8f64)

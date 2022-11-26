@@ -25,8 +25,9 @@ ipyvizzu-story
 
 ## Example
 
-Below you can see an example that you can try in Mercury.
-For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
+Below you can see an example, place the following code blocks into notebook cells in order to try it in Mercury.
+
+For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../tutorial.md) of our documentation site.
 
 ```
 ---
@@ -125,4 +126,4 @@ if "code" is selected:
 
 ## Try it!
 
-Place the above code in a notebook in order to try it. [![Open in Mercury](https://raw.githubusercontent.com/mljar/mercury/main/docs/media/open_in_mercury.svg)](https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo)
+Place the above code blocks into notebook cells in order to try it. [![Open in Mercury](https://raw.githubusercontent.com/mljar/mercury/main/docs/media/open_in_mercury.svg)](https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo)
