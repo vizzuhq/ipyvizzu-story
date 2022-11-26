@@ -9,3 +9,5 @@ tests/coverage
 .test.*
 
 .venv
+
+site
