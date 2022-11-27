@@ -21,7 +21,7 @@ You can use ipyvizzu-story in Voilà with the following restrictions:
 Run the following command in your command line
 
 ```sh
-pip install ipyvizzu-story[jupyter]
+pip install ipyvizzu-story[jupyter] voila
 ```
 
 or place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../../installation.md) of our documentation site).
