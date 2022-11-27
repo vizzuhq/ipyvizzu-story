@@ -63,7 +63,7 @@ nav:
               - docs/environments/jupyter/mode.md
               - docs/environments/jupyter/noteable.md
               - Voilà: docs/environments/jupyter/voila.md
-              - VSCode: docs/environments/jupyter/vscode.md
+              - VSCode Python: docs/environments/jupyter/vscode.md
           - docs/environments/streamlit.md
           - docs/environments/panel.md
           - docs/environments/python.md
