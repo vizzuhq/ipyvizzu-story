@@ -3,16 +3,20 @@
 You can use ipyvizzu-story in Python with the following restrictions:
 
 - [ ] Display the created Story (`play` method)
-- [ ] Display the created Story (`_repr_html_` method)
-- [x] Use fullscreen *
-- [x] Use navigation buttons *
 
-- [x] Set width/height of the Story *
+- [ ] Display the created Story (`_repr_html_` method)
+
+- [x] Use fullscreen \*
+
+- [x] Use navigation buttons \*
+
+- [x] Set width/height of the Story \*
 
 - [x] Export the Story into a html file
+
 - [x] Get the html Story as a string
 
-*can only be used in the exported html file.
+\*can only be used in the exported html file.
 
 ## Installation
 
@@ -35,6 +39,7 @@ from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory import Story  # or
+
 # from ipyvizzustory.env.py.story import Story
 ```
 

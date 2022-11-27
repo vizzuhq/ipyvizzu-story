@@ -3,24 +3,28 @@
 You can use ipyvizzu-story in Mode with the following restrictions:
 
 - [x] Display the created Story (`play` method)
+
 - [x] Display the created Story (`_repr_html_` method)
-- [ ] Use fullscreen *
+
+- [ ] Use fullscreen \*
+
 - [x] Use navigation buttons
 
 - [x] Set width/height of the Story
 
-- [ ] Export the Story into a html file **
+- [ ] Export the Story into a html file \*\*
+
 - [x] Get the html Story as a string
 
-*Mode disables the fullscreen button
+\*Mode disables the fullscreen button
 
-**Mode does not provide a download option for the created file
+\*\*Mode does not provide a download option for the created file
 
 ## Installation
 
 Place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../../installation.md) of our documentation site).
 
-```python
+```
 !pip install ipyvizzu-story[jupyter] -t "/tmp" > /dev/null 2>&1
 ```
 
@@ -37,6 +41,7 @@ from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory import Story  # or
+
 # from ipyvizzustory.env.ipy.story import Story
 ```
 

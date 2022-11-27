@@ -3,22 +3,26 @@
 You can use ipyvizzu-story in Databricks with the following restrictions:
 
 - [x] Display the created Story (`play` method)
+
 - [x] Display the created Story (`_repr_html_` method)
+
 - [x] Use fullscreen
+
 - [x] Use navigation buttons
 
-- [x] Set width/height of the Story *
+- [x] Set width/height of the Story \*
 
 - [x] Export the Story into a html file
+
 - [x] Get the html Story as a string
 
-*mandatory
+\*mandatory
 
 ## Installation
 
 Place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../../installation.md) of our documentation site).
 
-```python
+```
 !pip install ipyvizzu-story[jupyter]
 ```
 
@@ -35,6 +39,7 @@ from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory import Story  # or
+
 # from ipyvizzustory.env.ipy.story import Story
 ```
 
@@ -95,11 +100,11 @@ html_file = "mystory.html"
 
 story.export_to_html(filename=f"/{html_file}")
 
-dbutils.fs.cp (f"file:/{html_file}", f"dbfs:/FileStore/{html_file}")
+dbutils.fs.cp(f"file:/{html_file}", f"dbfs:/FileStore/{html_file}")
 displayHTML(
-    f'<a href="/files/{html_file}/?o={databricks_unique_id}"' +
-    ' ' +
-    'download>Download HTML</a>'
+    f'<a href="/files/{html_file}/?o={databricks_unique_id}"'
+    + " "
+    + "download>Download HTML</a>"
 )
 
 # or you can get the html Story as a string

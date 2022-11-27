@@ -23,7 +23,7 @@ You can use `ipyvizzu-story` in `Jupyter/IPython`, `Streamlit`, `Panel` or `Pyth
 You can easily install `ipyvizzu-story` in your notebook without using the command line
 if you place the following code into a cell.
 
-```python
+```
 !pip install ipyvizzu-story
 ```
 

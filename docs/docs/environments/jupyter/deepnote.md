@@ -3,24 +3,28 @@
 You can use ipyvizzu-story in Deepnote with the following restrictions:
 
 - [x] Display the created Story (`play` method)
+
 - [x] Display the created Story (`_repr_html_` method)
-- [x] Use fullscreen *
+
+- [x] Use fullscreen \*
+
 - [x] Use navigation buttons
 
-- [x] Set width/height of the Story **
+- [x] Set width/height of the Story \*\*
 
 - [x] Export the Story into a html file
+
 - [x] Get the html Story as a string
 
-*Deepnote disables the fullscreen button
+\*Deepnote disables the fullscreen button
 
-**mandatory
+\*\*mandatory
 
 ## Installation
 
 Place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../../installation.md) of our documentation site).
 
-```python
+```
 !pip install ipyvizzu-story[jupyter]
 ```
 
@@ -37,6 +41,7 @@ from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory import Story  # or
+
 # from ipyvizzustory.env.ipy.story import Story
 ```
 

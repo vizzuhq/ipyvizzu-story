@@ -3,16 +3,20 @@
 You can use ipyvizzu-story in Streamlit with the following restrictions:
 
 - [x] Display the created Story (`play` method)
+
 - [ ] Display the created Story (`_repr_html_` method)
+
 - [x] Use fullscreen
+
 - [x] Use navigation buttons
 
-- [x] Set width/height of the Story *
+- [x] Set width/height of the Story \*
 
 - [x] Export the Story into a html file
+
 - [x] Get the html Story as a string
 
-*mandatory
+\*mandatory
 
 ## Installation
 
@@ -35,6 +39,7 @@ from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory import Story  # or
+
 # from ipyvizzustory.env.st.story import Story
 ```
 
@@ -72,9 +77,7 @@ slide1 = Slide(
 story.add_slide(slide1)
 
 slide2 = Slide(
-    Step(
-        Config({"color": "Foo", "x": "Baz", "geometry": "circle"}),
-    )
+    Step(Config({"color": "Foo", "x": "Baz", "geometry": "circle"}))
 )
 story.add_slide(slide2)
 ```

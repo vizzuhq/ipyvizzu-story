@@ -29,6 +29,7 @@ Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you 
 ```sh
 pip install ipyvizzu-story
 ```
+
 Visit [Installation chapter](https://vizzuhq.github.io/ipyvizzu-story/docs/installation.html) of our documentation site for more installation options and details.
 
 ## Usage
@@ -68,6 +69,7 @@ story.add_slide(slide2)
 
 story.play()
 ```
+
 Visit our [Documentation site](https://vizzuhq.github.io/ipyvizzu-story/docs/index.html) for more details and a step-by-step tutorial into ipyvizzu-story or check out our [Example gallery](https://vizzuhq.github.io/ipyvizzu-story/examples/index.html).
 
 ## Environment support
@@ -80,9 +82,9 @@ We welcome contributions to the project, visit our [Contributing guide](https://
 
 ## Contact
 
-* Join our Slack if you have any questions or comments: [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
-* Drop us a line at hello@vizzuhq.com
-* Follow us on Twitter: [VizzuHQ](https://twitter.com/VizzuHQ)
+- Join our Slack if you have any questions or comments: [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
+- Drop us a line at hello@vizzuhq.com
+- Follow us on Twitter: [VizzuHQ](https://twitter.com/VizzuHQ)
 
 ## License
 

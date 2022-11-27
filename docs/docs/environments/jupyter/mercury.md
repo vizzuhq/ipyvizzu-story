@@ -3,18 +3,22 @@
 You can use ipyvizzu-story in Mercury with the following restrictions:
 
 - [x] Display the created Story (`play` method)
+
 - [ ] Display the created Story (`_repr_html_` method)
+
 - [x] Use fullscreen
+
 - [x] Use navigation buttons
 
 - [x] Set width/height of the Story
 
 - [ ] Export the Story into a html file
+
 - [x] Get the html Story as a string
 
 ## Installation
 
-Add ipyvizzu-story to requirements.txt. 
+Add ipyvizzu-story to requirements.txt.
 
 ```
 python-dotenv
@@ -57,6 +61,7 @@ from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory import Story  # or
+
 # from ipyvizzustory.env.ipy.story import Story
 
 from IPython.display import display as display_html, HTML
