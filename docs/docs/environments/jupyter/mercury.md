@@ -1,6 +1,6 @@
-# Mercury (mljar)
+# Mercury/mljar
 
-You can use ipyvizzu-story in Mercury with the following restrictions:
+You can use ipyvizzu-story in Mercury/mljar with the following restrictions:
 
 - [x] Display the created Story (`play` method)
 
@@ -29,7 +29,7 @@ ipyvizzu-story
 
 ## Example
 
-Below you can see an example, place the following code blocks into notebook cells in order to try it in Mercury.
+Below you can see an example, place the following code blocks into notebook cells in order to try it in Mercury/mljar.
 
 For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
 
