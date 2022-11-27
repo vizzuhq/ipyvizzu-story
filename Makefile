@@ -76,12 +76,12 @@ check: check-format lint check-typing test
 format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black src tests tools setup.py
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 78 docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat docs README.md
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --end-of-line keep docs README.md
 
 check-format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black --check src tests tools setup.py
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 78 --check docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --check docs README.md
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --check --end-of-line keep docs README.md
 
 lint: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pylint src tests tools setup.py
