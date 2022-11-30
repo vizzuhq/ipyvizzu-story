@@ -1,6 +1,6 @@
-# VSCode
+# VSCode Python
 
-You can use ipyvizzu-story in VSCode with the following restrictions:
+You can use ipyvizzu-story in VSCode Python with the following restrictions:
 
 - [x] Display the created Story (`play` method)
 
@@ -32,7 +32,7 @@ or place the following code into a notebook cell in order to install ipyvizzu-st
 
 ## Example
 
-Below you can see an example, place the following code blocks into a python file in order to try it in VSCode.
+Below you can see an example, place the following code blocks into a python file in order to try it in VSCode Python.
 
 For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
 

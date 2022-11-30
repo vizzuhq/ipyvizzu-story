@@ -17,6 +17,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
+  - mdx_truly_sane_lists
 
 plugins:
   - search
@@ -59,11 +60,11 @@ nav:
               - JupyterLab: docs/environments/jupyter/jupyterlab.md
               - JupyterLite: docs/environments/jupyter/jupyterlite.md
               - docs/environments/jupyter/kaggle.md
-              - Mercury (mljar): docs/environments/jupyter/mercury.md
+              - Mercury/mljar: docs/environments/jupyter/mercury.md
               - docs/environments/jupyter/mode.md
               - docs/environments/jupyter/noteable.md
               - Voilà: docs/environments/jupyter/voila.md
-              - VSCode: docs/environments/jupyter/vscode.md
+              - VSCode Python: docs/environments/jupyter/vscode.md
           - docs/environments/streamlit.md
           - docs/environments/panel.md
           - docs/environments/python.md
