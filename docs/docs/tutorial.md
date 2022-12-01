@@ -1,5 +1,7 @@
 # Tutorial
 
+**Note:** Since `ipyvizzu-story` is built on top of `ipyvizzu`, it's recommended that you first understand that library before starting with this one. The tutorial for `ipyvizzu` can be found [here](https://ipyvizzu.vizzuhq.com/tutorial/01_01_intro.html)
+
 ## Usage
 
 **Note:** ipyvizzu-story uses vizzu and vizzu-story javascript packages and loads them from jsDelivr CDN. If you get a vizzu or vizzu-story releated error in your browser console, please clean your browser cache, because an older version of these could be stored in your browser.
@@ -27,9 +29,9 @@ See [ipyvizzu tutorial - Color palette & fonts](https://ipyvizzu.vizzuhq.com/tut
 story = Story(data=data)
 ```
 
-Create the data story by defining a sequence of slides. A slide can be a single chart corresponding to a single `chart.animate()` call from ipyvizzu, see [ipyvizzu tutorial - Intro](https://ipyvizzu.vizzuhq.com/tutorial/01_01_intro.html) for more details. Or a slide can be a sequence of animation calls, in which case all of these animations will be played until the last one in the sequence, allowing for more complex transitions between slides. Navigation controls beneath the chart will navigate between the slides. You can use the PgUp and PgDn buttons, left and right arrows to navigate between slides, and the Home and End buttons to jump to the first or last slide.
+Create the data story by defining a sequence of slides. A slide can be a single chart corresponding to a single `chart.animate()` call from `ipyvizzu`, see [ipyvizzu tutorial - Intro](https://ipyvizzu.vizzuhq.com/tutorial/01_01_intro.html) for more details. Or a slide can be a sequence of animation calls, in which case all of these animations will be played until the last one in the sequence, allowing for more complex transitions between slides. Navigation controls beneath the chart will navigate between the slides. You can use the PgUp and PgDn buttons, left and right arrows to navigate between slides, and the Home and End buttons to jump to the first or last slide.
 
-On each chart, you can define the chart configuration and style with the same objects as in ipyvizzu. However, you can not modify the underlying data between the slides, only the data filter used. See [ipyvizzu tutorial - Filtering & adding new records](https://ipyvizzu.vizzuhq.com/tutorial/01_11_filter_add_new_records.html) for more details on data filtering options.
+On each chart, you can define the chart configuration and style with the same objects as in `ipyvizzu`. However, you can not modify the underlying data between the slides, only the data filter used. See [ipyvizzu tutorial - Filtering & adding new records](https://ipyvizzu.vizzuhq.com/tutorial/01_11_filter_add_new_records.html) for more details on data filtering options.
 
 ```python
 slide1 = Slide(

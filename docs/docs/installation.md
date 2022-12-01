@@ -1,6 +1,6 @@
 # Installation
 
-`ipyvizzu-story` requires [ipyvizzu](https://pypi.org/project/ipyvizzu) package.
+`ipyvizzu-story` requires the [ipyvizzu](https://pypi.org/project/ipyvizzu) package.
 
 ## pypi
 
