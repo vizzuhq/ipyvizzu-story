@@ -14,7 +14,7 @@ jobs:
 
     - uses: actions/cache@v3
       with:
-        path: ./.venv
+        path: ./.venv-ipyvizzu-story
         key: venv-${{ github.run_id }}
 
     - name: Touch dev environment
@@ -24,7 +24,7 @@ jobs:
       run: make release
 
     - name: Release package
-      run: ./.venv/bin/python -m twine upload -u "__token__" -p "${{ secrets.PYPI_API_TOKEN }}" dist/*.tar.gz  dist/*.whl
+      run: ./.venv-ipyvizzu-story/bin/python -m twine upload -u "__token__" -p "${{ secrets.PYPI_API_TOKEN }}" dist/*.tar.gz  dist/*.whl
       if: ( github.event_name == 'release' && github.event.action == 'published' )
     
     - name: Upload package
