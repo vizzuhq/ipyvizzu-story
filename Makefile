@@ -16,7 +16,7 @@ endif
 	clean-doc doc \
 	clean-build build-release check-release release
 
-VIRTUAL_ENV = .venv
+VIRTUAL_ENV = .venv-ipyvizzu-story
 
 DEV_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_BUILD_FLAG
 
@@ -43,11 +43,10 @@ install-dev-req:
 	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/customise_mdformat_black.py -v $(VIRTUAL_ENV) -l 78
 
 install-kernel:
-	$(VIRTUAL_ENV)/$(BIN_PATH)/ipython kernel install --name ".venv" --user
+	$(VIRTUAL_ENV)/$(BIN_PATH)/ipython kernel install --user --name "$(VIRTUAL_ENV)"
 
 install:
-	$(VIRTUAL_ENV)/$(BIN_PATH)/pip uninstall -y $(PACKAGE)
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python setup.py install
+	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install --use-pep517 .
 
 touch-dev:
 ifeq ($(OS_TYPE), windows)

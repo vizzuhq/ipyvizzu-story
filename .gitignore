@@ -11,5 +11,6 @@ tests/coverage
 .test.*
 
 .venv
+.venv-ipyvizzu-story
 
 site
