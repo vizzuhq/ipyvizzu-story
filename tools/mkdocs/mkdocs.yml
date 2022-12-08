@@ -34,7 +34,7 @@ plugins:
             show_submodules: True
   - mkdocs-jupyter:
       execute: True
-      ignore: ["demo/*.ipynb"]
+      ignore: ["demo/*.ipynb", "worldpop/*.ipynb"]
       kernel_name: .venv-ipyvizzu-story
       ignore_h1_titles: True
       include_source: True
