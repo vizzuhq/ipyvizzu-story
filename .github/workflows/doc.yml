@@ -11,6 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - uses: actions/cache@v3
+        with:
+          path: ./tests/coverage
+          key: coverage
+
       - name: Configure git
         run: |
           git config --global user.mail doc@github.com
