@@ -118,7 +118,7 @@ of our documentation site for more details.
 ## Contributing
 
 We welcome contributions to the project, visit our
-[Contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md)
+[Contributing guide](https://vizzuhq.github.io/ipyvizzu-story/dev/CONTRIBUTING.md)
 for further info.
 
 ## Contact
