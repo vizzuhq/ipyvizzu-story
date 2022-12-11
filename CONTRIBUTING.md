@@ -110,7 +110,7 @@ If you want to release ipyvizzu-story follow the steps below.
 
 - Generate the release notes and publish the new release on [Releases](https://github.com/vizzuhq/ipyvizzu-story/releases).
 
- **Note:** Publishing a new release will automatically trigger the `release` workflow which builds, checks and uploads the ipyvizzu-story package to [pypi](https://pypi.org/project/ipyvizzu-story).
+**Note:** Publishing a new release will automatically trigger the `release` workflow which builds, checks and uploads the ipyvizzu-story package to [pypi](https://pypi.org/project/ipyvizzu-story).
 
 You can build and check the package before a release with the `release` make target.
 

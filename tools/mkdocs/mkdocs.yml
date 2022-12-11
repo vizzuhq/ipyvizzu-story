@@ -14,6 +14,7 @@ theme:
     logo: material/home
 
 markdown_extensions:
+  - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -21,8 +22,12 @@ markdown_extensions:
 
 plugins:
   - search
-  - section-index
   - autorefs
+  - literate-nav
+  - coverage:
+      page_name: coverage
+      html_report_dir: tests/coverage
+  - section-index
   - mkdocstrings:
       handlers:
         python:
@@ -41,7 +46,6 @@ plugins:
   - gen-files:
       scripts:
         - gen_files.py
-  - literate-nav
 
 nav:
   - Home: index.md
@@ -77,3 +81,7 @@ nav:
           - examples/themes/index.md
           - Dark Theme: examples/themes/dark_theme.ipynb
   - Reference: reference/ipyvizzustory/
+  - Development:
+      - Contributing: dev/CONTRIBUTING.md
+      - Code of Conduct: dev/CODE_OF_CONDUCT.md
+      - Coverage report: coverage.md
