@@ -24,7 +24,9 @@ Run the following command in your command line
 pip install ipyvizzu-story[jupyter]
 ```
 
-or place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../../installation.md) of our documentation site).
+or place the following code into a notebook cell in order to install
+ipyvizzu-story (for more installation options and details see
+[Installation chapter](../../installation.md) of our documentation site).
 
 ```
 !pip install ipyvizzu-story[jupyter]
@@ -32,9 +34,11 @@ or place the following code into a notebook cell in order to install ipyvizzu-st
 
 ## Example
 
-Below you can see an example, place the following code blocks into notebook cells in order to try it in JupyterLab.
+Below you can see an example, place the following code blocks into notebook
+cells in order to try it in JupyterLab.
 
-For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
+For more information regarding to how to use ipyvizzu-story please check
+[Tutorial chapter](../../tutorial.md) of our documentation site.
 
 ```python
 # import ipyvizzu and ipyvizzu-story
@@ -119,7 +123,8 @@ story.play()
 
 ## Try it!
 
-Run the following command and place the above code blocks into notebook cells in order to try it.
+Run the following command and place the above code blocks into notebook cells in
+order to try it.
 
 ```sh
 jupyter-lab

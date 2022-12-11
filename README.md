@@ -19,9 +19,17 @@
 
 ## About The Extension
 
-ipyvizzu-story is an extension of [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create interactive presentations within the data science notebook of their choice.
-The extension provides a widget that contains the presentation and adds controls for navigating between slides - predefined stages within the story being presented. Navigation also works with keyboard shortcuts - arrow keys, PgUp, PgDn, Home, End - and you can also use a clicker to switch between the slides.
-Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you to start from the [ipyvizzu repo](https://github.com/vizzuhq/ipyvizzu) if you're interested in building animated charts but not necessarly presenting them live or to share your presentation as an HTML file.
+ipyvizzu-story is an extension of
+[ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create
+interactive presentations within the data science notebook of their choice. The
+extension provides a widget that contains the presentation and adds controls for
+navigating between slides - predefined stages within the story being presented.
+Navigation also works with keyboard shortcuts - arrow keys, PgUp, PgDn, Home,
+End - and you can also use a clicker to switch between the slides. Since
+ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you to
+start from the [ipyvizzu repo](https://github.com/vizzuhq/ipyvizzu) if you're
+interested in building animated charts but not necessarly presenting them live
+or to share your presentation as an HTML file.
 
 ## Installation
 
@@ -29,11 +37,16 @@ Since ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you 
 pip install ipyvizzu-story
 ```
 
-Visit [Installation chapter](https://vizzuhq.github.io/ipyvizzu-story/installation.html) of our documentation site for more installation options and details.
+Visit
+[Installation chapter](https://vizzuhq.github.io/ipyvizzu-story/installation.html)
+of our documentation site for more installation options and details.
 
 ## Usage
 
-You can check the code behind the animation on the top of the page in [HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/complex/complex.html) or download it as an [ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb).
+You can check the code behind the animation on the top of the page in
+[HTML](https://vizzuhq.github.io/ipyvizzu-story/examples/complex/complex.html)
+or download it as an
+[ipynb file](https://vizzuhq.github.io/ipyvizzu-story/examples/demo/ipyvizzu-story_example.ipynb).
 
 You can create the story below with the following code snippet.
 
@@ -69,22 +82,31 @@ story.add_slide(slide2)
 story.play()
 ```
 
-Visit our [Documentation site](https://vizzuhq.github.io/ipyvizzu-story/index.html) for more details and a step-by-step tutorial into ipyvizzu-story or check out our [Example gallery](https://vizzuhq.github.io/ipyvizzu-story/examples/index.html).
+Visit our
+[Documentation site](https://vizzuhq.github.io/ipyvizzu-story/index.html) for
+more details and a step-by-step tutorial into ipyvizzu-story or check out our
+[Example gallery](https://vizzuhq.github.io/ipyvizzu-story/examples/index.html).
 
 ## Environment support
 
-ipyvizzu-story can be used in a wide variety of environments, visit [Environments chapter](https://vizzuhq.github.io/ipyvizzu-story/environments/index.html) of our documentation site for more details.
+ipyvizzu-story can be used in a wide variety of environments, visit
+[Environments chapter](https://vizzuhq.github.io/ipyvizzu-story/environments/index.html)
+of our documentation site for more details.
 
 - Jupyter/IPython
   - [Jupyter Notebook](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/jupyternotebook.html)
-  - [Colab](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/colab.html) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VnmuPHm7Ynk6aZiWN0QcnIqGGW5ODnFf?usp=sharing)
+  - [Colab](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/colab.html)
+    [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VnmuPHm7Ynk6aZiWN0QcnIqGGW5ODnFf?usp=sharing)
   - [Databricks](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/databricks.html)
   - [DataCamp](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/datacamp.html)
-  - [Deepnote](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/deepnote.html) [![View in Deepnote](https://deepnote.com/static/buttons/view-in-deepnote.svg)](https://deepnote.com/workspace/david-andras-vegh-bc03-79fd3a98-abaf-40c0-8b52-9f3e438a73fc/project/ipyvizzu-story-demo-11b5d5eb-7f68-44c4-b1a7-347fde1a8f64)
+  - [Deepnote](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/deepnote.html)
+    [![View in Deepnote](https://deepnote.com/static/buttons/view-in-deepnote.svg)](https://deepnote.com/workspace/david-andras-vegh-bc03-79fd3a98-abaf-40c0-8b52-9f3e438a73fc/project/ipyvizzu-story-demo-11b5d5eb-7f68-44c4-b1a7-347fde1a8f64)
   - [JupyterLab](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/jupyterlab.html)
   - [JupyterLite](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/jupyterlite.html)
-  - [Kaggle](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/kaggle.html) [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)
-  - [Mercury/mljar](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/mercury.html) [![Open in Mercury](https://raw.githubusercontent.com/mljar/mercury/main/media/open_in_mercury.svg)](https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo)
+  - [Kaggle](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/kaggle.html)
+    [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)
+  - [Mercury/mljar](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/mercury.html)
+    [![Open in Mercury](https://raw.githubusercontent.com/mljar/mercury/main/media/open_in_mercury.svg)](https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo)
   - [Mode](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/mode.html)
   - [Noteable](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/noteable.html)
   - [Voilà](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/voila.html)
@@ -95,11 +117,14 @@ ipyvizzu-story can be used in a wide variety of environments, visit [Environment
 
 ## Contributing
 
-We welcome contributions to the project, visit our [Contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md) for further info.
+We welcome contributions to the project, visit our
+[Contributing guide](https://github.com/vizzuhq/ipyvizzu-story/blob/main/CONTRIBUTING.md)
+for further info.
 
 ## Contact
 
-- Join our Slack if you have any questions or comments: [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
+- Join our Slack if you have any questions or comments:
+  [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
 - Drop us a line at hello@vizzuhq.com
 - Follow us on Twitter: [VizzuHQ](https://twitter.com/VizzuHQ)
 
@@ -107,4 +132,5 @@ We welcome contributions to the project, visit our [Contributing guide](https://
 
 Copyright © 2022 [Vizzu Kft.](https://vizzuhq.com).
 
-Released under the [Apache 2.0 License](https://github.com/vizzuhq/vizzu-lib/blob/main/LICENSE).
+Released under the
+[Apache 2.0 License](https://github.com/vizzuhq/vizzu-lib/blob/main/LICENSE).

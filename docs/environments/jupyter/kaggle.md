@@ -20,7 +20,9 @@ You can use ipyvizzu-story in Kaggle with the following restrictions:
 
 ## Installation
 
-Place the following code into a notebook cell in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../../installation.md) of our documentation site).
+Place the following code into a notebook cell in order to install ipyvizzu-story
+(for more installation options and details see
+[Installation chapter](../../installation.md) of our documentation site).
 
 ```
 !pip install ipyvizzu-story[jupyter]
@@ -28,9 +30,11 @@ Place the following code into a notebook cell in order to install ipyvizzu-story
 
 ## Example
 
-Below you can see an example, place the following code blocks into notebook cells in order to try it in Kaggle.
+Below you can see an example, place the following code blocks into notebook
+cells in order to try it in Kaggle.
 
-For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../../tutorial.md) of our documentation site.
+For more information regarding to how to use ipyvizzu-story please check
+[Tutorial chapter](../../tutorial.md) of our documentation site.
 
 ```python
 # import ipyvizzu and ipyvizzu-story
@@ -115,4 +119,5 @@ story.play()
 
 ## Try it!
 
-Place the above code blocks into notebook cells in order to try it. [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)
+Place the above code blocks into notebook cells in order to try it.
+[![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)

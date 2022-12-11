@@ -20,7 +20,9 @@ You can use ipyvizzu-story in Python with the following restrictions:
 
 ## Installation
 
-Run the following command in your command line in order to install ipyvizzu-story (for more installation options and details see [Installation chapter](../installation.md) of our documentation site).
+Run the following command in your command line in order to install
+ipyvizzu-story (for more installation options and details see
+[Installation chapter](../installation.md) of our documentation site).
 
 ```sh
 pip install ipyvizzu-story
@@ -28,9 +30,11 @@ pip install ipyvizzu-story
 
 ## Example
 
-Below you can see an example, place the following code blocks into a python file in order to try it in Python.
+Below you can see an example, place the following code blocks into a python file
+in order to try it in Python.
 
-For more information regarding to how to use ipyvizzu-story please check [Tutorial chapter](../tutorial.md) of our documentation site.
+For more information regarding to how to use ipyvizzu-story please check
+[Tutorial chapter](../tutorial.md) of our documentation site.
 
 ```python
 # import ipyvizzu and ipyvizzu-story
@@ -103,8 +107,9 @@ print(html)
 
 ## Try it!
 
-Place the above code blocks into a python file (for example called `ipyvizzustory_example.py`)
-and run the following command in your command line in order to try it.
+Place the above code blocks into a python file (for example called
+`ipyvizzustory_example.py`) and run the following command in your command line
+in order to try it.
 
 ```sh
 python3 ipyvizzustory_example.py

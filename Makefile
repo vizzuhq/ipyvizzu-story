@@ -67,12 +67,12 @@ check: check-format lint check-typing test
 format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black src tests tools setup.py
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 78 docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --wrap 80 --end-of-line keep docs/docs docs/examples README.md CONTRIBUTING.md CODE_OF_CONDUCT.md
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --wrap 80 --end-of-line keep README.md CONTRIBUTING.md CODE_OF_CONDUCT.md docs/installation.md docs/tutorial.md docs/environments docs/examples
 
 check-format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black --check src tests tools setup.py
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 78 --check docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --check --wrap 80 --end-of-line keep docs/docs docs/examples README.md CONTRIBUTING.md CODE_OF_CONDUCT.md 
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --check --wrap 80 --end-of-line keep README.md CONTRIBUTING.md CODE_OF_CONDUCT.md docs/installation.md docs/tutorial.md docs/environments docs/examples
 
 lint: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pylint src tests tools setup.py
