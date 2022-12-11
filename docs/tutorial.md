@@ -22,7 +22,7 @@ data.add_series("Bar", [15, 32, 12])
 data.add_series("Baz", [5, 3, 2])
 ```
 
-Put the data object into the `Story` constructor. Here you can also set the `Story` object's `style` property to set the chart style used for the whole story as you can see in our [complex example](../examples/complex/complex.ipynb).
+Put the data object into the `Story` constructor. Here you can also set the `Story` object's `style` property to set the chart style used for the whole story as you can see in our [complex example](./examples/complex/complex.ipynb).
 See [ipyvizzu tutorial - Color palette & fonts](https://ipyvizzu.vizzuhq.com/tutorial/01_13_color_palette_fonts.html) and [ipyvizzu tutorial - Chart layout](https://ipyvizzu.vizzuhq.com/tutorial/01_14_chart_layout.html) for more details on style options.
 
 ```python
@@ -77,7 +77,7 @@ Then play the Story.
 story.play()
 ```
 
-For live examples check out our [Example gallery](../examples/index.md)!
+For live examples check out our [Example gallery](./examples/index.md)!
 
 ## Export
 
