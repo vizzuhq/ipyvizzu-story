@@ -39,7 +39,7 @@ plugins:
             show_submodules: True
   - mkdocs-jupyter:
       execute: True
-      ignore: ["demo/*.ipynb", "worldpop/*.ipynb"]
+      ignore: ["demo/*.ipynb", "community/*.ipynb"]
       kernel_name: .venv-ipyvizzu-story
       ignore_h1_titles: True
       include_source: True
@@ -75,9 +75,6 @@ nav:
       - examples/index.md
       - Basic example: examples/basic/basic.ipynb
       - Complex example: examples/complex/complex.ipynb
-      - Themes:
-          - examples/themes/index.md
-          - Dark Theme: examples/themes/dark_theme.ipynb
   - Reference: reference/ipyvizzustory/
   - Development:
       - Contributing: dev/CONTRIBUTING.md
