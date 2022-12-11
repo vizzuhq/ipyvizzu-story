@@ -29,17 +29,13 @@ clean: clean-dev clean-test clean-doc clean-build
 # init
 
 clean-dev:
-ifeq ($(OS_TYPE), windows)
-	if exist $(VIRTUAL_ENV) ( rd /s /q $(VIRTUAL_ENV) )
-else
-	rm -rf $(VIRTUAL_ENV)
-endif
+	$(PYTHON_BIN) -c "import os, shutil;shutil.rmtree('$(VIRTUAL_ENV)') if os.path.exists('$(VIRTUAL_ENV)') else print('Nothing to be done for \'clean-dev\'')"
 
 update-dev-req: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pip-compile --upgrade dev-requirements.in
 
 install-dev-req:
-	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install -r dev-requirements.txt
+	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install --use-pep517 -r dev-requirements.txt
 	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/customise_mdformat_black.py -v $(VIRTUAL_ENV) -l 78
 
 install-kernel:
@@ -49,11 +45,7 @@ install:
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install --use-pep517 .
 
 touch-dev:
-ifeq ($(OS_TYPE), windows)
-	type NUL >> $(DEV_BUILD_FLAG)
-else
-	touch $(DEV_BUILD_FLAG)
-endif
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/make/touch.py -f $(DEV_BUILD_FLAG)
 
 dev: $(DEV_BUILD_FLAG)
 
