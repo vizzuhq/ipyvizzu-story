@@ -18,9 +18,9 @@ jobs:
         key: venv-${{ github.run_id }}
 
     - uses: actions/cache@v3
-        with:
-          path: ./tests/coverage
-          key: coverage
+      with:
+        path: ./tests/coverage
+        key: coverage
 
     - name: Touch dev environment
       run: make touch-dev
