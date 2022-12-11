@@ -1,10 +1,18 @@
 """A module for testing the ipyvizzustory.storylib.animation.DataFilter class."""
 
+# pylint: disable=wrong-import-position
+
+import sys
 import unittest
+
 
 from ipyvizzu import Data
 
-from ipyvizzustory.storylib.animation import DataFilter
+sys.path.insert(0, "./src")
+
+from ipyvizzustory.storylib.animation import (
+    DataFilter,
+)
 
 
 class TestDataFilter(unittest.TestCase):

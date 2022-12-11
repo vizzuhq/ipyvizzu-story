@@ -1,8 +1,13 @@
 """A module for testing the ipyvizzustory.storylib.story.Slide class."""
 
+# pylint: disable=wrong-import-position
+
+import sys
 import unittest
 
 from ipyvizzu import Data
+
+sys.path.insert(0, "./src")
 
 from ipyvizzustory.storylib.story import Slide, Step
 

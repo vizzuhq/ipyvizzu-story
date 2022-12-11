@@ -12,7 +12,7 @@ endif
 
 .PHONY: clean \
 	clean-dev update-dev-req install-dev-req install-kernel install touch-dev \
-	check format check-format lint check-typing clean-test test-wo-install test \
+	check format check-format lint check-typing clean-test test \
 	clean-doc doc \
 	clean-build build-release check-release release
 
@@ -89,12 +89,10 @@ else
 	rm -rf `find tests -name '.test.*'`
 endif
 
-test-wo-install: $(DEV_BUILD_FLAG)
+test: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage run --data-file tests/coverage/.coverage --branch --source ipyvizzustory -m unittest discover tests
 	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage html --data-file tests/coverage/.coverage -d tests/coverage
 	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage report --data-file tests/coverage/.coverage -m --fail-under=100
-
-test: $(DEV_BUILD_FLAG) install test-wo-install
 
 
 

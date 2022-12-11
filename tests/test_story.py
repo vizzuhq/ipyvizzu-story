@@ -1,9 +1,14 @@
 """A module for testing the ipyvizzustory environment specific Story classes."""
 
+# pylint: disable=wrong-import-position
+
+import sys
 import unittest
 import unittest.mock
 
 from ddt import ddt, data  # type: ignore
+
+sys.path.insert(0, "./src")
 
 from ipyvizzustory.env.py.story import Story as PythonStory
 from ipyvizzustory.env.ipy.story import Story as JupyterStory
