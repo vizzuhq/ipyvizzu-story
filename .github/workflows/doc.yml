@@ -10,8 +10,6 @@ on:
 jobs:
   build_doc:
 
-    if: github.event_name != 'workflow_dispatch'
-
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +28,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ./site
-          key: site-${{ inputs.run_id }}
+          key: site-${{ github.run_id }}
 
       - name: Touch dev environment
         run: make touch-dev
@@ -55,7 +53,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ./site
-          key: site-${{ inputs.run_id }}
+          key: site-${{ github.run_id }}
 
       - name: Configure git
         run: |
