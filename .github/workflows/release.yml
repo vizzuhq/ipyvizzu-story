@@ -6,7 +6,6 @@ on:
       run_id:
         type: string
         required: true
-        default: ${{ github.run_id }}
 
 jobs:
 
