@@ -1,5 +1,11 @@
 name: CI-CD
 
+inputs:
+  run_id:
+    type: string
+    required: true
+    default: ${{ github.run_id }}
+
 on:
   release:
     types: [published]
