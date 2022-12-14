@@ -21,15 +21,21 @@ jobs:
     with:
       run_id: ${{ github.run_id }}
 
-  doc:
-    uses: ./.github/workflows/doc.yml
+  doc_build:
+    uses: ./.github/workflows/doc_build.yml
     needs: ci
+    with:
+      run_id: ${{ github.run_id }}
+
+  doc_publish:
+    uses: ./.github/workflows/doc_publish.yml
+    needs: doc_build
     with:
       run_id: ${{ github.run_id }}
 
   release:
     uses: ./.github/workflows/release.yml
     secrets: inherit
-    needs: doc
+    needs: doc_publish
     with:
       run_id: ${{ github.run_id }}

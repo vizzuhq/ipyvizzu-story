@@ -8,36 +8,6 @@ on:
         required: true
 
 jobs:
-  build_doc:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/cache@v3
-        with:
-          path: ./.venv-ipyvizzu-story
-          key: venv-${{ inputs.run_id }}
-
-      - uses: actions/cache@v3
-        with:
-          path: ./tests/coverage
-          key: coverage-${{ inputs.run_id }}
-
-      - uses: actions/cache@v3
-        with:
-          path: ./site
-          key: site-${{ github.run_id }}
-
-      - name: Touch dev environment
-        run: make touch-dev
-
-      - name: Set Jupyter kernel
-        run: make install-kernel
-
-      - name: Build documentation
-        run: make doc
 
   commit_doc:
 
@@ -53,7 +23,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ./site
-          key: site-${{ github.run_id }}
+          key: site-${{ inputs.run_id }}
 
       - name: Configure git
         run: |
