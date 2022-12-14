@@ -12,8 +12,6 @@ jobs:
   commit_doc:
 
     if: ( github.event_name == 'release' && github.event.action == 'published' ) || github.event_name == 'workflow_dispatch'
-    
-    needs: build_doc
 
     runs-on: ubuntu-latest
 
