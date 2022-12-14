@@ -2,12 +2,12 @@ name: Site
 
 on:
   workflow_dispatch:
+    inputs:
+      run_id:
+        type: string
+        required: true
 
 jobs:
 
-  init:
-    uses: ./.github/workflows/init.yml
-
   doc:
     uses: ./.github/workflows/doc.yml
-    needs: init

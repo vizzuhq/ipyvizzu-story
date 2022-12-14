@@ -2,6 +2,11 @@ name: Init
 
 on:
   workflow_call:
+    inputs:
+      run_id:
+        type: string
+        required: true
+        default: ${{ github.run_id }}
 
 jobs:
 
@@ -15,7 +20,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ./.venv-ipyvizzu-story
-          key: venv-${{ github.run_id }}
+          key: venv-${{ inputs.run_id }}
 
       - name: Init dev environment
         run: make dev

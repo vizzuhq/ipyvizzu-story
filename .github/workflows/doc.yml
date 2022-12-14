@@ -2,6 +2,11 @@ name: Publish documentation
 
 on:
   workflow_call:
+    inputs:
+      run_id:
+        type: string
+        required: true
+        default: ${{ github.run_id }}
 
 jobs:
   publish_doc:
@@ -14,7 +19,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ./tests/coverage
-          key: coverage
+          key: coverage-${{ inputs.run_id }}
 
       - name: Configure git
         run: |
@@ -29,7 +34,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: ./.venv-ipyvizzu-story
-          key: venv-${{ github.run_id }}
+          key: venv-${{ inputs.run_id }}
 
       - name: Touch dev environment
         run: make touch-dev
