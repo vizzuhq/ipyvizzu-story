@@ -11,3 +11,5 @@ jobs:
 
   doc:
     uses: ./.github/workflows/doc.yml
+    with:
+      run_id: ${{ inputs.run_id }}
