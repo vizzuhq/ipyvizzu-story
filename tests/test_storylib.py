@@ -1,8 +1,5 @@
 """A module for testing the ipyvizzustory.storylib.story.Story class."""
 
-# pylint: disable=wrong-import-position
-
-import sys
 import unittest
 import unittest.mock
 import os
@@ -11,10 +8,8 @@ from abc import ABC, abstractmethod
 
 from ipyvizzu import Data, Style
 
-sys.path.insert(0, "./src")
-
-from ipyvizzustory.storylib.story import Story, Slide, Step
-from ipyvizzustory.storylib.template import (
+from tests import Story, Slide, Step
+from tests import (
     VIZZU_STORY,
     DISPLAY_TEMPLATE,
     DISPLAY_INDENT,

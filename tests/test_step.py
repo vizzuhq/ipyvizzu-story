@@ -1,15 +1,10 @@
 """A module for testing the ipyvizzustory.storylib.story.Step class."""
 
-# pylint: disable=wrong-import-position
-
-import sys
 import unittest
 
-from ipyvizzu import Data, Config, Style, PlainAnimation
+from ipyvizzu import Config, Data, PlainAnimation, Style
 
-sys.path.insert(0, "./src")
-
-from ipyvizzustory.storylib.story import Step
+from tests import Step
 
 
 class TestStep(unittest.TestCase):
