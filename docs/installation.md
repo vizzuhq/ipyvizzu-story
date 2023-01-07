@@ -61,7 +61,7 @@ pip install ipyvizzu-story[panel]
 Installing `ipyvizzu-story` from `conda-forge` can be achieved by adding
 `conda-forge` to your channels with:
 
-```
+```sh
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
@@ -70,7 +70,7 @@ Once the `conda-forge` channel has been enabled, run the following command to
 install `ipyvizzu-story` from
 [conda](https://anaconda.org/conda-forge/ipyvizzu-story/)
 
-```
+```sh
 conda install ipyvizzu-story
 
 # or with mamba:
@@ -80,7 +80,7 @@ mamba install ipyvizzu-story
 
 or the command below to upgrade it.
 
-```
+```sh
 conda update ipyvizzu-story
 
 # or with mamba:

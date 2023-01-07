@@ -6,7 +6,7 @@
   <p align="center">
     <a href="https://vizzuhq.github.io/ipyvizzu-story/">Documentation</a>
     · <a href="https://vizzuhq.github.io/ipyvizzu-story/examples/index.html">Examples</a>
-    · <a href="https://vizzuhq.github.io/ipyvizzu-story/reference/ipyvizzustory/index.html">Reference</a>
+    · <a href="https://vizzuhq.github.io/ipyvizzu-story/reference/ipyvizzustory/index.html">Code reference</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
 </p>
@@ -82,12 +82,14 @@ story.add_slide(slide2)
 story.play()
 ```
 
+## Documentation
+
 Visit our
 [Documentation site](https://vizzuhq.github.io/ipyvizzu-story/index.html) for
 more details and a step-by-step tutorial into ipyvizzu-story or check out our
 [Example gallery](https://vizzuhq.github.io/ipyvizzu-story/examples/index.html).
 
-## Environment support
+## Environments
 
 ipyvizzu-story can be used in a wide variety of environments, visit
 [Environments chapter](https://vizzuhq.github.io/ipyvizzu-story/environments/index.html)
@@ -106,7 +108,6 @@ of our documentation site for more details.
   - [Kaggle](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/kaggle.html)
     [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)
   - [Mercury/mljar](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/mercury.html)
-    [![Open in Mercury](https://raw.githubusercontent.com/mljar/mercury/main/media/open_in_mercury.svg)](https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo)
   - [Mode](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/mode.html)
   - [Noteable](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/noteable.html)
   - [PyCharm](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/pycharm.html)
@@ -119,7 +120,7 @@ of our documentation site for more details.
 ## Contributing
 
 We welcome contributions to the project, visit our
-[Contributing guide](https://vizzuhq.github.io/ipyvizzu-story/dev/CONTRIBUTING.md)
+[Contributing guide](https://vizzuhq.github.io/ipyvizzu-story/CONTRIBUTING.html)
 for further info.
 
 ## Contact
@@ -131,7 +132,7 @@ for further info.
 
 ## License
 
-Copyright © 2022 [Vizzu Kft.](https://vizzuhq.com).
+Copyright © 2022-2023 [Vizzu](https://vizzuhq.com).
 
 Released under the
-[Apache 2.0 License](https://github.com/vizzuhq/vizzu-lib/blob/main/LICENSE).
+[Apache 2.0 License](https://vizzuhq.github.io/ipyvizzu-story/LICENSE.html).

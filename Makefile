@@ -13,12 +13,14 @@ endif
 .PHONY: clean \
 	clean-dev update-dev-req install-dev-req install-kernel install touch-dev \
 	check format check-format lint check-typing clean-test test \
+	format-js \ lint-js \ check-js \
 	clean-doc doc \
 	clean-build build-release check-release release
 
 VIRTUAL_ENV = .venv-ipyvizzu-story
 
 DEV_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_BUILD_FLAG
+DEV_JS_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_JS_BUILD_FLAG
 
 
 
@@ -36,7 +38,6 @@ update-dev-req: $(DEV_BUILD_FLAG)
 
 install-dev-req:
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install --use-pep517 -r dev-requirements.txt
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/customise_mdformat_black.py -v $(VIRTUAL_ENV) -l 78
 
 install-kernel:
 	$(VIRTUAL_ENV)/$(BIN_PATH)/ipython kernel install --user --name "$(VIRTUAL_ENV)"
@@ -58,6 +59,14 @@ $(DEV_BUILD_FLAG):
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pre-commit install --hook-type pre-commit --hook-type pre-push
 	$(MAKE) -f Makefile touch-dev
 
+touch-dev-js:
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/make/touch.py -f $(DEV_JS_BUILD_FLAG)
+
+$(DEV_JS_BUILD_FLAG):
+	cd tools/javascripts && \
+		npm update
+	$(MAKE) -f Makefile touch-dev-js
+
 
 
 # ci
@@ -66,13 +75,22 @@ check: check-format lint check-typing test
 
 format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black src tests tools setup.py
-	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 78 docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --wrap 80 --end-of-line keep README.md CONTRIBUTING.md CODE_OF_CONDUCT.md docs/installation.md docs/tutorial.md docs/environments docs/examples
+	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 70 docs
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat \
+		--wrap 80 \
+		--end-of-line keep \
+		--line-length 70 \
+		docs README.md CONTRIBUTING.md CODE_OF_CONDUCT.md
 
 check-format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black --check src tests tools setup.py
-	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 78 --check docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat --check --wrap 80 --end-of-line keep README.md CONTRIBUTING.md CODE_OF_CONDUCT.md docs/installation.md docs/tutorial.md docs/environments docs/examples
+	$(VIRTUAL_ENV)/$(BIN_PATH)/black --check -l 70 docs
+	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat \
+		--check \
+		--wrap 80 \
+		--end-of-line keep \
+		--line-length 70 \
+		docs README.md CONTRIBUTING.md CODE_OF_CONDUCT.md
 
 lint: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pylint src tests tools setup.py
@@ -90,9 +108,24 @@ else
 endif
 
 test: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage run --data-file tests/coverage/.coverage --branch --source ipyvizzustory -m unittest discover tests
-	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage html --data-file tests/coverage/.coverage -d tests/coverage
-	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage report --data-file tests/coverage/.coverage -m --fail-under=100
+	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage run \
+		--data-file tests/coverage/.coverage --branch --source ipyvizzustory -m unittest discover tests
+	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage html \
+	 	--data-file tests/coverage/.coverage -d tests/coverage
+	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage report \
+		--data-file tests/coverage/.coverage -m --fail-under=100
+
+format-js: $(DEV_JS_BUILD_FLAG)
+	cd tools/javascripts && \
+		npm run prettier
+
+lint-js: $(DEV_JS_BUILD_FLAG)
+	cd tools/javascripts && \
+		npm run eslint
+
+check-js: $(DEV_JS_BUILD_FLAG)
+	cd tools/javascripts && \
+		npm run check
 
 
 

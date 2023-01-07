@@ -1,11 +1,41 @@
-{% extends "base.html" %}
-
-{% block content %}
-{% if page.nb_url %}
-    <a href="{{ page.nb_url }}" title="Download Notebook" class="md-content__button md-icon">
-        {% include ".icons/material/download.svg" %}
-    </a>
-{% endif %}
-
-{{ super() }}
-{% endblock content %}
+{% extends "base.html" %} {% block extrahead %}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ipyvizzu-story" />
+<meta property="og:title" content="ipyvizzu-story" />
+<meta
+  property="og:description"
+  content="ipyvizzu-story Animated Chart Presentation in Jupyter Notebook and in many other environments"
+/>
+<meta property="og:url" content="{{ page.canonical_url }}" />
+<meta
+  property="og:image"
+  content="https://vizzuhq.com/images/logo/vizzu-twitter.png"
+/>
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta
+  property="og:video"
+  content="https://vizzuhq.com/images/logo/social-image-big.mp4"
+/>
+<meta name="twitter:title" content="ipyvizzu-story" />
+<meta
+  name="twitter:description"
+  content="ipyvizzu-story Animated Chart Presentation in Jupyter Notebook and in many other environments"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@VizzuHQ" />
+<meta name="twitter:creator" content="@VizzuHQ" />
+<meta
+  name="twitter:image"
+  content="https://vizzuhq.com/images/logo/vizzu-twitter.png"
+/>
+{% endblock %} {% block content %} {% if page.nb_url %}
+<a
+  href="{{ page.nb_url }}"
+  title="Download Notebook"
+  class="md-content__button md-icon"
+>
+  {% include ".icons/material/download.svg" %}
+</a>
+{% endif %} {{ super() }} {% endblock content %}

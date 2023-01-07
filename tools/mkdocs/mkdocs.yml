@@ -1,5 +1,6 @@
 site_name: ipyvizzu-story
 site_url: https://vizzuhq.github.io/ipyvizzu-story/
+copyright: Copyright &copy; 2022-2023 Vizzu
 
 docs_dir: ../../docs
 
@@ -9,25 +10,57 @@ use_directory_urls: false
 
 theme:
   name: material
+  palette:
+    scheme: vizzu
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/logo-white.svg
+  favicon: assets/favicon.svg
   custom_dir: ./overrides
-  icon:
-    logo: material/home
+  features:
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - navigation.top
+    - navigation.footer
+
+extra_css:
+  - stylesheets/vizzu.css
+  - stylesheets/highlight.css
+
+extra_javascript:
+  - //cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7/build/highlight.min.js
+  - javascripts/highlight.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/slack
+      name: Vizzu on Slack
+      link: https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg
+    - icon: fontawesome/brands/twitter
+      name: Vizzu on Twitter
+      link: https://twitter.com/VizzuHQ
+    - icon: fontawesome/brands/reddit
+      name: Vizzu on Reddit
+      link: https://www.reddit.com/user/VizzuHQ/
+    - icon: fontawesome/brands/github
+      name: Vizzu on GitHub
+      link: https://github.com/vizzuhq/
 
 markdown_extensions:
-  - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - mdx_truly_sane_lists
+  - attr_list
+  - md_in_html
 
 plugins:
   - search
-  - autorefs
-  - literate-nav
-  - coverage:
-      page_name: coverage
-      html_report_dir: tests/coverage
   - section-index
+  - literate-nav:
+      implicit_index: true
+  - autorefs
   - mkdocstrings:
       handlers:
         python:
@@ -37,15 +70,21 @@ plugins:
             show_root_heading: True
             show_root_members_full_path: True
             show_submodules: True
-  - mkdocs-jupyter:
-      execute: True
-      ignore: ["demo/*.ipynb", "community/*.ipynb"]
-      kernel_name: .venv-ipyvizzu-story
-      ignore_h1_titles: True
-      include_source: True
   - gen-files:
       scripts:
-        - gen_files.py
+        - gen_pages.py
+        - gen_reference.py
+  - coverage:
+      page_name: coverage
+      html_report_dir: tests/coverage
+  - mkdocs-jupyter:
+      # include: []
+      ignore: ["demo/*.ipynb", "community/*.ipynb"]
+      ignore_h1_titles: False
+      include_source: True
+      execute: True
+      allow_errors: False
+      kernel_name: .venv-ipyvizzu-story
 
 nav:
   - Home: index.md
@@ -76,8 +115,10 @@ nav:
       - examples/index.md
       - Basic example: examples/basic/basic.ipynb
       - Complex example: examples/complex/complex.ipynb
-  - Reference: reference/ipyvizzustory/
+  - Code reference: reference/ipyvizzustory/
   - Development:
-      - Contributing: dev/CONTRIBUTING.md
-      - Code of Conduct: dev/CODE_OF_CONDUCT.md
+      - dev/index.md
+      - Contributing: CONTRIBUTING.md
+      - Code of Conduct: CODE_OF_CONDUCT.md
       - Coverage report: coverage.md
+  - License: LICENSE.md

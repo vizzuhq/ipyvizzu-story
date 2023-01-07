@@ -134,4 +134,3 @@ if "code" is selected:
 ## Try it!
 
 Place the above code blocks into notebook cells in order to try it.
-[![Open in Mercury](https://raw.githubusercontent.com/mljar/mercury/main/docs/media/open_in_mercury.svg)](https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo)
