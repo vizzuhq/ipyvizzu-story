@@ -90,6 +90,11 @@ nav:
   - Home: index.md
   - installation.md
   - tutorial.md
+  - Examples:
+      - examples/index.md
+      - Basic example: examples/basic/basic.ipynb
+      - Complex example: examples/complex/complex.ipynb
+  - Code reference: reference/ipyvizzustory/
   - Environments:
       - environments/index.md
       - Jupyter/IPython:
@@ -111,11 +116,6 @@ nav:
       - environments/streamlit.md
       - environments/panel.md
       - environments/python.md
-  - Examples:
-      - examples/index.md
-      - Basic example: examples/basic/basic.ipynb
-      - Complex example: examples/complex/complex.ipynb
-  - Code reference: reference/ipyvizzustory/
   - Development:
       - dev/index.md
       - Contributing: CONTRIBUTING.md
