@@ -297,6 +297,7 @@ mkdocs==1.4.2
     # via
     #   -r dev-requirements.in
     #   mkdocs-autorefs
+    #   mkdocs-coverage
     #   mkdocs-gen-files
     #   mkdocs-jupyter
     #   mkdocs-literate-nav
@@ -307,6 +308,8 @@ mkdocs-autorefs==0.4.1
     # via
     #   -r dev-requirements.in
     #   mkdocstrings
+mkdocs-coverage==0.2.6
+    # via -r dev-requirements.in
 mkdocs-gen-files==0.4.0
     # via -r dev-requirements.in
 mkdocs-jupyter==0.22.0

@@ -43,6 +43,7 @@ mkdocs-literate-nav
 mkdocs-autorefs
 mkdocstrings[python]
 mkdocs-gen-files
+mkdocs-coverage
 mkdocs-jupyter
 #
 #
