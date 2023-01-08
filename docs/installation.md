@@ -12,7 +12,7 @@ Run the following command to install `ipyvizzu-story` from
 pip install ipyvizzu-story
 ```
 
-or the command below to upgrade it.
+and this is how to upgrade it.
 
 ```sh
 pip install -U ipyvizzu-story
@@ -23,8 +23,7 @@ You can use `ipyvizzu-story` in `Jupyter/IPython`, `Streamlit`, `Panel` or
 
 ### Jupyter/IPython
 
-You can easily install `ipyvizzu-story` in your notebook without using the
-command line if you place the following code into a cell.
+You can install `ipyvizzu-story` in your notebook without using the command line by entering the following code into a cell.
 
 ```
 !pip install ipyvizzu-story
@@ -77,7 +76,7 @@ conda install ipyvizzu-story
 mamba install ipyvizzu-story
 ```
 
-or the command below to upgrade it.
+and this is how to upgrade it.
 
 ```sh
 conda update ipyvizzu-story
