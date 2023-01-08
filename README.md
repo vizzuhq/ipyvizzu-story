@@ -93,7 +93,7 @@ more details and a step-by-step tutorial into ipyvizzu-story or check out our
 
 ipyvizzu-story can be used in a wide variety of environments, visit
 [Environments chapter](https://vizzuhq.github.io/ipyvizzu-story/environments/index.html)
-of our documentation site for more details.
+for more details.
 
 - Jupyter/IPython
   - [Jupyter Notebook](https://vizzuhq.github.io/ipyvizzu-story/environments/jupyter/jupyternotebook.html)

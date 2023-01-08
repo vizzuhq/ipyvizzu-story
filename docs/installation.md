@@ -19,8 +19,7 @@ pip install -U ipyvizzu-story
 ```
 
 You can use `ipyvizzu-story` in `Jupyter/IPython`, `Streamlit`, `Panel` or
-`Python` (see [Environments chapter](environments/index.md) of our documentation
-site).
+`Python` (see [Environments chapter](environments/index.md) for more details).
 
 ### Jupyter/IPython
 

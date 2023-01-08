@@ -33,8 +33,8 @@ pip install ipyvizzu-story[streamlit]
 Below you can see an example, place the following code blocks into a python file
 in order to try it in Streamlit.
 
-For more information regarding to how to use ipyvizzu-story please check
-[Tutorial chapter](../tutorial.md) of our documentation site.
+For more info about ipyvizzu-story please check
+[Tutorial chapter](../tutorial.md).
 
 ```python
 # import ipyvizzu and ipyvizzu-story
