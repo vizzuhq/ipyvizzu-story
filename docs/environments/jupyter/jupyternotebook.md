@@ -25,8 +25,8 @@ pip install ipyvizzu-story[jupyter]
 ```
 
 or place the following code into a notebook cell in order to install
-ipyvizzu-story (for more installation options and details see
-[Installation chapter](../../installation.md) of our documentation site).
+ipyvizzu-story (visit [Installation chapter](../../installation.md) for more
+options and details).
 
 ```
 !pip install ipyvizzu-story[jupyter]

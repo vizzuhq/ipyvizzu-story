@@ -21,8 +21,8 @@ You can use ipyvizzu-story in Panel with the following restrictions:
 ## Installation
 
 Run the following command in your command line in order to install
-ipyvizzu-story (for more installation options and details see
-[Installation chapter](../installation.md) of our documentation site).
+ipyvizzu-story (visit [Installation chapter](../installation.md) for more
+options and details).
 
 ```sh
 pip install ipyvizzu-story[panel]

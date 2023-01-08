@@ -39,7 +39,7 @@ pip install ipyvizzu-story
 
 Visit
 [Installation chapter](https://vizzuhq.github.io/ipyvizzu-story/installation.html)
-of our documentation site for more installation options and details.
+for more options and details.
 
 ## Usage
 

@@ -21,8 +21,8 @@ You can use ipyvizzu-story in Kaggle with the following restrictions:
 ## Installation
 
 Place the following code into a notebook cell in order to install ipyvizzu-story
-(for more installation options and details see
-[Installation chapter](../../installation.md) of our documentation site).
+(visit [Installation chapter](../../installation.md) for more options and
+details).
 
 ```
 !pip install ipyvizzu-story[jupyter]
