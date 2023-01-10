@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       return;
     }
 
-    if (window.location.href.includes("/reference/ipyvizzu/")) {
+    if (window.location.href.includes("/reference/ipyvizzustory/")) {
       el.classList.add("language-python");
     }
 
