@@ -38,7 +38,7 @@ Below you can see an example, place the following code blocks into notebook
 cells in order to try it in Voilà.
 
 For more info about ipyvizzu-story please check
-[Tutorial chapter](../../tutorial.md).
+[Tutorial chapter](../../tutorial/index.md).
 
 ```python
 # import ipyvizzu and ipyvizzu-story
