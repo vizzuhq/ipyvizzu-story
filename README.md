@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://ipyvizzu-story.vizzuhq.com">
-    <img src="https://ipyvizzu-story.vizzuhq.com/examples/demo/ipyvizzu-story.gif" alt="ipyvizzu-story" />
+    <img src="https://ipyvizzu-story.vizzuhq.com/assets/ipyvizzu-story.gif" alt="ipyvizzu-story" />
   </a>
   <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook and in many other environments</p>
   <p align="center">
@@ -51,7 +51,7 @@ download it as an
 You can create the story below with the following code snippet.
 
 <p align="center">
-  <img src="https://github.com/vizzuhq/vizzu-ext-js-story/raw/main/assets/readme-example.gif" alt="ipyvizzu" />
+  <img src="https://ipyvizzu-story.vizzuhq.com/assets/readme-example.gif" alt="ipyvizzu-story" />
 </p>
 
 ```python
