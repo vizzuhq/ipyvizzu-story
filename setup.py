@@ -33,7 +33,7 @@ setup(
     },
     url="https://github.com/vizzuhq/ipyvizzu-story",
     project_urls={
-        "Documentation": "https://github.com/vizzuhq/ipyvizzu-story",
+        "Documentation": "https://ipyvizzu-story.vizzuhq.com",
         "Source": "https://github.com/vizzuhq/ipyvizzu-story",
         "Tracker": "https://github.com/vizzuhq/ipyvizzu-story/issues",
     },

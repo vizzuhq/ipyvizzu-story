@@ -109,7 +109,7 @@ make doc
 
 The documentation will be published to the gh-pages branch with the `doc`
 workflow. Online version can be read at
-[vizzuhq.github.io/ipyvizzu-story](https://vizzuhq.github.io/ipyvizzu-story).
+[ipyvizzu-story.vizzuhq.com](https://ipyvizzu-story.vizzuhq.com).
 
 ### Release
 
