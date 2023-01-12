@@ -1,3 +1,7 @@
+---
+csv_url: ../../data/data.csv
+---
+
 # Colab
 
 You can use ipyvizzu-story in Colab with the following restrictions:
@@ -61,11 +65,7 @@ data.add_series("Baz", [5, 3, 2])
 # import pandas as pd
 #
 # data = Data()
-# df = pd.read_csv(
-#     "https://raw.githubusercontent.com/" +
-#     "vizzuhq/ipyvizzu-story/main/" +
-#     "docs/examples/basic/basic.csv"
-# )
+# df = pd.read_csv(../../data/data.csv)
 # data.add_data_frame(df)
 
 story = Story(data=data)
