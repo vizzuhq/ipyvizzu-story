@@ -95,18 +95,18 @@ ipyvizzu-story can be used in a wide variety of environments, visit
 for more details.
 
 - Notebooks
-  - [Jupyter Notebook](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/jupyternotebook.html)
-  - [Colab](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/colab.html)
+  - [Jupyter Notebook](https://ipyvizzu-story.vizzuhq.com/environments/notebook/jupyternotebook.html)
+  - [Colab](https://ipyvizzu-story.vizzuhq.com/environments/notebook/colab.html)
     [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VnmuPHm7Ynk6aZiWN0QcnIqGGW5ODnFf?usp=sharing)
-  - [Databricks](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/databricks.html)
-  - [DataCamp](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/datacamp.html)
-  - [Deepnote](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/deepnote.html)
+  - [Databricks](https://ipyvizzu-story.vizzuhq.com/environments/notebook/databricks.html)
+  - [DataCamp](https://ipyvizzu-story.vizzuhq.com/environments/notebook/datacamp.html)
+  - [Deepnote](https://ipyvizzu-story.vizzuhq.com/environments/notebook/deepnote.html)
     [![View in Deepnote](https://deepnote.com/static/buttons/view-in-deepnote.svg)](https://deepnote.com/workspace/david-andras-vegh-bc03-79fd3a98-abaf-40c0-8b52-9f3e438a73fc/project/ipyvizzu-story-demo-11b5d5eb-7f68-44c4-b1a7-347fde1a8f64)
-  - [JupyterLab](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/jupyterlab.html)
-  - [JupyterLite](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/jupyterlite.html)
-  - [Kaggle](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/kaggle.html)
+  - [JupyterLab](https://ipyvizzu-story.vizzuhq.com/environments/notebook/jupyterlab.html)
+  - [JupyterLite](https://ipyvizzu-story.vizzuhq.com/environments/notebook/jupyterlite.html)
+  - [Kaggle](https://ipyvizzu-story.vizzuhq.com/environments/notebook/kaggle.html)
     [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)
-  - [Noteable](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/noteable.html)
+  - [Noteable](https://ipyvizzu-story.vizzuhq.com/environments/notebook/noteable.html)
 - App platforms
   - [Streamlit](https://ipyvizzu-story.vizzuhq.com/environments/platform/streamlit.html)
   - [Panel](https://ipyvizzu-story.vizzuhq.com/environments/platform/panel.html)
