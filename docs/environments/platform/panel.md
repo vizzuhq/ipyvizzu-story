@@ -35,13 +35,9 @@ options and details).
 pip install ipyvizzu-story[panel]
 ```
 
-## Example
+## Sample
 
-Below you can see an example, place the following code blocks into a python file
-in order to try it in Panel.
-
-For more info about ipyvizzu-story please check
-[Tutorial chapter](../../tutorial/index.md).
+Try `ipyvizzu-story` in `Panel` with the following sample.
 
 ```python
 # import ipyvizzu and ipyvizzu-story
@@ -50,9 +46,8 @@ from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
 
 from ipyvizzustory.env.pn.story import Story
-```
 
-```python
+
 # create data and initialize Story with the created data
 
 data = Data()
@@ -69,9 +64,8 @@ data.add_series("Baz", [5, 3, 2])
 # data.add_data_frame(df)
 
 story = Story(data=data)
-```
 
-```python
+
 # create Slides and Steps and add them to the Story
 
 slide1 = Slide(
@@ -87,16 +81,14 @@ slide2 = Slide(
     )
 )
 story.add_slide(slide2)
-```
 
-```python
+
 # note: in Panel if you want to use the `play` method,
 # you need to set the width and height in pixels
 
 story.set_size(width="800px", height="480px")
-```
 
-```python
+
 # you can export the Story into a html file
 
 story.export_to_html(filename="mystory.html")
@@ -105,15 +97,13 @@ story.export_to_html(filename="mystory.html")
 
 html = story.to_html()
 print(html)
-```
 
-```python
+
 # you can display the Story with the `play` method
 
 story.play()
-```
 
-```python
+
 # or you can customize Panel before `play`
 
 # import panel as pn
@@ -125,9 +115,8 @@ story.play()
 # )
 #
 # story.play()
-```
 
-```python
+
 # or if you would like to customize it completely,
 # you can do it with the `_repr_html_` method
 
@@ -146,8 +135,6 @@ story.play()
 # ).servable()
 ```
 
-## Try it!
-
 Place the above code blocks into a python file (for example called
 `ipyvizzustory_example.py`) and run the following command in your command line
 in order to try it.
@@ -155,3 +142,5 @@ in order to try it.
 ```sh
 panel serve ipyvizzustory_example.py --autoreload
 ```
+
+Check the [Tutorial](../../tutorial/index.md) for more info.
