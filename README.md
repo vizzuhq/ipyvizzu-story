@@ -108,10 +108,10 @@ for more details.
     [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)
   - [Noteable](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/noteable.html)
 - App platforms
-  - [Streamlit](https://ipyvizzu-story.vizzuhq.com/environments/streamlit.html)
-  - [Panel](https://ipyvizzu-story.vizzuhq.com/environments/panel.html)
-  - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/mercury.html)
-  - [Voilà](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/voila.html)
+  - [Streamlit](https://ipyvizzu-story.vizzuhq.com/environments/platform/streamlit.html)
+  - [Panel](https://ipyvizzu-story.vizzuhq.com/environments/platform/panel.html)
+  - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/environments/platform/mercury.html)
+  - [Voilà](https://ipyvizzu-story.vizzuhq.com/environments/platform/voila.html)
 - BI tools
   - [Mode](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/mode.html)
 - IDEs

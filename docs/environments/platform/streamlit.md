@@ -1,5 +1,5 @@
 ---
-csv_url: ../data/data.csv
+csv_url: ../../data/data.csv
 ---
 
 # Streamlit
@@ -25,7 +25,7 @@ You can use ipyvizzu-story in Streamlit with the following restrictions:
 ## Installation
 
 Run the following command in your command line in order to install
-ipyvizzu-story (visit [Installation chapter](../installation.md) for more
+ipyvizzu-story (visit [Installation chapter](../../installation.md) for more
 options and details).
 
 ```sh
@@ -38,7 +38,7 @@ Below you can see an example, place the following code blocks into a python file
 in order to try it in Streamlit.
 
 For more info about ipyvizzu-story please check
-[Tutorial chapter](../tutorial/index.md).
+[Tutorial chapter](../../tutorial/index.md).
 
 ```python
 # import ipyvizzu and ipyvizzu-story
@@ -64,7 +64,7 @@ data.add_series("Baz", [5, 3, 2])
 # import pandas as pd
 #
 # data = Data()
-# df = pd.read_csv(../data/data.csv)
+# df = pd.read_csv(../../data/data.csv)
 # data.add_data_frame(df)
 
 story = Story(data=data)
