@@ -115,8 +115,8 @@ for more details.
 - BI tools
   - [Mode](https://ipyvizzu-story.vizzuhq.com/environments/bi/mode.html)
 - IDEs
-  - [PyCharm](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/pycharm.html)
-  - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/vscode.html)
+  - [PyCharm](https://ipyvizzu-story.vizzuhq.com/environments/ide/pycharm.html)
+  - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/environments/ide/vscode.html)
 - [Python](https://ipyvizzu-story.vizzuhq.com/environments/python.html)
 
 ## Contributing
