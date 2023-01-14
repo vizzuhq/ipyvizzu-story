@@ -4,28 +4,31 @@ csv_url: ../../data/data.csv
 
 # Colab
 
-You can use ipyvizzu-story in Colab with the following restrictions:
+## Features
 
-- [x] Display the created Story (`play` method)
+The features of `ipyvizzu-story` that are available in `Colab` are marked with a
+green check.
 
-- [x] Display the created Story (`_repr_html_` method)
+- [x] Display the created `Story` (`play` method)
+
+- [x] Display the created `Story` (`_repr_html_` method)
 
 - [x] Use fullscreen \*
 
 - [x] Use navigation buttons
 
-- [x] Set width/height of the Story
+- [x] Set width/height of the `Story`
 
-- [x] Export the Story into a html file
+- [x] Export the `Story` into a html file
 
-- [x] Get the html Story as a string
+- [x] Get the html `Story` as a string
 
-\*Colab disables the fullscreen button, use the built-in
+\*`Colab` disables the fullscreen button, use the built-in
 `view output fullscreen` option instead
 
 ## Installation
 
-Place the following code into a notebook cell in order to install ipyvizzu-story
+Place the following code into a notebook cell in order to install `ipyvizzu-story`
 (visit [Installation chapter](../../installation.md) for more options and
 details).
 

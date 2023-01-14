@@ -4,25 +4,28 @@ csv_url: ../../data/data.csv
 
 # Mercury/mljar
 
-You can use ipyvizzu-story in Mercury/mljar with the following restrictions:
+## Features
 
-- [x] Display the created Story (`play` method)
+The features of `ipyvizzu-story` that are available in `Mercury/mljar` are
+marked with a green check.
 
-- [ ] Display the created Story (`_repr_html_` method)
+- [x] Display the created `Story` (`play` method)
+
+- [ ] Display the created `Story` (`_repr_html_` method)
 
 - [x] Use fullscreen
 
 - [x] Use navigation buttons
 
-- [x] Set width/height of the Story
+- [x] Set width/height of the `Story`
 
-- [ ] Export the Story into a html file
+- [ ] Export the `Story` into a html file
 
-- [x] Get the html Story as a string
+- [x] Get the html `Story` as a string
 
 ## Installation
 
-Add ipyvizzu-story to requirements.txt.
+Add `ipyvizzu-story` to `requirements.txt`.
 
 ```
 python-dotenv
