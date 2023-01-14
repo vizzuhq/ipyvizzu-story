@@ -94,7 +94,7 @@ ipyvizzu-story can be used in a wide variety of environments, visit
 [Environments chapter](https://ipyvizzu-story.vizzuhq.com/environments/index.html)
 for more details.
 
-- Jupyter/IPython
+- Notebooks
   - [Jupyter Notebook](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/jupyternotebook.html)
   - [Colab](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/colab.html)
     [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VnmuPHm7Ynk6aZiWN0QcnIqGGW5ODnFf?usp=sharing)
@@ -106,14 +106,17 @@ for more details.
   - [JupyterLite](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/jupyterlite.html)
   - [Kaggle](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/kaggle.html)
     [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/dvidandrsvgh/ipyvizzu-story-demo)
-  - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/mercury.html)
-  - [Mode](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/mode.html)
   - [Noteable](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/noteable.html)
-  - [PyCharm](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/pycharm.html)
+- App platforms
+  - [Streamlit](https://ipyvizzu-story.vizzuhq.com/environments/streamlit.html)
+  - [Panel](https://ipyvizzu-story.vizzuhq.com/environments/panel.html)
+  - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/mercury.html)
   - [Voilà](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/voila.html)
+- BI tools
+  - [Mode](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/mode.html)
+- IDEs
+  - [PyCharm](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/pycharm.html)
   - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/vscode.html)
-- [Streamlit](https://ipyvizzu-story.vizzuhq.com/environments/streamlit.html)
-- [Panel](https://ipyvizzu-story.vizzuhq.com/environments/panel.html)
 - [Python](https://ipyvizzu-story.vizzuhq.com/environments/python.html)
 
 ## Contributing
