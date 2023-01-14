@@ -111,7 +111,6 @@ nav:
           - JupyterLab: environments/jupyter/jupyterlab.md
           - JupyterLite: environments/jupyter/jupyterlite.md
           - environments/jupyter/kaggle.md
-          - environments/jupyter/mode.md
           - environments/jupyter/noteable.md
       - App platforms:
           - environments/platform/index.md
@@ -121,7 +120,7 @@ nav:
           - Voilà: environments/platform/voila.md
       - BI tools:
           - environments/bi/index.md
-          - environments/jupyter/mode.md
+          - environments/bi/mode.md
       - IDEs:
           - environments/ide/index.md
           - PyCharm: environments/jupyter/pycharm.md

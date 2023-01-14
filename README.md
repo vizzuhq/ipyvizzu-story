@@ -113,7 +113,7 @@ for more details.
   - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/environments/platform/mercury.html)
   - [Voilà](https://ipyvizzu-story.vizzuhq.com/environments/platform/voila.html)
 - BI tools
-  - [Mode](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/mode.html)
+  - [Mode](https://ipyvizzu-story.vizzuhq.com/environments/bi/mode.html)
 - IDEs
   - [PyCharm](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/pycharm.html)
   - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/environments/jupyter/vscode.html)
