@@ -2,7 +2,7 @@
   <a href="https://ipyvizzu-story.vizzuhq.com">
     <img src="https://ipyvizzu-story.vizzuhq.com/assets/ipyvizzu-story.gif" alt="ipyvizzu-story" />
   </a>
-  <p align="center"><b>ipyvizzu-story</b> Animated Chart Presentation in Jupyter Notebook and in many other environments</p>
+  <p align="center"><b>ipyvizzu-story</b> Build, present and share animated data stories in Jupyter Notebook and similar environments</p>
   <p align="center">
     <a href="https://ipyvizzu-story.vizzuhq.com">Documentation</a>
     · <a href="https://ipyvizzu-story.vizzuhq.com/examples/index.html">Examples</a>
@@ -19,17 +19,14 @@
 
 ## About The Extension
 
-ipyvizzu-story is an extension of
-[ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create
-interactive presentations within the data science notebook of their choice. The
+ipyvizzu-story is an extension of the animated charting tool
+[ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create and present
+interactive data presentations within the data science notebook of their choice and to share them as an HTML file. The
 extension provides a widget that contains the presentation and adds controls for
 navigating between slides - predefined stages within the story being presented.
 Navigation also works with keyboard shortcuts - arrow keys, PgUp, PgDn, Home,
-End - and you can also use a clicker to switch between the slides. Since
-ipyvizzu-story's synthax is a bit different to ipyvizzu's, we suggest you to
-start from the [ipyvizzu repo](https://github.com/vizzuhq/ipyvizzu) if you're
-interested in building animated charts but not necessarly presenting them live
-or to share your presentation as an HTML file.
+End - and you can also use a clicker to switch between the slides. 
+.
 
 ## Installation
 
