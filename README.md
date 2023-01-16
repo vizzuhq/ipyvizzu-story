@@ -20,13 +20,13 @@
 ## About The Extension
 
 ipyvizzu-story is an extension of the animated charting tool
-[ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create and present
-interactive data presentations within the data science notebook of their choice and to share them as an HTML file. The
-extension provides a widget that contains the presentation and adds controls for
-navigating between slides - predefined stages within the story being presented.
-Navigation also works with keyboard shortcuts - arrow keys, PgUp, PgDn, Home,
-End - and you can also use a clicker to switch between the slides. 
-.
+[ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create and
+present interactive data presentations within the data science notebook of their
+choice and to share them as an HTML file. The extension provides a widget that
+contains the presentation and adds controls for navigating between slides -
+predefined stages within the story being presented. Navigation also works with
+keyboard shortcuts - arrow keys, PgUp, PgDn, Home, End - and you can also use a
+clicker to switch between the slides. .
 
 ## Installation
 
