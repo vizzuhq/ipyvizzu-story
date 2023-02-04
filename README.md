@@ -103,6 +103,7 @@ for more details.
   - [Noteable](https://ipyvizzu-story.vizzuhq.com/environments/notebook/noteable.html)
 - App platforms
   - [Streamlit](https://ipyvizzu-story.vizzuhq.com/environments/platform/streamlit.html)
+  - [Flask](https://ipyvizzu-story.vizzuhq.com/environments/platform/flask.html)
   - [Panel](https://ipyvizzu-story.vizzuhq.com/environments/platform/panel.html)
   - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/environments/platform/mercury.html)
   - [Voilà](https://ipyvizzu-story.vizzuhq.com/environments/platform/voila.html)
