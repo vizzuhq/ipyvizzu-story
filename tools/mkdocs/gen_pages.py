@@ -118,7 +118,11 @@ class Page:
 
     @staticmethod
     def generate(
-        src: Path, dst: str, site: str, ipynbs: Optional[List[str]] = None
+        src: Path,
+        dst: str,
+        site: str,
+        keep: bool = False,
+        ipynbs: Optional[List[str]] = None,
     ) -> None:
         """
         A method for generating a page.
@@ -127,6 +131,7 @@ class Page:
             src: Source path.
             dst: Destination path.
             site: Site url.
+            keep: Place the original content into a pre tag.
             ipynbs: List of html links that are ipynb files.
         """
 
@@ -150,6 +155,9 @@ class Page:
                 )
 
         content = content.replace(f"{site}/", "./").replace(f"{site}", "./")
+
+        if keep:
+            content = f"<pre>{content}</pre>"
 
         mkdocs_gen_files.set_edit_path(dst, ".." / Path(dst).parent / Path(src).name)
         with mkdocs_gen_files.open(dst, "w") as f_dst:
@@ -189,6 +197,7 @@ def main() -> None:
         src=Path(__file__).parent / ".." / ".." / "LICENSE",
         dst="LICENSE.md",
         site=config["site_url"],
+        keep=True,
     )
 
 
