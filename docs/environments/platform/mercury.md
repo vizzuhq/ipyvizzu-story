@@ -23,6 +23,10 @@ marked with a green check.
 
 - [x] Get the html `Story` as a string
 
+## Live example
+
+[![Open in Mercury](https://raw.githubusercontent.com/mljar/mercury/main/docs/media/open_in_mercury.svg)](https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo)
+
 ## Installation
 
 Add `ipyvizzu-story` to `requirements.txt`.
