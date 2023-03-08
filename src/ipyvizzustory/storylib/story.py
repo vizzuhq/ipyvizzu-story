@@ -239,6 +239,9 @@ class Story(dict):
 
         super().__init__()
 
+        self._vizzu: Optional[str] = None
+        self._vizzu_story: str = VIZZU_STORY
+
         self._size: StorySize = StorySize()
 
         self._features: List[str] = []
@@ -254,6 +257,39 @@ class Story(dict):
             self.update(style.build())
 
         self["slides"] = []
+
+    @property
+    def vizzu(self) -> Optional[str]:
+        """
+        A property for changing vizzu url.
+
+        Note:
+            If `None`, vizzu url is set by vizzu-story.
+
+        Returns:
+            Vizzu url.
+        """
+
+        return self._vizzu
+
+    @vizzu.setter
+    def vizzu(self, url: str) -> None:
+        self._vizzu = url
+
+    @property
+    def vizzu_story(self) -> str:
+        """
+        A property for changing vizzu-story url.
+
+        Returns:
+            Vizzu-story url.
+        """
+
+        return self._vizzu_story
+
+    @vizzu_story.setter
+    def vizzu_story(self, url: str) -> None:
+        self._vizzu_story = url
 
     def add_slide(self, slide: Slide) -> None:
         """
@@ -348,7 +384,8 @@ class Story(dict):
         vizzu_player_data = f"{json.dumps(self, cls=RawJavaScriptEncoder)}"
         return DISPLAY_TEMPLATE.format(
             id=uuid.uuid4().hex[:7],
-            vizzu_story=VIZZU_STORY,
+            vizzu_attribute=f'vizzu-url="{self._vizzu}"' if self._vizzu else "",
+            vizzu_story=self._vizzu_story,
             vizzu_player_data=vizzu_player_data,
             chart_size=self._size.style,
             chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
