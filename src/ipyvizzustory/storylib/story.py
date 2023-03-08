@@ -151,7 +151,7 @@ class StorySize:
         if any([width is not None, height is not None]):
             width = "" if width is None else f"width: {width};"
             height = "" if height is None else f"height: {height};"
-            self._style = f"vizzuPlayer.style.cssText = '{width}{height}'"
+            self._style = f"vp.style.cssText = '{width}{height}'"
 
     @property
     def width(self) -> Optional[str]:
