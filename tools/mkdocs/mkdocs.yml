@@ -92,7 +92,7 @@ plugins:
   - gen-files:
       scripts:
         - gen_pages.py
-        - gen_reference.py
+        - reference/gen_reference.py
   - coverage:
       page_name: coverage
       html_report_dir: tests/coverage
