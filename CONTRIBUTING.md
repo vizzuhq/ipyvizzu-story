@@ -111,7 +111,7 @@ make doc
 ```
 
 Online version can be read at
-[ipyvizzu-story.vizzuhq.com](https://ipyvizzu-story.vizzuhq.com).
+[ipyvizzu-story.vizzuhq.com](https://ipyvizzu-story.vizzuhq.com/latest/).
 
 ### Release
 

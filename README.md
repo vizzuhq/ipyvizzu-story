@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://ipyvizzu-story.vizzuhq.com">
+  <a href="https://ipyvizzu-story.vizzuhq.com/latest/">
     <img src="https://ipyvizzu-story.vizzuhq.com/latest/assets/ipyvizzu-story.gif" alt="ipyvizzu-story" />
   </a>
   <p align="center"><b>ipyvizzu-story</b> - Build, present and share animated data stories in Jupyter Notebook and similar environments</p>
   <p align="center">
-    <a href="https://ipyvizzu-story.vizzuhq.com">Documentation</a>
+    <a href="https://ipyvizzu-story.vizzuhq.com/latest/">Documentation</a>
     · <a href="https://ipyvizzu-story.vizzuhq.com/latest/examples/">Examples</a>
     · <a href="https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/">Code reference</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
@@ -81,8 +81,8 @@ story.play()
 
 ## Documentation
 
-Visit our [Documentation site](https://ipyvizzu-story.vizzuhq.com) for more
-details and a step-by-step tutorial into ipyvizzu-story or check out our
+Visit our [Documentation site](https://ipyvizzu-story.vizzuhq.com/latest/) for
+more details and a step-by-step tutorial into ipyvizzu-story or check out our
 [Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/).
 
 ## Environments
