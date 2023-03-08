@@ -1,12 +1,15 @@
+strict: true
+
 site_name: ipyvizzu-story
 site_url: https://ipyvizzu-story.vizzuhq.com
 copyright: Copyright &copy; 2022-2023 Vizzu Inc.
 
 docs_dir: ../../docs
+site_dir: ../../site
 
 repo_url: https://github.com/vizzuhq/ipyvizzu-story
 edit_uri: https://github.com/vizzuhq/ipyvizzu-story/edit/main/docs
-use_directory_urls: false
+use_directory_urls: true
 
 theme:
   name: material
@@ -35,6 +38,8 @@ extra_javascript:
   - assets/javascripts/highlight.js
 
 extra:
+  #  version:
+  #    provider: mike
   social:
     - icon: fontawesome/brands/slack
       name: Vizzu on Slack
@@ -55,8 +60,18 @@ markdown_extensions:
   - mdx_truly_sane_lists
   - attr_list
   - md_in_html
+  - admonition
+  - pymdownx.highlight:
+      use_pygments: false
+  - pymdownx.details
+  - pymdownx.superfences
 
 plugins:
+  #  - mike:
+  #      version_selector: false
+  #      alias_type: symlink
+  #      canonical_version: latest
+  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html
   - search
   - section-index
   - literate-nav:

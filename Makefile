@@ -157,7 +157,7 @@ else
 endif
 
 doc: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/$(BIN_PATH)/mkdocs build -s -f ./tools/mkdocs/mkdocs.yml -d ../../site
+	$(VIRTUAL_ENV)/$(BIN_PATH)/mkdocs build -f ./tools/mkdocs/mkdocs.yml
 
 
 
