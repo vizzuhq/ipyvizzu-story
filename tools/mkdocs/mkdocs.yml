@@ -88,7 +88,7 @@ plugins:
       include_source: True
       execute: True
       allow_errors: False
-      kernel_name: .venv-ipyvizzu-story
+      kernel_name: .venv_ipyvizzu_story
 
 nav:
   - Home: index.md

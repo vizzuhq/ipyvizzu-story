@@ -17,7 +17,7 @@ endif
 	clean-doc doc \
 	clean-build build-release check-release release
 
-VIRTUAL_ENV = .venv-ipyvizzu-story
+VIRTUAL_ENV = .venv_ipyvizzu_story
 
 DEV_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_BUILD_FLAG
 DEV_JS_BUILD_FLAG = $(VIRTUAL_ENV)/DEV_JS_BUILD_FLAG
