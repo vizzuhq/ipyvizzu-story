@@ -2,7 +2,7 @@
 
 
 VIZZU_STORY: str = (
-    "https://cdn.jsdelivr.net/npm/vizzu-story@0.2/dist/vizzu-story.min.js"
+    "https://cdn.jsdelivr.net/npm/vizzu-story@0.3/dist/vizzu-story.min.js"
 )
 """A variable for storing the default url of the vizzu-story package."""
 
