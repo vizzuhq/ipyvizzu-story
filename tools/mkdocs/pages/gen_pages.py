@@ -3,10 +3,23 @@
 import os
 from pathlib import Path
 from typing import Union, Optional, List
-import re
+import sys
 
 import yaml
 import mkdocs_gen_files  # type: ignore
+
+
+REPO_PATH = Path(__file__).parent / ".." / ".." / ".."
+MKDOCS_PATH = REPO_PATH / "tools" / "mkdocs"
+
+sys.path.insert(0, str(MKDOCS_PATH / "modules"))
+
+from context import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
+    chdir,
+)
+from vizzu import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
+    Vizzu,
+)
 
 
 class MkdocsConfig:
@@ -84,12 +97,15 @@ class IndexPages:
                 raise NotImplementedError(f"{item}")
 
     @staticmethod
-    def generate(nav_item: Union[list, dict, str]) -> None:
+    def generate(
+        nav_item: Union[list, dict, str], skip: Optional[List[str]] = None
+    ) -> None:
         """
         A method for creating section indices for the navigation.
 
         Args:
             nav_item: Part of the navigation.
+            skip: List of index files to skip.
         """
 
         if isinstance(nav_item, list):
@@ -98,17 +114,18 @@ class IndexPages:
                 and isinstance(nav_item[0], str)
                 and nav_item[0].endswith("index.md")
             ):
-                original = Path("docs", nav_item[0])
-                if original.exists():
-                    mkdocs_gen_files.set_edit_path(nav_item[0], nav_item[0])
-                with mkdocs_gen_files.open(nav_item[0], "a") as f_index:
-                    f_index.write("\n")
-                IndexPages._write_index_file(file=nav_item[0], toc=nav_item[1:])
+                if not skip or nav_item[0] not in skip:
+                    original = Path("docs", nav_item[0])
+                    if original.exists():
+                        mkdocs_gen_files.set_edit_path(nav_item[0], nav_item[0])
+                    with mkdocs_gen_files.open(nav_item[0], "a") as f_index:
+                        f_index.write("\n")
+                    IndexPages._write_index_file(file=nav_item[0], toc=nav_item[1:])
             for item in nav_item:
-                IndexPages.generate(nav_item=item)
+                IndexPages.generate(nav_item=item, skip=skip)
         elif isinstance(nav_item, dict):
             for key in nav_item:
-                IndexPages.generate(nav_item=nav_item[key])
+                IndexPages.generate(nav_item=nav_item[key], skip=skip)
 
 
 class Page:
@@ -117,44 +134,24 @@ class Page:
     # pylint: disable=too-few-public-methods
 
     @staticmethod
-    def generate(
-        src: Path,
-        dst: str,
-        site: str,
-        keep: bool = False,
-        ipynbs: Optional[List[str]] = None,
-    ) -> None:
+    def generate(src: Path, dst: str, pos: str, site: str, keep: bool = False) -> None:
         """
         A method for generating a page.
 
         Args:
             src: Source path.
             dst: Destination path.
+            pos: Destination relative pos to the index.
             site: Site url.
             keep: Place the original content into a pre tag.
-            ipynbs: List of html links that are ipynb files.
         """
-
-        if ipynbs is None:
-            ipynbs = []
 
         with open(src, "rt", encoding="utf8") as f_src:
             content = f_src.read()
 
-        for match in re.finditer(
-            rf"\[([^]]*)\]\(({site}/)([^]]*)(.html)([^]]*)?\)",
-            content,
-        ):
-            if match[0] in ipynbs:
-                content = content.replace(
-                    match[0], f"[{match[1]}]({match[3]}.ipynb{match[5]})"
-                )
-            else:
-                content = content.replace(
-                    match[0], f"[{match[1]}]({match[3]}.md{match[5]})"
-                )
+        content = content.replace(f"{site}/latest/", pos).replace(f"{site}/latest", pos)
 
-        content = content.replace(f"{site}/", "./").replace(f"{site}", "./")
+        content = Vizzu.set_version(content)
 
         if keep:
             content = f"<pre>{content}</pre>"
@@ -164,41 +161,75 @@ class Page:
             f_dst.write(content)
 
 
+class Docs:
+    """A class for creating docs pages."""
+
+    # pylint: disable=too-few-public-methods
+
+    @staticmethod
+    def generate(skip: Optional[List[str]] = None) -> None:
+        """
+        A method for generating docs pages.
+
+        Args:
+            skip: List of file names to skip.
+        """
+
+        docs_path = REPO_PATH / "docs"
+        for path in list(docs_path.rglob("*.md")) + list(docs_path.rglob("*.js")):
+            if skip and path.name in skip:
+                continue
+            with open(path, "rt", encoding="utf8") as f_src:
+                dst = path.relative_to(docs_path)
+                content = f_src.read()
+                if path.suffix == ".md":
+                    content = Vizzu.set_version(content)
+                    mkdocs_gen_files.set_edit_path(dst, dst)
+                with mkdocs_gen_files.open(dst, "w") as f_dst:
+                    f_dst.write(content)
+
+
 def main() -> None:
     """
     The main method.
     It prepares files for the documentation site.
     """
 
-    config = MkdocsConfig.load(Path(__file__).parent / "mkdocs.yml")
+    with chdir(REPO_PATH):
+        config = MkdocsConfig.load(MKDOCS_PATH / "mkdocs.yml")
 
-    IndexPages.generate(nav_item=config["nav"])
+        Docs.generate()
 
-    Page.generate(
-        src=Path(__file__).parent / ".." / ".." / "README.md",
-        dst="index.md",
-        site=config["site_url"],
-        ipynbs=[f"[HTML]({config['site_url']}/examples/complex/complex.html)"],
-    )
+        IndexPages.generate(nav_item=config["nav"])
 
-    Page.generate(
-        src=Path(__file__).parent / ".." / ".." / "CONTRIBUTING.md",
-        dst="CONTRIBUTING.md",
-        site=config["site_url"],
-    )
+        Page.generate(
+            src=REPO_PATH / "README.md",
+            dst="index.md",
+            pos="./",
+            site=config["site_url"],
+        )
 
-    Page.generate(
-        src=Path(__file__).parent / ".." / ".." / "CODE_OF_CONDUCT.md",
-        dst="CODE_OF_CONDUCT.md",
-        site=config["site_url"],
-    )
+        Page.generate(
+            src=REPO_PATH / "CONTRIBUTING.md",
+            dst="CONTRIBUTING.md",
+            pos="../",
+            site=config["site_url"],
+        )
 
-    Page.generate(
-        src=Path(__file__).parent / ".." / ".." / "LICENSE",
-        dst="LICENSE.md",
-        site=config["site_url"],
-        keep=True,
-    )
+        Page.generate(
+            src=REPO_PATH / "CODE_OF_CONDUCT.md",
+            dst="CODE_OF_CONDUCT.md",
+            pos="../",
+            site=config["site_url"],
+        )
+
+        Page.generate(
+            src=REPO_PATH / "LICENSE",
+            dst="LICENSE.md",
+            pos="../",
+            site=config["site_url"],
+            keep=True,
+        )
 
 
 main()

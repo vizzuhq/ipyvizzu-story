@@ -91,7 +91,7 @@ plugins:
             - https://docs.python.org/3/objects.inv
   - gen-files:
       scripts:
-        - gen_pages.py
+        - pages/gen_pages.py
         - reference/gen_reference.py
   - coverage:
       page_name: coverage

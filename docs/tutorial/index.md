@@ -3,7 +3,7 @@
 **Note:** Since `ipyvizzu-story` is built on top of `ipyvizzu`, it's recommended
 that you first understand that library before starting with this one. The
 tutorial for `ipyvizzu` can be found
-[here](https://ipyvizzu.vizzuhq.com/tutorial/01_01_intro.html)
+[here](https://ipyvizzu.vizzuhq.com/latest/tutorial/)
 
 ## Usage
 
@@ -23,7 +23,7 @@ from ipyvizzustory import Story, Slide, Step
 Add the underlying data for the story. You can use the same data definition
 formats as in the ipyvizzu library, but you must add the entire data set for the
 whole story in the initial step, you can not change this later. See
-[ipyvizzu tutorial - Adding data](https://ipyvizzu.vizzuhq.com/tutorial/01_02_adding_data.html)
+[ipyvizzu tutorial - Data](https://ipyvizzu.vizzuhq.com/latest/tutorial/data/)
 for more details on data formats.
 
 ```python
@@ -37,9 +37,9 @@ Put the data object into the `Story` constructor. Here you can also set the
 `Story` object's `style` property to set the chart style used for the whole
 story as you can see in our
 [complex example](../examples/complex/complex.ipynb). See
-[ipyvizzu tutorial - Color palette & fonts](https://ipyvizzu.vizzuhq.com/tutorial/01_13_color_palette_fonts.html)
+[ipyvizzu tutorial - Color palette & fonts](https://ipyvizzu.vizzuhq.com/latest/tutorial/color_palette_fonts/)
 and
-[ipyvizzu tutorial - Chart layout](https://ipyvizzu.vizzuhq.com/tutorial/01_14_chart_layout.html)
+[ipyvizzu tutorial - Chart layout](https://ipyvizzu.vizzuhq.com/latest/tutorial/chart_layout/)
 for more details on style options.
 
 ```python
@@ -48,18 +48,18 @@ story = Story(data=data)
 
 Create the data story by defining a sequence of slides. A slide can be a single
 chart corresponding to a single `chart.animate()` call from `ipyvizzu`, see
-[ipyvizzu tutorial - Intro](https://ipyvizzu.vizzuhq.com/tutorial/01_01_intro.html)
-for more details. Or a slide can be a sequence of animation calls, in which case
-all of these animations will be played until the last one in the sequence,
-allowing for more complex transitions between slides. Navigation controls
-beneath the chart will navigate between the slides. You can use the PgUp and
-PgDn buttons, left and right arrows to navigate between slides, and the Home and
-End buttons to jump to the first or last slide.
+[ipyvizzu tutorial](https://ipyvizzu.vizzuhq.com/latest/tutorial/) for more
+details. Or a slide can be a sequence of animation calls, in which case all of
+these animations will be played until the last one in the sequence, allowing for
+more complex transitions between slides. Navigation controls beneath the chart
+will navigate between the slides. You can use the PgUp and PgDn buttons, left
+and right arrows to navigate between slides, and the Home and End buttons to
+jump to the first or last slide.
 
 On each chart, you can define the chart configuration and style with the same
 objects as in `ipyvizzu`. However, you can not modify the underlying data
 between the slides, only the data filter used. See
-[ipyvizzu tutorial - Filtering & adding new records](https://ipyvizzu.vizzuhq.com/tutorial/01_11_filter_add_new_records.html)
+[ipyvizzu tutorial - Filtering & adding new records](https://ipyvizzu.vizzuhq.com/latest/tutorial/filter_add_new_records/)
 for more details on data filtering options.
 
 ```python
@@ -81,7 +81,7 @@ story.add_slide(slide2)
 Before you play the story, many parameters can be changed.
 
 You can enable or disable chart features. See
-[ipyvizzu tutorial - Axes, title, tooltip](https://ipyvizzu.vizzuhq.com/tutorial/01_03_axes_title_tooltip.html)
+[ipyvizzu tutorial - Axes, title, tooltip](https://ipyvizzu.vizzuhq.com/latest/tutorial/axes_title_tooltip/)
 for more details on chart features.
 
 ```python
@@ -89,7 +89,7 @@ story.set_feature("tooltip", True)
 ```
 
 You can add events. See
-[ipyvizzu tutorial - Events](https://ipyvizzu.vizzuhq.com/tutorial/01_17_events.html)
+[ipyvizzu tutorial - Events](https://ipyvizzu.vizzuhq.com/latest/tutorial/events/)
 for more details on events.
 
 ```python
