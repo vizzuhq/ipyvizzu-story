@@ -23,11 +23,19 @@ jobs:
 
     - uses: actions/cache@v3
       with:
+        path: ./node_modules
+        key: nodemodules-ipyvizzu-story-${{ github.run_id }}
+
+    - uses: actions/cache@v3
+      with:
         path: ./tests/coverage
         key: coverage-ipyvizzu-story-${{ inputs.run_id }}
 
     - name: Touch dev environment
       run: make touch-dev
+
+    - name: Touch dev-js environment
+      run: make touch-dev-js
           
     - name: Check format
       run: make check-format
@@ -40,3 +48,6 @@ jobs:
 
     - name: Run test
       run: make test
+
+    - name: Check js
+      run: make check-js

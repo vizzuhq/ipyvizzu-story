@@ -12,10 +12,11 @@ endif
 
 .PHONY: clean \
 	clean-dev update-dev-req install-dev-req install-kernel install touch-dev \
-	check format check-format lint check-typing clean-test test \
-	format-js \ lint-js \ check-js \
+	touch-dev-js \
+	check format check-format check-lint check-typing clean-test test \
+	check-js format-js check-format-js lint-js check-lint-js \
 	clean-doc doc \
-	clean-build build-release check-release release
+	clean-build set-version build-release check-release release
 
 VIRTUAL_ENV = .venv_ipyvizzu_story
 
@@ -46,21 +47,23 @@ install:
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install --use-pep517 .
 
 touch-dev:
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/make/touch.py -f $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/make/touch.py -f $(DEV_BUILD_FLAG)
+
+touch-dev-js:
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/make/touch.py -f $(DEV_JS_BUILD_FLAG)
 
 dev: $(DEV_BUILD_FLAG)
 
+dev-js: $(DEV_BUILD_FLAG) $(DEV_JS_BUILD_FLAG)
+
 $(DEV_BUILD_FLAG):
 	$(PYTHON_BIN) -m venv $(VIRTUAL_ENV)
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python -m pip install --upgrade pip
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) -m pip install --upgrade pip
 	$(MAKE) -f Makefile install
 	$(MAKE) -f Makefile install-dev-req
 	$(MAKE) -f Makefile install-kernel
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pre-commit install --hook-type pre-commit --hook-type pre-push
 	$(MAKE) -f Makefile touch-dev
-
-touch-dev-js:
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/make/touch.py -f $(DEV_JS_BUILD_FLAG)
 
 $(DEV_JS_BUILD_FLAG):
 	cd tools/javascripts && \
@@ -71,12 +74,12 @@ $(DEV_JS_BUILD_FLAG):
 
 # ci
 
-check: check-format lint check-typing test
+check: check-format check-lint check-typing test
 
 format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black src tests tools setup.py
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black -l 70 docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat \
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat \
 		--wrap 80 \
 		--end-of-line keep \
 		--line-length 70 \
@@ -85,14 +88,14 @@ format: $(DEV_BUILD_FLAG)
 check-format: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black --check src tests tools setup.py
 	$(VIRTUAL_ENV)/$(BIN_PATH)/black --check -l 70 docs
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat \
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/mdformat/mdformat.py $(VIRTUAL_ENV)/$(BIN_PATH)/mdformat \
 		--check \
 		--wrap 80 \
 		--end-of-line keep \
 		--line-length 70 \
 		docs README.md CONTRIBUTING.md CODE_OF_CONDUCT.md
 
-lint: $(DEV_BUILD_FLAG)
+check-lint: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pylint src tests tools setup.py
 
 check-typing: $(DEV_BUILD_FLAG)
@@ -115,17 +118,27 @@ test: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/coverage report \
 		--data-file tests/coverage/.coverage -m --fail-under=100
 
+
+
+check-js: $(DEV_JS_BUILD_FLAG)
+	cd tools/javascripts && \
+		npm run check
+
 format-js: $(DEV_JS_BUILD_FLAG)
 	cd tools/javascripts && \
 		npm run prettier
+
+check-format-js: $(DEV_JS_BUILD_FLAG)
+	cd tools/javascripts && \
+		npm run check-prettier
 
 lint-js: $(DEV_JS_BUILD_FLAG)
 	cd tools/javascripts && \
 		npm run eslint
 
-check-js: $(DEV_JS_BUILD_FLAG)
+check-lint-js: $(DEV_JS_BUILD_FLAG)
 	cd tools/javascripts && \
-		npm run check
+		npm run check-eslint
 
 
 
@@ -160,10 +173,13 @@ else
 	rm -rf `find . -name '__pycache__'`
 endif
 
+set-version: $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/release/set_version.py 
+
 build-release: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python -m build
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) -m build
 
 check-release: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/$(BIN_PATH)/python -m twine check dist/*.tar.gz dist/*.whl
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) -m twine check dist/*.tar.gz dist/*.whl
 
-release: clean-build build-release check-release
+release: clean-build set-version build-release check-release
