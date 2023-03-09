@@ -19,14 +19,14 @@
 
 ## About The Extension
 
-ipyvizzu-story is an extension of the animated charting tool
+`ipyvizzu-story` is an extension of the animated charting tool
 [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create and
 present interactive data presentations within the data science notebook of their
-choice and to share them as an HTML file. The extension provides a widget that
+choice and to share them as an `HTML` file. The extension provides a widget that
 contains the presentation and adds controls for navigating between slides -
 predefined stages within the story being presented. Navigation also works with
-keyboard shortcuts - arrow keys, PgUp, PgDn, Home, End - and you can also use a
-clicker to switch between the slides. .
+keyboard shortcuts - arrow keys, `PgUp`, `PgDn`, `Home`, `End` - and you can
+also use a clicker to switch between the slides.
 
 ## Installation
 
@@ -40,10 +40,8 @@ for more options and details.
 
 ## Usage
 
-You can check the code behind the animation on the top of the page in
-[HTML](https://ipyvizzu-story.vizzuhq.com/examples/complex/complex.html) or
-download it as an
-[ipynb file](https://ipyvizzu-story.vizzuhq.com/examples/demo/ipyvizzu-story_example.ipynb).
+You can check the code behind the animation on the top of the page in our
+[Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/us_budget/).
 
 You can create the story below with the following code snippet.
 
@@ -82,12 +80,12 @@ story.play()
 ## Documentation
 
 Visit our [Documentation site](https://ipyvizzu-story.vizzuhq.com/latest/) for
-more details and a step-by-step tutorial into ipyvizzu-story or check out our
+more details and a step-by-step tutorial into `ipyvizzu-story` or check out our
 [Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/).
 
 ## Environments
 
-ipyvizzu-story can be used in a wide variety of environments, visit
+`ipyvizzu-story` can be used in a wide variety of environments, visit
 [Environments chapter](https://ipyvizzu-story.vizzuhq.com/latest/environments/)
 for more details.
 

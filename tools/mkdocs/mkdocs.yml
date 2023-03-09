@@ -36,6 +36,7 @@ extra_javascript:
   - assets/javascripts/extlinks.js
   - //cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7/build/highlight.min.js
   - assets/javascripts/highlight.js
+  - assets/javascripts/notebooklinks.js
 
 extra:
   #  version:
@@ -93,13 +94,14 @@ plugins:
   - gen-files:
       scripts:
         - pages/gen_pages.py
+        - pages/gen_notebooks.py
         - reference/gen_reference.py
   - coverage:
       page_name: coverage
       html_report_dir: tests/coverage
   - mkdocs-jupyter:
-      # include: []
-      ignore: ["demo/*.ipynb", "community/*.ipynb"]
+      include: ["examples/*.ipynb"]
+      ignore: ["community/*.ipynb"]
       ignore_h1_titles: False
       include_source: True
       execute: True
@@ -112,8 +114,8 @@ nav:
   - Tutorial: tutorial/index.md
   - Examples:
       - examples/index.md
-      - Basic example: examples/basic/basic.ipynb
-      - Complex example: examples/complex/complex.ipynb
+      - Basic example: examples/basic.ipynb
+      - US Federal R&D budget: examples/us_budget.ipynb
   - Code reference: reference/ipyvizzustory/
   - Environments:
       - environments/index.md
