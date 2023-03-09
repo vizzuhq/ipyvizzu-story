@@ -51,12 +51,13 @@ class Vizzu:
         return f"{version.group(1)}.{version.group(2)}"  # type: ignore
 
     @staticmethod
-    def set_version(content: str) -> str:
+    def set_version(content: str, restore: bool = False) -> str:
         """
         A static method for setting vizzu version in content.
 
         Args:
             content: Content to be modified.
+            restore: A flag to restore the content.
 
         Returns:
             Modified content.
@@ -64,13 +65,23 @@ class Vizzu:
 
         ipyvizzu_version = Vizzu.get_ipyvizzu_version()
         ipyvizzustory_version = Vizzu.get_ipyvizzustory_version()
-        content = content.replace(
-            "https://ipyvizzu-story.vizzuhq.com/latest/",
-            f"https://ipyvizzu-story.vizzuhq.com/{ipyvizzustory_version}/",
-        )
-        content = content.replace(
-            "https://ipyvizzu.vizzuhq.com/latest/",
-            f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/",
-        )
+        if not restore:
+            content = content.replace(
+                "https://ipyvizzu-story.vizzuhq.com/latest/",
+                f"https://ipyvizzu-story.vizzuhq.com/{ipyvizzustory_version}/",
+            )
+            content = content.replace(
+                "https://ipyvizzu.vizzuhq.com/latest/",
+                f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/",
+            )
+        else:
+            content = content.replace(
+                f"https://ipyvizzu-story.vizzuhq.com/{ipyvizzustory_version}/",
+                "https://ipyvizzu-story.vizzuhq.com/latest/",
+            )
+            content = content.replace(
+                f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/",
+                "https://ipyvizzu.vizzuhq.com/latest/",
+            )
 
         return content

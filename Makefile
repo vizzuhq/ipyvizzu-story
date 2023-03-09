@@ -15,8 +15,8 @@ endif
 	clean-dev-js touch-dev-js \
 	check format check-format check-lint check-typing clean-test test \
 	check-js format-js check-format-js lint-js check-lint-js \
-	clean-doc doc \
-	clean-build set-version build-release check-release release
+	clean-doc doc deploy \
+	clean-build set-version restore-version build-release check-release release release-wo-restore
 
 VIRTUAL_ENV = .venv_ipyvizzu_story
 
@@ -159,6 +159,10 @@ endif
 doc: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/mkdocs build -f ./tools/mkdocs/mkdocs.yml
 
+deploy: $(DEV_BUILD_FLAG) $(DEV_JS_BUILD_FLAG)
+	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install ipyvizzu --upgrade
+	. $(VIRTUAL_ENV)/$(BIN_PATH)/activate; $(PYTHON_BIN) tools/release/deploy.py
+
 
 
 # release
@@ -177,7 +181,10 @@ else
 endif
 
 set-version: $(DEV_BUILD_FLAG)
-	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/release/set_version.py 
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/release/set_version.py False
+
+restore-version: $(DEV_BUILD_FLAG)
+	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) tools/release/set_version.py True
 
 build-release: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) -m build
@@ -185,4 +192,6 @@ build-release: $(DEV_BUILD_FLAG)
 check-release: $(DEV_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/$(PYTHON_BIN) -m twine check dist/*.tar.gz dist/*.whl
 
-release: clean-build set-version build-release check-release
+release-wo-restore: clean-build set-version build-release check-release
+
+release: release-wo-restore restore-version

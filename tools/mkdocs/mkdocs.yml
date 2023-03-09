@@ -89,6 +89,7 @@ plugins:
             show_submodules: True
           import:
             - https://docs.python.org/3/objects.inv
+            - https://ipyvizzu.vizzuhq.com/latest/objects.inv
   - gen-files:
       scripts:
         - pages/gen_pages.py
