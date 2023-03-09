@@ -69,8 +69,7 @@ $(DEV_BUILD_FLAG):
 	$(MAKE) -f Makefile touch-dev
 
 $(DEV_JS_BUILD_FLAG):
-	cd tools/javascripts && \
-		npm update
+	npm install ./tools/javascripts/
 	$(MAKE) -f Makefile touch-dev-js
 
 
