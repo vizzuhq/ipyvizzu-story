@@ -10,8 +10,9 @@ package.
     [vizzu-story](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
     [package](https://www.jsdelivr.com/package/npm/vizzu-story) from
     `jsDelivr CDN`, but you can also use a different or self-hosted version of
-    them. Check [Story settings chapter](./tutorial/properties.md) for more
-    details.
+    them. Check
+    [Initialization chapter](./tutorial/initialization/#story-properties.md) for
+    more details.
 
 ## pypi
 
