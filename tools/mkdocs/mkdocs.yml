@@ -30,6 +30,7 @@ theme:
 
 extra_css:
   - assets/stylesheets/vizzu.css
+  - assets/stylesheets/gallery.css
   - assets/stylesheets/highlight.css
 
 extra_javascript:
@@ -111,7 +112,12 @@ plugins:
 nav:
   - Home: index.md
   - installation.md
-  - Tutorial: tutorial/index.md
+  - Tutorial:
+      - tutorial/index.md
+      - tutorial/data.md
+      - tutorial/initialization.md
+      - Slides and Steps: tutorial/slides_steps.md
+      - tutorial/export.md
   - Examples:
       - examples/index.md
       - Basic example: examples/basic.ipynb
