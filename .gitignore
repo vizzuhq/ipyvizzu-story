@@ -13,6 +13,5 @@ tests/coverage
 .venv_ipyvizzu_story
 
 site
-.chromium
 node_modules
 package-lock.json

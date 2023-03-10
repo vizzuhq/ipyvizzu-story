@@ -13,9 +13,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env:
-      PUPPETEER_CACHE_DIR: ${{ github.workspace }}/node_modules/.chromium
-
     steps:
       - uses: actions/checkout@v3
 
