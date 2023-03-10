@@ -11,7 +11,7 @@ package.
     [package](https://www.jsdelivr.com/package/npm/vizzu-story) from
     `jsDelivr CDN`, but you can also use a different or self-hosted version of
     them. Check
-    [Initialization chapter](./tutorial/initialization/#story-properties.md) for
+    [Initialization chapter](./tutorial/initialization.md#story-properties) for
     more details.
 
 ## pypi
