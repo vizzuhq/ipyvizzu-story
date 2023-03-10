@@ -32,7 +32,7 @@
 />
 {% endblock %} {% block content %} {% if page.nb_url %}
 <a
-  href="{{ page.nb_url | replace('.ipynb', '_share.ipynb') }}"
+  href="{{ page.nb_url.split('/') | last | replace('.ipynb', '_share.ipynb') }}"
   title="Download Notebook"
   class="md-content__button md-icon"
 >
@@ -40,7 +40,7 @@
 </a>
 {% if "basic.ipynb" not in page.nb_url %}
 <a
-  href="{{ page.nb_url | replace('.ipynb', '.csv') }}"
+  href="{{ page.nb_url.split('/') | last | replace('.ipynb', '.csv') }}"
   title="Download data"
   class="md-content__button md-icon"
 >
