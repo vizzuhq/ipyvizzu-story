@@ -8,8 +8,7 @@ the generated `HTML` file.
 story.export_to_html(filename="mystory.html")
 ```
 
-You can also get the same `HTML` file in a string format using the following
-code.
+You can also get the raw `HTML` string using the following code.
 
 ```python
 html = story.to_html()

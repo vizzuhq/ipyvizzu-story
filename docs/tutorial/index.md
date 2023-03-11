@@ -52,6 +52,6 @@ Visit [Installation chapter](../installation.md) for more options and details.
     `vizzu` calls are evaluated by the browser. Therefore if a blank space
     appears where the chart should be, check the console log of your browser.
     `vizzu-story` and `vizzu` reports its errors there. If you get a
-    `vizzu-story` or `vizzu` related error in your browser console, please clean
-    your browser cache, because an older version of these could be stored in
-    your browser.
+    `vizzu-story` or `vizzu` error in your browser console that is not
+    straightforward to understand, please clean your browser cache first,
+    because it might be caused by an older version being stored in your browser.
