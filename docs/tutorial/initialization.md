@@ -21,7 +21,7 @@ story = Story(data=data)
 ```
 
 You can set the style used initally for the story as you can see in this
-[example](../examples/us_budget.ipynb), and you can alter the style at each step
+[example](../examples/usbudget.ipynb), and you can alter the style at each step
 within the story.
 
 !!! tip

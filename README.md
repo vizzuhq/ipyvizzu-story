@@ -42,7 +42,7 @@ for more options and details.
 
 You can check and download the code behind the animation on the top of the page
 in our
-[Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/us_budget/).
+[Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/usbudget/).
 
 You can create the story below with the following code snippet.
 
