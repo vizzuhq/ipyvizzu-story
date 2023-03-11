@@ -9,6 +9,7 @@ import mkdocs_gen_files  # type: ignore
 
 REPO_PATH = Path(__file__).parent / ".." / ".." / ".."
 MKDOCS_PATH = REPO_PATH / "tools" / "mkdocs"
+JS_ASSETS_PATH = "assets/javascripts"
 
 sys.path.insert(0, str(MKDOCS_PATH / "modules"))
 
@@ -42,8 +43,19 @@ class Notebook:
 
         example_path = REPO_PATH / "docs" / "examples"
         with mkdocs_gen_files.open("examples/index.md", "a") as f_index:
+            meta = """---\nhide:\n  - toc\n---"""
+            f_index.write(f"{meta}\n\n")
+            f_index.write("# Examples\n")
+            f_index.write(f'<script src="../{JS_ASSETS_PATH}/thumbs.js"></script>\n')
             for path in sorted(example_path.glob("*.ipynb")):
-                f_index.write(f"- {path.stem}\n")
+                f_index.write(
+                    "["
+                    + f"![{path.stem}]"
+                    + f"(./{path.stem}.png)"
+                    + "{ class='image-gallery' }"
+                    + "]"
+                    + f"(./{path.name})\n"
+                )
                 with open(path, "rt", encoding="utf8") as f_src:
                     content = f_src.read()
                     content = Vizzu.set_version(content)
