@@ -103,6 +103,8 @@ After you created the `Story`, you can play it with the `play`, or the
 story.play()
 ```
 
+or
+
 ```python
 story
 ```

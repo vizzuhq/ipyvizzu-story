@@ -1,4 +1,4 @@
-"""A module for working with presentation stories in Panel environment."""
+"""A module for working with presentation stories in `Panel` environment."""
 
 from typing import Optional
 
@@ -10,7 +10,7 @@ from ipyvizzustory.storylib.story import StorySize, Story as StoryLib
 
 
 class Story(StoryLib):
-    """A class for representing a presentation story in Panel environment."""
+    """A class for representing a presentation story in `Panel` environment."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
         """
@@ -28,7 +28,7 @@ class Story(StoryLib):
 
     def play(self) -> None:
         """
-        A method for displaying the assembled html code in Panel environment.
+        A method for displaying the assembled `HTML` code in `Panel` environment.
 
         Raises:
             ValueError: If `width` or `height` is not in pixel.

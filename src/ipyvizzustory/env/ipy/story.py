@@ -1,4 +1,4 @@
-"""A module for working with presentation stories in Jupyter/IPython environment."""
+"""A module for working with presentation stories in `Jupyter`/`IPython` environment."""
 
 from typing import Optional
 
@@ -10,7 +10,7 @@ from ipyvizzustory.storylib.story import Story as StoryLib
 
 
 class Story(StoryLib):
-    """A class for representing a presentation story in Jupyter/IPython environment."""
+    """A class for representing a presentation story in `Jupyter`/`IPython` environment."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
         """
@@ -27,6 +27,6 @@ class Story(StoryLib):
         super().__init__(data=data, style=style)
 
     def play(self) -> None:
-        """A method for displaying the assembled html code in Jupyter/IPython environment."""
+        """A method for displaying the assembled `HTML` code in `Jupyter`/`IPython` environment."""
 
         display_html(HTML(self.to_html()))

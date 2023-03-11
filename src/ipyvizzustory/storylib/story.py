@@ -30,7 +30,8 @@ class Step(dict):
             Do not set `anim_options` argument, it will raise `NotImplementedError` error.
 
         Args:
-            *animations: List of `ipyvizzu.Data`, `ipyvizzu.Config` and `ipyvizzu.Style` objects.
+            *animations: List of [Data][ipyvizzu.Data],
+                [Config][ipyvizzu.Config] and [Style][ipyvizzu.Style] objects.
                 A `Step` can contain each of the above once.
             **anim_options: Animation options such as duration.
 
@@ -39,7 +40,7 @@ class Step(dict):
             NotImplementedError: If `anim_options` are set.
 
         Example:
-            Initialize a step with a `ipyvizzu.Config` object:
+            Initialize a step with a [Config][ipyvizzu.Config] object:
 
                 step = Step(
                     Config({"x": "Foo", "y": "Bar"})
@@ -261,13 +262,13 @@ class Story(dict):
     @property
     def vizzu(self) -> Optional[str]:
         """
-        A property for changing vizzu url.
+        A property for changing `vizzu` url.
 
         Note:
-            If `None`, vizzu url is set by vizzu-story.
+            If `None`, vizzu url is set by `vizzu-story`.
 
         Returns:
-            Vizzu url.
+            `Vizzu` url.
         """
 
         return self._vizzu
@@ -279,10 +280,10 @@ class Story(dict):
     @property
     def vizzu_story(self) -> str:
         """
-        A property for changing vizzu-story url.
+        A property for changing `vizzu-story` url.
 
         Returns:
-            Vizzu-story url.
+            `Vizzu-story` url.
         """
 
         return self._vizzu_story
@@ -340,7 +341,7 @@ class Story(dict):
 
         Args:
             event: The type of the event.
-            handler: The handler JavaScript expression as string.
+            handler: The handler `JavaScript` expression as string.
 
         Example:
             Add an event handler to the story:
@@ -375,10 +376,10 @@ class Story(dict):
 
     def to_html(self) -> str:
         """
-        A method for assembling the html code.
+        A method for assembling the `HTML` code.
 
         Returns:
-            The assembled html code as string.
+            The assembled `HTML` code as string.
         """
 
         vizzu_player_data = f"{json.dumps(self, cls=RawJavaScriptEncoder)}"
@@ -394,10 +395,10 @@ class Story(dict):
 
     def export_to_html(self, filename: PathLike) -> None:
         """
-        A method for exporting the story into html file.
+        A method for exporting the story into `HTML` file.
 
         Args:
-            filename: The path of the target html file.
+            filename: The path of the target `HTML` file.
         """
 
         with open(filename, "w", encoding="utf8") as file_desc:
