@@ -1,5 +1,5 @@
 ---
-csv_url: ../../assets/data/data.csv
+csv_url: ../../../assets/data/data.csv
 ---
 
 # Panel
@@ -60,7 +60,9 @@ data.add_series("Baz", [5, 3, 2])
 # import pandas as pd
 #
 # data = Data()
-# df = pd.read_csv(../../assets/data/data.csv)
+# df = pd.read_csv(
+#     "https://ipyvizzu-story.vizzuhq.com/latest/assets/data/data.csv"
+# )
 # data.add_data_frame(df)
 
 story = Story(data=data)

@@ -1,13 +1,13 @@
-"""A module for storing the html templates."""
+"""A module for storing the `HTML` templates."""
 
 
 VIZZU_STORY: str = (
     "https://cdn.jsdelivr.net/npm/vizzu-story@0.3/dist/vizzu-story.min.js"
 )
-"""A variable for storing the default url of the vizzu-story package."""
+"""A variable for storing the default url of the `vizzu-story` package."""
 
 DISPLAY_INDENT: str = "    "
-"""A variable for storing the default indent in the html template."""
+"""A variable for storing the default indent in the `HTML` template."""
 
 DISPLAY_TEMPLATE: str = """
 <div>
@@ -32,4 +32,4 @@ DISPLAY_TEMPLATE: str = """
     </script>
 </div>
 """
-"""A variable for storing the vizzu-story html template."""
+"""A variable for storing the `vizzu-story` `HTML` template."""

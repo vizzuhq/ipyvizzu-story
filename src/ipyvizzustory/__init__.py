@@ -1,20 +1,21 @@
 """
-Animated Chart Presentation in Jupyter Notebook and in many other environments.
+Build, present and share animated data stories in `Jupyter Notebook` and similar environments.
 
-ipyvizzu-story package consists of two main parts:
+`ipyvizzu-story` package consists of two main parts:
 
-* ipyvizzustory.storylib: environment independent modules
-* ipyvizzustory.env: environment dependent modules
+* [Env][ipyvizzustory.env]: environment dependent modules
+* [Storylib][ipyvizzustory.storylib]: environment independent modules
 
-ipyvizzustory package tries to figure out the environment and import the correct type of `Story`,
+`ipyvizzu-story` package tries to figure out the environment and import the correct type of `Story`,
 however `Story` could be imported with full path.
 
-ipyvizzustory package imports the following objects in `__init__.py`:
+`ipyvizzu-story` package imports the following objects in `__init__.py`:
 
-* `Step` and `Slide` from `ipyvizzustory.storylib.story`
-* `Story` from `ipyvizzustory.env.py.story` or
-    `ipyvizzustory.env.ipy.story` or
-    `ipyvizzustory.env.st.story`
+* [Step][ipyvizzustory.storylib.story.Step] and
+  [Slide][ipyvizzustory.storylib.story.Slide]
+* `Story` from [Env.py.story][ipyvizzustory.env.py.story] or
+    [Env.ipy.story][ipyvizzustory.env.ipy.story] or
+    [Env.st.story][ipyvizzustory.env.st.story]
 """
 
 

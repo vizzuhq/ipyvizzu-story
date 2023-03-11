@@ -1,12 +1,15 @@
+strict: true
+
 site_name: ipyvizzu-story
 site_url: https://ipyvizzu-story.vizzuhq.com
 copyright: Copyright &copy; 2022-2023 Vizzu Inc.
 
 docs_dir: ../../docs
+site_dir: ../../site
 
 repo_url: https://github.com/vizzuhq/ipyvizzu-story
 edit_uri: https://github.com/vizzuhq/ipyvizzu-story/edit/main/docs
-use_directory_urls: false
+use_directory_urls: true
 
 theme:
   name: material
@@ -27,14 +30,18 @@ theme:
 
 extra_css:
   - assets/stylesheets/vizzu.css
+  - assets/stylesheets/gallery.css
   - assets/stylesheets/highlight.css
 
 extra_javascript:
   - assets/javascripts/extlinks.js
   - //cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7/build/highlight.min.js
   - assets/javascripts/highlight.js
+  - assets/javascripts/notebooklinks.js
 
 extra:
+  #  version:
+  #    provider: mike
   social:
     - icon: fontawesome/brands/slack
       name: Vizzu on Slack
@@ -55,8 +62,18 @@ markdown_extensions:
   - mdx_truly_sane_lists
   - attr_list
   - md_in_html
+  - admonition
+  - pymdownx.highlight:
+      use_pygments: false
+  - pymdownx.details
+  - pymdownx.superfences
 
 plugins:
+  #  - mike:
+  #      version_selector: false
+  #      alias_type: symlink
+  #      canonical_version: latest
+  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html
   - search
   - section-index
   - literate-nav:
@@ -74,30 +91,34 @@ plugins:
             show_submodules: True
           import:
             - https://docs.python.org/3/objects.inv
+            - https://ipyvizzu.vizzuhq.com/latest/objects.inv
   - gen-files:
       scripts:
-        - gen_pages.py
-        - gen_reference.py
+        - pages/gen_pages.py
+        - pages/gen_notebooks.py
+        - reference/gen_reference.py
   - coverage:
       page_name: coverage
       html_report_dir: tests/coverage
   - mkdocs-jupyter:
-      # include: []
-      ignore: ["demo/*.ipynb", "community/*.ipynb"]
+      include: ["examples/*.ipynb"]
+      ignore: ["community/*.ipynb"]
       ignore_h1_titles: False
       include_source: True
       execute: True
       allow_errors: False
-      kernel_name: .venv-ipyvizzu-story
+      kernel_name: .venv_ipyvizzu_story
 
 nav:
   - Home: index.md
   - installation.md
-  - Tutorial: tutorial/index.md
-  - Examples:
-      - examples/index.md
-      - Basic example: examples/basic/basic.ipynb
-      - Complex example: examples/complex/complex.ipynb
+  - Tutorial:
+      - tutorial/index.md
+      - tutorial/data.md
+      - tutorial/initialization.md
+      - Building blocks: tutorial/building_blocks.md
+      - tutorial/export.md
+  - Examples: examples/
   - Code reference: reference/ipyvizzustory/
   - Environments:
       - environments/index.md

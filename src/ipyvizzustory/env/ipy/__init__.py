@@ -1,1 +1,1 @@
-"""Jupyter/IPython environment dependent modules."""
+"""`Jupyter`/`IPython` environment dependent modules."""

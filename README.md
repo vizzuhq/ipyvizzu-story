@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://ipyvizzu-story.vizzuhq.com">
-    <img src="https://ipyvizzu-story.vizzuhq.com/assets/ipyvizzu-story.gif" alt="ipyvizzu-story" />
+  <a href="https://ipyvizzu-story.vizzuhq.com/latest/">
+    <img src="https://ipyvizzu-story.vizzuhq.com/latest/assets/ipyvizzu-story.gif" alt="ipyvizzu-story" />
   </a>
   <p align="center"><b>ipyvizzu-story</b> - Build, present and share animated data stories in Jupyter Notebook and similar environments</p>
   <p align="center">
-    <a href="https://ipyvizzu-story.vizzuhq.com">Documentation</a>
-    · <a href="https://ipyvizzu-story.vizzuhq.com/examples/index.html">Examples</a>
-    · <a href="https://ipyvizzu-story.vizzuhq.com/reference/ipyvizzustory/index.html">Code reference</a>
+    <a href="https://ipyvizzu-story.vizzuhq.com/latest/">Documentation</a>
+    · <a href="https://ipyvizzu-story.vizzuhq.com/latest/examples/">Examples</a>
+    · <a href="https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/">Code reference</a>
     · <a href="https://github.com/vizzuhq/ipyvizzu-story">Repository</a>
   </p>
 </p>
@@ -19,14 +19,14 @@
 
 ## About The Extension
 
-ipyvizzu-story is an extension of the animated charting tool
+`ipyvizzu-story` is an extension of the animated charting tool
 [ipyvizzu](https://github.com/vizzuhq/ipyvizzu) that enables users to create and
 present interactive data presentations within the data science notebook of their
-choice and to share them as an HTML file. The extension provides a widget that
+choice and to share them as an `HTML` file. The extension provides a widget that
 contains the presentation and adds controls for navigating between slides -
 predefined stages within the story being presented. Navigation also works with
-keyboard shortcuts - arrow keys, PgUp, PgDn, Home, End - and you can also use a
-clicker to switch between the slides. .
+keyboard shortcuts - arrow keys, `PgUp`, `PgDn`, `Home`, `End` - and you can
+also use a clicker to switch between the slides.
 
 ## Installation
 
@@ -35,20 +35,19 @@ pip install ipyvizzu-story
 ```
 
 Visit
-[Installation chapter](https://ipyvizzu-story.vizzuhq.com/installation.html) for
-more options and details.
+[Installation chapter](https://ipyvizzu-story.vizzuhq.com/latest/installation)
+for more options and details.
 
 ## Usage
 
-You can check the code behind the animation on the top of the page in
-[HTML](https://ipyvizzu-story.vizzuhq.com/examples/complex/complex.html) or
-download it as an
-[ipynb file](https://ipyvizzu-story.vizzuhq.com/examples/demo/ipyvizzu-story_example.ipynb).
+You can check and download the code behind the animation on the top of the page
+in our
+[Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/usbudget/).
 
 You can create the story below with the following code snippet.
 
 <p align="center">
-  <img src="https://ipyvizzu-story.vizzuhq.com/assets/readme-example.gif" alt="ipyvizzu-story" />
+  <img src="https://ipyvizzu-story.vizzuhq.com/latest/assets/readme-example.gif" alt="ipyvizzu-story" />
 </p>
 
 ```python
@@ -81,43 +80,43 @@ story.play()
 
 ## Documentation
 
-Visit our [Documentation site](https://ipyvizzu-story.vizzuhq.com/index.html)
-for more details and a step-by-step tutorial into ipyvizzu-story or check out
-our [Example gallery](https://ipyvizzu-story.vizzuhq.com/examples/index.html).
+Visit our [Documentation site](https://ipyvizzu-story.vizzuhq.com/latest/) for
+more details and a step-by-step tutorial into `ipyvizzu-story` or check out our
+[Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/).
 
 ## Environments
 
-ipyvizzu-story can be used in a wide variety of environments, visit
-[Environments chapter](https://ipyvizzu-story.vizzuhq.com/environments/index.html)
+`ipyvizzu-story` can be used in a wide variety of environments, visit
+[Environments chapter](https://ipyvizzu-story.vizzuhq.com/latest/environments/)
 for more details.
 
 - Notebooks
-  - [Jupyter Notebook](https://ipyvizzu-story.vizzuhq.com/environments/notebook/jupyternotebook.html)
-  - [Colab](https://ipyvizzu-story.vizzuhq.com/environments/notebook/colab.html)
-  - [Databricks](https://ipyvizzu-story.vizzuhq.com/environments/notebook/databricks.html)
-  - [DataCamp](https://ipyvizzu-story.vizzuhq.com/environments/notebook/datacamp.html)
-  - [Deepnote](https://ipyvizzu-story.vizzuhq.com/environments/notebook/deepnote.html)
-  - [JupyterLab](https://ipyvizzu-story.vizzuhq.com/environments/notebook/jupyterlab.html)
-  - [JupyterLite](https://ipyvizzu-story.vizzuhq.com/environments/notebook/jupyterlite.html)
-  - [Kaggle](https://ipyvizzu-story.vizzuhq.com/environments/notebook/kaggle.html)
-  - [Noteable](https://ipyvizzu-story.vizzuhq.com/environments/notebook/noteable.html)
+  - [Jupyter Notebook](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyternotebook/)
+  - [Colab](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/colab/)
+  - [Databricks](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/databricks/)
+  - [DataCamp](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/datacamp/)
+  - [Deepnote](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/deepnote/)
+  - [JupyterLab](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlab/)
+  - [JupyterLite](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlite/)
+  - [Kaggle](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/kaggle/)
+  - [Noteable](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/noteable/)
 - App platforms
-  - [Streamlit](https://ipyvizzu-story.vizzuhq.com/environments/platform/streamlit.html)
-  - [Flask](https://ipyvizzu-story.vizzuhq.com/environments/platform/flask.html)
-  - [Panel](https://ipyvizzu-story.vizzuhq.com/environments/platform/panel.html)
-  - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/environments/platform/mercury.html)
-  - [Voilà](https://ipyvizzu-story.vizzuhq.com/environments/platform/voila.html)
+  - [Streamlit](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/streamlit/)
+  - [Flask](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/flask/)
+  - [Panel](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/panel/)
+  - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/mercury/)
+  - [Voilà](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/voila/)
 - BI tools
-  - [Mode](https://ipyvizzu-story.vizzuhq.com/environments/bi/mode.html)
+  - [Mode](https://ipyvizzu-story.vizzuhq.com/latest/environments/bi/mode/)
 - IDEs
-  - [PyCharm](https://ipyvizzu-story.vizzuhq.com/environments/ide/pycharm.html)
-  - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/environments/ide/vscode.html)
-- [Python](https://ipyvizzu-story.vizzuhq.com/environments/python.html)
+  - [PyCharm](https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/pycharm/)
+  - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/vscode/)
+- [Python](https://ipyvizzu-story.vizzuhq.com/latest/environments/python/)
 
 ## Contributing
 
 We welcome contributions to the project, visit our
-[Contributing guide](https://ipyvizzu-story.vizzuhq.com/CONTRIBUTING.html) for
+[Contributing guide](https://ipyvizzu-story.vizzuhq.com/latest/CONTRIBUTING) for
 further info.
 
 ## Contact
@@ -132,4 +131,4 @@ further info.
 Copyright © 2022-2023 [Vizzu Inc](https://vizzuhq.com).
 
 Released under the
-[Apache 2.0 License](https://ipyvizzu-story.vizzuhq.com/LICENSE.html).
+[Apache 2.0 License](https://ipyvizzu-story.vizzuhq.com/latest/LICENSE).

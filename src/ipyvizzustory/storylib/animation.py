@@ -8,7 +8,7 @@ class DataFilter(Data):
 
     def build(self) -> dict:
         """
-        A method for overwriting `ipyvizzu.Data.build` method.
+        A method for overwriting [Data.build][ipyvizzu.animation.Data.build] method.
         Data initialized with a `DataFilter` must contain only a filter.
 
         Returns:

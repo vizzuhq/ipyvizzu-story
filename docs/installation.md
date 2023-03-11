@@ -3,6 +3,17 @@
 `ipyvizzu-story` requires the [ipyvizzu](https://pypi.org/project/ipyvizzu)
 package.
 
+!!! info
+    `ipyvizzu-story` requires and downloads the
+    [Vizzu](https://github.com/vizzuhq/vizzu-lib) `JavaScript`/`C++`
+    [library](https://www.jsdelivr.com/package/npm/vizzu) and the
+    [vizzu-story](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
+    [package](https://www.jsdelivr.com/package/npm/vizzu-story) from
+    `jsDelivr CDN`, but you can also use a different or self-hosted version of
+    them. Check
+    [Initialization chapter](./tutorial/initialization.md#story-properties) for
+    more details.
+
 ## pypi
 
 Run the following command to install `ipyvizzu-story` from

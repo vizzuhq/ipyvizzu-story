@@ -1,4 +1,4 @@
-"""A module for working with presentation stories in Streamlit environment."""
+"""A module for working with presentation stories in `Streamlit` environment."""
 
 from typing import Optional
 
@@ -10,7 +10,7 @@ from ipyvizzustory.storylib.story import Story as StoryLib
 
 
 class Story(StoryLib):
-    """A class for representing a presentation story in Streamlit environment."""
+    """A class for representing a presentation story in `Streamlit` environment."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
         """
@@ -32,7 +32,7 @@ class Story(StoryLib):
         """
         A method for overwriting
         [storylib.story.Story.set_size][ipyvizzustory.storylib.story.Story.set_size] method.
-        In Streamlit environment `width` and `height` must be specified in pixels.
+        In `Streamlit` environment `width` and `height` must be specified in pixels.
 
         Args:
             width: Width of the presentation story in pixels.
@@ -47,7 +47,7 @@ class Story(StoryLib):
         super().set_size(width=str(width) + "px", height=str(height) + "px")
 
     def play(self) -> None:
-        """A method for displaying the assembled html code in Streamlit environment."""
+        """A method for displaying the assembled `HTML` code in `Streamlit` environment."""
 
         html(
             self.to_html(),

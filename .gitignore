@@ -7,11 +7,10 @@ build
 dist
 *.egg-info
 
-coverage
+tests/coverage
 .test.*
 
-.venv
-.venv-ipyvizzu-story
+.venv_ipyvizzu_story
 
 site
 node_modules

@@ -1,4 +1,4 @@
-"""A module for working with presentation stories in Python environment."""
+"""A module for working with presentation stories in `Python` environment."""
 
 from typing import Optional
 
@@ -8,7 +8,7 @@ from ipyvizzustory.storylib.story import Story as StoryLib
 
 
 class Story(StoryLib):
-    """A class for representing a presentation story in Python environment."""
+    """A class for representing a presentation story in `Python` environment."""
 
     def __init__(self, data: Data, style: Optional[Style] = None):
         """
@@ -26,10 +26,10 @@ class Story(StoryLib):
 
     def play(self) -> str:
         """
-        A method for returning the assembled html code in Python environment.
+        A method for returning the assembled `HTML` code in `Python` environment.
 
         Returns:
-            The assembled html code as string.
+            The assembled `HTML` code as string.
         """
 
         return self.to_html()

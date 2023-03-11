@@ -1,0 +1,43 @@
+name: Build documentation
+
+on:
+  workflow_call:
+    inputs:
+      run_id:
+        type: string
+        required: true
+
+jobs:
+  build_doc:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        with:
+          path: ./.venv_ipyvizzu_story
+          key: venv-ipyvizzu-story-${{ inputs.run_id }}
+
+      - uses: actions/cache@v3
+        with:
+          path: ./node_modules
+          key: nodemodules-ipyvizzu-story-${{ github.run_id }}
+
+      - uses: actions/cache@v3
+        with:
+          path: ./tests/coverage
+          key: coverage-ipyvizzu-story-${{ inputs.run_id }}
+
+      - name: Touch dev environment
+        run: make touch-dev
+
+      - name: Touch dev-js environment
+        run: make touch-dev-js
+
+      - name: Set Jupyter kernel
+        run: make install-kernel
+
+      - name: Build documentation
+        run: make doc
