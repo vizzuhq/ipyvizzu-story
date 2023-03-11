@@ -16,7 +16,7 @@ packages = find_packages(where="src", exclude=["__pycache__"])
 
 setup(
     name="ipyvizzu-story",
-    version="0.5.0",
+    version="0.6.0",
     description=(
         "Build, present and share animated data stories in Jupyter Notebook and similar environments."  # pylint: disable=line-too-long
     ),
