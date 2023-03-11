@@ -42,7 +42,7 @@ class Notebook:
 
         example_path = REPO_PATH / "docs" / "examples"
         with mkdocs_gen_files.open("examples/index.md", "a") as f_index:
-            for path in example_path.glob("*.ipynb"):
+            for path in sorted(example_path.glob("*.ipynb")):
                 f_index.write(f"- {path.stem}\n")
                 with open(path, "rt", encoding="utf8") as f_src:
                     content = f_src.read()
