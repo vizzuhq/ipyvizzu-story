@@ -118,10 +118,7 @@ nav:
       - tutorial/initialization.md
       - Building blocks: tutorial/building_blocks.md
       - tutorial/export.md
-  - Examples:
-      - examples/index.md
-      - Basic example: examples/basic.ipynb
-      - US Federal R&D budget: examples/us_budget.ipynb
+  - Examples: examples/
   - Code reference: reference/ipyvizzustory/
   - Environments:
       - environments/index.md

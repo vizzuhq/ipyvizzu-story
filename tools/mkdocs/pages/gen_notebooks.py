@@ -41,14 +41,16 @@ class Notebook:
         """A method for generating shareable notebooks."""
 
         example_path = REPO_PATH / "docs" / "examples"
-        for path in example_path.glob("*.ipynb"):
-            with open(path, "rt", encoding="utf8") as f_src:
-                content = f_src.read()
-                content = re.sub(Notebook.CSV, Notebook._replace_csv_url, content)
-                with mkdocs_gen_files.open(
-                    f"examples/{path.stem}/{path.stem}_share.ipynb", "w"
-                ) as f_dst:
-                    f_dst.write(content)
+        with mkdocs_gen_files.open("examples/index.md", "a") as f_index:
+            for path in example_path.glob("*.ipynb"):
+                f_index.write(f"- {path.stem}\n")
+                with open(path, "rt", encoding="utf8") as f_src:
+                    content = f_src.read()
+                    content = re.sub(Notebook.CSV, Notebook._replace_csv_url, content)
+                    with mkdocs_gen_files.open(
+                        f"examples/{path.stem}/{path.stem}_share.ipynb", "w"
+                    ) as f_dst:
+                        f_dst.write(content)
 
     @staticmethod
     def generate_csv_url_script(file: str) -> None:
