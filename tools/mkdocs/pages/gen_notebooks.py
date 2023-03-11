@@ -46,11 +46,24 @@ class Notebook:
                 f_index.write(f"- {path.stem}\n")
                 with open(path, "rt", encoding="utf8") as f_src:
                     content = f_src.read()
-                    content = re.sub(Notebook.CSV, Notebook._replace_csv_url, content)
+                    content = Vizzu.set_version(content)
+                    content_share = re.sub(
+                        Notebook.CSV, Notebook._replace_csv_url, content
+                    )
                     with mkdocs_gen_files.open(
                         f"examples/{path.stem}/{path.stem}_share.ipynb", "w"
                     ) as f_dst:
-                        f_dst.write(content)
+                        f_dst.write(content_share)
+                csv = path.parent / path.stem / (path.stem + ".csv")
+                if csv.exists():
+                    with open(csv, "rt", encoding="utf8") as f_csv:
+                        content_csv = f_csv.read()
+                    with mkdocs_gen_files.open(
+                        f"examples/{path.stem}/{path.stem}.csv", "wt"
+                    ) as f_csv:
+                        f_csv.write(content_csv)
+                with mkdocs_gen_files.open(f"examples/{path.name}", "wt") as f_src:
+                    f_src.write(content)
 
     @staticmethod
     def generate_csv_url_script(file: str) -> None:
