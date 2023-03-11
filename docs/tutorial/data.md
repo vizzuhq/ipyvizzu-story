@@ -4,14 +4,22 @@ csv_url: ../../assets/data/data.csv
 
 # Data
 
-You can use the same data definition formats as in the `ipyvizzu` library.
+You can use the same data definition formats as in the `ipyvizzu` library:
+`pandas` `DataFrame`, `JSON`, or add data manually in different formats.
+Similarly to `ipyvizzu`, there are two types of data series: dimensions and
+measures.
+
+!!! info
+    Please note, that all of the data used throughout your data story has to be
+    added to the story at initialization. The data being shown can be filtered
+    at each step.
 
 !!! tip
     See
     [ipyvizzu - Data chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/data/)
-    for more details about data formats.
+    for more details about data.
 
-Below you can see some commonly used cases.
+Here's some sample code for common use cases.
 
 ## Using pandas DataFrame
 

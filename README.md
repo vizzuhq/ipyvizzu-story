@@ -40,7 +40,8 @@ for more options and details.
 
 ## Usage
 
-You can check the code behind the animation on the top of the page in our
+You can check and download the code behind the animation on the top of the page
+in our
 [Example gallery](https://ipyvizzu-story.vizzuhq.com/latest/examples/us_budget/).
 
 You can create the story below with the following code snippet.

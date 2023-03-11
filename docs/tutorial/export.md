@@ -1,13 +1,15 @@
 # Export
 
-You can export your story to an html file, just place the following code after
-your story
+You can export your `Story` into an `HTML` file, by calling the `export_to_html`
+method. The data, the `Story` and the navigation buttons will all be included in
+the generated `HTML` file.
 
 ```python
 story.export_to_html(filename="mystory.html")
 ```
 
-or you can get the html story as a string with the following code.
+You can also get the same `HTML` file in a string format using the following
+code.
 
 ```python
 html = story.to_html()
