@@ -2,8 +2,11 @@
 
 from pathlib import Path
 import sys
+from types import ModuleType
 
 import mkdocs_gen_files  # type: ignore
+
+import ipyvizzustory
 
 
 REPO_PATH = Path(__file__).parent / ".." / ".." / ".."
@@ -23,11 +26,12 @@ class Reference:
     # pylint: disable=too-few-public-methods
 
     @staticmethod
-    def generate(folder: str) -> None:
+    def generate(package: ModuleType, folder: str) -> None:
         """
         A method for generating the code reference.
 
         Args:
+            package: The src package.
             folder: The destination folder of the code reference.
         """
 
@@ -47,9 +51,18 @@ class Reference:
                 full_doc_path = full_doc_path.with_name("index.md")
 
             item = ".".join(parts)
-            mkdocs_gen_files.set_edit_path(full_doc_path, ".." / path)
-            with mkdocs_gen_files.open(full_doc_path, "w") as f_md:
-                f_md.write(f"::: {item}")
+            if item == package.__name__:
+                mkdocs_gen_files.set_edit_path(full_doc_path, ".." / path)
+                with mkdocs_gen_files.open(full_doc_path, "w") as f_md:
+                    f_md.write(f"{package.__doc__}\n")
+                    for item in package.__all__:
+                        f_md.write(f"::: {package.__name__}.{item}\n")
+                        f_md.write("    options:\n")
+                        f_md.write("      show_root_members_full_path: false\n")
+            else:
+                mkdocs_gen_files.set_edit_path(full_doc_path, ".." / path)
+                with mkdocs_gen_files.open(full_doc_path, "w") as f_md:
+                    f_md.write(f"::: {item}")
 
 
 def main() -> None:
@@ -59,7 +72,7 @@ def main() -> None:
     """
 
     with chdir(REPO_PATH):
-        Reference.generate("reference")
+        Reference.generate(ipyvizzustory, "reference")
 
 
 main()

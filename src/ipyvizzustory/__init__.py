@@ -3,19 +3,20 @@ Build, present and share animated data stories in `Jupyter Notebook` and similar
 
 `ipyvizzu-story` package consists of two main parts:
 
-* [Env][ipyvizzustory.env]: environment dependent modules
 * [Storylib][ipyvizzustory.storylib]: environment independent modules
+* [Env][ipyvizzustory.env]: environment dependent modules
 
 `ipyvizzu-story` package tries to figure out the environment and import the correct type of `Story`,
 however `Story` could be imported with full path.
 
 `ipyvizzu-story` package imports the following objects in `__init__.py`:
 
-* [Step][ipyvizzustory.storylib.story.Step] and
-  [Slide][ipyvizzustory.storylib.story.Slide]
+
 * `Story` from [Env.py.story][ipyvizzustory.env.py.story] or
     [Env.ipy.story][ipyvizzustory.env.ipy.story] or
     [Env.st.story][ipyvizzustory.env.st.story]
+* [Step][ipyvizzustory.storylib.story.Step]
+* [Slide][ipyvizzustory.storylib.story.Slide]
 """
 
 
@@ -61,4 +62,4 @@ def get_story():
 
 Story = get_story()
 
-__all__ = ["Story", "Slide", "Step"]
+__all__ = ["get_story", "Story", "Slide", "Step"]
