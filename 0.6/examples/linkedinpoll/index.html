@@ -2572,7 +2572,7 @@ Licensed under the Apache License, Version 2.0.
 <span class="kn">from</span> <span class="nn">ipyvizzustory</span> <span class="kn">import</span> <span class="n">Story</span><span class="p">,</span> <span class="n">Slide</span><span class="p">,</span> <span class="n">Step</span>
 
 
-<span class="c1"># Create data object, read csv to data frame and add data frame to data object.</span>
+<span class="c1"># Create data object, read csv to data frame and add data frame to data object</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">()</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s2">&quot;./linkedinpoll/linkedinpoll.csv&quot;</span><span class="p">,</span>
@@ -2580,11 +2580,16 @@ Licensed under the Apache License, Version 2.0.
 <span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">add_data_frame</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-
+<span class="c1"># Create story object, add data to it</span>
 <span class="n">story</span> <span class="o">=</span> <span class="n">Story</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Set the size of the HTML element</span>
+<span class="c1"># that appears within the notebook</span>
 <span class="n">story</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="s2">&quot;450px&quot;</span><span class="p">)</span>
 
 
+<span class="c1"># Each slide here is a page in the final interactive story</span>
+<span class="c1"># Add the first slide</span>
 <span class="n">slide1</span> <span class="o">=</span> <span class="n">Slide</span><span class="p">(</span>
     <span class="n">Step</span><span class="p">(</span>
         <span class="n">Style</span><span class="p">(</span>
@@ -2618,6 +2623,7 @@ Licensed under the Apache License, Version 2.0.
         <span class="p">),</span>
     <span class="p">)</span>
 <span class="p">)</span>
+<span class="c1"># Add the slide to the story</span>
 <span class="n">story</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">slide1</span><span class="p">)</span>
 
 <span class="n">slide2</span> <span class="o">=</span> <span class="n">Slide</span><span class="p">(</span>
@@ -2704,6 +2710,7 @@ Licensed under the Apache License, Version 2.0.
 <span class="n">story</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">slide5</span><span class="p">)</span>
 
 
+<span class="c1"># Play the created story!</span>
 <span class="n">story</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt">import pandas as pd
@@ -2712,7 +2719,7 @@ from ipyvizzu import Data, Config, Style
 from ipyvizzustory import Story, Slide, Step
 
 
-# Create data object, read csv to data frame and add data frame to data object.
+# Create data object, read csv to data frame and add data frame to data object
 data = Data()
 df = pd.read_csv(
     "./linkedinpoll/linkedinpoll.csv",
@@ -2720,11 +2727,16 @@ df = pd.read_csv(
 )
 data.add_data_frame(df)
 
-
+# Create story object, add data to it
 story = Story(data=data)
+
+# Set the size of the HTML element
+# that appears within the notebook
 story.set_size("100%", "450px")
 
 
+# Each slide here is a page in the final interactive story
+# Add the first slide
 slide1 = Slide(
     Step(
         Style(
@@ -2758,6 +2770,7 @@ slide1 = Slide(
         ),
     )
 )
+# Add the slide to the story
 story.add_slide(slide1)
 
 slide2 = Slide(
@@ -2844,6 +2857,7 @@ slide5.add_step(
 story.add_slide(slide5)
 
 
+# Play the created story!
 story.play()</div>
     
         </div>
@@ -2867,11 +2881,11 @@ story.play()</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
 
 <div>
-    <vizzu-player id="6fe6045"  controller></vizzu-player>
+    <vizzu-player id="d604b9b"  controller></vizzu-player>
     <script type="module">
         import VizzuPlayer from "https://cdn.jsdelivr.net/npm/vizzu-story@0.3/dist/vizzu-story.min.js";
 
-        const vp = document.getElementById("6fe6045");
+        const vp = document.getElementById("d604b9b");
         import(vp.vizzuUrl).then(vizzuLoaded => {
             const lib = vizzuLoaded.default;
             const vizzuPlayerData = {"data": {"series": [{"name": "Group", "type": "dimension", "values": ["Data Analytics, Data Science, Business Analytics...", "Python Developers Community (moderated)", "Data Scientist, Data Analyst and Data Engineer", "Artificial Intelligence, Digital Transformation...", "AI & ML  - Analytics , Data Science...", "Data Analytics, Data Science, Business Analytics...", "Python Developers Community (moderated)", "Data Scientist, Data Analyst and Data Engineer", "Artificial Intelligence, Digital Transformation...", "AI & ML  - Analytics , Data Science...", "Data Analytics, Data Science, Business Analytics...", "Python Developers Community (moderated)", "Data Scientist, Data Analyst and Data Engineer", "Artificial Intelligence, Digital Transformation...", "AI & ML  - Analytics , Data Science...", "Data Analytics, Data Science, Business Analytics...", "Python Developers Community (moderated)", "Data Scientist, Data Analyst and Data Engineer", "Artificial Intelligence, Digital Transformation...", "AI & ML  - Analytics , Data Science..."]}, {"name": "Group number", "type": "dimension", "values": ["Group 5", "Group 4", "Group 3", "Group 2", "Group 1", "Group 5", "Group 4", "Group 3", "Group 2", "Group 1", "Group 5", "Group 4", "Group 3", "Group 2", "Group 1", "Group 5", "Group 4", "Group 3", "Group 2", "Group 1"]}, {"name": "Answer", "type": "dimension", "values": ["2 or more per month", "2 or more per month", "2 or more per month", "2 or more per month", "2 or more per month", "1 per month", "1 per month", "1 per month", "1 per month", "1 per month", "1-2 per quarter", "1-2 per quarter", "1-2 per quarter", "1-2 per quarter", "1-2 per quarter", "Never", "Never", "Never", "Never", "Never"]}, {"name": "Vote percentage [%]", "type": "measure", "values": [39.0, 44.0, 47.0, 55.0, 56.0, 31.0, 24.0, 20.0, 18.0, 12.0, 14.0, 13.0, 16.0, 18.0, 17.0, 16.0, 19.0, 17.0, 9.0, 15.0]}, {"name": "Vote count", "type": "measure", "values": [27.0, 191.0, 66.0, 6.0, 29.0, 22.0, 104.0, 28.0, 2.0, 6.0, 10.0, 56.0, 23.0, 2.0, 9.0, 11.0, 82.0, 24.0, 1.0, 8.0]}, {"name": "GroupVote count", "type": "measure", "values": [70.0, 433.0, 141.0, 11.0, 52.0, 70.0, 433.0, 141.0, 11.0, 52.0, 70.0, 433.0, 141.0, 11.0, 52.0, 70.0, 433.0, 141.0, 11.0, 52.0]}, {"name": "GroupVote percentage [%]", "type": "measure", "values": [39.0, 44.0, 47.0, 55.0, 56.0, 31.0, 24.0, 20.0, 18.0, 12.0, 14.0, 13.0, 16.0, 18.0, 17.0, 16.0, 19.0, 17.0, 9.0, 15.0]}, {"name": "Answer percentage [%]", "type": "measure", "values": [3.8, 27.0, 9.3, 0.8, 4.1, 3.1, 14.7, 4.0, 0.3, 0.8, 1.4, 7.9, 3.3, 0.3, 1.3, 1.6, 11.6, 3.4, 0.1, 1.1]}, {"name": "Unnamed: 8", "type": "measure", "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"name": "Unnamed: 9", "type": "measure", "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"name": "Unnamed: 10", "type": "measure", "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"name": "Unnamed: 11", "type": "measure", "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"name": "Unnamed: 12", "type": "measure", "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"name": "Unnamed: 13", "type": "measure", "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"name": "Unnamed: 14", "type": "measure", "values": [52.0, 11.0, 141.0, 433.0, 70.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}]}, "slides": [[{"style": {"legend": {"label": {"fontSize": "1.1em"}, "paddingRight": "-1em"}, "plot": {"marker": {"label": {"fontSize": "1.1em"}}, "paddingLeft": "10em", "xAxis": {"title": {"color": "#00000000"}, "label": {"fontSize": "1.1em"}}, "yAxis": {"label": {"fontSize": "1.1em"}}}, "logo": {"width": "6em"}, "fontSize": "0.8em"}, "config": {"x": {"set": ["Vote percentage [%]", "Answer"]}, "y": "Group number", "color": "Answer", "label": "Vote percentage [%]", "title": "How often do you present your findings to business stakeholders?"}}], [{"style": {"plot": {"xAxis": {"label": {"color": "#00000000"}}}}, "config": {"split": true, "title": "2 or more is the most popular answer in every group"}}], [{"style": {"plot": {"marker": {"label": {"fontSize": "0.916667em"}}}}, "config": {"x": {"set": ["Vote count", "Answer"]}, "label": "Vote count", "title": "61% of the votes came from one group"}}], [{"style": {"plot": {"yAxis": {"title": {"color": "#00000000"}}}}, "config": {"x": "Answer", "y": ["Group number", "Vote count"], "split": false, "legend": "color"}}, {"style": {"plot": {"marker": {"label": {"fontSize": "1.1em"}}}}, "config": {"y": "Vote count", "title": "More than 700 people voted"}}], [{"config": {"x": ["Answer percentage [%]", "Answer"], "y": null, "label": "Answer percentage [%]"}}, {"style": {"plot": {"xAxis": {"label": {"color": "#00000000"}}}}, "config": {"coordSystem": "polar", "title": "More than two-third of respondents present at least once per month"}}]]};
@@ -3044,7 +3058,7 @@ story.play()</div>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>

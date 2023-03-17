@@ -2562,30 +2562,30 @@ Licensed under the Apache License, Version 2.0.
 <span class="kn">from</span> <span class="nn">ipyvizzustory</span> <span class="kn">import</span> <span class="n">Story</span><span class="p">,</span> <span class="n">Slide</span><span class="p">,</span> <span class="n">Step</span>
 
 
-<span class="c1"># First, initialize our data.</span>
+<span class="c1"># Create data object</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">()</span>
 <span class="n">data</span><span class="o">.</span><span class="n">add_series</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Ted&quot;</span><span class="p">])</span>
 <span class="n">data</span><span class="o">.</span><span class="n">add_series</span><span class="p">(</span><span class="s2">&quot;Bar&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
 <span class="n">data</span><span class="o">.</span><span class="n">add_series</span><span class="p">(</span><span class="s2">&quot;Baz&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 
 
-<span class="c1"># Create a blank story, attaching it to our dataset.</span>
+<span class="c1"># Create story object, add data to it</span>
 <span class="n">story</span> <span class="o">=</span> <span class="n">Story</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 
 <span class="c1"># Each slide here is a page in the final interactive story</span>
-<span class="c1"># For info on configuring Steps and providing Configs,</span>
-<span class="c1"># please see the base ipyvizzu documentation.</span>
+<span class="c1"># Add the first slide</span>
 <span class="n">slide1</span> <span class="o">=</span> <span class="n">Slide</span><span class="p">(</span>
     <span class="n">Step</span><span class="p">(</span>
         <span class="n">Config</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;Foo&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="s2">&quot;Bar&quot;</span><span class="p">}),</span>
     <span class="p">)</span>
 <span class="p">)</span>
+<span class="c1"># Add the slide to the story</span>
 <span class="n">story</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">slide1</span><span class="p">)</span>
 
-<span class="c1"># Create the second slide.</span>
+<span class="c1"># Create the second slide</span>
 <span class="c1"># Configs provided here are changes to the visualization</span>
-<span class="c1"># created in the previous Step.</span>
+<span class="c1"># created in the previous Step</span>
 <span class="n">slide2</span> <span class="o">=</span> <span class="n">Slide</span><span class="p">(</span>
     <span class="n">Step</span><span class="p">(</span>
         <span class="n">Config</span><span class="p">({</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;Foo&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="s2">&quot;Baz&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="s2">&quot;circle&quot;</span><span class="p">}),</span>
@@ -2594,37 +2594,37 @@ Licensed under the Apache License, Version 2.0.
 <span class="n">story</span><span class="o">.</span><span class="n">add_slide</span><span class="p">(</span><span class="n">slide2</span><span class="p">)</span>
 
 
-<span class="c1"># Display our end story!</span>
+<span class="c1"># Play the created story!</span>
 <span class="n">story</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt">from ipyvizzu import Data, Config
 from ipyvizzustory import Story, Slide, Step
 
 
-# First, initialize our data.
+# Create data object
 data = Data()
 data.add_series("Foo", ["Alice", "Bob", "Ted"])
 data.add_series("Bar", [15, 32, 12])
 data.add_series("Baz", [5, 3, 2])
 
 
-# Create a blank story, attaching it to our dataset.
+# Create story object, add data to it
 story = Story(data=data)
 
 
 # Each slide here is a page in the final interactive story
-# For info on configuring Steps and providing Configs,
-# please see the base ipyvizzu documentation.
+# Add the first slide
 slide1 = Slide(
     Step(
         Config({"x": "Foo", "y": "Bar"}),
     )
 )
+# Add the slide to the story
 story.add_slide(slide1)
 
-# Create the second slide.
+# Create the second slide
 # Configs provided here are changes to the visualization
-# created in the previous Step.
+# created in the previous Step
 slide2 = Slide(
     Step(
         Config({"color": "Foo", "x": "Baz", "geometry": "circle"}),
@@ -2633,7 +2633,7 @@ slide2 = Slide(
 story.add_slide(slide2)
 
 
-# Display our end story!
+# Play the created story!
 story.play()</div>
     
         </div>
@@ -2657,11 +2657,11 @@ story.play()</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
 
 <div>
-    <vizzu-player id="ad7b75e"  controller></vizzu-player>
+    <vizzu-player id="e34ed34"  controller></vizzu-player>
     <script type="module">
         import VizzuPlayer from "https://cdn.jsdelivr.net/npm/vizzu-story@0.3/dist/vizzu-story.min.js";
 
-        const vp = document.getElementById("ad7b75e");
+        const vp = document.getElementById("e34ed34");
         import(vp.vizzuUrl).then(vizzuLoaded => {
             const lib = vizzuLoaded.default;
             const vizzuPlayerData = {"data": {"series": [{"name": "Foo", "values": ["Alice", "Bob", "Ted"]}, {"name": "Bar", "values": [15, 32, 12]}, {"name": "Baz", "values": [5, 3, 2]}]}, "slides": [[{"config": {"x": "Foo", "y": "Bar"}}], [{"config": {"color": "Foo", "x": "Baz", "geometry": "circle"}}]]};
@@ -2811,7 +2811,7 @@ story.play()</div>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>

@@ -7,7 +7,7 @@ package.
     `ipyvizzu-story` requires and downloads the
     [Vizzu](https://github.com/vizzuhq/vizzu-lib) `JavaScript`/`C++`
     [library](https://www.jsdelivr.com/package/npm/vizzu) and the
-    [vizzu-story](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
+    [Vizzu-Story](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
     [package](https://www.jsdelivr.com/package/npm/vizzu-story) from
     `jsDelivr CDN`, but you can also use a different or self-hosted version of
     them. Check
