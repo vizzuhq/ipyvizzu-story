@@ -27,6 +27,7 @@ theme:
     - search.highlight
     - navigation.top
     - navigation.footer
+    - content.code.copy
 
 extra_css:
   - assets/stylesheets/vizzu.css

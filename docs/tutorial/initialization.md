@@ -24,16 +24,16 @@ You can set the style used initally for the story as you can see in this
 [example](../examples/usbudget.ipynb), and you can alter the style at each step
 within the story.
 
+```python
+story = Story(data=data, style=Style({"title": {"fontSize": 50}}))
+```
+
 !!! tip
     Check
     [ipyvizzu - Color palette & fonts chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/color_palette_fonts/)
     and
     [ipyvizzu - Chart layout chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/chart_layout/)
     for more details on the available styling options.
-
-```python
-story = Story(data=data, style=Style({"title": {"fontSize": 50}}))
-```
 
 ## Size
 
@@ -53,18 +53,18 @@ story.set_size(width="100%", height="400px")
 [library](https://www.jsdelivr.com/package/npm/vizzu) from `jsDelivr CDN`, but
 you can also use a different or self-hosted version of it.
 
-!!! info
-    The default value of `vizzu` property is `None`, because the default version
-    of `Vizzu` is stored in the `vizzu-story` package.
-
 ```python
 story.vizzu = "<url>/vizzu.min.js"
 ```
 
+!!! info
+    The default value of `vizzu` property is `None`, because the default version
+    of `Vizzu` is stored in the `vizzu-story` package.
+
 ### vizzu_story
 
 `ipyvizzu-story` requires and downloads the
-[Vizzu](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
+[Vizzu-Story](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
 [package](https://www.jsdelivr.com/package/npm/vizzu-story) from `jsDelivr CDN`,
 but you can also use a different or self-hosted version of it.
 

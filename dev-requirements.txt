@@ -72,7 +72,7 @@ colorama==0.4.6
     #   mkdocs-material
 comm==0.1.2
     # via ipykernel
-coverage==7.2.1
+coverage==7.2.2
     # via -r dev-requirements.in
 cryptography==39.0.2
     # via secretstorage
@@ -104,7 +104,7 @@ executing==1.2.0
     # via stack-data
 fastjsonschema==2.16.3
     # via nbformat
-filelock==3.9.1
+filelock==3.10.0
     # via virtualenv
 fqdn==1.5.1
     # via jsonschema
@@ -116,7 +116,7 @@ gitpython==3.1.31
     # via streamlit
 griffe==0.25.5
     # via mkdocstrings-python
-identify==2.5.20
+identify==2.5.21
     # via pre-commit
 idna==3.4
     # via
@@ -188,7 +188,7 @@ jupyter-client==8.0.3
     #   nbclassic
     #   nbclient
     #   notebook
-jupyter-core==5.2.0
+jupyter-core==5.3.0
     # via
     #   ipykernel
     #   jupyter-client
@@ -200,7 +200,7 @@ jupyter-core==5.2.0
     #   notebook
 jupyter-events==0.6.3
     # via jupyter-server
-jupyter-server==2.4.0
+jupyter-server==2.5.0
     # via
     #   nbclassic
     #   notebook-shim
@@ -318,7 +318,7 @@ mkdocs-coverage==0.2.6
     # via -r dev-requirements.in
 mkdocs-gen-files==0.4.0
     # via -r dev-requirements.in
-mkdocs-jupyter==0.23.0
+mkdocs-jupyter==0.23.1
     # via -r dev-requirements.in
 mkdocs-literate-nav==0.6.0
     # via -r dev-requirements.in
@@ -406,7 +406,7 @@ param==1.13.0
     #   pyviz-comms
 parso==0.8.3
     # via jedi
-pathspec==0.11.0
+pathspec==0.11.1
     # via black
 pexpect==4.8.0
     # via ipython
