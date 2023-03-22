@@ -93,7 +93,6 @@ for more details.
 - Notebooks
   - [Jupyter Notebook](./environments/notebook/jupyternotebook/)
   - [Colab](./environments/notebook/colab/)
-  - [Databricks](./environments/notebook/databricks/)
   - [DataCamp](./environments/notebook/datacamp/)
   - [Deepnote](./environments/notebook/deepnote/)
   - [JupyterLab](./environments/notebook/jupyterlab/)

@@ -956,20 +956,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environments/notebook/databricks/" class="md-nav__link">
-        Databricks
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../environments/notebook/datacamp/" class="md-nav__link">
         DataCamp
       </a>
@@ -1557,7 +1543,7 @@ however <code>Story</code> could be imported with full path.</p>
             The appropriate `Story` for the environment.
     """  # pylint: disable=line-too-long
 
-    return JupyterStory or StreamlitStory or PythonStory</code></pre>
+    return JupyterStory or StreamlitStory or PythonStory  # type: ignore</code></pre>
       </details>
   </div>
 

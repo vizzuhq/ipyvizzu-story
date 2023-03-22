@@ -8,7 +8,6 @@ from our list, please open an issue in our
 
 * [Jupyter Notebook](jupyternotebook.md)
 * [Colab](colab.md)
-* [Databricks](databricks.md)
 * [DataCamp](datacamp.md)
 * [Deepnote](deepnote.md)
 * [JupyterLab](jupyterlab.md)
