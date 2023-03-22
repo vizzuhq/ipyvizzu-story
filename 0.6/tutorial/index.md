@@ -12,7 +12,7 @@ the end of this page and in the menu.
 Since `ipyvizzu-story` is built on top of
 [ipyvizzu](https://github.com/vizzuhq/ipyvizzu), it's recommended that you learn
 and understand `ipyvizzu` first. The tutorial for `ipyvizzu` can be found
-[here](https://ipyvizzu.vizzuhq.com/0.14/tutorial/).
+[here](https://ipyvizzu.vizzuhq.com/0.15/tutorial/).
 
 ## Basic logic of ipyvizzu-story
 

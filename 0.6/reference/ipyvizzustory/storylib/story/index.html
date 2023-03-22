@@ -118,6 +118,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+               You're not viewing the latest version.
+<a href="../../../../..">
+  <strong>Click here to go to latest.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
     
       
 
@@ -2037,10 +2052,10 @@
         <tr>
           <td><code>*animations</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="ipyvizzu.Data" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Data">Data</a>, <a class="autorefs autorefs-external" title="ipyvizzu.Style" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Style">Style</a>, <a class="autorefs autorefs-external" title="ipyvizzu.Config" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Config">Config</a>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="ipyvizzu.Data" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Data">Data</a>, <a class="autorefs autorefs-external" title="ipyvizzu.Style" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Style">Style</a>, <a class="autorefs autorefs-external" title="ipyvizzu.Config" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Config">Config</a>]</code>
           </td>
-          <td><p>List of <a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Data">Data</a>,
-<a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Config">Config</a> and <a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Style">Style</a> objects.
+          <td><p>List of <a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Data">Data</a>,
+<a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Config">Config</a> and <a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Style">Style</a> objects.
 A <code>Step</code> can contain each of the above once.</p></td>
           <td>
                 <code>()</code>
@@ -2085,7 +2100,7 @@ A <code>Step</code> can contain each of the above once.</p></td>
 
 <details class="example">
   <summary>Example</summary>
-  <p>Initialize a step with a <a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Config">Config</a> object:</p>
+  <p>Initialize a step with a <a class="autorefs autorefs-external" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Config">Config</a> object:</p>
 <pre class="highlight"><code>step = Step(
     Config({"x": "Foo", "y": "Bar"})
 )</code></pre>
@@ -3163,7 +3178,7 @@ def is_pixel(value: Any) -&gt; bool:
         <tr>
           <td><code>data</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="ipyvizzu.Data" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Data">Data</a></code>
+                <code><a class="autorefs autorefs-external" title="ipyvizzu.Data" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Data">Data</a></code>
           </td>
           <td><p>Data set for the whole presentation story.
 After initialization <code>data</code> can not be modified,
@@ -3175,7 +3190,7 @@ but it can be filtered.</p></td>
         <tr>
           <td><code>style</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-external" title="ipyvizzu.Style" href="https://ipyvizzu.vizzuhq.com/0.14/reference/ipyvizzu/#ipyvizzu.Style">Style</a>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Optional" href="https://docs.python.org/3/library/typing.html#typing.Optional">Optional</a>[<a class="autorefs autorefs-external" title="ipyvizzu.Style" href="https://ipyvizzu.vizzuhq.com/0.15/reference/ipyvizzu/#ipyvizzu.Style">Style</a>]</code>
           </td>
           <td><p>Style settings for the presentation story.
 <code>style</code> can be changed at each presentation step.</p></td>
@@ -3851,7 +3866,7 @@ story = Story(data=data)</code></pre>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>

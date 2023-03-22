@@ -30,9 +30,9 @@ story = Story(data=data, style=Style({"title": {"fontSize": 50}}))
 
 !!! tip
     Check
-    [ipyvizzu - Color palette & fonts chapter](https://ipyvizzu.vizzuhq.com/0.14/tutorial/color_palette_fonts/)
+    [ipyvizzu - Color palette & fonts chapter](https://ipyvizzu.vizzuhq.com/0.15/tutorial/color_palette_fonts/)
     and
-    [ipyvizzu - Chart layout chapter](https://ipyvizzu.vizzuhq.com/0.14/tutorial/chart_layout/)
+    [ipyvizzu - Chart layout chapter](https://ipyvizzu.vizzuhq.com/0.15/tutorial/chart_layout/)
     for more details on the available styling options.
 
 ## Size

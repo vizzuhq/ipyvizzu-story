@@ -15,7 +15,7 @@ to `ipyvizzu`, there are two types of data series: dimensions and measures.
 
 !!! tip
     See
-    [ipyvizzu - Data chapter](https://ipyvizzu.vizzuhq.com/0.14/tutorial/data/)
+    [ipyvizzu - Data chapter](https://ipyvizzu.vizzuhq.com/0.15/tutorial/data/)
     for more details about data.
 
 Here's some sample code for common use cases.

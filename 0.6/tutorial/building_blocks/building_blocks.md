@@ -9,7 +9,7 @@ based on that data, arranged into `Slides` and `Steps`.
 `Slides` can contain one or more `Steps`.
 
 A `Step` (and a single-Step `Slide`) is basically the same as the `Chart` object
-in [ipyvizzu](https://ipyvizzu.vizzuhq.com/0.14/tutorial/), with some minor,
+in [ipyvizzu](https://ipyvizzu.vizzuhq.com/0.15/tutorial/), with some minor,
 but important differences (for now):
 
 - all of the data has to be added to the story at initialization, and it can be
@@ -67,7 +67,7 @@ story.add_slide(slide)
 
 !!! tip
     Check
-    [ipyvizzu - Filtering & adding new records chapter](https://ipyvizzu.vizzuhq.com/0.14/tutorial/filter_add_new_records/)
+    [ipyvizzu - Filtering & adding new records chapter](https://ipyvizzu.vizzuhq.com/0.15/tutorial/filter_add_new_records/)
     for more details on data filtering options.
 
 There are some parameters of the `Story` you can change before you play it.
@@ -83,7 +83,7 @@ story.set_feature("tooltip", True)
 
 !!! tip
     See
-    [ipyvizzu - Axes, title, tooltip chapter](https://ipyvizzu.vizzuhq.com/0.14/tutorial/axes_title_tooltip/)
+    [ipyvizzu - Axes, title, tooltip chapter](https://ipyvizzu.vizzuhq.com/0.15/tutorial/axes_title_tooltip/)
     for more details on chart features.
 
 ## Story events
@@ -99,7 +99,7 @@ story.add_event("click", handler)
 
 !!! tip
     See
-    [ipyvizzu - Events chapter](https://ipyvizzu.vizzuhq.com/0.14/tutorial/events/)
+    [ipyvizzu - Events chapter](https://ipyvizzu.vizzuhq.com/0.15/tutorial/events/)
     for more details on events.
 
 ## Play

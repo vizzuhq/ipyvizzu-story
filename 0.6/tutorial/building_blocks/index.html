@@ -118,6 +118,21 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+               You're not viewing the latest version.
+<a href="../../..">
+  <strong>Click here to go to latest.</strong>
+</a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
     
       
 
@@ -1585,7 +1600,7 @@ based on that data, arranged into <code>Slides</code> and <code>Steps</code>.</p
 <h2 id="slides-and-steps">Slides and Steps</h2>
 <p><code>Slides</code> can contain one or more <code>Steps</code>.</p>
 <p>A <code>Step</code> (and a single-Step <code>Slide</code>) is basically the same as the <code>Chart</code> object
-in <a href="https://ipyvizzu.vizzuhq.com/0.14/tutorial/">ipyvizzu</a>, with some minor,
+in <a href="https://ipyvizzu.vizzuhq.com/0.15/tutorial/">ipyvizzu</a>, with some minor,
 but important differences (for now):</p>
 <ul>
 <li>all of the data has to be added to the story at initialization, and it can be
@@ -1632,7 +1647,7 @@ story.add_slide(slide)</code></pre>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Check
-<a href="https://ipyvizzu.vizzuhq.com/0.14/tutorial/filter_add_new_records/">ipyvizzu - Filtering &amp; adding new records chapter</a>
+<a href="https://ipyvizzu.vizzuhq.com/0.15/tutorial/filter_add_new_records/">ipyvizzu - Filtering &amp; adding new records chapter</a>
 for more details on data filtering options.</p>
 </div>
 <p>There are some parameters of the <code>Story</code> you can change before you play it.</p>
@@ -1643,7 +1658,7 @@ the viewer hovers their mouse over a specific element of the chart.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>See
-<a href="https://ipyvizzu.vizzuhq.com/0.14/tutorial/axes_title_tooltip/">ipyvizzu - Axes, title, tooltip chapter</a>
+<a href="https://ipyvizzu.vizzuhq.com/0.15/tutorial/axes_title_tooltip/">ipyvizzu - Axes, title, tooltip chapter</a>
 for more details on chart features.</p>
 </div>
 <h2 id="story-events">Story events</h2>
@@ -1655,7 +1670,7 @@ story.add_event("click", handler)</code></pre>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>See
-<a href="https://ipyvizzu.vizzuhq.com/0.14/tutorial/events/">ipyvizzu - Events chapter</a>
+<a href="https://ipyvizzu.vizzuhq.com/0.15/tutorial/events/">ipyvizzu - Events chapter</a>
 for more details on events.</p>
 </div>
 <h2 id="play">Play</h2>
@@ -1790,7 +1805,7 @@ available features in your environment.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.efa0ade1.min.js"></script>
