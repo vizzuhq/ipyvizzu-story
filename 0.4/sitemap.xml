@@ -76,11 +76,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/databricks/</loc>
-         <lastmod>2023-03-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/datacamp/</loc>
          <lastmod>2023-03-22</lastmod>
          <changefreq>daily</changefreq>
