@@ -96,7 +96,6 @@ for more details.
   - [Kaggle](./environments/notebook/kaggle/)
   - [Noteable](./environments/notebook/noteable/)
 - App platforms
-  - [Flask](./environments/platform/flask/)
   - [Mercury/mljar](./environments/platform/mercury/)
   - [Voilà](./environments/platform/voila/)
 - BI tools
