@@ -44,6 +44,8 @@
       
     
     
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
       <link rel="stylesheet" href="../assets/stylesheets/vizzu.css">
     
       <link rel="stylesheet" href="../assets/stylesheets/gallery.css">
@@ -1097,6 +1099,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#release" class="md-nav__link">
     Release
   </a>
@@ -1263,6 +1272,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#release" class="md-nav__link">
     Release
   </a>
@@ -1327,8 +1343,8 @@ run the CI steps.</p>
 <pre class="highlight"><code class="language-sh">make check-format</code></pre>
 <h4 id="code-analyses">Code analyses</h4>
 <p>The <code>ipyvizzu-story</code> project is analysed with <code>pylint</code>.</p>
-<p>Run the <code>lint</code> make target to run code analyses.</p>
-<pre class="highlight"><code class="language-sh">make lint</code></pre>
+<p>Run the <code>check-lint</code> make target to run code analyses.</p>
+<pre class="highlight"><code class="language-sh">make check-lint</code></pre>
 <h4 id="typing">Typing</h4>
 <p>The <code>ipyvizzu-story</code> project is using type hints.</p>
 <p>Run the <code>check-typing</code> make target to run check code typing.</p>
@@ -1338,6 +1354,17 @@ run the CI steps.</p>
 <p>Run the <code>test</code> make target to install <code>ipyvizzu-story</code> into your virtual
 environment and run the tests.</p>
 <pre class="highlight"><code class="language-sh">make test</code></pre>
+<h3 id="documentation">Documentation</h3>
+<p>Run the <code>doc</code> make target to build the documentation.</p>
+<p>Note: If you modify the documentation, you also need to configure the
+<code>JavaScript</code> development environment.</p>
+<pre class="highlight"><code class="language-sh">make dev-js
+
+make check-js
+
+make doc</code></pre>
+<p>Online version can be read at
+<a href="../">ipyvizzu-story.vizzuhq.com</a>.</p>
 <h3 id="release">Release</h3>
 <p><code>ipyvizzu-story</code> is distributed on
 <a href="https://pypi.org/project/ipyvizzu-story">pypi</a>. <strong>Note:</strong> You need to be an
