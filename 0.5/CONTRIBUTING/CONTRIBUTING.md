@@ -68,10 +68,10 @@ make check-format
 
 The `ipyvizzu-story` project is analysed with `pylint`.
 
-Run the `lint` make target to run code analyses.
+Run the `check-lint` make target to run code analyses.
 
 ```sh
-make lint
+make check-lint
 ```
 
 #### Typing
@@ -94,6 +94,24 @@ environment and run the tests.
 ```sh
 make test
 ```
+
+### Documentation
+
+Run the `doc` make target to build the documentation.
+
+Note: If you modify the documentation, you also need to configure the
+`JavaScript` development environment.
+
+```sh
+make dev-js
+
+make check-js
+
+make doc
+```
+
+Online version can be read at
+[ipyvizzu-story.vizzuhq.com](../).
 
 ### Release
 
