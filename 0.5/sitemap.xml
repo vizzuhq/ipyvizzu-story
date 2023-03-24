@@ -2,287 +2,287 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/CODE_OF_CONDUCT/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/CONTRIBUTING/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/LICENSE/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/installation/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/dev/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/python/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/bi/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/bi/mode/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/pycharm/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/vscode/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/colab/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/databricks/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/datacamp/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/deepnote/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlab/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlite/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyternotebook/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/kaggle/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/noteable/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/flask/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/mercury/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/panel/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/streamlit/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/voila/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/_basic/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/linkedinpoll/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/population/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/proglangs/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/titanic/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/trumptwitter/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/examples/usbudget/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/ipy/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/ipy/story/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/pn/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/pn/story/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/py/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/py/story/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/st/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/env/st/story/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/storylib/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/storylib/animation/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/storylib/story/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/reference/ipyvizzustory/storylib/template/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/tutorial/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/tutorial/building_blocks/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/tutorial/data/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/tutorial/export/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/tutorial/initialization/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ipyvizzu-story.vizzuhq.com/latest/coverage/</loc>
-         <lastmod>2023-03-23</lastmod>
+         <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
