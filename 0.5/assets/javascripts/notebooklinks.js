@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     for (let i = 0; i < elements.length; i++) {
       elements[i].innerHTML = elements[i].innerHTML.replace(
         regex,
-        '"https://ipyvizzu-story.vizzuhq.com/0.5/$2$3'
+        '"https://ipyvizzu-story.vizzuhq.com/0.5/examples/$2$3'
       );
     }
   }
