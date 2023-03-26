@@ -70,7 +70,6 @@ class Deploy:
                 f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/objects.inv",
             )
             content = content.replace("  #  - mike:", "  - mike:")
-            content = content.replace("  #  - mike:", "  - mike:")
             content = content.replace(
                 "  #      version_selector: true", "      version_selector: true"
             )
