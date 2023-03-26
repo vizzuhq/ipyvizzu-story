@@ -22,22 +22,28 @@ from vizzu import (  # pylint: disable=import-error, wrong-import-position, wron
 class Deploy:
     """A class for deploying site."""
 
+    latest: bool = True
+
     @staticmethod
     def mike() -> None:
         """A method for deploying site."""
 
         version = Vizzu.get_ipyvizzustory_version()
 
+        params = [
+            "mike",
+            "deploy",
+        ]
+        if Deploy.latest:
+            params.append("-u")
+        params.append(version)
+        if Deploy.latest:
+            params.append("latest")
+        params.append("-F")
+        params.append("tools/mkdocs/mkdocs.yml")
+
         with Popen(
-            [
-                "mike",
-                "deploy",
-                "-u",
-                version,
-                "latest",
-                "-F",
-                "tools/mkdocs/mkdocs.yml",
-            ],
+            params,
         ) as process:
             process.communicate()
 
@@ -78,6 +84,11 @@ class Deploy:
                 "  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
                 "      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
             )
+            if not Deploy.latest:
+                content = content.replace(
+                    "- content.action.edit",
+                    "# - content.action.edit",
+                )
         else:
             content = content.replace(
                 f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/objects.inv",
@@ -97,6 +108,11 @@ class Deploy:
                 "      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
                 "  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
             )
+            if not Deploy.latest:
+                content = content.replace(
+                    "# - content.action.edit",
+                    "- content.action.edit",
+                )
 
         with open(MKDOCS_PATH / "mkdocs.yml", "w", encoding="utf8") as fh_readme:
             fh_readme.write(content)
