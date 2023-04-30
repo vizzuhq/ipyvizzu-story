@@ -32,8 +32,8 @@ theme:
 
 extra_css:
   - assets/stylesheets/vizzu.css
-  - assets/stylesheets/gallery.css
   - assets/stylesheets/highlight.css
+  - assets/stylesheets/gallery.css
 
 extra_javascript:
   - assets/javascripts/extlinks.js

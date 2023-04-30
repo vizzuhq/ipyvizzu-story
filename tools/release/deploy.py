@@ -16,6 +16,7 @@ from context import (  # pylint: disable=import-error, wrong-import-position, wr
 )
 from vizzu import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
     Vizzu,
+    IPYVIZZU_SITE_URL,
 )
 
 
@@ -65,10 +66,6 @@ class Deploy:
             content = fh_readme.read()
 
         if not restore:
-            content = content.replace(
-                "https://ipyvizzu.vizzuhq.com/latest/objects.inv",
-                f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/objects.inv",
-            )
             content = content.replace("  #  - mike:", "  - mike:")
             content = content.replace(
                 "  #      version_selector: true", "      version_selector: true"
@@ -83,16 +80,17 @@ class Deploy:
                 "  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
                 "      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
             )
+            content = content.replace(
+                f"{IPYVIZZU_SITE_URL}/latest/objects.inv",
+                f"{IPYVIZZU_SITE_URL}/{ipyvizzu_version}/objects.inv",
+            )
+
             if not Deploy.latest:
                 content = content.replace(
                     "- content.action.edit",
                     "# - content.action.edit",
                 )
         else:
-            content = content.replace(
-                f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/objects.inv",
-                "https://ipyvizzu.vizzuhq.com/latest/objects.inv",
-            )
             content = content.replace("  - mike:", "  #  - mike:")
             content = content.replace(
                 "      version_selector: true", "  #      version_selector: true"
@@ -107,6 +105,11 @@ class Deploy:
                 "      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
                 "  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
             )
+            content = content.replace(
+                f"{IPYVIZZU_SITE_URL}/{ipyvizzu_version}/objects.inv",
+                f"{IPYVIZZU_SITE_URL}/latest/objects.inv",
+            )
+
             if not Deploy.latest:
                 content = content.replace(
                     "# - content.action.edit",

@@ -12,24 +12,16 @@ jobs:
 
   init:
     uses: ./.github/workflows/init.yml
-    with:
-      run_id: ${{ github.run_id }}
 
   ci:
     uses: ./.github/workflows/ci.yml
     needs: init
-    with:
-      run_id: ${{ github.run_id }}
 
   doc:
     uses: ./.github/workflows/doc.yml
     needs: ci
-    with:
-      run_id: ${{ github.run_id }}
 
   release:
     uses: ./.github/workflows/release.yml
     secrets: inherit
     needs: doc
-    with:
-      run_id: ${{ github.run_id }}

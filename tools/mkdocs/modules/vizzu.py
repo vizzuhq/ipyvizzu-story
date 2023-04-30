@@ -11,6 +11,9 @@ MKDOCS_PATH = REPO_PATH / "tools" / "mkdocs"
 IPYVIZZUSTORY_VERSION = ""
 IPYVIZZU_VERSION = ""
 
+IPYVIZZUSTORY_SITE_URL = "https://ipyvizzu.vizzuhq.com"
+IPYVIZZU_SITE_URL = "https://ipyvizzu-story.vizzuhq.com"
+
 
 class Vizzu:
     """A class for working with Vizzu."""
@@ -67,21 +70,21 @@ class Vizzu:
         ipyvizzustory_version = Vizzu.get_ipyvizzustory_version()
         if not restore:
             content = content.replace(
-                "https://ipyvizzu-story.vizzuhq.com/latest/",
-                f"https://ipyvizzu-story.vizzuhq.com/{ipyvizzustory_version}/",
+                f"{IPYVIZZUSTORY_SITE_URL}/latest/",
+                f"{IPYVIZZUSTORY_SITE_URL}/{ipyvizzustory_version}/",
             )
             content = content.replace(
-                "https://ipyvizzu.vizzuhq.com/latest/",
-                f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/",
+                f"{IPYVIZZU_SITE_URL}/latest/",
+                f"{IPYVIZZU_SITE_URL}/{ipyvizzu_version}/",
             )
         else:
             content = content.replace(
-                f"https://ipyvizzu-story.vizzuhq.com/{ipyvizzustory_version}/",
-                "https://ipyvizzu-story.vizzuhq.com/latest/",
+                f"{IPYVIZZUSTORY_SITE_URL}/{ipyvizzustory_version}/",
+                f"{IPYVIZZUSTORY_SITE_URL}/latest/",
             )
             content = content.replace(
-                f"https://ipyvizzu.vizzuhq.com/{ipyvizzu_version}/",
-                "https://ipyvizzu.vizzuhq.com/latest/",
+                f"{IPYVIZZU_SITE_URL}/{ipyvizzu_version}/",
+                f"{IPYVIZZU_SITE_URL}/latest/",
             )
 
         return content

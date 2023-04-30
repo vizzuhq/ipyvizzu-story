@@ -68,28 +68,3 @@
   color: #93a49a70 !important;
   transition: 200ms;
 }
-
-.highlight-ipynb {
-  background: #f8f9fa !important;
-}
-
-.kn,
-.k,
-.kc {
-  color: #03ae71 !important;
-}
-
-.c1 {
-  color: #4c7450ff !important;
-}
-
-.o,
-.p {
-  color: #36464e !important;
-}
-
-.mi,
-.s2,
-.sd {
-  color: #f25456 !important;
-}
