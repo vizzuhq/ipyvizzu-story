@@ -1,1 +1,0 @@
-::: ipyvizzustory.env.ipy
