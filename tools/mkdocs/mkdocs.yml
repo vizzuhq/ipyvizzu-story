@@ -40,7 +40,6 @@ extra_javascript:
   - //cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7/build/highlight.min.js
   - //cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js
   - assets/javascripts/highlight.js
-  - assets/javascripts/notebooklinks.js
 
 extra:
   version:
@@ -99,19 +98,11 @@ plugins:
   - gen-files:
       scripts:
         - pages/gen_pages.py
-        - pages/gen_notebooks.py
+        - examples/gen_examples.py
         - reference/gen_reference.py
   - coverage:
       page_name: coverage
       html_report_dir: tests/coverage
-  - mkdocs-jupyter:
-      include: ["examples/*.ipynb"]
-      ignore: ["community/*.ipynb"]
-      ignore_h1_titles: False
-      include_source: True
-      execute: True
-      allow_errors: False
-      kernel_name: .venv_ipyvizzu_story
 
 nav:
   - Home: index.md
