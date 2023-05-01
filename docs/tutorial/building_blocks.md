@@ -68,7 +68,9 @@ story.add_slide(slide)
 !!! tip
     Check
     [ipyvizzu - Filtering & adding new records chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/filter_add_new_records/)
-    for more details on data filtering options.
+    and
+    [ipyvizzu - Style chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/style/)
+    for more details on data filtering and style options.
 
 There are some parameters of the `Story` you can change before you play it.
 
