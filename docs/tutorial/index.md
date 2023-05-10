@@ -27,11 +27,10 @@ chart, via which the users can navigate between the `Slides` within the story.
 `Slides` can contain one or more `Steps`.
 
 A `Step` (and a single-Step `Slide`) is basically the same as the `Chart` object
-in `ipyvizzu`, with some minor, but important differences (for now):
+in `ipyvizzu`, with a minor, but important difference:
 
 - all of the data has to be added to the story at initialization, and it can be
   filtered at every `Step` throughout the `Story`.
-- animation options are not available
 
 In case of a `Slide` with multiple `Steps`, all, but the last `Steps` are
 interim charts that connect a `Slide` with a previous `Slide` but the animation

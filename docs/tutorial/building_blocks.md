@@ -9,12 +9,11 @@ based on that data, arranged into `Slides` and `Steps`.
 `Slides` can contain one or more `Steps`.
 
 A `Step` (and a single-Step `Slide`) is basically the same as the `Chart` object
-in [ipyvizzu](https://ipyvizzu.vizzuhq.com/latest/tutorial/), with some minor,
-but important differences (for now):
+in [ipyvizzu](https://ipyvizzu.vizzuhq.com/latest/tutorial/), with a minor, but
+important difference:
 
 - all of the data has to be added to the story at initialization, and it can be
   filtered at every `Step` throughout the `Story`.
-- animation options are not available
 
 ```python
 slide = Slide(
@@ -50,9 +49,9 @@ beneath the chart. They can also use the `PgUp` and `PgDn` buttons, and the left
 and right arrows to navigate between `Slides`, and the `Home` and `End` buttons
 to jump to the first and last `Slide` in the `Story`.
 
-On each chart, you can define the chart configuration and style using the same
-objects as in `ipyvizzu`. However, you can not modify the underlying data
-between the slides, just the data filter can be used.
+On each chart, you can define the chart configuration, style and animation
+options using the same objects as in `ipyvizzu`. However, you can not modify the
+underlying data between the slides, just the data filter can be used.
 
 ```python
 slide = Slide(
@@ -60,6 +59,7 @@ slide = Slide(
         Data.filter("record['Foo'] == 'Bob'"),
         Config({"geometry": "circle"}),
         Style({"plot": {"marker": {"colorPalette": "#FF0000"}}}),
+        duration=1,
     )
 )
 story.add_slide(slide)

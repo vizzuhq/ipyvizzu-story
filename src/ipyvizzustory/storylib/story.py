@@ -26,9 +26,6 @@ class Step(dict):
         """
         Step constructor.
 
-        Note:
-            Do not set `anim_options` argument, it will raise `NotImplementedError` error.
-
         Args:
             *animations: List of [Data][ipyvizzu.Data],
                 [Config][ipyvizzu.Config] and [Style][ipyvizzu.Style] objects.
@@ -37,7 +34,6 @@ class Step(dict):
 
         Raises:
             ValueError: If `animations` are not set.
-            NotImplementedError: If `anim_options` are set.
 
         Example:
             Initialize a step with a [Config][ipyvizzu.Config] object:
@@ -53,8 +49,7 @@ class Step(dict):
         self._update(*animations)
 
         if anim_options:
-            # self["animOptions"] = PlainAnimation(**anim_options).build()
-            raise NotImplementedError("Anim options are not supported.")
+            self["animOptions"] = anim_options
 
     def _update(self, *animations: Union[Data, Style, Config]) -> None:
         for animation in animations:
