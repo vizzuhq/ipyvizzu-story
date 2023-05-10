@@ -71,3 +71,11 @@ but you can also use a different or self-hosted version of it.
 ```python
 story.vizzu_story = "<url>/vizzu-story.min.js"
 ```
+
+### start_slide
+
+You can start the story on a specific slide via the `start_slide` property.
+
+```python
+story.start_slide = 3
+```

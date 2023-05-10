@@ -11,7 +11,7 @@ DISPLAY_INDENT: str = "    "
 
 DISPLAY_TEMPLATE: str = """
 <div>
-    <vizzu-player id="{id}" {vizzu_attribute} controller></vizzu-player>
+    <vizzu-player id="{id}" {vizzu_attribute} {start_slide} controller></vizzu-player>
     <script type="module">
         import VizzuPlayer from "{vizzu_story}";
 

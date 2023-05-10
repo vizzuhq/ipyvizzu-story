@@ -67,6 +67,7 @@ class TestHtml(ABC):
         return DISPLAY_TEMPLATE.format(
             id="1234567",
             vizzu_attribute="",
+            start_slide="",
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=self.get_vpd(),
             chart_size="",
@@ -85,6 +86,7 @@ class TestHtml(ABC):
         return DISPLAY_TEMPLATE.format(
             id="1234567",
             vizzu_attribute="",
+            start_slide="",
             vizzu_story=VIZZU_STORY,
             vizzu_player_data=self.get_vpd(),
             chart_size="vp.style.cssText = 'width: 800px;height: 480px;'",
@@ -273,6 +275,7 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute=f'vizzu-url="{vizzu}"',
+                    start_slide="",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="",
@@ -311,7 +314,47 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute="",
+                    start_slide="",
                     vizzu_story=vizzu_story,
+                    vizzu_player_data=self.get_vpd(),
+                    chart_size="",
+                    chart_features="",
+                    chart_events="",
+                ),
+            )
+
+    def test_start_slide_default(self) -> None:
+        """
+        A method for testing default Story.start_slide property.
+
+        Raises:
+            AssertionError: If the property value is not correct.
+        """
+
+        story = self.get_story()
+        self.assertEqual(story.start_slide, None)
+
+    def test_start_slide(self) -> None:
+        """
+        A method for testing Story.start_slide property.
+
+        Raises:
+            AssertionError: If the story html is not correct.
+        """
+
+        start_slide = 3
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.start_slide = start_slide
+            self.assertEqual(
+                story.to_html(),
+                DISPLAY_TEMPLATE.format(
+                    id="1234567",
+                    vizzu_attribute="",
+                    start_slide=f'hash-navigation start-slide="{start_slide}"',
+                    vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="",
                     chart_features="",
@@ -416,6 +459,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute="",
+                    start_slide="",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="",
@@ -442,6 +486,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute="",
+                    start_slide="",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="vp.style.cssText = 'width: 800px;'",
@@ -468,6 +513,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute="",
+                    start_slide="",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="vp.style.cssText = 'height: 480px;'",
@@ -513,6 +559,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute="",
+                    start_slide="",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="",
@@ -550,6 +597,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute="",
+                    start_slide="",
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="",
