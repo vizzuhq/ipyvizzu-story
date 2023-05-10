@@ -26,11 +26,13 @@ class TestStep(unittest.TestCase):
         A method for testing Step.__init__ method if anim option was set.
 
         Raises:
-            AssertionError: If NotImplementedError is not occurred.
+            AssertionError: If the step dict is not correct.
         """
 
-        with self.assertRaises(NotImplementedError):
-            Step(Data.filter(None), duration=1)
+        self.assertEqual(
+            Step(Data.filter(None), duration=1),
+            {"filter": None, "animOptions": {"duration": 1}},
+        )
 
     def test_init_if_animation_was_data(self) -> None:
         """
