@@ -16,7 +16,7 @@ and understand `ipyvizzu` first. The tutorial for `ipyvizzu` can be found
 
 ## Basic logic of ipyvizzu-story
 
-![Vizzu](../assets/code_structure.svg){ class='image-center' }
+![Vizzu](../assets/api-overview.svg){ class='image-center' }
 
 With `ipyvizzu-story`, you can build, show and export a `Story` object that
 contains all of the data being shown throughout the story and the charts created
