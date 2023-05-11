@@ -207,6 +207,8 @@ class StorySize:
 class Story(dict):
     """A class for representing a presentation story."""
 
+    # pylint: disable=too-many-instance-attributes
+
     def __init__(self, data: Data, style: Optional[Style] = None):
         """
         Presentation Story constructor.
@@ -237,6 +239,7 @@ class Story(dict):
 
         self._vizzu: Optional[str] = None
         self._vizzu_story: str = VIZZU_STORY
+        self._start_slide: Optional[int] = None
 
         self._size: StorySize = StorySize()
 
@@ -286,6 +289,21 @@ class Story(dict):
     @vizzu_story.setter
     def vizzu_story(self, url: str) -> None:
         self._vizzu_story = url
+
+    @property
+    def start_slide(self) -> Optional[int]:
+        """
+        A property for setting the starter slide.
+
+        Returns:
+            Number of the starter slide.
+        """
+
+        return self._start_slide
+
+    @start_slide.setter
+    def start_slide(self, number: int) -> None:
+        self._start_slide = number
 
     def add_slide(self, slide: Slide) -> None:
         """
@@ -381,6 +399,9 @@ class Story(dict):
         return DISPLAY_TEMPLATE.format(
             id=uuid.uuid4().hex[:7],
             vizzu_attribute=f'vizzu-url="{self._vizzu}"' if self._vizzu else "",
+            start_slide=f'start-slide="{self._start_slide}"'
+            if self._start_slide
+            else "",
             vizzu_story=self._vizzu_story,
             vizzu_player_data=vizzu_player_data,
             chart_size=self._size.style,
