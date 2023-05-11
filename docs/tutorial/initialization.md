@@ -74,7 +74,8 @@ story.vizzu_story = "<url>/vizzu-story.min.js"
 
 ### start_slide
 
-You can start the story on a specific slide via the `start_slide` property.
+You can start the story on a specific slide via the `start_slide` property. You
+can also use negative numbers, where `-1` means the last slide.
 
 ```python
 story.start_slide = 3

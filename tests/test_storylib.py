@@ -353,7 +353,7 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
                 DISPLAY_TEMPLATE.format(
                     id="1234567",
                     vizzu_attribute="",
-                    start_slide=f'hash-navigation start-slide="{start_slide}"',
+                    start_slide=f'start-slide="{start_slide}"',
                     vizzu_story=VIZZU_STORY,
                     vizzu_player_data=self.get_vpd(),
                     chart_size="",

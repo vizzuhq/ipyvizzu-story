@@ -399,7 +399,7 @@ class Story(dict):
         return DISPLAY_TEMPLATE.format(
             id=uuid.uuid4().hex[:7],
             vizzu_attribute=f'vizzu-url="{self._vizzu}"' if self._vizzu else "",
-            start_slide=f'hash-navigation start-slide="{self._start_slide}"'
+            start_slide=f'start-slide="{self._start_slide}"'
             if self._start_slide
             else "",
             vizzu_story=self._vizzu_story,
