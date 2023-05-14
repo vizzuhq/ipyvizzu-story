@@ -1,8 +1,6 @@
 name: CI-CD
 
 on:
-  release:
-    types: [published]
   push:
     branches: [ main ]
   pull_request:
@@ -24,4 +22,4 @@ jobs:
   release:
     uses: ./.github/workflows/release.yml
     secrets: inherit
-    needs: doc
+    needs: ci

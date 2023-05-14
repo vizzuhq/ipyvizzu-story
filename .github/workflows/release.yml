@@ -1,11 +1,15 @@
 name: Release
 
 on:
+  release:
+    types: [published]
   workflow_call:
 
 jobs:
 
-  release_package:
+  create_release:
+
+    if: ${{ !(github.event_name == 'release' && github.event.action == 'published') }}
 
     runs-on: ubuntu-latest
 
@@ -17,18 +21,58 @@ jobs:
         path: ./.venv_ipyvizzu_story
         key: venv-ipyvizzu-story-${{ github.run_id }}
 
+    - uses: actions/cache@v3
+      with:
+        path: ./dist
+        key: dist-ipyvizzu-story-${{ github.run_id }}
+
     - name: Touch dev environment
       run: make touch-dev
 
     - name: Build package
       run: make release-wo-restore
 
+  publish_release:
+
+    if: ${{ (github.event_name == 'release' && github.event.action == 'published') }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get workflow ID
+      id: workflow_id
+      run: |
+        workflow_data=$(curl -s -X GET \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/workflows")
+        workflow_id=$(echo $workflow_data | jq -r '.workflows[] | select(.name == "CI-CD") | .id')
+        echo "workflow_id=${workflow_id}" >> $GITHUB_OUTPUT
+
+    - name: Get run ID
+      id: run_id
+      run: |
+        run_data=$(curl -s -X GET \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/workflows/${{ steps.workflow_id.outputs.workflow_id }}/runs?branch=main")
+        run_id=$(echo $run_data | jq -r '.workflow_runs[0].id')
+        echo "run_id=${run_id}" >> $GITHUB_OUTPUT
+
+    - uses: actions/cache@v3
+      with:
+        path: ./.venv_ipyvizzu_story
+        key: venv-ipyvizzu-story-${{ steps.run_id.outputs.run_id }}
+
+    - uses: actions/cache@v3
+      with:
+        path: ./dist
+        key: dist-ipyvizzu-story-${{ steps.run_id.outputs.run_id }}
+
     - name: Release package
       run: ./.venv_ipyvizzu_story/bin/python -m twine upload -u "__token__" -p "${{ secrets.PYPI_API_TOKEN }}" dist/*.tar.gz  dist/*.whl
-      if: ( github.event_name == 'release' && github.event.action == 'published' )
     
     - name: Upload package
       run: |
         echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
         gh release upload ${{ github.event.release.tag_name }} dist/*.tar.gz  dist/*.whl --clobber
-      if: ( github.event_name == 'release' && github.event.action == 'published' )
