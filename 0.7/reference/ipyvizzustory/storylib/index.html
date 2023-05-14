@@ -1529,6 +1529,40 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ipyvizzustory.storylib.template" class="md-nav__link">
+    template
+  </a>
+  
+    <nav class="md-nav" aria-label="template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ipyvizzustory.storylib.template.VIZZU_STORY" class="md-nav__link">
+    VIZZU_STORY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipyvizzustory.storylib.template.DISPLAY_INDENT" class="md-nav__link">
+    DISPLAY_INDENT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipyvizzustory.storylib.template.DISPLAY_TEMPLATE" class="md-nav__link">
+    DISPLAY_TEMPLATE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ipyvizzustory.storylib.story" class="md-nav__link">
     story
   </a>
@@ -1711,40 +1745,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ipyvizzustory.storylib.template" class="md-nav__link">
-    template
-  </a>
-  
-    <nav class="md-nav" aria-label="template">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipyvizzustory.storylib.template.VIZZU_STORY" class="md-nav__link">
-    VIZZU_STORY
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ipyvizzustory.storylib.template.DISPLAY_INDENT" class="md-nav__link">
-    DISPLAY_INDENT
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ipyvizzustory.storylib.template.DISPLAY_TEMPLATE" class="md-nav__link">
-    DISPLAY_TEMPLATE
-  </a>
   
 </li>
         
@@ -1968,6 +1968,103 @@ Data initialized with a <code>DataFilter</code> must contain only a filter.</p>
   </div>
 
 </div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="ipyvizzustory.storylib.template" class="doc doc-heading">
+          <code>ipyvizzustory.storylib.template</code>
+
+
+</h3>
+
+  <div class="doc doc-contents ">
+  
+      <p>A module for storing the <code>HTML</code> templates.</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="ipyvizzustory.storylib.template.VIZZU_STORY" class="doc doc-heading">
+<code class="highlight language-python">VIZZU_STORY: str = 'https://cdn.jsdelivr.net/npm/vizzu-story@0.4/dist/vizzu-story.min.js'</code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A variable for storing the default url of the <code>vizzu-story</code> package.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="ipyvizzustory.storylib.template.DISPLAY_INDENT" class="doc doc-heading">
+<code class="highlight language-python">DISPLAY_INDENT: str = '    '</code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A variable for storing the default indent in the <code>HTML</code> template.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="ipyvizzustory.storylib.template.DISPLAY_TEMPLATE" class="doc doc-heading">
+<code class="highlight language-python">DISPLAY_TEMPLATE: str = '\n&lt;div&gt;\n    &lt;vizzu-player id="{id}" {vizzu_attribute} {start_slide} controller&gt;&lt;/vizzu-player&gt;\n    &lt;script type="module"&gt;\n        import VizzuPlayer from "{vizzu_story}";\n\n        const vp = document.getElementById("{id}");\n        import(vp.vizzuUrl).then(vizzuLoaded =&gt; {{\n            const lib = vizzuLoaded.default;\n            const vizzuPlayerData = {vizzu_player_data};\n            // story.set_size()\n            {chart_size}\n            vp.slides = vizzuPlayerData;\n            vp.initializing.then(chart =&gt; {{\n                // story.set_feature()\n                {chart_features}\n                // story.add_event()\n                {chart_events}\n            }});\n        }});\n    &lt;/script&gt;\n&lt;/div&gt;\n'</code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A variable for storing the <code>vizzu-story</code> <code>HTML</code> template.</p>
+  </div>
+
+</div>
+
 
 
 
@@ -3148,8 +3245,8 @@ def is_pixel(value: Any) -&gt; bool:
 <code class="highlight language-python">vizzu: Optional[str]</code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
 </h5>
@@ -3192,8 +3289,8 @@ def is_pixel(value: Any) -&gt; bool:
 <code class="highlight language-python">vizzu_story: str</code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
 </h5>
@@ -3232,8 +3329,8 @@ def is_pixel(value: Any) -&gt; bool:
 <code class="highlight language-python">start_slide: Optional[int]</code>
   
   <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
       <small class="doc doc-label doc-label-property"><code>property</code></small>
+      <small class="doc doc-label doc-label-writable"><code>writable</code></small>
   </span>
 
 </h5>
@@ -3857,103 +3954,6 @@ story = Story(data=data)</code></pre>
   </div>
 
 </div>
-
-
-
-
-  </div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-module">
-
-
-
-<h3 id="ipyvizzustory.storylib.template" class="doc doc-heading">
-          <code>ipyvizzustory.storylib.template</code>
-
-
-</h3>
-
-  <div class="doc doc-contents ">
-  
-      <p>A module for storing the <code>HTML</code> templates.</p>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="ipyvizzustory.storylib.template.VIZZU_STORY" class="doc doc-heading">
-<code class="highlight language-python">VIZZU_STORY: str = 'https://cdn.jsdelivr.net/npm/vizzu-story@0.4/dist/vizzu-story.min.js'</code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span>
-
-</h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>A variable for storing the default url of the <code>vizzu-story</code> package.</p>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="ipyvizzustory.storylib.template.DISPLAY_INDENT" class="doc doc-heading">
-<code class="highlight language-python">DISPLAY_INDENT: str = '    '</code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span>
-
-</h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>A variable for storing the default indent in the <code>HTML</code> template.</p>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="ipyvizzustory.storylib.template.DISPLAY_TEMPLATE" class="doc doc-heading">
-<code class="highlight language-python">DISPLAY_TEMPLATE: str = '\n&lt;div&gt;\n    &lt;vizzu-player id="{id}" {vizzu_attribute} {start_slide} controller&gt;&lt;/vizzu-player&gt;\n    &lt;script type="module"&gt;\n        import VizzuPlayer from "{vizzu_story}";\n\n        const vp = document.getElementById("{id}");\n        import(vp.vizzuUrl).then(vizzuLoaded =&gt; {{\n            const lib = vizzuLoaded.default;\n            const vizzuPlayerData = {vizzu_player_data};\n            // story.set_size()\n            {chart_size}\n            vp.slides = vizzuPlayerData;\n            vp.initializing.then(chart =&gt; {{\n                // story.set_feature()\n                {chart_features}\n                // story.add_event()\n                {chart_events}\n            }});\n        }});\n    &lt;/script&gt;\n&lt;/div&gt;\n'</code>
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span>
-
-</h4>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>A variable for storing the <code>vizzu-story</code> <code>HTML</code> template.</p>
-  </div>
-
-</div>
-
 
 
 
