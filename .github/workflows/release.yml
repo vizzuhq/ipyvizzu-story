@@ -14,23 +14,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-
-    - uses: actions/cache@v3
+    - name: Checkout repo
+      uses: actions/checkout@v3
       with:
-        path: ./.venv_ipyvizzu_story
-        key: venv-ipyvizzu-story-${{ github.run_id }}
+        fetch-depth: 1
 
-    - uses: actions/cache@v3
+    - name: Cache repo
+      uses: actions/cache@v3
       with:
-        path: ./dist
-        key: dist-ipyvizzu-story-${{ github.run_id }}
+        path: |
+          ./*
+          !.git
+        key: ipyvizzu-story-${{ github.run_id }}
 
     - name: Touch dev environment
       run: make touch-dev
 
     - name: Build package
       run: make release-wo-restore
+
+    - name: Cache release files
+      uses: actions/cache@v3
+      with:
+        path: dist/
+        key: ipyvizzu-story-release-${{ github.run_id }}
 
   publish_release:
 
@@ -39,7 +46,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
 
     - name: Get workflow ID
       id: workflow_id
@@ -61,15 +71,19 @@ jobs:
         run_id=$(echo $run_data | jq -r '.workflow_runs[0].id')
         echo "run_id=${run_id}" >> $GITHUB_OUTPUT
 
-    - uses: actions/cache@v3
+    - name: Cache repo
+      uses: actions/cache@v3
       with:
-        path: ./.venv_ipyvizzu_story
-        key: venv-ipyvizzu-story-${{ steps.run_id.outputs.run_id }}
+        path: |
+          ./*
+          !.git
+        key: ipyvizzu-story-${{ steps.run_id.outputs.run_id }}
 
-    - uses: actions/cache@v3
+    - name: Cache release files
+      uses: actions/cache@v3
       with:
-        path: ./dist
-        key: dist-ipyvizzu-story-${{ steps.run_id.outputs.run_id }}
+        path: dist/
+        key: ipyvizzu-story-release-${{ steps.run_id.outputs.run_id }}
 
     - name: Release package
       run: ./.venv_ipyvizzu_story/bin/python -m twine upload -u "__token__" -p "${{ secrets.PYPI_API_TOKEN }}" dist/*.tar.gz  dist/*.whl

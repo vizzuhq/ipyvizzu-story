@@ -10,17 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/cache@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
         with:
-          path: ./.venv_ipyvizzu_story
-          key: venv-ipyvizzu-story-${{ github.run_id }}
+          fetch-depth: 1
 
-      - uses: actions/cache@v3
+      - name: Cache repo
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: nodemodules-ipyvizzu-story-${{ github.run_id }}
+          path: |
+            ./*
+            !.git
+          key: ipyvizzu-story-${{ github.run_id }}
 
       - name: Init dev environment
         run: make dev

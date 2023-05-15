@@ -22,4 +22,4 @@ jobs:
   release:
     uses: ./.github/workflows/release.yml
     secrets: inherit
-    needs: ci
+    needs: doc
