@@ -84,9 +84,7 @@ data.add_series("Baz", [5, 3, 2])
 #
 # data = Data()
 # df = pd.read_csv(
-#     "https://raw.githubusercontent.com/" +
-#     "vizzuhq/ipyvizzu-story/main/" +
-#     "docs/examples/basic/basic.csv"
+#     "https://ipyvizzu-story.vizzuhq.com/latest/assets/data/data.csv"
 # )
 # data.add_data_frame(df)
 
