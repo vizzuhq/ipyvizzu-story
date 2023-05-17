@@ -104,7 +104,7 @@ for more details.
   - [Streamlit](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/streamlit/)
   - [Flask](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/flask/)
   - [Panel](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/panel/)
-  - [Mercury/mljar](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/mercury/)
+  - [Mercury](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/mercury/)
   - [Voilà](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/voila/)
 - BI tools
   - [Mode](https://ipyvizzu-story.vizzuhq.com/latest/environments/bi/mode/)
