@@ -17,11 +17,11 @@
         <link rel="next" href="../voila/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>Mercury/mljar - ipyvizzu-story</title>
+        <title>Mercury - ipyvizzu-story</title>
       
     
     
@@ -109,7 +109,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mercurymljar" class="md-skip">
+        <a href="#mercury" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mercury/mljar
+              Mercury
             
           </span>
         </div>
@@ -1204,12 +1204,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Mercury/mljar
+          Mercury
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Mercury/mljar
+        Mercury
       </a>
       
         
@@ -1610,10 +1610,10 @@
   
 
 
-<h1 id="mercurymljar">Mercury/mljar</h1>
+<h1 id="mercury">Mercury</h1>
 <h2 id="features">Features</h2>
-<p>The features of <code>ipyvizzu-story</code> that are available in <code>Mercury/mljar</code> are
-marked with a green check.</p>
+<p>The features of <code>ipyvizzu-story</code> that are available in <code>Mercury</code> are marked with
+a green check.</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Display the created <code>Story</code> (<code>play</code> method)</li>
 </ul>
@@ -1636,33 +1636,16 @@ marked with a green check.</p>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Get the html <code>Story</code> as a string</li>
 </ul>
 <h2 id="live-example">Live example</h2>
-<p><a href="https://huggingface.co/spaces/veghdev/ipyvizzu-story-demo"><img alt="Open in Mercury" src="https://raw.githubusercontent.com/mljar/mercury/main/docs/media/open_in_mercury.svg" /></a></p>
+<p><a href="https://veghdev-ipyvizzu-story-demo.hf.space/app/ipyvizzustory_demo"><img alt="Open in Mercury" src="https://raw.githubusercontent.com/mljar/mercury/main/docs/media/open_in_mercury.svg" /></a></p>
 <h2 id="installation">Installation</h2>
 <p>Add <code>ipyvizzu-story</code> to <code>requirements.txt</code>.</p>
 <pre class="highlight"><code>python-dotenv
 pandas
-mljar-mercury
+mercury
 ipyvizzu-story</code></pre>
 <h2 id="sample">Sample</h2>
-<p>Try <code>ipyvizzu-story</code> in <code>Mercury/mljar</code> with the following sample.</p>
-<pre class="highlight"><code>---
-title: ipyvizzu-story demo
-description: ipyvizzu-story demo with mercury
-show-code: False
-params:
-params:
-    selected:
-        input: select
-        label: select what you want to see
-        choices: [animation, code]
-        multi: True
----</code></pre>
-<pre class="highlight"><code class="language-python"># configure default value
-
-selected = ["animation"]
-
-
-# import ipyvizzu and ipyvizzu-story
+<p>Try <code>ipyvizzu-story</code> in <code>Mercury</code> with the following sample.</p>
+<pre class="highlight"><code class="language-python"># import ipyvizzu and ipyvizzu-story
 
 from ipyvizzu import Data, Config
 from ipyvizzustory import Slide, Step
@@ -1672,6 +1655,22 @@ from ipyvizzustory import Story  # or
 # from ipyvizzustory.env.ipy.story import Story
 
 from IPython.display import display as display_html, HTML
+
+import mercury as mr
+
+
+# setup Mercury App
+app = mr.App(
+    title="ipyvizzu-story demo",
+    description="ipyvizzu-story demo with mercury",
+)
+
+# add widget
+selected = mr.MultiSelect(
+    label="Select what you want to see",
+    value=["animation"],
+    choices=["animation", "code"],
+)
 
 
 # create data and initialize Story with the created data
@@ -1693,7 +1692,6 @@ data.add_series("Baz", [5, 3, 2])
 
 story = Story(data=data)
 
-
 # create Slides and Steps and add them to the Story
 
 slide1 = Slide(
@@ -1710,22 +1708,17 @@ slide2 = Slide(
 )
 story.add_slide(slide2)
 
-
 # you can set the width and height (CSS style)
 
 story.set_size(width="800px", height="480px")
-
 
 # you can get the html Story as a string
 
 html = story.to_html()
 
-
-if "animation" is selected:
-    # you can display the Story with the `play` method
+if "animation" in selected.value:
     story.play()
-if "code" is selected:
-    # you can display the html code
+if "code" in selected.value:
     display_html(html)</code></pre>
 <p>Check the <a href="../../../tutorial/">Tutorial</a> for more info.</p>
 
@@ -1851,7 +1844,7 @@ if "code" is selected:
     <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.follow", "search.suggest", "search.highlight", "navigation.top", "navigation.footer", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="../../../assets/javascripts/extlinks.js"></script>
       
