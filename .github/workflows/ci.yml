@@ -24,17 +24,6 @@ jobs:
           make check-dev-py
           make dev-py
 
-      - name: Cache dev-js environment
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: dev-js-${{ hashFiles('package-lock.json') }}
-
-      - name: Init dev-js environment
-        run: |
-          make check-dev-js
-          make dev-js
-
       - name: Check format
         run: make check-format
 
@@ -47,11 +36,25 @@ jobs:
       - name: Run test
         run: make test
 
-      - name: Check js
-        run: make check-js
-
       - name: Cache coverage
         uses: actions/cache@v3
         with:
           path: ./tests/coverage
           key: coverage-${{ github.run_id }}
+
+      - name: Cache dev-js environment
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: dev-js-${{ hashFiles('package-lock.json') }}
+
+      - name: Init dev-js environment
+        run: |
+          make check-dev-js
+          make dev-js
+
+      - name: Check format-js
+        run: make check-format-js
+
+      - name: Check lint-js
+        run: make check-lint-js

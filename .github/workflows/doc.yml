@@ -29,17 +29,6 @@ jobs:
           make check-dev-py
           make dev-py
 
-      - name: Cache dev-js environment
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: dev-js-${{ hashFiles('package-lock.json') }}
-
-      - name: Init dev-js environment
-        run: |
-          make check-dev-js
-          make dev-js
-
       - name: Cache coverage
         uses: actions/cache@v3
         with:
@@ -70,17 +59,6 @@ jobs:
         run: |
           make check-dev-py
           make dev-py
-
-      - name: Cache dev-js environment
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: dev-js-${{ hashFiles('package-lock.json') }}
-
-      - name: Init dev-js environment
-        run: |
-          make check-dev-js
-          make dev-js
 
       - name: Get workflow ID
         id: workflow_id

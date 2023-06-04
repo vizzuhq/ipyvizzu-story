@@ -153,7 +153,7 @@ endif
 doc: $(DEV_PY_BUILD_FLAG)
 	$(VIRTUAL_ENV)/$(BIN_PATH)/mkdocs build -f ./tools/mkdocs/mkdocs.yml
 
-deploy: $(DEV_PY_BUILD_FLAG) $(DEV_JS_BUILD_FLAG) install
+deploy: $(DEV_PY_BUILD_FLAG) install
 	$(VIRTUAL_ENV)/$(BIN_PATH)/pip install ipyvizzu --upgrade
 	. $(VIRTUAL_ENV)/$(BIN_PATH)/activate; $(PYTHON_BIN) tools/release/deploy.py
 
