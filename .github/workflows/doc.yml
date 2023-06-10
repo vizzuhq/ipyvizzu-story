@@ -28,6 +28,7 @@ jobs:
         run: |
           make check-dev-py
           make dev-py
+          make install
 
       - name: Cache coverage
         uses: actions/cache@v3
@@ -59,6 +60,7 @@ jobs:
         run: |
           make check-dev-py
           make dev-py
+          make install
 
       - name: Get workflow ID
         id: workflow_id
