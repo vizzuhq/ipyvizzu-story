@@ -66,20 +66,6 @@ class Deploy:
             content = fh_readme.read()
 
         if not restore:
-            content = content.replace("  #  - mike:", "  - mike:")
-            content = content.replace(
-                "  #      version_selector: true", "      version_selector: true"
-            )
-            content = content.replace(
-                "  #      alias_type: symlink", "      alias_type: symlink"
-            )
-            content = content.replace(
-                "  #      canonical_version: latest", "      canonical_version: latest"
-            )
-            content = content.replace(
-                "  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
-                "      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
-            )
             content = content.replace(
                 f"{IPYVIZZU_SITE_URL}/latest/objects.inv",
                 f"{IPYVIZZU_SITE_URL}/{ipyvizzu_version}/objects.inv",
@@ -91,20 +77,6 @@ class Deploy:
                     "# - content.action.edit",
                 )
         else:
-            content = content.replace("  - mike:", "  #  - mike:")
-            content = content.replace(
-                "      version_selector: true", "  #      version_selector: true"
-            )
-            content = content.replace(
-                "      alias_type: symlink", "  #      alias_type: symlink"
-            )
-            content = content.replace(
-                "      canonical_version: latest", "  #      canonical_version: latest"
-            )
-            content = content.replace(
-                "      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
-                "  #      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html",
-            )
             content = content.replace(
                 f"{IPYVIZZU_SITE_URL}/{ipyvizzu_version}/objects.inv",
                 f"{IPYVIZZU_SITE_URL}/latest/objects.inv",

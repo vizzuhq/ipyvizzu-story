@@ -9,19 +9,19 @@ csv_url: ../../../assets/data/data.csv
 The features of `ipyvizzu-story` that are available in `DataCamp` are marked
 with a green check.
 
-- [x] Display the created `Story` (`play` method) \*
+- [x]  Display the created `Story` (`play` method) \*
 
-- [x] Display the created `Story` (`_repr_html_` method) \*
+- [x]  Display the created `Story` (`_repr_html_` method) \*
 
-- [ ] Use fullscreen \*\*
+- [ ]  Use fullscreen \*\*
 
-- [x] Use navigation buttons \*
+- [x]  Use navigation buttons \*
 
-- [x] Set width/height of the `Story`
+- [x]  Set width/height of the `Story`
 
-- [x] Export the `Story` into a html file \*
+- [x]  Export the `Story` into a html file \*
 
-- [x] Get the html `Story` as a string
+- [x]  Get the html `Story` as a string
 
 \*`ipyvizzu-story` does not work in the default editor, switch to the
 `JupyterLab`-style editor

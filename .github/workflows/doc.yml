@@ -86,16 +86,6 @@ jobs:
           path: ./tests/coverage
           key: coverage-${{ steps.run_id.outputs.run_id }}
 
-      - name: Checkout mike
-        uses: actions/checkout@v3
-        with:
-          repository: jimporter/mike
-          fetch-depth: 1
-          path: mike
-
-      - name: Install mike
-        run: ./.venv_ipyvizzu_story/bin/pip install mike/
-
       - name: Configure Git
         run: |
           git config --global user.name "${{ env.GIT_USER_NAME }}"

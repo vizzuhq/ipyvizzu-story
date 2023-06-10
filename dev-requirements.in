@@ -58,9 +58,6 @@ types-pyyaml
 types-requests
 #
 #
-mike
-#
-#
 # environments
 #
 notebook

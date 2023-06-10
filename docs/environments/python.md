@@ -9,19 +9,19 @@ csv_url: ../../assets/data/data.csv
 The features of `ipyvizzu-story` that are available in `Python` are marked with
 a green check.
 
-- [ ] Display the created `Story` (`play` method)
+- [ ]  Display the created `Story` (`play` method)
 
-- [ ] Display the created `Story` (`_repr_html_` method)
+- [ ]  Display the created `Story` (`_repr_html_` method)
 
-- [x] Use fullscreen \*
+- [x]  Use fullscreen \*
 
-- [x] Use navigation buttons \*
+- [x]  Use navigation buttons \*
 
-- [x] Set width/height of the `Story` \*
+- [x]  Set width/height of the `Story` \*
 
-- [x] Export the `Story` into a html file
+- [x]  Export the `Story` into a html file
 
-- [x] Get the html `Story` as a string
+- [x]  Get the html `Story` as a string
 
 \*can only be used in the exported html file.
 
