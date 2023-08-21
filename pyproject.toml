@@ -51,7 +51,7 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [tool.pdm.package-dir]
-ipyvizzu = "src/ipyvizzustory"
+ipyvizzustory = "src/ipyvizzustory"
 
 [tool.pdm.version]
 source = "file"
