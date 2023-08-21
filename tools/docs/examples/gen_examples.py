@@ -13,7 +13,7 @@ JS_ASSETS_PATH = "assets/javascripts"
 
 sys.path.insert(0, str(TOOLS_PATH / "modules"))
 
-from contchdirext import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
+from chdir import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
     chdir,
 )
 from vizzu import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order

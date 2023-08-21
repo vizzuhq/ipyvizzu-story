@@ -9,8 +9,8 @@ dist
 
 .venv
 .pdm-python
+.tox
 .coverage
-.tests
 
 site
 node_modules

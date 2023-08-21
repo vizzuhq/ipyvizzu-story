@@ -3,7 +3,7 @@
 import unittest
 import unittest.mock
 import os
-import shutil
+import sys
 from abc import ABC, abstractmethod
 
 from ipyvizzu import Data, Style
@@ -204,22 +204,21 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
 
 
 class TestStoryHtml(TestHtml, unittest.TestCase):
-    def setUp(self):
-        self.test_dir = os.path.dirname(os.path.realpath(__file__))
-        self.test_tmp_dir = os.path.join(self.test_dir, "..", ".tests")
-        os.makedirs(self.test_tmp_dir)
-
-    def tearDown(self):
-        shutil.rmtree(self.test_tmp_dir)
-
     def story(self, *args, **kwargs):
         return Story(*args, **kwargs)
 
     def test_export_to_html(self) -> None:
+        test_dir = os.path.dirname(os.path.realpath(__file__))
+        test_out = os.path.join(
+            test_dir,
+            "..",
+            ".tox",
+            "py" + str(sys.version_info.major) + str(sys.version_info.minor),
+        )
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
-            test_html = self.test_tmp_dir + "/test_export_to_html.html"
+            test_html = os.path.join(test_out, "test_export_to_html.html")
             story = self.get_story()
             story.export_to_html(test_html)
             with open(test_html, "r", encoding="utf8") as file_desc:
