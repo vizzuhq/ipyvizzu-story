@@ -79,8 +79,6 @@ plugins:
       redirect_template: ./tools/docs/overrides/mike/redirect.html
   - search
   - section-index
-  - literate-nav:
-      implicit_index: true
   - autorefs
   - mkdocstrings:
       enable_inventory: true
@@ -102,7 +100,9 @@ plugins:
         - reference/gen_reference.py
   - coverage:
       page_name: coverage
-      html_report_dir: tests/coverage
+      html_report_dir: .coverage/html
+  - literate-nav:
+      implicit_index: true
 
 nav:
   - Home: index.md
