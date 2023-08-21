@@ -13,7 +13,7 @@ with a green check.
 
 - [x]  Display the created `Story` (`_repr_html_` method)
 
-- [x]  Use fullscreen \*
+- [ ]  Use fullscreen \*
 
 - [x]  Use navigation buttons
 
