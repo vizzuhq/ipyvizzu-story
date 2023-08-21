@@ -7,10 +7,10 @@ build
 dist
 *.egg-info
 
-tests/coverage
-.test.*
-
-.venv_ipyvizzu_story
+.venv
+.pdm-python
+.tox
+.coverage
 
 site
 node_modules

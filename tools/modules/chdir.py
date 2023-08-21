@@ -1,4 +1,4 @@
-"""A module for working with context."""
+# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 
 import os
 from pathlib import Path
@@ -9,15 +9,11 @@ from typing import Union
 if sys.version_info >= (3, 11):
     from contextlib import chdir  # pylint: disable=unused-import
 else:
+    # TODO: remove once support for Python 3.10 is dropped
     from contextlib import contextmanager
 
     @contextmanager
     def chdir(path: Union[str, Path]):
-        """
-        A method for changing the current working directory upon entering
-        and restoring the old one on exit.
-        """
-
         old_wd = os.getcwd()
         os.chdir(path)
         try:

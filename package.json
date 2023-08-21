@@ -2,12 +2,7 @@
   "name": "ipyvizzu-story-dev",
   "description": "ipyvizzu-story development",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "check": "npm-run-all check-prettier check-eslint",
-    "prettier": "prettier -w docs/ tools/ .github/",
-    "check-prettier": "prettier -c docs/ tools/ .github/",
-    "eslint": "eslint --ext .js,.cjs,.mjs -c .eslintrc.cjs --fix docs/",
-    "check-eslint": "eslint --ext .js,.cjs,.mjs -c .eslintrc.cjs docs/"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,5 +18,19 @@
     "eslint": "*",
     "eslint-config-standard": "*",
     "eslint-config-prettier": "*"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "endOfLine": "auto"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "extends": [
+      "standard",
+      "prettier"
+    ]
   }
 }

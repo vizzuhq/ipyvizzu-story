@@ -1,4 +1,4 @@
-"""A module for deploying site."""
+# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 
 from pathlib import Path
 from subprocess import Popen
@@ -6,12 +6,12 @@ import sys
 
 
 REPO_PATH = Path(__file__).parent / ".." / ".."
-MKDOCS_PATH = REPO_PATH / "tools" / "mkdocs"
+TOOLS_PATH = REPO_PATH / "tools"
+MKDOCS_PATH = TOOLS_PATH / "docs"
 
+sys.path.insert(0, str(TOOLS_PATH / "modules"))
 
-sys.path.insert(0, str(MKDOCS_PATH / "modules"))
-
-from context import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
+from chdir import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
     chdir,
 )
 from vizzu import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
@@ -21,14 +21,10 @@ from vizzu import (  # pylint: disable=import-error, wrong-import-position, wron
 
 
 class Deploy:
-    """A class for deploying site."""
-
     latest: bool = True
 
     @staticmethod
     def mike() -> None:
-        """A method for deploying site."""
-
         version = Vizzu.get_ipyvizzustory_version()
 
         params = [
@@ -41,7 +37,7 @@ class Deploy:
         if Deploy.latest:
             params.append("latest")
         params.append("-F")
-        params.append("tools/mkdocs/mkdocs.yml")
+        params.append("tools/docs/mkdocs.yml")
 
         with Popen(
             params,
@@ -53,13 +49,6 @@ class Deploy:
 
     @staticmethod
     def set_config(restore: bool) -> None:
-        """
-        A method for setting config.
-
-        Args:
-            restore: A flag to restore the config.
-        """
-
         ipyvizzu_version = Vizzu.get_ipyvizzu_version()
 
         with open(MKDOCS_PATH / "mkdocs.yml", "r", encoding="utf8") as fh_readme:
@@ -93,11 +82,6 @@ class Deploy:
 
 
 def main() -> None:
-    """
-    The main method.
-    It set deploys site.
-    """
-
     with chdir(REPO_PATH):
         Deploy.set_config(restore=False)
         Deploy.mike()

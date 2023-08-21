@@ -1,15 +1,17 @@
-"""A module for working with Vizzu."""
+# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 
-import importlib.metadata
 from pathlib import Path
 import re
 import requests
 
+import ipyvizzu
+
+import ipyvizzustory
+
 from ipyvizzustory.storylib.template import VIZZU_STORY
 
 
-REPO_PATH = Path(__file__).parent / ".." / ".." / ".."
-MKDOCS_PATH = REPO_PATH / "tools" / "mkdocs"
+REPO_PATH = Path(__file__).parent / ".." / ".."
 
 IPYVIZZUSTORY_VERSION = ""
 VIZZUSTORY_VERSION = ""
@@ -25,8 +27,6 @@ VIZZUSTORY_CDN_URL = "https://cdn.jsdelivr.net/npm/vizzu-story"
 
 
 class Vizzu:
-    """A class for working with Vizzu."""
-
     _ipyvizzustory_version = ""
     _vizzustory_version = ""
     _ipyvizzu_version = ""
@@ -34,35 +34,16 @@ class Vizzu:
 
     @staticmethod
     def get_ipyvizzustory_version() -> str:
-        """
-        A static method for returning ipyvizzu-story major.minor version.
-
-        Returns:
-            ipyvizzu-story major.minor version.
-        """
-
         if IPYVIZZUSTORY_VERSION:
             return IPYVIZZUSTORY_VERSION
         if not Vizzu._ipyvizzustory_version:
-            with open(
-                REPO_PATH / "setup.py",
-                "r",
-                encoding="utf8",
-            ) as f_version:
-                content = f_version.read()
-                version = re.search(r"version=\"(\d+).(\d+).(\d+)\"", content)
-                Vizzu._ipyvizzustory_version = f"{version.group(1)}.{version.group(2)}"  # type: ignore  # pylint: disable=line-too-long
+            version = ipyvizzustory.__version__
+            version_groups = re.search(r"(\d+.\d+).\d+", version)
+            Vizzu._ipyvizzustory_version = version_groups.group(1)  # type: ignore
         return Vizzu._ipyvizzustory_version
 
     @staticmethod
     def get_vizzustory_version() -> str:
-        """
-        A static method for returning vizzu-story major.minor version.
-
-        Returns:
-            vizzu-story major.minor version.
-        """
-
         if VIZZUSTORY_VERSION:
             return VIZZUSTORY_VERSION
         if not Vizzu._vizzustory_version:
@@ -72,30 +53,15 @@ class Vizzu:
 
     @staticmethod
     def get_ipyvizzu_version() -> str:
-        """
-        A static method for returning ipyvizzu major.minor version.
-
-        Returns:
-            ipyvizzu major.minor version.
-        """
-
         if IPYVIZZU_VERSION:
             return IPYVIZZU_VERSION
         if not Vizzu._ipyvizzu_version:
-            metadata = importlib.metadata.version("ipyvizzu")
-            version = re.search(r"(\d+).(\d+).(\d+)", metadata)
-            Vizzu._ipyvizzu_version = f"{version.group(1)}.{version.group(2)}"  # type: ignore
+            version = ipyvizzu.__version__
+            Vizzu._ipyvizzu_version = re.search(r"(\d+.\d+).\d+", version).group(1)  # type: ignore
         return Vizzu._ipyvizzu_version
 
     @staticmethod
     def get_vizzu_version() -> str:
-        """
-        A static method for returning vizzu major.minor version.
-
-        Returns:
-            vizzu major.minor version.
-        """
-
         if VIZZU_VERSION:
             return VIZZU_VERSION
         if not Vizzu._vizzu_version:
@@ -110,17 +76,6 @@ class Vizzu:
 
     @staticmethod
     def set_version(content: str, restore: bool = False) -> str:
-        """
-        A static method for setting vizzu version in content.
-
-        Args:
-            content: Content to be modified.
-            restore: A flag to restore the content.
-
-        Returns:
-            Modified content.
-        """
-
         ipyvizzu_version = Vizzu.get_ipyvizzu_version()
         vizzustory_version = Vizzu.get_vizzustory_version()
         ipyvizzustory_version = Vizzu.get_ipyvizzustory_version()

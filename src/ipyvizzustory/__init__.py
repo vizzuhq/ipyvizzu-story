@@ -19,6 +19,7 @@ however `Story` could be imported with full path.
 * [Slide][ipyvizzustory.storylib.story.Slide]
 """
 
+from .__version__ import __version__
 
 from .storylib.story import Step, Slide
 
@@ -26,7 +27,7 @@ from .env.py.story import Story as PythonStory
 
 try:
     from .env.ipy.story import Story as JupyterStory
-    import IPython  # type: ignore
+    import IPython
 
     if not IPython.get_ipython():  # pragma: no cover
         raise ImportError("JupyterStory")
@@ -38,7 +39,7 @@ try:
     import streamlit as st
 
     if hasattr(st, "runtime"):  # pragma: no cover
-        ctx = st.runtime.scriptrunner.get_script_run_ctx()  # type: ignore
+        ctx = st.runtime.scriptrunner.get_script_run_ctx()
     else:  # pragma: no cover
         ctx = st.scriptrunner.script_run_context.get_script_run_ctx()  # type: ignore  # pylint: disable=no-member
 
