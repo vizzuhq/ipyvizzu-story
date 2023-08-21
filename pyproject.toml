@@ -57,6 +57,39 @@ ipyvizzu = "src/ipyvizzustory"
 source = "file"
 path = "src/ipyvizzustory/__version__.py"
 
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist =
+    py{36,37,38,39,310,311}
+    coverage
+
+[testenv]
+setenv =
+    COVERAGE_FILE = .coverage/env/.coverage.{envname}
+deps =
+    coverage[toml]
+    ddt
+extras =
+    jupyter
+    streamlit
+    panel
+commands =
+    python -m coverage run --branch --source ipyvizzustory -m unittest discover tests
+    python -m coverage report -m
+    python -c "import os; pyenv='{envname}'; os.rename('.coverage/env/.coverage.' + pyenv, '.coverage/env/.coverage.3.' + pyenv[3:])"
+
+[testenv:py{37,38,39,310,311}]
+package = editable
+
+[testenv:coverage]
+skip_install = True
+commands =
+    python -m coverage combine --keep --data-file .coverage/.coverage .coverage/env/
+    python -m coverage html --data-file .coverage/.coverage -d .coverage/html
+    python -m coverage report --data-file .coverage/.coverage -m --fail-under=100
+"""
+
 [tool.pdm.dev-dependencies]
 packagetool = [
     "pdm==2.8.0 ; python_version >= '3.10'",
@@ -110,3 +143,6 @@ docs = [
 [tool.pylint.messages-control]
 disable = ["fixme"]
 good-names= ["i", "df"]
+
+[tool.coverage.paths]
+source = ["src/", ".tox/py*/lib/python*/site-packages/"]

@@ -9,7 +9,7 @@ dist
 
 .venv
 .pdm-python
-tests/coverage
+.coverage
 .test.*
 
 site
