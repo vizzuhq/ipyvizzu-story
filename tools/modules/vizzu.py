@@ -1,9 +1,10 @@
 # pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 
-import importlib.metadata
 from pathlib import Path
 import re
 import requests
+
+import ipyvizzu
 
 import ipyvizzustory
 
@@ -37,7 +38,8 @@ class Vizzu:
             return IPYVIZZUSTORY_VERSION
         if not Vizzu._ipyvizzustory_version:
             version = ipyvizzustory.__version__
-            Vizzu._ipyvizzu_version = re.search(r"(\d+.\d+).\d+", version).group(1)  # type: ignore
+            version_groups = re.search(r"(\d+.\d+).\d+", version)
+            Vizzu._ipyvizzustory_version = version_groups.group(1)  # type: ignore
         return Vizzu._ipyvizzustory_version
 
     @staticmethod
@@ -54,9 +56,8 @@ class Vizzu:
         if IPYVIZZU_VERSION:
             return IPYVIZZU_VERSION
         if not Vizzu._ipyvizzu_version:
-            metadata = importlib.metadata.version("ipyvizzu")
-            version = re.search(r"(\d+).(\d+).(\d+)", metadata)
-            Vizzu._ipyvizzu_version = f"{version.group(1)}.{version.group(2)}"  # type: ignore
+            version = ipyvizzu.__version__
+            Vizzu._ipyvizzu_version = re.search(r"(\d+.\d+).\d+", version).group(1)  # type: ignore
         return Vizzu._ipyvizzu_version
 
     @staticmethod
