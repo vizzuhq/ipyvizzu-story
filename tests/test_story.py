@@ -2,6 +2,7 @@
 
 import unittest
 import unittest.mock
+import sys
 
 from ddt import ddt, data  # type: ignore
 
@@ -40,8 +41,13 @@ class TestJupyterStory(TestHtml, unittest.TestCase):
                 "ipyvizzustory.env.ipy.story.display_html"
             ) as output:
                 self.get_story().play()
+                if sys.version_info >= (3, 8):
+                    args = output.call_args_list[0].args
+                else:
+                    # TODO: remove once support for Python 3.7 is dropped
+                    args, _ = output.call_args_list[0]
                 self.assertEqual(
-                    output.call_args_list[0].args[0].data,
+                    args[0].data,
                     self.get_html(),
                 )
 
@@ -69,8 +75,13 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
                 story = self.get_story()
                 story.set_size(width=800, height=480)
                 story.play()
+                if sys.version_info >= (3, 8):
+                    args = output.call_args_list[0].args
+                else:
+                    # TODO: remove once support for Python 3.7 is dropped
+                    args, _ = output.call_args_list[0]
                 self.assertEqual(
-                    output.call_args_list[0].args[0],
+                    args[0],
                     self.get_html_with_size(),
                 )
 
@@ -106,7 +117,12 @@ class TestPanelStory(TestHtml, unittest.TestCase):
                 story = self.get_story()
                 story.set_size(width="800px", height="480px")
                 story.play()
+                if sys.version_info >= (3, 8):
+                    args = output.call_args_list[0].args
+                else:
+                    # TODO: remove once support for Python 3.7 is dropped
+                    args, _ = output.call_args_list[0]
                 self.assertEqual(
-                    output.call_args_list[0].args[0],
+                    args[0],
                     self.get_html_with_size(),
                 )
