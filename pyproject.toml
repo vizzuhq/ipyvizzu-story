@@ -1,0 +1,58 @@
+[project]
+name = "ipyvizzu-story"
+dynamic = ["version"]
+description = "Build, present and share animated data stories in Jupyter Notebook and similar environments."
+authors = [
+    {name = "Vizzu Inc.", email = "hello@vizzuhq.com"},
+]
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "ipyvizzu",
+]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+keywords = [
+    "python",
+    "template",
+    "notebook",
+    "interactive",
+    "presentation",
+    "data-visualization",
+    "charting",
+    "datastory",
+    "datastorytelling",
+]
+
+[project.optional-dependencies]
+jupyter = [
+    "IPython",
+]
+streamlit = [
+    "streamlit",
+]
+panel = [
+    "panel",
+]
+
+[project.urls]
+Homepage = "https://ipyvizzu-story.vizzuhq.com"
+Documentation = "https://ipyvizzu-story.vizzuhq.com"
+Source = "https://github.com/vizzuhq/ipyvizzu-story"
+Tracker = "https://github.com/vizzuhq/ipyvizzu-story/issues"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm.package-dir]
+ipyvizzu = "src/ipyvizzustory"
+
+[tool.pdm.version]
+source = "file"
+path = "src/ipyvizzustory/__version__.py"
