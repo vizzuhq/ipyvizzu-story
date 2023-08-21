@@ -19,6 +19,7 @@ however `Story` could be imported with full path.
 * [Slide][ipyvizzustory.storylib.story.Slide]
 """
 
+from .__version__ import __version__
 
 from .storylib.story import Step, Slide
 
