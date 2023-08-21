@@ -6,7 +6,7 @@ groups = ["codequality", "docs", "env", "packagedeps", "packagetool"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:641f2055a47b7dccac4cafe3c3fefc1ccfd1bc52e8268f5b04ce4107c09f157e"
+content_hash = "sha256:ef510ce31d0efa600f2ec5d360ae4977f05fa9457f467f1f8990058c04b532c6"
 
 [[package]]
 name = "altair"
@@ -697,6 +697,15 @@ dependencies = [
 ]
 files = [
     {file = "cssbeautifier-1.14.9.tar.gz", hash = "sha256:2da432472f68170eb854aff97b16a24721f5090ee36af2e31199590a89e7f71f"},
+]
+
+[[package]]
+name = "ddt"
+version = "1.6.0"
+summary = "Data-Driven/Decorated Tests"
+files = [
+    {file = "ddt-1.6.0-py2.py3-none-any.whl", hash = "sha256:e3c93b961a108b4f4d5a6c7f2263513d928baf3bb5b32af8e1c804bfb041141d"},
+    {file = "ddt-1.6.0.tar.gz", hash = "sha256:f71b348731b8c78c3100bffbd951a769fbd439088d1fdbb3841eee019af80acd"},
 ]
 
 [[package]]

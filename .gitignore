@@ -10,7 +10,7 @@ dist
 .venv
 .pdm-python
 .coverage
-.test.*
+.tests
 
 site
 node_modules
