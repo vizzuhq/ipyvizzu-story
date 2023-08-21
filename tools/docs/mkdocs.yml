@@ -76,7 +76,7 @@ plugins:
       version_selector: true
       alias_type: symlink
       canonical_version: latest
-      redirect_template: ./tools/mkdocs/overrides/mike/redirect.html
+      redirect_template: ./tools/docs/overrides/mike/redirect.html
   - search
   - section-index
   - literate-nav:
