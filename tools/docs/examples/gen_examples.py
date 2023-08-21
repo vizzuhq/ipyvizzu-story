@@ -1,4 +1,4 @@
-"""A module for generating examples."""
+# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 
 from pathlib import Path
 import sys
@@ -7,12 +7,13 @@ import mkdocs_gen_files  # type: ignore
 
 
 REPO_PATH = Path(__file__).parent / ".." / ".." / ".."
-MKDOCS_PATH = REPO_PATH / "tools" / "mkdocs"
+TOOLS_PATH = REPO_PATH / "tools"
+MKDOCS_PATH = TOOLS_PATH / "docs"
 JS_ASSETS_PATH = "assets/javascripts"
 
-sys.path.insert(0, str(MKDOCS_PATH / "modules"))
+sys.path.insert(0, str(TOOLS_PATH / "modules"))
 
-from context import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
+from contchdirext import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
     chdir,
 )
 from vizzu import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
@@ -21,8 +22,6 @@ from vizzu import (  # pylint: disable=import-error, wrong-import-position, wron
 
 
 class GenExamples:
-    """A class for generating notebooks."""
-
     # pylint: disable=too-few-public-methods
 
     @staticmethod
@@ -89,8 +88,6 @@ class GenExamples:
 
     @staticmethod
     def generate() -> None:
-        """A method for generating shareable notebooks."""
-
         GenExamples._create_index()
         example_path = REPO_PATH / "docs" / "examples"
         for example in sorted(example_path.glob("*.md")):
@@ -98,11 +95,6 @@ class GenExamples:
 
 
 def main() -> None:
-    """
-    The main method.
-    It prepares files for the documentation site.
-    """
-
     with chdir(REPO_PATH):
         GenExamples.generate()
 

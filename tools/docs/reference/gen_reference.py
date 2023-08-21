@@ -1,4 +1,4 @@
-"""A module for generating the code reference."""
+# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 
 from pathlib import Path
 import sys
@@ -10,31 +10,21 @@ import ipyvizzustory
 
 
 REPO_PATH = Path(__file__).parent / ".." / ".." / ".."
-MKDOCS_PATH = REPO_PATH / "tools" / "mkdocs"
+TOOLS_PATH = REPO_PATH / "tools"
 
 
-sys.path.insert(0, str(MKDOCS_PATH / "modules"))
+sys.path.insert(0, str(TOOLS_PATH / "modules"))
 
-from context import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
+from chdir import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
     chdir,
 )
 
 
 class Reference:
-    """A class for generating the code reference."""
-
     # pylint: disable=too-few-public-methods
 
     @staticmethod
     def generate(package: ModuleType, folder: str) -> None:
-        """
-        A method for generating the code reference.
-
-        Args:
-            package: The src package.
-            folder: The destination folder of the code reference.
-        """
-
         for path in sorted(Path("src").rglob("*.py")):
             module_path = path.relative_to("src").with_suffix("")
 
@@ -66,11 +56,6 @@ class Reference:
 
 
 def main() -> None:
-    """
-    The main method.
-    It generates the code reference.
-    """
-
     with chdir(REPO_PATH):
         Reference.generate(ipyvizzustory, "reference")
 
