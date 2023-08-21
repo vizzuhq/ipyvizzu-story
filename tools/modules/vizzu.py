@@ -5,6 +5,8 @@ from pathlib import Path
 import re
 import requests
 
+import ipyvizzustory
+
 from ipyvizzustory.storylib.template import VIZZU_STORY
 
 
@@ -34,14 +36,8 @@ class Vizzu:
         if IPYVIZZUSTORY_VERSION:
             return IPYVIZZUSTORY_VERSION
         if not Vizzu._ipyvizzustory_version:
-            with open(
-                REPO_PATH / "setup.py",
-                "r",
-                encoding="utf8",
-            ) as f_version:
-                content = f_version.read()
-                version = re.search(r"version=\"(\d+).(\d+).(\d+)\"", content)
-                Vizzu._ipyvizzustory_version = f"{version.group(1)}.{version.group(2)}"  # type: ignore  # pylint: disable=line-too-long
+            version = ipyvizzustory.__version__
+            Vizzu._ipyvizzu_version = re.search(r"(\d+.\d+).\d+", version).group(1)  # type: ignore
         return Vizzu._ipyvizzustory_version
 
     @staticmethod
