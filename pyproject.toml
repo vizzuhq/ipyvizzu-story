@@ -61,7 +61,7 @@ path = "src/ipyvizzustory/__version__.py"
 init_py = "pdm install"
 init_js = "npm install"
 
-init_src = {composite = ["init_py"]}
+init_src = {composite = ["pkg_install", "init_py"]}
 init_docs = {composite = ["init"]}
 init_tools = {composite = ["init"]}
 

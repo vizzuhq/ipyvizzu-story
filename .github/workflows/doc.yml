@@ -7,10 +7,10 @@ on:
   workflow_call:
 
 jobs:
-  create_doc:
+  build_docs:
     if: ${{ !((github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch') }}
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repo
@@ -21,28 +21,35 @@ jobs:
       - name: Cache dev-py environment
         uses: actions/cache@v3
         with:
-          path: .venv_ipyvizzu_story
-          key: dev-py-${{ hashFiles('dev-requirements.txt') }}
+          path: .venv
+          key: cache_dev_py_ubuntu22_${{ hashFiles('pdm.lock') }}
 
-      - name: Init dev-py environment
-        run: |
-          make check-dev-py
-          make dev-py
-          make install
+      - name: Cache dev-js environment
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: cache_dev_js_ubuntu22_${{ hashFiles('package-lock.json') }}
 
       - name: Cache coverage
         uses: actions/cache@v3
         with:
-          path: ./tests/coverage
-          key: coverage-${{ github.run_id }}
+          path: .coverage/html
+          key: cache_coverage_${{ github.run_id }}
+
+      - name: Install package
+        run: |
+          source .venv/bin/activate
+          pdm run pkg_install
 
       - name: Build documentation
-        run: make doc
+        run: |
+          source .venv/bin/activate
+          pdm run docs_build
 
-  publish_doc:
+  publish_docs:
     if: ${{ ((github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch') }}
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repo
@@ -53,14 +60,14 @@ jobs:
       - name: Cache dev-py environment
         uses: actions/cache@v3
         with:
-          path: .venv_ipyvizzu_story
-          key: dev-py-${{ hashFiles('dev-requirements.txt') }}
+          path: .venv
+          key: cache_dev_py_ubuntu22_${{ hashFiles('pdm.lock') }}
 
-      - name: Init dev-py environment
-        run: |
-          make check-dev-py
-          make dev-py
-          make install
+      - name: Cache dev-js environment
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: cache_dev_js_ubuntu22_${{ hashFiles('package-lock.json') }}
 
       - name: Get workflow ID
         id: workflow_id
@@ -85,8 +92,13 @@ jobs:
       - name: Cache coverage
         uses: actions/cache@v3
         with:
-          path: ./tests/coverage
-          key: coverage-${{ steps.run_id.outputs.run_id }}
+          path: .coverage/html
+          key: cache_coverage_${{ steps.run_id.outputs.run_id }}
+
+      - name: Install package
+        run: |
+          source .venv/bin/activate
+          pdm run pkg_install
 
       - name: Configure Git
         run: |
@@ -98,6 +110,7 @@ jobs:
 
       - name: Deploy documentation
         run: |
+          source .venv/bin/activate
           git fetch origin gh-pages || echo "gh-pages does not exist"
-          make deploy
+          pdm run docs_deploy
           git push origin gh-pages
