@@ -56,3 +56,57 @@ ipyvizzu = "src/ipyvizzustory"
 [tool.pdm.version]
 source = "file"
 path = "src/ipyvizzustory/__version__.py"
+
+[tool.pdm.dev-dependencies]
+packagetool = [
+    "pdm==2.8.0 ; python_version >= '3.10'",
+    "twine ; python_version >= '3.10'"
+]
+packagedeps = [
+    "ipyvizzu ; python_version >= '3.10'",
+]
+codequality = [
+    "pre-commit ; python_version >= '3.10'",
+    "black ; python_version >= '3.10'",
+    "black[jupyter] ; python_version >= '3.10'",
+    "pylint ; python_version >= '3.10'",
+    "mypy ; python_version >= '3.10'",
+    "tox ; python_version >= '3.10'",
+]
+env = [
+    "notebook ; python_version >= '3.10'",
+    "IPython ; python_version >= '3.10'",
+    "streamlit ; python_version >= '3.10'",
+    "panel ; python_version >= '3.10'",
+]
+docs = [
+    "mdformat ; python_version >= '3.10'",
+    "mdformat-beautysh ; python_version >= '3.10'",
+    "mdformat-black ; python_version >= '3.10'",
+    "mdformat-configurable-black ; python_version >= '3.10'",
+    "mdformat-config ; python_version >= '3.10'",
+    "mdformat-web ; python_version >= '3.10'",
+    "mdformat-admon ; python_version >= '3.10'",
+    "mdformat-gfm ; python_version >= '3.10'",
+    "mdformat-tables ; python_version >= '3.10'",
+    "mdformat-footnote ; python_version >= '3.10'",
+    "mdformat-frontmatter ; python_version >= '3.10'",
+    "mdx_truly_sane_lists ; python_version >= '3.10'",
+    "pyyaml ; python_version >= '3.10'",
+    "types-pyyaml ; python_version >= '3.10'",
+    "requests ; python_version >= '3.10'",
+    "types-requests ; python_version >= '3.10'",
+    "mkdocs ; python_version >= '3.10'",
+    "mkdocs-material ; python_version >= '3.10'",
+    "mkdocs-section-index ; python_version >= '3.10'",
+    "mkdocs-literate-nav ; python_version >= '3.10'",
+    "mkdocs-autorefs ; python_version >= '3.10'",
+    "mkdocstrings[python] ; python_version >= '3.10'",
+    "mkdocs-gen-files ; python_version >= '3.10'",
+    "mkdocs-coverage ; python_version >= '3.10'",
+    "mike @ git+https://github.com/jimporter/mike.git@master",
+]
+
+[tool.pylint.messages-control]
+disable = ["fixme"]
+good-names= ["i", "df"]
