@@ -19,7 +19,9 @@ however `Story` could be imported with full path.
 * [Slide][ipyvizzustory.storylib.story.Slide]
 """
 
-from .__version__ import __version__
+import warnings
+
+from .__version__ import __version__, PYENV
 
 from .storylib.story import Step, Slide
 
@@ -72,3 +74,11 @@ Available types:
 """
 
 __all__ = ["get_story", "Story", "Slide", "Step"]
+
+# TODO: remove once support for Python 3.6 is dropped
+if PYENV < (3, 7):
+    warnings.warn(
+        "Python 3.6 support will be dropped in future versions.",
+        FutureWarning,
+        stacklevel=2,
+    )
