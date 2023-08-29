@@ -31,23 +31,23 @@ try:
     from .env.ipy.story import Story as JupyterStory
     import IPython
 
-    if not IPython.get_ipython():  # pragma: no cover
+    if not IPython.get_ipython():
         raise ImportError("JupyterStory")
-except ImportError as e:  # pragma: no cover
+except ImportError:
     JupyterStory = None  # type: ignore
 
 try:
     from .env.st.story import Story as StreamlitStory
     import streamlit as st
 
-    if hasattr(st, "runtime"):  # pragma: no cover
+    if hasattr(st, "runtime"):
         ctx = st.runtime.scriptrunner.get_script_run_ctx()
-    else:  # pragma: no cover
+    else:
         ctx = st.scriptrunner.script_run_context.get_script_run_ctx()  # type: ignore  # pylint: disable=no-member
 
-    if not ctx:  # pragma: no cover
+    if not ctx:
         raise ImportError("StreamlitStory")
-except ImportError:  # pragma: no cover
+except ImportError:
     StreamlitStory = None  # type: ignore
 
 
