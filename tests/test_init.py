@@ -47,10 +47,11 @@ class TestInitPy(unittest.TestCase):
             )
 
     def test_import_story_in_python_with_import_errors(self):
-        with RaiseImportError.module_name("IPython", "streamlit"):
-            with ReImport("ipyvizzustory"):
-                import ipyvizzustory  # pylint: disable=import-outside-toplevel
+        with RaiseImportError.module_name("IPython"):
+            with RaiseImportError.module_name("streamlit"):
+                with ReImport("ipyvizzustory"):
+                    import ipyvizzustory  # pylint: disable=import-outside-toplevel
 
-                self.assertEqual(
-                    ipyvizzustory.Story.__module__, "ipyvizzustory.env.py.story"
-                )
+                    self.assertEqual(
+                        ipyvizzustory.Story.__module__, "ipyvizzustory.env.py.story"
+                    )

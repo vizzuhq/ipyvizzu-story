@@ -37,19 +37,16 @@ class ReImport:
 class RaiseImportError:
     @classmethod
     @contextmanager
-    def module_name(cls, *module_names: str) -> Iterator[None]:
-        original_values = {name: os.environ.get(name, None) for name in module_names}
-        for name in module_names:
-            os.environ[name] = name
-
+    def module_name(cls, module_name: str) -> Iterator[None]:
+        original_value = os.environ.get("RAISE_IMPORT_ERROR", None)
+        os.environ["RAISE_IMPORT_ERROR"] = module_name
         try:
             yield
         finally:
-            for name, original_value in original_values.items():
-                if original_value is None:
-                    os.environ.pop(name, None)
-                else:
-                    os.environ[name] = original_value
+            if original_value is None:
+                os.environ.pop("RAISE_IMPORT_ERROR", None)
+            else:
+                os.environ["RAISE_IMPORT_ERROR"] = original_value
 
     @staticmethod
     def overwrite_imports() -> None:
@@ -57,9 +54,9 @@ class RaiseImportError:
 
         def overwrite_import(original_import_builtin):
             def import_replacement(name, *args, **kwargs):
-                module_names = os.environ.get("RAISE_IMPORT_ERROR", "").split(",")
-                if name in module_names:
-                    raise ImportError(f"{name} is not available")
+                module_name = os.environ.get("RAISE_IMPORT_ERROR", None)
+                if name == module_name:
+                    raise ImportError(f"{module_name} is not available")
                 return original_import_builtin(name, *args, **kwargs)
 
             return import_replacement
