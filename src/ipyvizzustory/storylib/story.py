@@ -253,8 +253,10 @@ class StorySize:
             if not StorySize.is_pixel(self.height):
                 raise ValueError("height should be in pixels")
             return (int(self.width[:-2]), int(self.height[:-2]))  # type: ignore
+        if not isinstance(self.aspect_ratio, (float, int)):
+            raise ValueError("aspect_ratio should be a float")
         _width = int(self.width[:-2])  # type: ignore
-        _height = int(_width / int(self.aspect_ratio))
+        _height = int(_width / self.aspect_ratio)
         return (_width, _height)
 
 
