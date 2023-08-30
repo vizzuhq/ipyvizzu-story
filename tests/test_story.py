@@ -53,35 +53,14 @@ class TestStreamlitStory(TestHtml, unittest.TestCase):
         return StreamlitStory(*args, **kwargs)
 
     @data(
+        {"width": "800"},
+        {"height": "480"},
+        {"width": "800", "height": "480"},
         {"width": "800", "height": 480},
         {"width": 800, "height": "480"},
-        {"width": "800", "height": "480"},
+        {"aspect_ratio": 16 / 9},
+        {"width": "100%", "aspect_ratio": 16 / 9},
     )
-    def test_set_size_if_width_or_height_is_not_int(self, value: dict) -> None:
-        story = self.get_story()
-        with self.assertRaises(ValueError):
-            story.set_size(**value)
-
-    def test_play(self) -> None:
-        with unittest.mock.patch(
-            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
-        ):
-            with unittest.mock.patch("ipyvizzustory.env.st.story.html") as output:
-                story = self.get_story()
-                story.set_size(width=800, height=480)
-                story.play()
-                self.assertEqual(
-                    "\n".join(Normalizer.normalize_output(output)),
-                    self.get_html_with_size(),
-                )
-
-
-@ddt
-class TestPanelStory(TestHtml, unittest.TestCase):
-    def story(self, *args, **kwargs) -> PanelStory:
-        return PanelStory(*args, **kwargs)
-
-    @data({"width": "800"}, {"height": "480"}, {"width": "800", "height": "480"})
     def test_play_if_width_or_height_is_not_int(self, value: dict) -> None:
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
@@ -103,11 +82,60 @@ class TestPanelStory(TestHtml, unittest.TestCase):
         with unittest.mock.patch(
             "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
         ):
+            with unittest.mock.patch("ipyvizzustory.env.st.story.html") as output:
+                story = self.get_story()
+                story.set_size(width=800, height=480)
+                story.play()
+                self.assertEqual(
+                    "\n".join(Normalizer.normalize_output(output)),
+                    self.get_html(
+                        chart_size="vp.style.cssText = 'width: 800px;height: 480px;'"
+                    ),
+                )
+
+
+@ddt
+class TestPanelStory(TestHtml, unittest.TestCase):
+    def story(self, *args, **kwargs) -> PanelStory:
+        return PanelStory(*args, **kwargs)
+
+    @data(
+        {"width": "800"},
+        {"height": "480"},
+        {"width": "800", "height": "480"},
+        {"width": "800", "height": 480},
+        {"width": 800, "height": "480"},
+        {"aspect_ratio": 16 / 9},
+        {"width": "100%", "aspect_ratio": 16 / 9},
+    )
+    def test_play_if_width_or_height_is_not_int(self, value: dict) -> None:
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            story.set_size(**value)
+            with self.assertRaises(ValueError):
+                story.play()
+
+    def test_play_if_style_was_not_set(self) -> None:
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            with self.assertRaises(ValueError):
+                story.play()
+
+    def test_play_with_height(self) -> None:
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
             with unittest.mock.patch("ipyvizzustory.env.pn.story.HTML") as output:
                 story = self.get_story()
                 story.set_size(width="800px", height="480px")
                 story.play()
                 self.assertEqual(
                     "\n".join(Normalizer.normalize_output(output)),
-                    self.get_html_with_size(),
+                    self.get_html(
+                        chart_size="vp.style.cssText = 'width: 800px;height: 480px;'"
+                    ),
                 )

@@ -39,28 +39,25 @@ class TestHtml(ABC):
             + "]}"
         )
 
-    def get_html(self) -> str:
+    def get_html(
+        self,
+        vizzu_attribute="",
+        start_slide="",
+        vizzu_story=VIZZU_STORY,
+        chart_size="",
+        chart_features="",
+        chart_events="",
+    ) -> str:
+        # pylint: disable=too-many-arguments
         return DISPLAY_TEMPLATE.format(
             id="1234567",
-            vizzu_attribute="",
-            start_slide="",
-            vizzu_story=VIZZU_STORY,
+            vizzu_attribute=vizzu_attribute,
+            start_slide=start_slide,
+            vizzu_story=vizzu_story,
             vizzu_player_data=self.get_vpd(),
-            chart_size="",
-            chart_features="",
-            chart_events="",
-        )
-
-    def get_html_with_size(self) -> str:
-        return DISPLAY_TEMPLATE.format(
-            id="1234567",
-            vizzu_attribute="",
-            start_slide="",
-            vizzu_story=VIZZU_STORY,
-            vizzu_player_data=self.get_vpd(),
-            chart_size="vp.style.cssText = 'width: 800px;height: 480px;'",
-            chart_features="",
-            chart_events="",
+            chart_size=chart_size,
+            chart_features=chart_features,
+            chart_events=chart_events,
         )
 
 
@@ -140,16 +137,7 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
             story.vizzu = vizzu
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute=f'vizzu-url="{vizzu}"',
-                    start_slide="",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="",
-                    chart_features="",
-                    chart_events="",
-                ),
+                self.get_html(vizzu_attribute=f'vizzu-url="{vizzu}"'),
             )
 
     def test_vizzu_story_default(self) -> None:
@@ -165,16 +153,7 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
             story.vizzu_story = vizzu_story
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute="",
-                    start_slide="",
-                    vizzu_story=vizzu_story,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="",
-                    chart_features="",
-                    chart_events="",
-                ),
+                self.get_html(vizzu_story=vizzu_story),
             )
 
     def test_start_slide_default(self) -> None:
@@ -190,16 +169,7 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
             story.start_slide = start_slide
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute="",
-                    start_slide=f'start-slide="{start_slide}"',
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="",
-                    chart_features="",
-                    chart_events="",
-                ),
+                self.get_html(start_slide=f'start-slide="{start_slide}"'),
             )
 
 
@@ -254,16 +224,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             story.set_size(width=None, height=None)
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute="",
-                    start_slide="",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="",
-                    chart_features="",
-                    chart_events="",
-                ),
+                self.get_html(),
             )
 
     def test_to_html_with_size_width(self) -> None:
@@ -274,16 +235,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             story.set_size(width="800px", height=None)
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute="",
-                    start_slide="",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="vp.style.cssText = 'width: 800px;'",
-                    chart_features="",
-                    chart_events="",
-                ),
+                self.get_html(chart_size="vp.style.cssText = 'width: 800px;'"),
             )
 
     def test_to_html_with_size_height(self) -> None:
@@ -294,16 +246,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             story.set_size(width=None, height="480px")
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute="",
-                    start_slide="",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="vp.style.cssText = 'height: 480px;'",
-                    chart_features="",
-                    chart_events="",
-                ),
+                self.get_html(chart_size="vp.style.cssText = 'height: 480px;'"),
             )
 
     def test_to_html_with_size_width_and_height(self) -> None:
@@ -314,7 +257,9 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             story.set_size(width="800px", height="480px")
             self.assertEqual(
                 story.to_html(),
-                self.get_html_with_size(),
+                self.get_html(
+                    chart_size="vp.style.cssText = 'width: 800px;height: 480px;'"
+                ),
             )
 
     def test_to_html_with_feature(self) -> None:
@@ -326,19 +271,12 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             story.set_feature("tooltip", True)
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute="",
-                    start_slide="",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="",
+                self.get_html(
                     chart_features=(
                         "chart.feature('tooltip', true);"
                         + f"\n{DISPLAY_INDENT * 3}"
                         + "chart.feature('tooltip', true);"
-                    ),
-                    chart_events="",
+                    )
                 ),
             )
 
@@ -357,20 +295,13 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             story.add_event("plot-axis-label-draw", handler)
             self.assertEqual(
                 story.to_html(),
-                DISPLAY_TEMPLATE.format(
-                    id="1234567",
-                    vizzu_attribute="",
-                    start_slide="",
-                    vizzu_story=VIZZU_STORY,
-                    vizzu_player_data=self.get_vpd(),
-                    chart_size="",
-                    chart_features="",
+                self.get_html(
                     chart_events=(
                         "chart.on('plot-axis-label-draw', "
                         + f"event => {{{' '.join(handler.split())}}});"
                         + f"\n{DISPLAY_INDENT * 3}"
                         + "chart.on('plot-axis-label-draw', "
                         + f"event => {{{' '.join(handler.split())}}});"
-                    ),
+                    )
                 ),
             )
