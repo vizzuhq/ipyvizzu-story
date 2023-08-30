@@ -17,13 +17,11 @@ with a green check.
 
 - [x]  Use navigation buttons
 
-- [x]  Set width/height of the `Story` \*
+- [x]  Set width/height of the `Story`
 
 - [x]  Export the `Story` into a html file
 
 - [x]  Get the html `Story` as a string
-
-\*mandatory
 
 ## Installation
 
@@ -85,10 +83,10 @@ slide2 = Slide(
 story.add_slide(slide2)
 
 
-# note: in Streamlit,
-# you need to set the width and height in pixels as int
+# note: in Streamlit if you want to use the `play` method,
+# you need to set the width and height in pixels
 
-story.set_size(width=800, height=480)
+story.set_size(width="800px", height="480px")
 
 
 # you can export the Story into a html file

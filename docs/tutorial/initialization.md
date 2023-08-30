@@ -44,6 +44,21 @@ but you can also set them manually with the `set_size` method.
 story.set_size(width="100%", height="400px")
 ```
 
+You can also set an aspect-ratio for your story (which doesn't affect the full
+screen view).
+
+```python
+story.set_size(aspect_ratio=16 / 9)
+```
+
+If you use the `aspect_ratio`, the `width` parameter can also be set, but in
+some environments, if you want to use the `play` method, it will only accept
+pixels.
+
+```python
+story.set_size(width="800px", aspect_ratio=16 / 9)
+```
+
 ## Story properties
 
 ### vizzu
