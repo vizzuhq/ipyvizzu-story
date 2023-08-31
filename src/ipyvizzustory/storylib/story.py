@@ -159,7 +159,7 @@ class StorySize:
         self._aspect_ratio = aspect_ratio
 
         self._style = ""
-        if all([width is not None, height is not None, aspect_ratio is not None]):
+        if None not in [width, height, aspect_ratio]:
             raise ValueError(
                 "width, height and aspect ratio cannot be set at the same time"
             )
@@ -186,7 +186,7 @@ class StorySize:
         if isinstance(value, int):
             return True
         if isinstance(value, str):
-            if re.search(r"^[-+]?[1-9]\d*$", value):
+            if re.search(r"^[-+]?[0-9]+$", value):
                 return True
         return False
 
@@ -238,7 +238,7 @@ class StorySize:
         A property for storing the style of a presentation story.
 
         Note:
-            If `width`, `height` or `aspect_ratio` are not set it returns an empty string.
+            If neither `width`, `height` nor `aspect_ratio` is set, it returns an empty string.
 
         Returns:
             The cssText width and height of a presentation story.
@@ -290,11 +290,8 @@ class StorySize:
         else:
             if not isinstance(self.aspect_ratio, (float, int)):
                 raise ValueError("aspect_ratio should be a float")
-            if all(
-                [
-                    not StorySize.is_pixel(self.width),
-                    not StorySize.is_pixel(self.height),
-                ]
+            if not any(
+                [StorySize.is_pixel(self.width), StorySize.is_pixel(self.height)]
             ):
                 raise ValueError("width or height should be in pixels")
             if StorySize.is_pixel(self.width):
