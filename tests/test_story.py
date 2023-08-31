@@ -73,9 +73,6 @@ class TestStoryWithLimitedPlay(TestHtml):
     @data(
         {"width": "800"},
         {"height": "480"},
-        {"width": "800", "height": "480"},
-        {"width": "800", "height": 480},
-        {"width": 800, "height": "480"},
         {"aspect_ratio": 16 / 9},
         {"width": "100%", "aspect_ratio": 16 / 9},
         {"width": 800, "aspect_ratio": "16/9"},
@@ -91,7 +88,37 @@ class TestStoryWithLimitedPlay(TestHtml):
 
     @data(
         {
+            "input": {"width": "800.0px", "height": "480.0px"},
+            "ref_style": "vp.style.cssText = 'width: 800.0px;height: 480.0px;'",
+            "ref_size": (800, 480),
+        },
+        {
+            "input": {"width": "800.0", "height": "480.0"},
+            "ref_style": "vp.style.cssText = 'width: 800.0px;height: 480.0px;'",
+            "ref_size": (800, 480),
+        },
+        {
+            "input": {"width": 800.0, "height": 480.0},
+            "ref_style": "vp.style.cssText = 'width: 800.0px;height: 480.0px;'",
+            "ref_size": (800, 480),
+        },
+        {
             "input": {"width": "800px", "height": "480px"},
+            "ref_style": "vp.style.cssText = 'width: 800px;height: 480px;'",
+            "ref_size": (800, 480),
+        },
+        {
+            "input": {"width": "800", "height": "480"},
+            "ref_style": "vp.style.cssText = 'width: 800px;height: 480px;'",
+            "ref_size": (800, 480),
+        },
+        {
+            "input": {"width": "800", "height": 480},
+            "ref_style": "vp.style.cssText = 'width: 800px;height: 480px;'",
+            "ref_size": (800, 480),
+        },
+        {
+            "input": {"width": 800, "height": "480"},
             "ref_style": "vp.style.cssText = 'width: 800px;height: 480px;'",
             "ref_size": (800, 480),
         },

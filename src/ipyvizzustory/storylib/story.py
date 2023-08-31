@@ -150,8 +150,8 @@ class StorySize:
             ValueError: If aspect_ratio and height are set together.
         """
 
-        width = str(width) + "px" if isinstance(width, int) else width
-        height = str(height) + "px" if isinstance(height, int) else height
+        width = self._convert_to_pixel_or_return(width)
+        height = self._convert_to_pixel_or_return(height)
 
         self._width = width
         self._height = height
@@ -170,8 +170,30 @@ class StorySize:
             )
             self._style = f"vp.style.cssText = '{_aspect_ratio}{_width}{_height}'"
 
+    @staticmethod
+    def _convert_to_pixel_or_return(value: Any) -> Optional[str]:
+        if StorySize._is_int(value) or StorySize._is_float(value):
+            return str(value) + "px"
+        return value
+
+    @staticmethod
+    def _is_int(value: Any) -> bool:
+        try:
+            int(value)
+            return True
+        except (ValueError, TypeError):
+            return False
+
+    @staticmethod
+    def _is_float(value: Any) -> bool:
+        try:
+            float(value)
+            return True
+        except (ValueError, TypeError):
+            return False
+
     @property
-    def width(self) -> Optional[Union[int, float, str]]:
+    def width(self) -> Optional[str]:
         """
         A property for storing the width of a presentation story.
 
@@ -182,7 +204,7 @@ class StorySize:
         return self._width
 
     @property
-    def height(self) -> Optional[Union[int, float, str]]:
+    def height(self) -> Optional[str]:
         """
         A property for storing the height of a presentation story.
 
@@ -229,11 +251,12 @@ class StorySize:
             `True` if the value is pixel, `False` otherwise.
         """
 
-        value_is_pixel = False
-        if isinstance(value, str):
-            if value.endswith("px"):
-                value_is_pixel = value[:-2].isnumeric()
-        return value_is_pixel
+        if StorySize._is_int(value) or StorySize._is_float(value):
+            return True
+        if isinstance(value, str) and value.endswith("px"):
+            if StorySize._is_int(value[0:-2]) or StorySize._is_float(value[0:-2]):
+                return True
+        return False
 
     def get_width_height_in_pixels(self) -> Tuple[int, int]:
         """
@@ -252,10 +275,10 @@ class StorySize:
         if self.aspect_ratio is None:
             if not StorySize.is_pixel(self.height):
                 raise ValueError("height should be in pixels")
-            return (int(self.width[:-2]), int(self.height[:-2]))  # type: ignore
+            return (int(float(self.width[:-2])), int(float(self.height[:-2])))  # type: ignore
         if not isinstance(self.aspect_ratio, (float, int)):
             raise ValueError("aspect_ratio should be a float")
-        _width = int(self.width[:-2])  # type: ignore
+        _width = int(float(self.width[:-2]))  # type: ignore
         _height = int(_width / self.aspect_ratio)
         return (_width, _height)
 
