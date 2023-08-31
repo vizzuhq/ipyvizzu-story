@@ -270,8 +270,9 @@ class StorySize:
         A method for returning the width and height in pixels.
 
         Raises:
-            ValueError: If width is not in pixels.
-            ValueError: If aspect_ratio is not set and height is not in pixels.
+            ValueError: If width and height are not in pixels when aspect_ratio is not set.
+            ValueError: If width or height is not in pixel when aspect_ratio is set.
+            ValueError: If aspect_ratio is not a float when aspect_ratio is set.
 
         Returns:
             The width and height in pixels as int.
