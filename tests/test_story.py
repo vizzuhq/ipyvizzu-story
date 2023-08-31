@@ -123,20 +123,20 @@ class TestStoryWithLimitedPlay(TestHtml):
             "ref_size": (800, 480),
         },
         {
-            "input": {"width": "800px", "aspect_ratio": 17 / 9},
+            "input": {"width": 800.5, "aspect_ratio": 17 / 9},
             "ref_style": (
                 "vp.style.cssText = "
-                "'aspect-ratio: 1.8888888888888888 !important;width: 800px;'"
+                "'aspect-ratio: 1.8888888888888888 !important;width: 800.5px;'"
             ),
             "ref_size": (800, 423),  # 800 / (17 / 9)
         },
         {
-            "input": {"height": "480px", "aspect_ratio": 17 / 9},
+            "input": {"height": 480.5, "aspect_ratio": 17 / 9},
             "ref_style": (
                 "vp.style.cssText = "
-                "'aspect-ratio: 1.8888888888888888 !important;width: unset;height: 480px;'"
+                "'aspect-ratio: 1.8888888888888888 !important;width: unset;height: 480.5px;'"
             ),
-            "ref_size": (906, 480),  # 480 * (17 / 9)
+            "ref_size": (907, 480),  # 480 * (17 / 9)
         },
     )
     def test_play(self, value: dict) -> None:

@@ -3,6 +3,7 @@
 from typing import Any, List, Optional, Tuple, Union
 from os import PathLike
 import json
+import re
 import uuid
 
 from ipyvizzu import RawJavaScriptEncoder, Data, Style, Config  # , PlainAnimation
@@ -182,19 +183,21 @@ class StorySize:
 
     @staticmethod
     def _is_int(value: Any) -> bool:
-        try:
-            int(value)
+        if isinstance(value, int):
             return True
-        except (ValueError, TypeError):
-            return False
+        if isinstance(value, str):
+            if re.search(r"^[-+]?[1-9]\d*$", value):
+                return True
+        return False
 
     @staticmethod
     def _is_float(value: Any) -> bool:
-        try:
-            float(value)
+        if isinstance(value, float):
             return True
-        except (ValueError, TypeError):
-            return False
+        if isinstance(value, str):
+            if re.search(r"^[+-]?[0-9]+\.[0-9]+$", value):
+                return True
+        return False
 
     @property
     def width(self) -> Optional[str]:
