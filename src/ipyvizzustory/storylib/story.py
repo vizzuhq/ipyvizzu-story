@@ -147,7 +147,7 @@ class StorySize:
             aspect_ratio: The aspect-ratio of a presentation story.
 
         Raises:
-            ValueError: If aspect_ratio and height are set together.
+            ValueError: If width, height and aspect_ratio are set together.
         """
 
         width = self._convert_to_pixel_or_return(width)

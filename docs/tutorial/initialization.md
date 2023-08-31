@@ -51,9 +51,9 @@ screen view).
 story.set_size(aspect_ratio=16 / 9)
 ```
 
-If you use the `aspect_ratio`, the `width` parameter can also be set, but in
-some environments, if you want to use the `play` method, it will only accept
-pixels.
+If you use the `aspect_ratio`, the `width` or `height` parameters can also be
+set, but in some environments, if you want to use the `play` method, it will
+only accept pixels.
 
 ```python
 story.set_size(width="800px", aspect_ratio=16 / 9)
