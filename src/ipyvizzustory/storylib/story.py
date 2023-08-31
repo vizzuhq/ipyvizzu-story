@@ -134,9 +134,9 @@ class StorySize:
 
     def __init__(
         self,
-        width: Optional[Union[int, str]] = None,
-        height: Optional[Union[int, str]] = None,
-        aspect_ratio: Optional[Union[float, str]] = None,
+        width: Optional[Union[int, float, str]] = None,
+        height: Optional[Union[int, float, str]] = None,
+        aspect_ratio: Optional[Union[int, float, str]] = None,
     ):
         """
         StorySize constructor.
@@ -171,7 +171,7 @@ class StorySize:
             self._style = f"vp.style.cssText = '{_aspect_ratio}{_width}{_height}'"
 
     @property
-    def width(self) -> Optional[str]:
+    def width(self) -> Optional[Union[int, float, str]]:
         """
         A property for storing the width of a presentation story.
 
@@ -182,7 +182,7 @@ class StorySize:
         return self._width
 
     @property
-    def height(self) -> Optional[str]:
+    def height(self) -> Optional[Union[int, float, str]]:
         """
         A property for storing the height of a presentation story.
 
@@ -193,7 +193,7 @@ class StorySize:
         return self._height
 
     @property
-    def aspect_ratio(self) -> Optional[Union[float, str]]:
+    def aspect_ratio(self) -> Optional[Union[int, float, str]]:
         """
         A property for storing the aspect-ratio of a presentation story.
 
@@ -424,9 +424,9 @@ class Story(dict):
 
     def set_size(
         self,
-        width: Optional[Union[int, str]] = None,
-        height: Optional[Union[int, str]] = None,
-        aspect_ratio: Optional[Union[float, str]] = None,
+        width: Optional[Union[int, float, str]] = None,
+        height: Optional[Union[int, float, str]] = None,
+        aspect_ratio: Optional[Union[int, float, str]] = None,
     ) -> None:
         """
         A method for setting width/height settings.
