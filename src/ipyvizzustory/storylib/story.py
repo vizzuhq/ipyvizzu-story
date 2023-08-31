@@ -158,8 +158,12 @@ class StorySize:
         self._aspect_ratio = aspect_ratio
 
         self._style = ""
-        if height is not None and aspect_ratio is not None:
-            raise ValueError("height and aspect ratio cannot be set at the same time")
+        if all([width is not None, height is not None, aspect_ratio is not None]):
+            raise ValueError(
+                "width, height and aspect ratio cannot be set at the same time"
+            )
+        if all([height is not None, aspect_ratio is not None]):
+            width = "unset"
         if any([width is not None, height is not None, aspect_ratio is not None]):
             _width = "" if width is None else f"width: {width};"
             _height = "" if height is None else f"height: {height};"
@@ -270,16 +274,32 @@ class StorySize:
             The width and height in pixels as int.
         """
 
-        if not StorySize.is_pixel(self.width):
-            raise ValueError("width should be in pixels")
         if self.aspect_ratio is None:
-            if not StorySize.is_pixel(self.height):
-                raise ValueError("height should be in pixels")
-            return (int(float(self.width[:-2])), int(float(self.height[:-2])))  # type: ignore
-        if not isinstance(self.aspect_ratio, (float, int)):
-            raise ValueError("aspect_ratio should be a float")
-        _width = int(float(self.width[:-2]))  # type: ignore
-        _height = int(_width / self.aspect_ratio)
+            if any(
+                [
+                    not StorySize.is_pixel(self.width),
+                    not StorySize.is_pixel(self.height),
+                ]
+            ):
+                raise ValueError("width and height should be in pixels")
+            _width = int(float(self.width[:-2]))  # type: ignore
+            _height = int(float(self.height[:-2]))  # type: ignore
+        else:
+            if not isinstance(self.aspect_ratio, (float, int)):
+                raise ValueError("aspect_ratio should be a float")
+            if all(
+                [
+                    not StorySize.is_pixel(self.width),
+                    not StorySize.is_pixel(self.height),
+                ]
+            ):
+                raise ValueError("width or height should be in pixels")
+            if StorySize.is_pixel(self.width):
+                _width = int(float(self.width[:-2]))  # type: ignore
+                _height = int(_width / self.aspect_ratio)
+            else:
+                _height = int(float(self.height[:-2]))  # type: ignore
+                _width = int(_height * self.aspect_ratio)
         return (_width, _height)
 
 

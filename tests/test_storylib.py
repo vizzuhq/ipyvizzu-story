@@ -289,6 +289,39 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
             "input": {"width": 800, "aspect_ratio": "16/9"},
             "ref": "vp.style.cssText = 'aspect-ratio: 16/9 !important;width: 800px;'",
         },
+        {
+            "input": {"height": "100%", "aspect_ratio": 16 / 9},
+            "ref": (
+                "vp.style.cssText = "
+                "'aspect-ratio: 1.7777777777777777 !important;width: unset;height: 100%;'"
+            ),
+        },
+        {
+            "input": {"height": "100%", "aspect_ratio": "16/9"},
+            "ref": "vp.style.cssText = 'aspect-ratio: 16/9 !important;width: unset;height: 100%;'",
+        },
+        {
+            "input": {"height": "480px", "aspect_ratio": 16 / 9},
+            "ref": (
+                "vp.style.cssText = "
+                "'aspect-ratio: 1.7777777777777777 !important;width: unset;height: 480px;'"
+            ),
+        },
+        {
+            "input": {"height": "480px", "aspect_ratio": "16/9"},
+            "ref": "vp.style.cssText = 'aspect-ratio: 16/9 !important;width: unset;height: 480px;'",
+        },
+        {
+            "input": {"height": 480, "aspect_ratio": 16 / 9},
+            "ref": (
+                "vp.style.cssText = "
+                "'aspect-ratio: 1.7777777777777777 !important;width: unset;height: 480px;'"
+            ),
+        },
+        {
+            "input": {"height": 480, "aspect_ratio": "16/9"},
+            "ref": "vp.style.cssText = 'aspect-ratio: 16/9 !important;width: unset;height: 480px;'",
+        },
     )
     def test_to_html_with_size(self, value: dict) -> None:
         with unittest.mock.patch(
