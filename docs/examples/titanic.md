@@ -49,7 +49,7 @@ sorterIndex = dict(zip(agegroupsorter, range(len(agegroupsorter))))
 df["Age_group_rank"] = df["Age_group"].map(sorterIndex)
 df.sort_values(["Age_group_rank"], inplace=True)
 
-data.add_data_frame(df)
+data.add_df(df)
 
 
 # Set the style of the charts in the story

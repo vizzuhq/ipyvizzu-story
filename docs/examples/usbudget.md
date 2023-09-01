@@ -29,7 +29,7 @@ example_df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/examples/usbudget/usbudget.csv",
     dtype={"Year": str},
 )
-example_data.add_data_frame(example_df)
+example_data.add_df(example_df)
 
 
 # Set the style of the charts in the story

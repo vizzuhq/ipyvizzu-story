@@ -31,7 +31,7 @@ data = Data()
 df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/assets/data/data.csv"
 )
-data.add_data_frame(df)
+data.add_df(df)
 ```
 
 ## Specify data by series

@@ -28,7 +28,7 @@ df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/examples/proglangs/proglangs.csv",
     dtype={"Year": str},
 )
-data.add_data_frame(df)
+data.add_df(df)
 
 
 # Create story object, add data to it
