@@ -24,16 +24,16 @@ from ipyvizzustory import Story, Slide, Step
 
 
 # Create data object, read csv to data frame and add data frame to data object
-example_data = Data()
-example_df = pd.read_csv(
+data = Data()
+df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/examples/usbudget/usbudget.csv",
     dtype={"Year": str},
 )
-example_data.add_df(example_df)
+data.add_df(df)
 
 
 # Set the style of the charts in the story
-example_style = Style(
+style = Style(
     {
         "plot": {
             "yAxis": {
@@ -58,7 +58,7 @@ example_style = Style(
 )
 
 # Create story object, add data and style settings to it
-story = Story(data=example_data, style=example_style)
+story = Story(data=data, style=style)
 
 # Set the size of the HTML element
 # that appears within the notebook
