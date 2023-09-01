@@ -20,7 +20,7 @@ data = Data()
 df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/examples/trumptwitter/trumptwitter.csv",
 )
-data.add_data_frame(df)
+data.add_df(df)
 
 
 # Set the style of the charts in the story
