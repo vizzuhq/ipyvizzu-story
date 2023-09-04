@@ -1,8 +1,9 @@
 """A module for working with presentation stories."""
 
-from typing import Optional, Union, List, Any
+from typing import Any, List, Optional, Tuple, Union
 from os import PathLike
 import json
+import re
 import uuid
 
 from ipyvizzu import RawJavaScriptEncoder, Data, Style, Config  # , PlainAnimation
@@ -132,22 +133,71 @@ class Slide(list):
 class StorySize:
     """A class for representing the size of a presentation story."""
 
-    def __init__(self, width: Optional[str] = None, height: Optional[str] = None):
+    def __init__(
+        self,
+        width: Optional[Union[int, float, str]] = None,
+        height: Optional[Union[int, float, str]] = None,
+        aspect_ratio: Optional[Union[int, float, str]] = None,
+    ):
         """
         StorySize constructor.
 
         Args:
             width: The width of a presentation story.
             height: The height of a presentation story.
+            aspect_ratio: The aspect ratio of a presentation story.
+
+        Raises:
+            ValueError: If width, height and aspect_ratio are set together.
         """
+
+        width = self._convert_to_pixel_or_return(width)
+        height = self._convert_to_pixel_or_return(height)
+
         self._width = width
         self._height = height
+        self._aspect_ratio = aspect_ratio
 
         self._style = ""
-        if any([width is not None, height is not None]):
-            width = "" if width is None else f"width: {width};"
-            height = "" if height is None else f"height: {height};"
-            self._style = f"vp.style.cssText = '{width}{height}'"
+        if None not in [width, height, aspect_ratio]:
+            raise ValueError(
+                "width, height and aspect ratio cannot be set at the same time"
+            )
+        if all([height is not None, aspect_ratio is not None]):
+            width = "unset"
+        if any([width is not None, height is not None, aspect_ratio is not None]):
+            _width = "" if width is None else f"width: {width};"
+            _height = "" if height is None else f"height: {height};"
+            _aspect_ratio = (
+                ""
+                if aspect_ratio is None
+                else f"aspect-ratio: {aspect_ratio} !important;"
+            )
+            self._style = f"vp.style.cssText = '{_aspect_ratio}{_width}{_height}'"
+
+    @staticmethod
+    def _convert_to_pixel_or_return(value: Any) -> Optional[str]:
+        if StorySize._is_int(value) or StorySize._is_float(value):
+            return str(value) + "px"
+        return value
+
+    @staticmethod
+    def _is_int(value: Any) -> bool:
+        if isinstance(value, int):
+            return True
+        if isinstance(value, str):
+            if re.search(r"^[-+]?[0-9]+$", value):
+                return True
+        return False
+
+    @staticmethod
+    def _is_float(value: Any) -> bool:
+        if isinstance(value, float):
+            return True
+        if isinstance(value, str):
+            if re.search(r"^[+-]?[0-9]+\.[0-9]+$", value):
+                return True
+        return False
 
     @property
     def width(self) -> Optional[str]:
@@ -172,12 +222,23 @@ class StorySize:
         return self._height
 
     @property
+    def aspect_ratio(self) -> Optional[Union[int, float, str]]:
+        """
+        A property for storing the aspect ratio of a presentation story.
+
+        Returns:
+            The aspect ratio of a presentation story.
+        """
+
+        return self._aspect_ratio
+
+    @property
     def style(self) -> str:
         """
         A property for storing the style of a presentation story.
 
         Note:
-            If `width` and `height` are not set it returns an empty string.
+            If neither `width`, `height` nor `aspect_ratio` is set, it returns an empty string.
 
         Returns:
             The cssText width and height of a presentation story.
@@ -197,11 +258,58 @@ class StorySize:
             `True` if the value is pixel, `False` otherwise.
         """
 
-        value_is_pixel = False
-        if isinstance(value, str):
-            if value.endswith("px"):
-                value_is_pixel = value[:-2].isnumeric()
-        return value_is_pixel
+        if StorySize._is_int(value) or StorySize._is_float(value):
+            return True
+        if isinstance(value, str) and value.endswith("px"):
+            if StorySize._is_int(value[0:-2]) or StorySize._is_float(value[0:-2]):
+                return True
+        return False
+
+    def get_width_height_in_pixels(self) -> Tuple[int, int]:
+        """
+        A method for returning the width and height in pixels.
+
+        Raises:
+            ValueError: If width and height are not in pixels when aspect_ratio is not set.
+            ValueError: If width or height is not in pixel when aspect_ratio is set.
+            ValueError: If aspect_ratio is not a float when aspect_ratio is set.
+
+        Returns:
+            The width and height in pixels as int.
+        """
+
+        if self.aspect_ratio is None:
+            if any(
+                [
+                    not StorySize.is_pixel(self.width),
+                    not StorySize.is_pixel(self.height),
+                ]
+            ):
+                raise ValueError("width and height should be in pixels")
+            _width = int(float(self.width[:-2]))  # type: ignore
+            _height = int(float(self.height[:-2]))  # type: ignore
+        else:
+            if not any(
+                [
+                    StorySize._is_int(self.aspect_ratio),
+                    StorySize._is_float(self.aspect_ratio),
+                ]
+            ):
+                raise ValueError("aspect_ratio should be a float")
+            if not any(
+                [StorySize.is_pixel(self.width), StorySize.is_pixel(self.height)]
+            ):
+                raise ValueError("width or height should be in pixels")
+            _aspect_ratio = float(self.aspect_ratio)
+            if StorySize.is_pixel(self.width):
+                _width = float(self.width[:-2])  # type: ignore
+                _height = int(_width / _aspect_ratio)
+                _width = int(_width)
+            else:
+                _height = float(self.height[:-2])  # type: ignore
+                _width = int(_height * _aspect_ratio)
+                _height = int(_height)
+        return (_width, _height)
 
 
 class Story(dict):
@@ -367,7 +475,10 @@ class Story(dict):
         )
 
     def set_size(
-        self, width: Optional[str] = None, height: Optional[str] = None
+        self,
+        width: Optional[Union[int, float, str]] = None,
+        height: Optional[Union[int, float, str]] = None,
+        aspect_ratio: Optional[Union[int, float, str]] = None,
     ) -> None:
         """
         A method for setting width/height settings.
@@ -375,6 +486,7 @@ class Story(dict):
         Args:
             width: The width of the presentation story.
             height: The height of the presentation story.
+            aspect_ratio: The aspect ratio of the presentation story.
 
         Example:
             Change the size of the story:
@@ -382,7 +494,7 @@ class Story(dict):
                 story.set_size("100%", "400px")
         """
 
-        self._size = StorySize(width=width, height=height)
+        self._size = StorySize(width=width, height=height, aspect_ratio=aspect_ratio)
 
     def _repr_html_(self) -> str:
         return self.to_html()

@@ -6,7 +6,7 @@ from panel.pane import HTML
 
 from ipyvizzu import Data, Style
 
-from ipyvizzustory.storylib.story import StorySize, Story as StoryLib
+from ipyvizzustory.storylib.story import Story as StoryLib
 
 
 class Story(StoryLib):
@@ -27,23 +27,12 @@ class Story(StoryLib):
         super().__init__(data=data, style=style)
 
     def play(self) -> None:
-        """
-        A method for displaying the assembled `HTML` code in `Panel` environment.
+        """A method for displaying the assembled `HTML` code in `Panel` environment."""
 
-        Raises:
-            ValueError: If `width` or `height` is not in pixel.
-        """
-
-        if any(
-            [
-                not StorySize.is_pixel(self._size.width),
-                not StorySize.is_pixel(self._size.height),
-            ]
-        ):
-            raise ValueError("width and height should be in pixels")
+        _width, _height = self._size.get_width_height_in_pixels()
 
         HTML(
             self.to_html(),
-            width=int(self._size.width[:-2]),  # type: ignore
-            height=int(self._size.height[:-2]),  # type: ignore
+            width=_width,
+            height=_height,
         ).servable()

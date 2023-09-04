@@ -26,31 +26,13 @@ class Story(StoryLib):
 
         super().__init__(data=data, style=style)
 
-    def set_size(  # type: ignore  # pylint: disable=signature-differs
-        self, width: int, height: int
-    ) -> None:
-        """
-        A method for overwriting
-        [storylib.story.Story.set_size][ipyvizzustory.storylib.story.Story.set_size] method.
-        In `Streamlit` environment `width` and `height` must be specified in pixels.
-
-        Args:
-            width: Width of the presentation story in pixels.
-            height: Height of the presentation story in pixels.
-
-        Raises:
-            ValueError: If `width` or `height` is not instance of `int`.
-        """
-
-        if any([not isinstance(width, int), not isinstance(height, int)]):
-            raise ValueError("width and height should be in pixels as int")
-        super().set_size(width=str(width) + "px", height=str(height) + "px")
-
     def play(self) -> None:
         """A method for displaying the assembled `HTML` code in `Streamlit` environment."""
 
+        _width, _height = self._size.get_width_height_in_pixels()
+
         html(
             self.to_html(),
-            width=int(self._size.width[:-2]),  # type: ignore
-            height=int(self._size.height[:-2]),  # type: ignore
+            width=_width,
+            height=_height,
         )
