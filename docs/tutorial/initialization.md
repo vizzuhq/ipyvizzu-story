@@ -78,9 +78,7 @@ value: `True`). Users can choose to opt-out if they prefer not to participate in
 data collection. Please note that even when this feature is enabled, publishing
 anything made with `ipyvizzu-story` remains GDPR compatible.
 
-To disable usage statistics feature, set
-[analytics](../reference/ipyvizzu-story/chart.md#ipyvizzu.chart.Chart.analytics)
-property to `False`.
+To disable usage statistics feature, set `analytics` property to `False`.
 
 ```python
 story.analytics = False
