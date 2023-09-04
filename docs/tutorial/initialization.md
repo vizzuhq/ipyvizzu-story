@@ -44,9 +44,9 @@ but you can also set them manually with the `set_size` method.
 story.set_size(width="100%", height="400px")
 ```
 
-You can also set the aspect-ratio of the story. This will not affect the
-aspect-ratio in full-screen view as that will be determined by the actual
-screen's dimensions.
+You can also set the aspect ratio of the story. This will not affect the aspect
+ratio in full-screen view as that will be determined by the actual screen's
+dimensions.
 
 ```python
 story.set_size(aspect_ratio=16 / 9)

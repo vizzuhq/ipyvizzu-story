@@ -145,7 +145,7 @@ class StorySize:
         Args:
             width: The width of a presentation story.
             height: The height of a presentation story.
-            aspect_ratio: The aspect-ratio of a presentation story.
+            aspect_ratio: The aspect ratio of a presentation story.
 
         Raises:
             ValueError: If width, height and aspect_ratio are set together.
@@ -224,10 +224,10 @@ class StorySize:
     @property
     def aspect_ratio(self) -> Optional[Union[int, float, str]]:
         """
-        A property for storing the aspect-ratio of a presentation story.
+        A property for storing the aspect ratio of a presentation story.
 
         Returns:
-            The aspect-ratio of a presentation story.
+            The aspect ratio of a presentation story.
         """
 
         return self._aspect_ratio
@@ -486,7 +486,7 @@ class Story(dict):
         Args:
             width: The width of the presentation story.
             height: The height of the presentation story.
-            aspect_ratio: The aspect-ratio of the presentation story.
+            aspect_ratio: The aspect ratio of the presentation story.
 
         Example:
             Change the size of the story:
