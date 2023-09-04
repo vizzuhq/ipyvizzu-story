@@ -62,7 +62,31 @@ story.set_size(width="800px", aspect_ratio=16 / 9)
 
 ## Story properties
 
-### vizzu
+### Analytics
+
+The usage statistics feature in `ipyvizzu-story` allows aggregate usage data
+collection using [Plausible](https://plausible.io/)'s algorithm. Enabling this
+feature helps us follow the progress and overall trends of our library, allowing
+us to focus our resources effectively and better serve our users.
+
+We do not track, collect, or store any personal data or personally identifiable
+information. All data is isolated to a single day, a single site, and a single
+device only.
+
+Usage statistics feature is optional, and by default, it is enabled (default
+value: `True`). Users can choose to opt-out if they prefer not to participate in
+data collection. Please note that even when this feature is enabled, publishing
+anything made with `ipyvizzu-story` remains GDPR compatible.
+
+To disable usage statistics feature, set
+[analytics](../reference/ipyvizzu-story/chart.md#ipyvizzu.chart.Chart.analytics)
+property to `False`.
+
+```python
+story.analytics = False
+```
+
+### Vizzu
 
 `ipyvizzu-story` requires and downloads the
 [Vizzu](https://github.com/vizzuhq/vizzu-lib) `JavaScript`/`C++`
@@ -77,7 +101,7 @@ story.vizzu = "<url>/vizzu.min.js"
     The default value of `vizzu` property is `None`, because the default version
     of `Vizzu` is stored in the `vizzu-story` package.
 
-### vizzu_story
+### Vizzu-Story
 
 `ipyvizzu-story` requires and downloads the
 [Vizzu-Story](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
@@ -88,7 +112,7 @@ but you can also use a different or self-hosted version of it.
 story.vizzu_story = "<url>/vizzu-story.min.js"
 ```
 
-### start_slide
+### Start slide
 
 You can start the story on a specific slide via the `start_slide` property. You
 can also use negative numbers, where `-1` means the last slide.

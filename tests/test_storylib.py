@@ -16,6 +16,7 @@ from ipyvizzustory.storylib.template import (
     DISPLAY_TEMPLATE,
     DISPLAY_INDENT,
 )
+from ipyvizzustory.__version__ import __version__
 
 
 class TestHtml(ABC):
@@ -43,9 +44,11 @@ class TestHtml(ABC):
 
     def get_html(
         self,
-        vizzu_attribute="",
-        start_slide="",
+        version=__version__,
+        analytics=True,
+        vizzu="",
         vizzu_story=VIZZU_STORY,
+        start_slide="",
         chart_size="",
         chart_features="",
         chart_events="",
@@ -53,10 +56,12 @@ class TestHtml(ABC):
         # pylint: disable=too-many-arguments
         return DISPLAY_TEMPLATE.format(
             id="1234567",
-            vizzu_attribute=vizzu_attribute,
-            start_slide=start_slide,
+            version=version,
+            analytics=str(analytics).lower(),
+            vizzu=vizzu,
             vizzu_story=vizzu_story,
             vizzu_player_data=self.get_vpd(),
+            start_slide=start_slide,
             chart_size=chart_size,
             chart_features=chart_features,
             chart_events=chart_events,
@@ -139,7 +144,7 @@ class TestStoryUrlProperties(TestHtml, unittest.TestCase):
             story.vizzu = vizzu
             self.assertEqual(
                 story.to_html(),
-                self.get_html(vizzu_attribute=f'vizzu-url="{vizzu}"'),
+                self.get_html(vizzu=f'vizzu-url="{vizzu}"'),
             )
 
     def test_vizzu_story_default(self) -> None:
@@ -376,4 +381,28 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                         + f"event => {{{' '.join(handler.split())}}});"
                     )
                 ),
+            )
+
+    def test_to_html_analytics(self) -> None:
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+            self.assertEqual(
+                story.analytics,
+                True,
+            )
+            self.assertEqual(
+                story.to_html(),
+                self.get_html(analytics=True),
+            )
+
+            story.analytics = False
+            self.assertEqual(
+                story.analytics,
+                False,
+            )
+            self.assertEqual(
+                story.to_html(),
+                self.get_html(analytics=False),
             )

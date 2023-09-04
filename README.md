@@ -127,6 +127,16 @@ further info.
 - Drop us a line at hello@vizzuhq.com
 - Follow us on Twitter: [VizzuHQ](https://twitter.com/VizzuHQ)
 
+## Usage Statistics
+
+`ipyvizzu-story` collects aggregate usage statistics by default to follow the
+progress and overall trends of our library. This feature is optional, and users
+can choose to opt-out. However, we do not track, collect, or store any personal
+data or personally identifiable information. Please note that even when this
+feature is enabled, publishing anything made with `ipyvizzu-story` remains GDPR
+compatible. For more details, please visit
+[Analytics chapter](https://ipyvizzu-story.vizzuhq.com/latest/tutorial/initialization/#analytics).
+
 ## License
 
 Copyright © 2022-2023 [Vizzu Inc](https://vizzuhq.com).
