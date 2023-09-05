@@ -11,9 +11,54 @@ DISPLAY_INDENT: str = "    "
 
 DISPLAY_TEMPLATE: str = """
 <div>
-    <vizzu-player id="{id}" {vizzu_attribute} {start_slide} controller></vizzu-player>
+    <vizzu-player id="{id}" {vizzu} {start_slide} controller></vizzu-player>
     <script type="module">
         import VizzuPlayer from "{vizzu_story}";
+
+        class IpyvizzuStory {{
+            static version = "{version}";
+            static analytics = undefined;
+
+            static changeAnalyticsTo(analytics) {{
+                if (IpyvizzuStory.analytics !== analytics) {{
+                    console.log("ipyvizzu-story gather usage stats:", analytics);
+                    IpyvizzuStory.analytics = analytics;
+                }}
+                if (analytics) {{
+                    IpyvizzuStory._addHeadScript();
+                }} else {{
+                    IpyvizzuStory._removeScript("ipyvizzu-story-analytics-head");
+                }}
+            }}
+
+            static _addHeadScript() {{
+                const scriptId = "ipyvizzu-story-analytics-head";
+                if (!IpyvizzuStory._isScriptAppended(scriptId)) {{
+                    const script = document.createElement("script");
+                    script.defer = true;
+                    script.src = "https://plausible.io/js/script.local.js";
+                    script.dataset.domain = "usage.ipyvizzu-story.com";
+                    script.id = scriptId;
+                    document.getElementsByTagName("head")[0].appendChild(script);
+                }}
+            }}
+
+            static _isScriptAppended(id) {{
+                return document.querySelector(`script[id="${{id}}"]`) !== null;
+            }}
+
+            static _removeScript(id) {{
+                const script = document.getElementById(id);
+                if (script) script.remove();
+            }}
+        }}
+
+        if (IpyvizzuStory.version !== window.IpyvizzuStory?.version) {{
+            window.IpyvizzuStory = IpyvizzuStory;
+            console.log(`ipyvizzu-story ${{IpyvizzuStory.version}}`);
+        }}
+
+        window.IpyvizzuStory?.changeAnalyticsTo({analytics});
 
         const vp = document.getElementById("{id}");
         import(vp.vizzuUrl).then(vizzuLoaded => {{

@@ -14,6 +14,7 @@ from ipyvizzustory.storylib.template import (
     DISPLAY_TEMPLATE,
     DISPLAY_INDENT,
 )
+from ipyvizzustory.__version__ import __version__
 
 
 class Step(dict):
@@ -345,6 +346,7 @@ class Story(dict):
 
         super().__init__()
 
+        self._analytics = True
         self._vizzu: Optional[str] = None
         self._vizzu_story: str = VIZZU_STORY
         self._start_slide: Optional[int] = None
@@ -364,6 +366,32 @@ class Story(dict):
             self.update(style.build())
 
         self["slides"] = []
+
+    @property
+    def analytics(self) -> bool:
+        """
+        A property for enabling/disabling the usage statistics feature.
+
+        The usage statistics feature allows aggregate usage data collection
+        using Plausible's algorithm.
+        Enabling this feature helps us follow the progress and overall trends of our library,
+        allowing us to focus our resources effectively and better serve our users.
+
+        We do not track, collect, or store any personal data or personally identifiable information.
+        All data is isolated to a single day, a single site, and a single device only.
+
+        Please note that even when this feature is enabled,
+        publishing anything made with `ipyvizzu-story` remains GDPR compatible.
+
+        Returns:
+            The value of the property (default `True`).
+        """
+
+        return self._analytics
+
+    @analytics.setter
+    def analytics(self, analytics: Optional[bool]):
+        self._analytics = bool(analytics)
 
     @property
     def vizzu(self) -> Optional[str]:
@@ -510,12 +538,14 @@ class Story(dict):
         vizzu_player_data = f"{json.dumps(self, cls=RawJavaScriptEncoder)}"
         return DISPLAY_TEMPLATE.format(
             id=uuid.uuid4().hex[:7],
-            vizzu_attribute=f'vizzu-url="{self._vizzu}"' if self._vizzu else "",
+            version=__version__,
+            analytics=str(self._analytics).lower(),
+            vizzu=f'vizzu-url="{self._vizzu}"' if self._vizzu else "",
+            vizzu_story=self._vizzu_story,
+            vizzu_player_data=vizzu_player_data,
             start_slide=f'start-slide="{self._start_slide}"'
             if self._start_slide
             else "",
-            vizzu_story=self._vizzu_story,
-            vizzu_player_data=vizzu_player_data,
             chart_size=self._size.style,
             chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
             chart_events=f"\n{DISPLAY_INDENT * 3}".join(self._events),
