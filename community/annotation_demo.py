@@ -8,6 +8,12 @@ from ipyvizzustory import Story, Slide, Step
 from streamlit.components.v1 import html
 import streamlit as st
 
+st.set_page_config(
+    page_title="Annotation Demo",
+    layout="wide"
+)
+
+
 #################################
 # # Taking User Input
 #################################
@@ -260,7 +266,7 @@ update_event_html = update_event_html1 + update_event_html2
 title_html = '<div id="slide-title"></div>'
 
 container_html = f'''
-    <div style="display:flex;">
+    <div style="display:flex;justify-content:flex-end;">
         {story_html}
         <div style="background-color: #eff2f6; padding:20px;margin:0px; width:100%;">
         {title_html}
@@ -271,4 +277,4 @@ container_html = f'''
 html(
     container_html + update_event_html,
     height=height,
-)
+    )
