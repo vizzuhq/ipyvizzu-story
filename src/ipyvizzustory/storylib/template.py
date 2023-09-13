@@ -17,6 +17,8 @@ DISPLAY_TEMPLATE: str = """
 
         const vp = document.getElementById("{id}");
         vp.initializing.then(chart => {{
+            const lib = vp.Vizzu;
+
             // story.set_size()
             {chart_size}
 
@@ -25,7 +27,6 @@ DISPLAY_TEMPLATE: str = """
             // story.add_event()
             {chart_events}
 
-            const lib = vp.Vizzu;
             const vizzuPlayerData = {vizzu_player_data};
             vp.slides = vizzuPlayerData;
         }});
