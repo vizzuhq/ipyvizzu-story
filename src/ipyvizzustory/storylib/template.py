@@ -2,7 +2,7 @@
 
 
 VIZZU_STORY: str = (
-    "https://cdn.jsdelivr.net/npm/vizzu-story@0.4/dist/vizzu-story.min.js"
+    "https://cdn.jsdelivr.net/npm/vizzu-story@0.5/dist/vizzu-story.min.js"
 )
 """A variable for storing the default url of the `vizzu-story` package."""
 
@@ -61,18 +61,19 @@ DISPLAY_TEMPLATE: str = """
         window.IpyvizzuStory?.changeAnalyticsTo({analytics});
 
         const vp = document.getElementById("{id}");
-        import(vp.vizzuUrl).then(vizzuLoaded => {{
-            const lib = vizzuLoaded.default;
-            const vizzuPlayerData = {vizzu_player_data};
+        vp.initializing.then(chart => {{
+            const lib = vp.Vizzu;
+
             // story.set_size()
             {chart_size}
+
+            // story.set_feature()
+            {chart_features}
+            // story.add_event()
+            {chart_events}
+
+            const vizzuPlayerData = {vizzu_player_data};
             vp.slides = vizzuPlayerData;
-            vp.initializing.then(chart => {{
-                // story.set_feature()
-                {chart_features}
-                // story.add_event()
-                {chart_events}
-            }});
         }});
     </script>
 </div>
