@@ -6,7 +6,7 @@ groups = ["codequality", "docs", "env", "packagedeps", "packagetool"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:ef510ce31d0efa600f2ec5d360ae4977f05fa9457f467f1f8990058c04b532c6"
+content_hash = "sha256:5304c4b41eb8e7d1f559796815878a16d46ed575c2285873d37ef954facb2820"
 
 [[package]]
 name = "altair"
@@ -1518,9 +1518,6 @@ name = "markdown"
 version = "3.3.7"
 requires_python = ">=3.6"
 summary = "Python implementation of Markdown."
-dependencies = [
-    "importlib-metadata>=4.4; python_version < \"3.10\"",
-]
 files = [
     {file = "Markdown-3.3.7-py3-none-any.whl", hash = "sha256:f5da449a6e1c989a4cea2631aa8ee67caa5a2ef855d551c88f9e309f4634c621"},
     {file = "Markdown-3.3.7.tar.gz", hash = "sha256:cbb516f16218e643d8e0a95b309f77eb118cb138d39a4f27851e6a63581db874"},
@@ -1830,7 +1827,7 @@ name = "mike"
 version = "1.2.0.dev0"
 git = "https://github.com/jimporter/mike.git"
 ref = "master"
-revision = "be1aafe244bc86172fbce52a903c9ab83e2e4a26"
+revision = "b3eea1258fea864cfe7ed2dd7b583d5a63ce2209"
 summary = "Manage multiple versions of your MkDocs-powered documentation"
 dependencies = [
     "importlib-metadata",
