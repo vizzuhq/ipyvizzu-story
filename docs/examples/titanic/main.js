@@ -8,7 +8,7 @@ const vp = document.querySelector('vizzu-player')
 const vizzuLoaded = import(vp.vizzuUrl)
 
 // Create data object
-const dataLoaded = Csv2Js.csv('./titanic_js.csv', ['Pclass'])
+const dataLoaded = Csv2Js.csv('./titanic_js.csv', { dimensions: ['Pclass'] })
 
 Promise.all([dataLoaded, vizzuLoaded]).then((results) => {
 	const data = results[0]

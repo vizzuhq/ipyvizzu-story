@@ -363,7 +363,7 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
         ):
             story = self.get_story()
             handler = """
-                let Year = parseFloat(event.data.text);
+                let Year = parseFloat(event.detail.text);
                 if (!isNaN(Year) && Year > 1950 && Year < 2020 && Year % 5 !== 0) {
                     event.preventDefault();
                 }

@@ -495,7 +495,7 @@ class Story(dict):
         Example:
             Add an event handler to the story:
 
-                story.add_event("click", "alert(JSON.stringify(event.data));")
+                story.add_event("click", "alert(JSON.stringify(event.detail));")
         """
 
         self._events.append(

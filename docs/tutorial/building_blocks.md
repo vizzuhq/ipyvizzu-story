@@ -94,7 +94,7 @@ You have many more options to change the look and feel of the `Story` by using
 events.
 
 ```python
-handler = "alert(JSON.stringify(event.data))"
+handler = "alert(JSON.stringify(event.detail))"
 
 story.add_event("click", handler)
 ```
