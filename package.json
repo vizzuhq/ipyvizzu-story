@@ -13,19 +13,14 @@
   "author": "Vizzu Inc.",
   "license": "Apache-2.0",
   "dependencies": {
-    "npm-run-all": "*",
-    "prettier": "*",
-    "eslint": "*",
-    "eslint-config-standard": "*",
-    "eslint-config-prettier": "*"
+    "@vizzu/prettier-config": "^0.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.1.1",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-prettier": "^9.1.0"
   },
-  "prettier": {
-    "semi": false,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "printWidth": 100,
-    "trailingComma": "none"
-  },
+  "prettier": "@vizzu/prettier-config",
   "eslintConfig": {
     "env": {
       "browser": true,
