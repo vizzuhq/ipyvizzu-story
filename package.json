@@ -13,6 +13,7 @@
 	"author": "Vizzu Inc.",
 	"license": "Apache-2.0",
 	"dependencies": {
+		"@vizzu/eslint-config": "^0.2.0",
 		"@vizzu/prettier-config": "^0.1.0",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^3.1.1",
@@ -22,16 +23,17 @@
 	},
 	"prettier": "@vizzu/prettier-config",
 	"eslintConfig": {
-		"env": {
-			"browser": true,
-			"jest": true
-		},
-		"extends": [
-			"standard",
-			"prettier"
-		],
-		"parserOptions": {
-			"ecmaVersion": "latest"
-		}
+		"overrides": [
+			{
+				"files": [
+					"*.js",
+					"*.mjs",
+					"*.cjs"
+				],
+				"extends": [
+					"@vizzu/eslint-config/standard"
+				]
+			}
+		]
 	}
 }

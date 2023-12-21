@@ -83,7 +83,7 @@ lint-docs-js = {composite = ["lint-eslint docs"]}
 lint-tools = {composite = ["lint-tools-py"]}
 lint-tools-py = {composite = ["lint-pylint tools"]}
 lint-pylint = "pylint"
-lint-eslint = "npx eslint --ext .js,.cjs,.mjs"
+lint-eslint = "npx eslint"
 
 type = {composite = ["type-src", "type-tools"]}
 type-src = {composite = ["type-src-py"]}
@@ -122,7 +122,7 @@ fix-format-prettier = "npx prettier -w"
 fix-lint = {composite = ["fix-lint-docs"]}
 fix-lint-docs = {composite = ["fix-lint-docs-js"]}
 fix-lint-docs-js = {composite = ["fix-lint-eslint docs"]}
-fix-lint-eslint = "npx eslint --ext .js,.cjs,.mjs --fix"
+fix-lint-eslint = "npx eslint --fix"
 
 build-docs = "mkdocs build -f ./tools/docs/mkdocs.yml"
 deploy-docs = {composite = ["pip install ipyvizzu --upgrade", "python ./tools/docs/deploy.py"]}
