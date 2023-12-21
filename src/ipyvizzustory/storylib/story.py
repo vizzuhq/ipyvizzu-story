@@ -515,6 +515,9 @@ class Story(dict):
             name: The name of the plugin (default `default`).
         """
 
+        if options is None:
+            options = {}
+
         self._plugins.append(
             "plugins.push({"
             + f"plugin: '{plugin}', "
