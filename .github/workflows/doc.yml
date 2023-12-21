@@ -39,12 +39,12 @@ jobs:
       - name: Install package
         run: |
           source .venv/bin/activate
-          pdm run pkg_install
+          pdm run deploy
 
       - name: Build documentation
         run: |
           source .venv/bin/activate
-          pdm run docs_build
+          pdm run build-docs
 
   publish_docs:
     if: ${{ ((github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch') }}
@@ -98,7 +98,7 @@ jobs:
       - name: Install package
         run: |
           source .venv/bin/activate
-          pdm run pkg_install
+          pdm run deploy
 
       - name: Configure Git
         run: |
@@ -112,5 +112,5 @@ jobs:
         run: |
           source .venv/bin/activate
           git fetch origin gh-pages || echo "gh-pages does not exist"
-          pdm run docs_deploy
+          pdm run deploy-docs
           git push origin gh-pages
