@@ -60,6 +60,38 @@ DISPLAY_TEMPLATE: str = """
 
         window.IpyvizzuStory?.changeAnalyticsTo({analytics});
 
+        class Plugins {{
+            static _resolveVizzuVersion(vp) {{
+                const url = vp.vizzuUrl;
+                const versionMatch = url.match(/vizzu@([^\\/]+)\\//);
+                return versionMatch[1];
+            }}
+
+            static _resolveUrl(plugin, tag) {{
+                if (!plugin.includes('/')) {{
+                    const jsdelivr = "https://cdn.jsdelivr.net/npm/@vizzu";
+                    return `${{jsdelivr}}/${{plugin}}@${{tag}}/dist/mjs/index.min.js`;
+                }}
+                return plugin;
+            }}
+
+            static register(vp, chart, plugins) {{
+                const tag = `vizzu-${{Plugins._resolveVizzuVersion(vp)}}`;
+                const pluginsRegistered = [];
+                for (const plugin of plugins) {{
+                    const pluginUrl = Plugins._resolveUrl(plugin.plugin, tag);
+                    const pluginRegistered = import(pluginUrl).then(pluginModule => {{
+                        const pluginInstance = new pluginModule[plugin.name](plugin.options);
+                        chart.feature(pluginInstance, true);
+                    }}).catch((error) => {{
+                        console.error('Error importing plugin:', pluginUrl, error)
+                    }});
+                    pluginsRegistered.push(pluginRegistered);
+                }}
+                return Promise.all(pluginsRegistered);
+            }}
+        }}
+
         const vp = document.getElementById("{id}");
         vp.initializing.then(chart => {{
             const lib = vp.Vizzu;
@@ -67,13 +99,18 @@ DISPLAY_TEMPLATE: str = """
             // story.set_size()
             {chart_size}
 
-            // story.set_feature()
-            {chart_features}
-            // story.add_event()
-            {chart_events}
+            // story.add_plugin()
+            const plugins = [];
+            {chart_plugins}
+            Plugins.register(vp, chart, plugins).then(() => {{
+                // story.set_feature()
+                {chart_features}
+                // story.add_event()
+                {chart_events}
 
-            const vizzuPlayerData = {vizzu_player_data};
-            vp.slides = vizzuPlayerData;
+                const vizzuPlayerData = {vizzu_player_data};
+                vp.slides = vizzuPlayerData;
+            }});
         }});
     </script>
 </div>

@@ -52,6 +52,7 @@ class TestHtml(ABC):
         chart_size="",
         chart_features="",
         chart_events="",
+        chart_plugins="",
     ) -> str:
         # pylint: disable=too-many-arguments
         return DISPLAY_TEMPLATE.format(
@@ -65,6 +66,7 @@ class TestHtml(ABC):
             chart_size=chart_size,
             chart_features=chart_features,
             chart_events=chart_events,
+            chart_plugins=chart_plugins,
         )
 
 
