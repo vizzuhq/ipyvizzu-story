@@ -403,7 +403,11 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                 + "})"
             )
 
-            plugin2_url = "https://cdn.jsdelivr.net/npm/@vizzu/marker-dropshadow@vizzu-0.9/dist/mjs/index.min.js"
+            plugin2_url = (
+                "https://cdn.jsdelivr.net/npm/@vizzu/"
+                + plugin1_url
+                + "@vizzu-0.9/dist/mjs/index.min.js"
+            )
             story.add_plugin(plugin2_url)
             plugin2 = (
                 "plugins.push({"
