@@ -9,6 +9,7 @@ csv_url: ./trumptwitter.csv
 <script type="module" src="./main.js"></script>
 
 ```python
+import math
 import pandas as pd
 
 from ipyvizzu import Data, Config, Style
@@ -373,7 +374,7 @@ slide15.add_step(
         Config(
             {
                 "coordSystem": "polar",
-                "rotate": 180,
+                "angle": math.pi,
                 "title": "Time of Day When Trump Tweeted",
             }
         ),

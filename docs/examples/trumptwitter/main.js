@@ -192,7 +192,7 @@ dataLoaded.then((data) => {
 			{
 				config: {
 					coordSystem: 'polar',
-					rotate: 180,
+					angle: Math.PI,
 					title: 'Time of Day When Trump Tweeted'
 				},
 				style: {
