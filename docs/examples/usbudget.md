@@ -194,7 +194,7 @@ story.set_feature("tooltip", True)
 
 # Set a handler that prevents showing the year values that are not divisible by 5
 handler = """
-let Year = parseFloat(event.data.text);
+let Year = parseFloat(event.detail.text);
 if (!isNaN(Year) && Year > 1950 && Year < 2020 && Year % 5 !== 0) {
     event.preventDefault();
 }
