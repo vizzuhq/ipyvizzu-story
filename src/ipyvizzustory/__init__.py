@@ -21,7 +21,7 @@ however `Story` could be imported with full path.
 
 import warnings
 
-from .__version__ import __version__, PYENV
+from .__version__ import __version__, __version_info__, PYENV
 
 from .storylib.story import Step, Slide
 
