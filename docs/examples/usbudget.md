@@ -29,7 +29,7 @@ df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/examples/usbudget/usbudget.csv",
     dtype={"Year": str},
 )
-data.add_df(df)
+data.add_df(df, units={"Amount": "B$"})
 
 
 # Set the style of the charts in the story
@@ -77,7 +77,7 @@ slide1 = Slide(
             {
                 "channels": {
                     "y": {
-                        "set": ["Amount[B$]", "Function"],
+                        "set": ["Amount", "Function"],
                         # Set the range of the y-axis
                         # to the min and max of the data being shown
                         # default value is 110% of the maximum value
@@ -175,8 +175,8 @@ slide6.add_step(
         Config(
             {
                 "x": ["Year", "Function"],
-                "y": "Amount[B$]",
-                "label": "Amount[B$]",
+                "y": "Amount",
+                "label": "Amount",
                 "title": "Group & Rearrange for Better Comparison",
             }
         )

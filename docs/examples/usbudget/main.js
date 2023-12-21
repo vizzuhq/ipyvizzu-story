@@ -7,7 +7,7 @@ import Csv2Js from '../../assets/javascripts/csv2js.js'
 const vp = document.querySelector('vizzu-player')
 
 // Create data object
-const dataLoaded = Csv2Js.csv('./usbudget.csv', ['Year'])
+const dataLoaded = Csv2Js.csv('./usbudget.csv', { dimensions: ['Year'], units: { Amount: 'B$' } })
 
 dataLoaded.then((data) => {
 	// Set the style of the charts in the story
@@ -44,7 +44,7 @@ dataLoaded.then((data) => {
 			config: {
 				channels: {
 					y: {
-						set: ['Amount[B$]', 'Function'],
+						set: ['Amount', 'Function'],
 						// Set the range of the y-axis
 						// to the min and max of the data being shown
 						// default value is 110% of the maximum value
@@ -104,8 +104,8 @@ dataLoaded.then((data) => {
 			{
 				config: {
 					x: ['Year', 'Function'],
-					y: 'Amount[B$]',
-					label: 'Amount[B$]',
+					y: 'Amount',
+					label: 'Amount',
 					title: 'Group & Rearrange for Better Comparison'
 				}
 			},

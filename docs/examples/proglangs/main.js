@@ -7,7 +7,7 @@ import Csv2Js from '../../assets/javascripts/csv2js.js'
 const vp = document.querySelector('vizzu-player')
 
 // Create data object
-const dataLoaded = Csv2Js.csv('./proglangs.csv', ['Year'])
+const dataLoaded = Csv2Js.csv('./proglangs.csv', { dimensions: ['Year'], units: { Value: '%' } })
 
 dataLoaded.then((data) => {
 	// Each slide here is a page in the final interactive story
@@ -29,10 +29,10 @@ dataLoaded.then((data) => {
 				fontSize: '0.8em'
 			},
 			config: {
-				x: ['Popularity', 'Value[%]'],
+				x: ['Popularity', 'Value'],
 				y: ['Language', 'Year', 'Lang_year'],
 				color: 'Popularity',
-				label: 'Value[%]',
+				label: 'Value',
 				align: 'stretch',
 				title: 'Use of programming languages by data scientists in 2022',
 				lightness: 'Year',
@@ -87,7 +87,7 @@ dataLoaded.then((data) => {
 			{
 				config: {
 					y: ['Lang_year', 'Year'],
-					x: ['Popularity', 'Language', 'Value[%]']
+					x: ['Popularity', 'Language', 'Value']
 				}
 			}
 		],

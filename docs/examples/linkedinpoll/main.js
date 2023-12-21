@@ -7,7 +7,10 @@ import Csv2Js from '../../assets/javascripts/csv2js.js'
 const vp = document.querySelector('vizzu-player')
 
 // Create data object
-const dataLoaded = Csv2Js.csv('./linkedinpoll.csv', ['Year'])
+const dataLoaded = Csv2Js.csv('./linkedinpoll.csv', {
+	dimensions: ['Year'],
+	units: { 'Vote percentage': '%', 'Answer percentage': '%' }
+})
 dataLoaded.then((data) => {
 	// Each slide here is a page in the final interactive story
 	const slides = [
@@ -30,10 +33,10 @@ dataLoaded.then((data) => {
 				fontSize: '0.8em'
 			},
 			config: {
-				x: { set: ['Vote percentage [%]', 'Answer'] },
+				x: { set: ['Vote percentage', 'Answer'] },
 				y: 'Group number',
 				color: 'Answer',
-				label: 'Vote percentage [%]',
+				label: 'Vote percentage',
 				title: 'How often do you present your findings to business stakeholders?'
 			}
 		},
@@ -74,9 +77,9 @@ dataLoaded.then((data) => {
 		[
 			{
 				config: {
-					x: ['Answer percentage [%]', 'Answer'],
+					x: ['Answer percentage', 'Answer'],
 					y: null,
-					label: 'Answer percentage [%]'
+					label: 'Answer percentage'
 				}
 			},
 			{

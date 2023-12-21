@@ -7,17 +7,19 @@ import Csv2Js from '../../assets/javascripts/csv2js.js'
 const vp = document.querySelector('vizzu-player')
 
 // Create data object
-const dataLoaded = Csv2Js.csv('./trumptwitter.csv', null, [
-	'NewtoTwitter',
-	'Businessman',
-	'Nominee',
-	'President',
-	'RT_New to Twitter',
-	'RT_Businessman',
-	'RT_Nominee',
-	'RT_President',
-	'Obama'
-])
+const dataLoaded = Csv2Js.csv('./trumptwitter.csv', {
+	measures: [
+		'NewtoTwitter',
+		'Businessman',
+		'Nominee',
+		'President',
+		'RT_New to Twitter',
+		'RT_Businessman',
+		'RT_Nominee',
+		'RT_President',
+		'Obama'
+	]
+})
 
 dataLoaded.then((data) => {
 	// Set the style of the charts in the story

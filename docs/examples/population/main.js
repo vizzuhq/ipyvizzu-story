@@ -8,7 +8,7 @@ const vp = document.querySelector('vizzu-player')
 const vizzuLoaded = import(vp.vizzuUrl)
 
 // Create data object
-const dataLoaded = Csv2Js.csv('./population.csv', ['Year'])
+const dataLoaded = Csv2Js.csv('./population.csv', { dimensions: ['Year'] })
 
 Promise.all([dataLoaded, vizzuLoaded]).then((results) => {
 	const data = results[0]

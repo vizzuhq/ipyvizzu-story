@@ -25,7 +25,9 @@ df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/examples/linkedinpoll/linkedinpoll.csv",
     dtype={"Year": str},
 )
-data.add_df(df)
+data.add_df(
+    df, units={"Answer percentage": "%", "Vote percentage": "%"}
+)
 
 # Create story object, add data to it
 story = Story(data=data)
@@ -60,10 +62,10 @@ slide1 = Slide(
         ),
         Config(
             {
-                "x": {"set": ["Vote percentage [%]", "Answer"]},
+                "x": {"set": ["Vote percentage", "Answer"]},
                 "y": "Group number",
                 "color": "Answer",
-                "label": "Vote percentage [%]",
+                "label": "Vote percentage",
                 "title": "How often do you present "
                 + "your findings to business stakeholders?",
             }
@@ -135,9 +137,9 @@ slide5.add_step(
     Step(
         Config(
             {
-                "x": ["Answer percentage [%]", "Answer"],
+                "x": ["Answer percentage", "Answer"],
                 "y": None,
-                "label": "Answer percentage [%]",
+                "label": "Answer percentage",
             }
         )
     )

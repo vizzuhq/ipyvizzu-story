@@ -28,7 +28,7 @@ df = pd.read_csv(
     "https://ipyvizzu-story.vizzuhq.com/latest/examples/proglangs/proglangs.csv",
     dtype={"Year": str},
 )
-data.add_df(df)
+data.add_df(df, units={"Value": "%"})
 
 
 # Create story object, add data to it
@@ -56,10 +56,10 @@ slide1 = Slide(
         Data.filter("record.Year == 2022"),
         Config(
             {
-                "x": ["Popularity", "Value[%]"],
+                "x": ["Popularity", "Value"],
                 "y": ["Language", "Year", "Lang_year"],
                 "color": "Popularity",
-                "label": "Value[%]",
+                "label": "Value",
                 "align": "stretch",
                 "title": "Use of programming languages by data scientists in 2022",
                 "lightness": "Year",
@@ -166,7 +166,7 @@ slide4.add_step(
         Config(
             {
                 "y": ["Lang_year", "Year"],
-                "x": ["Popularity", "Language", "Value[%]"],
+                "x": ["Popularity", "Language", "Value"],
             }
         )
     )
