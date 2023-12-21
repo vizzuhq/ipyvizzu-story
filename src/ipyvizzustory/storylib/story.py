@@ -355,6 +355,7 @@ class Story(dict):
 
         self._features: List[str] = []
         self._events: List[str] = []
+        self._plugins: List[str] = []
 
         if not data or type(data) != Data:  # pylint: disable=unidiomatic-typecheck
             raise TypeError("Type must be Data.")
@@ -502,6 +503,29 @@ class Story(dict):
             f"chart.on('{event}', event => {{{' '.join(handler.split())}}});"
         )
 
+    def add_plugin(
+        self, plugin: str, options: Optional[dict] = None, name: str = "default"
+    ) -> None:
+        """
+        A method for register plugins of the chart.
+
+        Args:
+            plugin: The package name or the url of the plugin.
+            options: The plugin constructor options.
+            name: The name of the plugin (default `default`).
+        """
+
+        if options is None:
+            options = {}
+
+        self._plugins.append(
+            "plugins.push({"
+            + f"plugin: '{plugin}', "
+            + f"options: {json.dumps(options, cls=RawJavaScriptEncoder)}, "
+            + f"name: '{name}'"
+            + "})"
+        )
+
     def set_size(
         self,
         width: Optional[Union[int, float, str]] = None,
@@ -549,6 +573,7 @@ class Story(dict):
             chart_size=self._size.style,
             chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
             chart_events=f"\n{DISPLAY_INDENT * 3}".join(self._events),
+            chart_plugins=f"\n{DISPLAY_INDENT * 3}".join(self._plugins),
         )
 
     def export_to_html(self, filename: PathLike) -> None:

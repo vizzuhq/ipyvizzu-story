@@ -52,6 +52,7 @@ class TestHtml(ABC):
         chart_size="",
         chart_features="",
         chart_events="",
+        chart_plugins="",
     ) -> str:
         # pylint: disable=too-many-arguments
         return DISPLAY_TEMPLATE.format(
@@ -65,6 +66,7 @@ class TestHtml(ABC):
             chart_size=chart_size,
             chart_features=chart_features,
             chart_events=chart_events,
+            chart_plugins=chart_plugins,
         )
 
 
@@ -380,6 +382,45 @@ class TestStoryHtml(TestHtml, unittest.TestCase):
                         + "chart.on('plot-axis-label-draw', "
                         + f"event => {{{' '.join(handler.split())}}});"
                     )
+                ),
+            )
+
+    def test_to_html_with_plugins(self) -> None:
+        with unittest.mock.patch(
+            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+        ):
+            story = self.get_story()
+
+            plugin1_url = "marker-dropshadow"
+            story.add_plugin(
+                plugin1_url, options={"debug": True}, name="MarkerDropshadow"
+            )
+            plugin1 = (
+                "plugins.push({"
+                + f"plugin: '{plugin1_url}', "
+                + 'options: {"debug": true}, '
+                + "name: 'MarkerDropshadow'"
+                + "})"
+            )
+
+            plugin2_url = (
+                "https://cdn.jsdelivr.net/npm/@vizzu/"
+                + plugin1_url
+                + "@vizzu-0.9/dist/mjs/index.min.js"
+            )
+            story.add_plugin(plugin2_url)
+            plugin2 = (
+                "plugins.push({"
+                + f"plugin: '{plugin2_url}', "
+                + "options: {}, "
+                + "name: 'default'"
+                + "})"
+            )
+
+            self.assertEqual(
+                story.to_html(),
+                self.get_html(
+                    chart_plugins=f"\n{DISPLAY_INDENT * 3}".join([plugin1, plugin2])
                 ),
             )
 
