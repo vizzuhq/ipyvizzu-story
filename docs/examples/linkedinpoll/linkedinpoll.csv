@@ -1,4 +1,4 @@
-Group,Group number,Answer,Vote percentage [%],Vote count,GroupVote count,GroupVote percentage [%],Answer percentage [%]
+Group,Group number,Answer,Vote percentage,Vote count,GroupVote count,GroupVote percentage,Answer percentage
 "Data Analytics, Data Science, Business Analytics...",Group 5,2 or more per month,39,27,70,39.0,3.8
 Python Developers Community (moderated),Group 4,2 or more per month,44,191,433,44.0,27
 "Data Scientist, Data Analyst and Data Engineer",Group 3,2 or more per month,47,66,141,47.0,9.3
