@@ -7,43 +7,43 @@ const vp = document.querySelector('vizzu-player')
 
 // Create data object
 const data = {
-  series: [
-    {
-      name: 'Foo',
-      values: ['Alice', 'Bob', 'Ted']
-    },
-    {
-      name: 'Bar',
-      values: [15, 32, 12]
-    },
-    {
-      name: 'Baz',
-      values: [5, 3, 2]
-    }
-  ]
+	series: [
+		{
+			name: 'Foo',
+			values: ['Alice', 'Bob', 'Ted']
+		},
+		{
+			name: 'Bar',
+			values: [15, 32, 12]
+		},
+		{
+			name: 'Baz',
+			values: [5, 3, 2]
+		}
+	]
 }
 
 // Each slide here is a page in the final interactive story
 const slides = [
-  {
-    config: {
-      x: 'Foo',
-      y: 'Bar'
-    }
-  },
-  {
-    config: {
-      color: 'Foo',
-      x: 'Baz',
-      geometry: 'circle'
-    }
-  }
+	{
+		config: {
+			x: 'Foo',
+			y: 'Bar'
+		}
+	},
+	{
+		config: {
+			color: 'Foo',
+			x: 'Baz',
+			geometry: 'circle'
+		}
+	}
 ]
 
 // Create story configuration object, add data and slides to it
 const story = {
-  data,
-  slides
+	data,
+	slides
 }
 
 // Set up the created element with the configuration object
