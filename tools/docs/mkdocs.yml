@@ -12,140 +12,140 @@ edit_uri: https://github.com/vizzuhq/ipyvizzu-story/edit/main/docs
 use_directory_urls: true
 
 theme:
-  name: material
-  palette:
-    scheme: vizzu
-  font:
-    text: Roboto
-    code: Roboto Mono
-  logo: assets/logo-white.svg
-  favicon: assets/favicon.svg
-  custom_dir: ./overrides
-  features:
-    - toc.follow
-    - search.suggest
-    - search.highlight
-    - navigation.top
-    - navigation.footer
-    - content.code.copy
-    - content.action.edit
+    name: material
+    palette:
+        scheme: vizzu
+    font:
+        text: Roboto
+        code: Roboto Mono
+    logo: assets/logo-white.svg
+    favicon: assets/favicon.svg
+    custom_dir: ./overrides
+    features:
+        - toc.follow
+        - search.suggest
+        - search.highlight
+        - navigation.top
+        - navigation.footer
+        - content.code.copy
+        - content.action.edit
 
 extra_css:
-  - assets/stylesheets/vizzu.css
-  - assets/stylesheets/highlight.css
-  - assets/stylesheets/gallery.css
+    - assets/stylesheets/vizzu.css
+    - assets/stylesheets/highlight.css
+    - assets/stylesheets/gallery.css
 
 extra_javascript:
-  - assets/javascripts/extlinks.js
-  - //cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7/build/highlight.min.js
-  - //cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js
-  - assets/javascripts/highlight.js
+    - assets/javascripts/extlinks.js
+    - //cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7/build/highlight.min.js
+    - //cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js
+    - assets/javascripts/highlight.js
 
 extra:
-  version:
-    provider: mike
-    default: latest
-  social:
-    - icon: fontawesome/brands/slack
-      name: Vizzu on Slack
-      link: https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg
-    - icon: fontawesome/brands/twitter
-      name: Vizzu on Twitter
-      link: https://twitter.com/VizzuHQ
-    - icon: fontawesome/brands/reddit
-      name: Vizzu on Reddit
-      link: https://www.reddit.com/user/VizzuHQ/?sort=top
-    - icon: fontawesome/brands/github
-      name: Vizzu on GitHub
-      link: https://github.com/vizzuhq/
+    version:
+        provider: mike
+        default: latest
+    social:
+        - icon: fontawesome/brands/slack
+          name: Vizzu on Slack
+          link: https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg
+        - icon: fontawesome/brands/twitter
+          name: Vizzu on Twitter
+          link: https://twitter.com/VizzuHQ
+        - icon: fontawesome/brands/reddit
+          name: Vizzu on Reddit
+          link: https://www.reddit.com/user/VizzuHQ/?sort=top
+        - icon: fontawesome/brands/github
+          name: Vizzu on GitHub
+          link: https://github.com/vizzuhq/
 
 markdown_extensions:
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - mdx_truly_sane_lists
-  - attr_list
-  - md_in_html
-  - admonition
-  - pymdownx.highlight:
-      use_pygments: false
-  - pymdownx.details
-  - pymdownx.superfences
+    - pymdownx.tasklist:
+          custom_checkbox: true
+    - mdx_truly_sane_lists
+    - attr_list
+    - md_in_html
+    - admonition
+    - pymdownx.highlight:
+          use_pygments: false
+    - pymdownx.details
+    - pymdownx.superfences
 
 plugins:
-  - mike:
-      version_selector: true
-      alias_type: symlink
-      canonical_version: latest
-      redirect_template: ./tools/docs/overrides/mike/redirect.html
-  - search
-  - section-index
-  - autorefs
-  - mkdocstrings:
-      enable_inventory: true
-      handlers:
-        python:
-          paths: [../../src]
-          options:
-            members_order: source
-            show_root_heading: True
-            show_root_members_full_path: True
-            show_submodules: True
-          import:
-            - https://docs.python.org/3/objects.inv
-            - https://ipyvizzu.vizzuhq.com/latest/objects.inv
-  - gen-files:
-      scripts:
-        - pages/gen_pages.py
-        - examples/gen_examples.py
-        - reference/gen_reference.py
-  - coverage:
-      page_name: coverage
-      html_report_dir: .coverage/html
-  - literate-nav:
-      implicit_index: true
+    - mike:
+          version_selector: true
+          alias_type: symlink
+          canonical_version: latest
+          redirect_template: ./tools/docs/overrides/mike/redirect.html
+    - search
+    - section-index
+    - autorefs
+    - mkdocstrings:
+          enable_inventory: true
+          handlers:
+              python:
+                  paths: [../../src]
+                  options:
+                      members_order: source
+                      show_root_heading: True
+                      show_root_members_full_path: True
+                      show_submodules: True
+                  import:
+                      - https://docs.python.org/3/objects.inv
+                      - https://ipyvizzu.vizzuhq.com/latest/objects.inv
+    - gen-files:
+          scripts:
+              - pages/gen_pages.py
+              - examples/gen_examples.py
+              - reference/gen_reference.py
+    - coverage:
+          page_name: coverage
+          html_report_dir: .coverage/html
+    - literate-nav:
+          implicit_index: true
 
 nav:
-  - Home: index.md
-  - installation.md
-  - Tutorial:
-      - tutorial/index.md
-      - tutorial/data.md
-      - tutorial/initialization.md
-      - Building blocks: tutorial/building_blocks.md
-      - tutorial/export.md
-  - Examples: examples/
-  - Code reference: reference/ipyvizzustory/
-  - Environments:
-      - environments/index.md
-      - Notebooks:
-          - environments/notebook/index.md
-          - Jupyter Notebook: environments/notebook/jupyternotebook.md
-          - environments/notebook/colab.md
-          - environments/notebook/databricks.md
-          - DataCamp: environments/notebook/datacamp.md
-          - environments/notebook/deepnote.md
-          - JupyterLab: environments/notebook/jupyterlab.md
-          - JupyterLite: environments/notebook/jupyterlite.md
-          - environments/notebook/kaggle.md
-          - environments/notebook/noteable.md
-      - App platforms:
-          - environments/platform/index.md
-          - environments/platform/streamlit.md
-          - environments/platform/flask.md
-          - environments/platform/panel.md
-          - environments/platform/mercury.md
-          - Voilà: environments/platform/voila.md
-      - BI tools:
-          - environments/bi/index.md
-          - environments/bi/mode.md
-      - IDEs:
-          - environments/ide/index.md
-          - PyCharm: environments/ide/pycharm.md
-          - VSCode Python: environments/ide/vscode.md
-      - environments/python.md
-  - Development:
-      - dev/index.md
-      - Contributing: CONTRIBUTING.md
-      - Code of Conduct: CODE_OF_CONDUCT.md
-      - Coverage report: coverage.md
-  - License: LICENSE.md
+    - Home: index.md
+    - installation.md
+    - Tutorial:
+          - tutorial/index.md
+          - tutorial/data.md
+          - tutorial/initialization.md
+          - Building blocks: tutorial/building_blocks.md
+          - tutorial/export.md
+    - Examples: examples/
+    - Code reference: reference/ipyvizzustory/
+    - Environments:
+          - environments/index.md
+          - Notebooks:
+                - environments/notebook/index.md
+                - Jupyter Notebook: environments/notebook/jupyternotebook.md
+                - environments/notebook/colab.md
+                - environments/notebook/databricks.md
+                - DataCamp: environments/notebook/datacamp.md
+                - environments/notebook/deepnote.md
+                - JupyterLab: environments/notebook/jupyterlab.md
+                - JupyterLite: environments/notebook/jupyterlite.md
+                - environments/notebook/kaggle.md
+                - environments/notebook/noteable.md
+          - App platforms:
+                - environments/platform/index.md
+                - environments/platform/streamlit.md
+                - environments/platform/flask.md
+                - environments/platform/panel.md
+                - environments/platform/mercury.md
+                - Voilà: environments/platform/voila.md
+          - BI tools:
+                - environments/bi/index.md
+                - environments/bi/mode.md
+          - IDEs:
+                - environments/ide/index.md
+                - PyCharm: environments/ide/pycharm.md
+                - VSCode Python: environments/ide/vscode.md
+          - environments/python.md
+    - Development:
+          - dev/index.md
+          - Contributing: CONTRIBUTING.md
+          - Code of Conduct: CODE_OF_CONDUCT.md
+          - Coverage report: coverage.md
+    - License: LICENSE.md
