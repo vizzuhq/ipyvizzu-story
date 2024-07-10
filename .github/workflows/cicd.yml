@@ -6,9 +6,6 @@ on:
     pull_request:
         branches: [main]
 
-permissions:
-    contents: write
-
 jobs:
     init:
         uses: ./.github/workflows/init.yml
