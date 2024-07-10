@@ -84,7 +84,7 @@ story.add_slide(slide2)
 
 
 # note: in Streamlit if you want to use the `play` method,
-# you need to set the width and height in pixels
+# you need to set the width and height in pixels or set the width to 100%
 
 story.set_size(width="800px", height="480px")
 

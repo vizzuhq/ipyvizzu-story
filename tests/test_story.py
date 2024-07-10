@@ -15,6 +15,36 @@ from ipyvizzustory.env.st.story import Story as StreamlitStory
 from ipyvizzustory.env.pn.story import Story as PanelStory
 
 
+def play(self, value) -> None:
+    with unittest.mock.patch(
+        "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
+    ):
+        with unittest.mock.patch(self.get_mock()) as output:
+            story = self.get_story()
+            story.set_size(**value["input"])
+            story.play()
+            self.assert_equal(
+                "\n".join(Normalizer.normalize_output(output)),
+                self.get_html(chart_size=value["ref_style"]),
+            )
+            try:
+                (
+                    width,
+                    height,
+                ) = story._get_width_height()  # pylint: disable=protected-access
+            except AttributeError:
+                (
+                    width,
+                    height,
+                ) = (
+                    story._size.get_width_height_in_pixels()  # pylint: disable=protected-access
+                )
+            self.assert_equal(
+                (width, height),
+                value["ref_size"],
+            )
+
+
 class TestPythonStory(TestHtml, unittest.TestCase):
     def story(self, *args, **kwargs) -> PythonStory:
         return PythonStory(*args, **kwargs)
@@ -140,23 +170,10 @@ class TestStoryWithLimitedPlay(TestHtml):
         },
     )
     def test_play(self, value: dict) -> None:
-        with unittest.mock.patch(
-            "ipyvizzustory.storylib.story.uuid.uuid4", return_value=self
-        ):
-            with unittest.mock.patch(self.get_mock()) as output:
-                story = self.get_story()
-                story.set_size(**value["input"])
-                story.play()
-                self.assert_equal(
-                    "\n".join(Normalizer.normalize_output(output)),
-                    self.get_html(chart_size=value["ref_style"]),
-                )
-                self.assert_equal(
-                    story._size.get_width_height_in_pixels(),  # pylint: disable=protected-access
-                    value["ref_size"],
-                )
+        play(self, value)
 
 
+@ddt
 class TestStreamlitStory(TestStoryWithLimitedPlay, unittest.TestCase):
     def story(self, *args, **kwargs) -> StreamlitStory:
         return StreamlitStory(*args, **kwargs)
@@ -169,6 +186,16 @@ class TestStreamlitStory(TestStoryWithLimitedPlay, unittest.TestCase):
 
     def assert_equal(self, value, ref):
         return self.assertEqual(value, ref)
+
+    @data(
+        {
+            "input": {"width": "100%", "height": "480px"},
+            "ref_style": "vp.style.cssText = 'width: 100%;height: 480px;'",
+            "ref_size": (None, 480),
+        },
+    )
+    def test_play_st(self, value: dict) -> None:
+        play(self, value)
 
 
 class TestPanelStory(TestStoryWithLimitedPlay, unittest.TestCase):
