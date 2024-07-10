@@ -26,7 +26,7 @@ class Story(StoryLib):
 
         super().__init__(data=data, style=style)
 
-    def _get_width_height(self) -> Tuple[int | None, int]:
+    def _get_width_height(self) -> Tuple[Optional[int], int]:
         if self._size.width == "100%" and StorySize.is_pixel(self._size.height):
             return None, int(float(self._size.height[:-2]))  # type: ignore
         try:
