@@ -7,7 +7,7 @@ on:
     workflow_call:
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
     build:
