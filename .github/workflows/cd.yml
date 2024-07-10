@@ -52,8 +52,8 @@ jobs:
                   path: dist/
                   key: package_${{ steps.run_id.outputs.run_id }}
 
-            # - name: Publish package
-            #   run: ./.venv/bin/python -m twine upload -u "__token__" -p "${{ secrets.PYPI_API_TOKEN }}" dist/*.tar.gz  dist/*.whl
+            - name: Publish package
+              run: ./.venv/bin/python -m twine upload -u "__token__" -p "${{ secrets.PYPI_API_TOKEN }}" dist/*.tar.gz  dist/*.whl
 
             - name: Upload package
               run: |
