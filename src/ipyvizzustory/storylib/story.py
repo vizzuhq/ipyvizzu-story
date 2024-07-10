@@ -134,6 +134,10 @@ class Slide(list):
 class StorySize:
     """A class for representing the size of a presentation story."""
 
+    ERROR_MSG_WIDTH_AND_HEIGHT = "width and height should be in pixels"
+    ERROR_MSG_WIDTH_OR_HEIGHT = "width or height should be in pixels"
+    ERROR_MSG_ASPECT_RATIO = "aspect_ratio should be a float"
+
     def __init__(
         self,
         width: Optional[Union[int, float, str]] = None,
@@ -286,7 +290,7 @@ class StorySize:
                     not StorySize.is_pixel(self.height),
                 ]
             ):
-                raise ValueError("width and height should be in pixels")
+                raise ValueError(StorySize.ERROR_MSG_WIDTH_AND_HEIGHT)
             _width = int(float(self.width[:-2]))  # type: ignore
             _height = int(float(self.height[:-2]))  # type: ignore
         else:
@@ -296,11 +300,11 @@ class StorySize:
                     StorySize._is_float(self.aspect_ratio),
                 ]
             ):
-                raise ValueError("aspect_ratio should be a float")
+                raise ValueError(StorySize.ERROR_MSG_ASPECT_RATIO)
             if not any(
                 [StorySize.is_pixel(self.width), StorySize.is_pixel(self.height)]
             ):
-                raise ValueError("width or height should be in pixels")
+                raise ValueError(StorySize.ERROR_MSG_WIDTH_OR_HEIGHT)
             _aspect_ratio = float(self.aspect_ratio)
             if StorySize.is_pixel(self.width):
                 _width = float(self.width[:-2])  # type: ignore
