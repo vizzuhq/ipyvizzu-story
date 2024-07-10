@@ -6,6 +6,9 @@ on:
         types: [published]
     workflow_call:
 
+permissions:
+  contents: write
+
 jobs:
     build:
         if: ${{ !((github.event_name == 'release' && github.event.action == 'published') || github.event_name == 'workflow_dispatch') }}
