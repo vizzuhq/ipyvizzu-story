@@ -1,0 +1,463 @@
+Year,Function,Amount
+1955,Health,0.54
+1955,Space,0.34
+1955,Science,0.63
+1955,Energy,0.21
+1955,Nat. Res.,0.25
+1955,Other,0.72
+1955,Defense,12.08
+1956,Health,0.62
+1956,Space,0.38
+1956,Science,0.71
+1956,Energy,0.32
+1956,Nat. Res.,0.29
+1956,Other,0.94
+1956,Defense,14.41
+1957,Health,0.98
+1957,Space,0.4
+1957,Science,0.87
+1957,Energy,0.56
+1957,Nat. Res.,0.33
+1957,Other,1.08
+1957,Defense,15.63
+1958,Health,1.12
+1958,Space,0.51
+1958,Science,1.12
+1958,Energy,0.77
+1958,Nat. Res.,0.38
+1958,Other,1.28
+1958,Defense,17.48
+1959,Health,1.51
+1959,Space,0.81
+1959,Science,1.43
+1959,Energy,0.9
+1959,Nat. Res.,0.62
+1959,Other,1.88
+1959,Defense,37.55
+1960,Health,1.91
+1960,Space,2.28
+1960,Science,1.66
+1960,Energy,1.1
+1960,Nat. Res.,0.47
+1960,Other,2.15
+1960,Defense,40.99
+1961,Health,2.25
+1961,Space,4.4
+1961,Science,1.94
+1961,Energy,1.18
+1961,Nat. Res.,0.72
+1961,Other,2.21
+1961,Defense,47.17
+1962,Health,2.93
+1962,Space,7.5
+1962,Science,2.12
+1962,Energy,2.68
+1962,Nat. Res.,0.67
+1962,Other,2.62
+1962,Defense,47.83
+1963,Health,3.67
+1963,Space,15.28
+1963,Science,2.43
+1963,Energy,3.08
+1963,Nat. Res.,0.79
+1963,Other,2.9
+1963,Defense,47.63
+1964,Health,4.63
+1964,Space,24.31
+1964,Science,2.86
+1964,Energy,3.3
+1964,Nat. Res.,0.79
+1964,Other,3.15
+1964,Defense,51.78
+1965,Health,3.82
+1965,Space,29.1
+1965,Science,2.95
+1965,Energy,3.09
+1965,Nat. Res.,0.91
+1965,Other,3.9
+1965,Defense,45.8
+1966,Health,4.68
+1966,Space,33.42
+1966,Science,3.26
+1966,Energy,2.86
+1966,Nat. Res.,1.01
+1966,Other,4.31
+1966,Defense,44.97
+1967,Health,5.56
+1967,Space,31
+1967,Science,3.49
+1967,Energy,2.94
+1967,Nat. Res.,1.11
+1967,Other,4.43
+1967,Defense,49.61
+1968,Health,5.84
+1968,Space,26.51
+1968,Science,3.14
+1968,Energy,3.06
+1968,Nat. Res.,1.23
+1968,Other,5.54
+1968,Defense,50.77
+1969,Health,6.1
+1969,Space,22.87
+1969,Science,3.78
+1969,Energy,2.67
+1969,Nat. Res.,1.32
+1969,Other,5.01
+1969,Defense,47.25
+1970,Health,5.79
+1970,Space,18.98
+1970,Science,3.7
+1970,Energy,2.43
+1970,Nat. Res.,1.62
+1970,Other,5.96
+1970,Defense,43.27
+1971,Health,5.76
+1971,Space,16.13
+1971,Science,3.67
+1971,Energy,2.33
+1971,Nat. Res.,1.8
+1971,Other,7.78
+1971,Defense,41.62
+1972,Health,6.74
+1972,Space,14.99
+1972,Science,3.81
+1972,Energy,1.61
+1972,Nat. Res.,2.48
+1972,Other,6.95
+1972,Defense,43.31
+1973,Health,7.79
+1973,Space,14.3
+1973,Science,3.78
+1973,Energy,1.78
+1973,Nat. Res.,2.53
+1973,Other,6.9
+1973,Defense,42.92
+1974,Health,7.27
+1974,Space,12.71
+1974,Science,3.64
+1974,Energy,2.3
+1974,Nat. Res.,2.24
+1974,Other,7.03
+1974,Defense,41.23
+1975,Health,7.51
+1975,Space,11.43
+1975,Science,3.5
+1975,Energy,3.71
+1975,Nat. Res.,2.57
+1975,Other,6.34
+1975,Defense,38.6
+1976,Health,8.51
+1976,Space,11.99
+1976,Science,3.27
+1976,Energy,5.29
+1976,Nat. Res.,2.4
+1976,Other,6.32
+1976,Defense,36.48
+1977,Health,5.71
+1977,Space,12.15
+1977,Science,3.24
+1977,Energy,7.61
+1977,Nat. Res.,2.03
+1977,Other,5.88
+1977,Defense,37.67
+1978,Health,8.97
+1978,Space,11.21
+1978,Science,3.16
+1978,Energy,8.25
+1978,Nat. Res.,2.19
+1978,Other,6.64
+1978,Defense,39.2
+1979,Health,9.73
+1979,Space,10.98
+1979,Science,3.24
+1979,Energy,9.92
+1979,Nat. Res.,2.69
+1979,Other,6.07
+1979,Defense,36.43
+1980,Health,10.17
+1980,Space,11.77
+1980,Science,3.27
+1980,Energy,9.09
+1980,Nat. Res.,2.63
+1980,Other,6.15
+1980,Defense,40.45
+1981,Health,10.27
+1981,Space,12.07
+1981,Science,3.52
+1981,Energy,9.26
+1981,Nat. Res.,2.29
+1981,Other,5.92
+1981,Defense,42.6
+1982,Health,10.21
+1982,Space,6.34
+1982,Science,3.34
+1982,Energy,7.83
+1982,Nat. Res.,1.97
+1982,Other,5.23
+1982,Defense,46.59
+1983,Health,10.05
+1983,Space,4.5
+1983,Science,3.29
+1983,Energy,6.15
+1983,Nat. Res.,1.93
+1983,Other,4.72
+1983,Defense,50.25
+1984,Health,9.92
+1984,Space,6.58
+1984,Science,3.55
+1984,Energy,6.01
+1984,Nat. Res.,1.84
+1984,Other,5.22
+1984,Defense,56.06
+1985,Health,10.8
+1985,Space,5.07
+1985,Science,3.56
+1985,Energy,8.95
+1985,Nat. Res.,1.86
+1985,Other,5.24
+1985,Defense,63.92
+1986,Health,11.48
+1986,Space,5.9
+1986,Science,3.93
+1986,Energy,5.4
+1986,Nat. Res.,1.9
+1986,Other,5.34
+1986,Defense,73.42
+1987,Health,11.7
+1987,Space,5.42
+1987,Science,4.03
+1987,Energy,4.67
+1987,Nat. Res.,1.78
+1987,Other,4.93
+1987,Defense,74.72
+1988,Health,13.41
+1988,Space,6.34
+1988,Science,4.16
+1988,Energy,4.46
+1988,Nat. Res.,2.05
+1988,Other,4.83
+1988,Defense,74.2
+1989,Health,14.15
+1989,Space,7.91
+1989,Science,4.22
+1989,Energy,4.6
+1989,Nat. Res.,1.98
+1989,Other,5.38
+1989,Defense,75.69
+1990,Health,14.93
+1990,Space,10.17
+1990,Science,4.17
+1990,Energy,4.24
+1990,Nat. Res.,2.21
+1990,Other,5.41
+1990,Defense,74.3
+1991,Health,14.89
+1991,Space,10.96
+1991,Science,4.31
+1991,Energy,4.37
+1991,Nat. Res.,2.31
+1991,Other,5.59
+1991,Defense,66.17
+1992,Health,16.45
+1992,Space,11.32
+1992,Science,4.29
+1992,Energy,4.42
+1992,Nat. Res.,2.71
+1992,Other,6.06
+1992,Defense,65.04
+1993,Health,17.27
+1993,Space,11.66
+1993,Science,4.23
+1993,Energy,4.19
+1993,Nat. Res.,2.93
+1993,Other,6.3
+1993,Defense,67.26
+1994,Health,17.32
+1994,Space,10.86
+1994,Science,4.14
+1994,Energy,4.32
+1994,Nat. Res.,2.85
+1994,Other,6.78
+1994,Defense,62.01
+1995,Health,17.96
+1995,Space,13.15
+1995,Science,4.14
+1995,Energy,5.03
+1995,Nat. Res.,2.65
+1995,Other,6.1
+1995,Defense,60.15
+1996,Health,16.44
+1996,Space,10.9
+1996,Science,4.36
+1996,Energy,4.6
+1996,Nat. Res.,2.52
+1996,Other,6.61
+1996,Defense,61.75
+1997,Health,17.63
+1997,Space,12.52
+1997,Science,4.18
+1997,Energy,4.06
+1997,Nat. Res.,2.45
+1997,Other,6.7
+1997,Defense,61.82
+1998,Health,19.33
+1998,Space,13.12
+1998,Science,5.88
+1998,Energy,2.32
+1998,Nat. Res.,2.51
+1998,Other,6.48
+1998,Defense,61
+1999,Health,21.51
+1999,Space,12.48
+1999,Science,6.35
+1999,Energy,1.93
+1999,Nat. Res.,2.6
+1999,Other,5.95
+1999,Defense,60.43
+2000,Health,23.34
+2000,Space,7.96
+2000,Science,6.9
+2000,Energy,1.86
+2000,Nat. Res.,2.48
+2000,Other,5.83
+2000,Defense,60.35
+2001,Health,26.13
+2001,Space,8.06
+2001,Science,6.97
+2001,Energy,1.92
+2001,Nat. Res.,2.51
+2001,Other,6.04
+2001,Defense,63.41
+2002,Health,29.94
+2002,Space,8.22
+2002,Science,7.21
+2002,Energy,1.69
+2002,Nat. Res.,2.62
+2002,Other,6.4
+2002,Defense,68.19
+2003,Health,32.84
+2003,Space,8.33
+2003,Science,7.93
+2003,Energy,1.84
+2003,Nat. Res.,2.66
+2003,Other,7.63
+2003,Defense,79.59
+2004,Health,35.56
+2004,Space,10.9
+2004,Science,8.33
+2004,Energy,1.88
+2004,Nat. Res.,2.19
+2004,Other,6.28
+2004,Defense,88.6
+2005,Health,36.29
+2005,Space,9.05
+2005,Science,8.48
+2005,Energy,1.67
+2005,Nat. Res.,2.47
+2005,Other,6.77
+2005,Defense,92.95
+2006,Health,36.04
+2006,Space,8.68
+2006,Science,8.51
+2006,Energy,1.47
+2006,Nat. Res.,1.95
+2006,Other,6.79
+2006,Defense,93.12
+2007,Health,35.81
+2007,Space,10.56
+2007,Science,8.29
+2007,Energy,1.55
+2007,Nat. Res.,2.06
+2007,Other,7.02
+2007,Defense,95.66
+2008,Health,36.07
+2008,Space,12.46
+2008,Science,8.25
+2008,Energy,1.48
+2008,Nat. Res.,2.31
+2008,Other,6.75
+2008,Defense,96.79
+2009,Health,37.05
+2009,Space,11.01
+2009,Science,8.75
+2009,Energy,2.22
+2009,Nat. Res.,2.32
+2009,Other,7.06
+2009,Defense,99.68
+2010,Health,41.09
+2010,Space,9.49
+2010,Science,9.78
+2010,Energy,2.34
+2010,Nat. Res.,2.21
+2010,Other,6.4
+2010,Defense,96.65
+2011,Health,41.67
+2011,Space,9.14
+2011,Science,10.84
+2011,Energy,4.3
+2011,Nat. Res.,2.19
+2011,Other,6.59
+2011,Defense,93.1
+2012,Health,39.03
+2012,Space,11.5
+2012,Science,10.48
+2012,Energy,3.46
+2012,Nat. Res.,2.36
+2012,Other,6.17
+2012,Defense,86.15
+2013,Health,36.45
+2013,Space,11.96
+2013,Science,10.4
+2013,Energy,2.29
+2013,Nat. Res.,2.14
+2013,Other,5.87
+2013,Defense,80.08
+2014,Health,34.01
+2014,Space,11.91
+2014,Science,10.28
+2014,Energy,2.61
+2014,Nat. Res.,2.14
+2014,Other,6.14
+2014,Defense,77.97
+2015,Health,33.77
+2015,Space,12.2
+2015,Science,10.07
+2015,Energy,3.04
+2015,Nat. Res.,2.27
+2015,Other,5.64
+2015,Defense,77.25
+2016,Health,33.63
+2016,Space,12.36
+2016,Science,10.25
+2016,Energy,3.01
+2016,Nat. Res.,2.41
+2016,Other,5.91
+2016,Defense,78.66
+2017,Health,36
+2017,Space,10.71
+2017,Science,10.23
+2017,Energy,3.1
+2017,Nat. Res.,2.54
+2017,Other,5.83
+2017,Defense,54.62
+2018,Health,35.8
+2018,Space,10.52
+2018,Science,9.93
+2018,Energy,3.13
+2018,Nat. Res.,2.41
+2018,Other,5.98
+2018,Defense,51.09
+2019,Health,37.29
+2019,Space,9.99
+2019,Science,9.97
+2019,Energy,3.56
+2019,Nat. Res.,2.4
+2019,Other,5.79
+2019,Defense,57.06
+2020,Health,38.61
+2020,Space,12.27
+2020,Science,10.52
+2020,Energy,3.46
+2020,Nat. Res.,2.48
+2020,Other,6.49
+2020,Defense,65.81
