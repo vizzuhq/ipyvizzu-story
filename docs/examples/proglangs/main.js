@@ -137,7 +137,7 @@ dataLoaded.then((data) => {
 
 		// Set a handler that prevents showing specific elements
 		chart.on('plot-marker-label-draw', (event) => {
-			if (event.detail.text.split(' ')[0] < 5) event.preventDefault()
+			if (event.detail.text.split('%')[0] < 5) event.preventDefault()
 		})
 	})
 })
