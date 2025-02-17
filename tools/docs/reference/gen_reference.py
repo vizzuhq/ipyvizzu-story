@@ -1,7 +1,7 @@
 # pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring
 
+from contextlib import chdir
 from pathlib import Path
-import sys
 from types import ModuleType
 
 import mkdocs_gen_files  # type: ignore
@@ -10,14 +10,6 @@ import ipyvizzustory
 
 
 REPO_PATH = Path(__file__).parent / ".." / ".." / ".."
-TOOLS_PATH = REPO_PATH / "tools"
-
-
-sys.path.insert(0, str(TOOLS_PATH / "modules"))
-
-from chdir import (  # pylint: disable=import-error, wrong-import-position, wrong-import-order
-    chdir,
-)
 
 
 class Reference:
