@@ -30,7 +30,7 @@ A `Step` (and a single-Step `Slide`) is basically the same as the `Chart` object
 in `ipyvizzu`, with a minor, but important difference:
 
 - all of the data has to be added to the story at initialization, and it can be
-  filtered at every `Step` throughout the `Story`.
+    filtered at every `Step` throughout the `Story`.
 
 In case of a `Slide` with multiple `Steps`, all, but the last `Steps` are
 interim charts that connect a `Slide` with a previous `Slide` but the animation
@@ -47,10 +47,11 @@ Visit [Installation chapter](../installation.md) for more options and details.
 ## Usage
 
 !!! note
-    `ipyvizzu-story` generates `JavaScript` code, then the `vizzu-story` and
-    `vizzu` calls are evaluated by the browser. Therefore if a blank space
-    appears where the chart should be, check the console log of your browser.
-    `vizzu-story` and `vizzu` reports its errors there. If you get a
-    `vizzu-story` or `vizzu` error in your browser console that is not
-    straightforward to understand, please clean your browser cache first,
-    because it might be caused by an older version being stored in your browser.
+
+    `ipyvizzu-story` generates `JavaScript` code, then the `vizzu-story` and `vizzu`
+    calls are evaluated by the browser. Therefore if a blank space appears where the
+    chart should be, check the console log of your browser. `vizzu-story` and
+    `vizzu` reports its errors there. If you get a `vizzu-story` or `vizzu` error in
+    your browser console that is not straightforward to understand, please clean
+    your browser cache first, because it might be caused by an older version being
+    stored in your browser.

@@ -156,10 +156,10 @@ administrator to release the project.
 To release `ipyvizzu-story`, follow the steps below:
 
 - Increase the version number in `__version__.py`. The version bump should be in
-  a separate commit.
+    a separate commit.
 
 - Generate the release notes and publish the new release on
-  [Releases](https://github.com/vizzuhq/ipyvizzu-story/releases).
+    [Releases](https://github.com/vizzuhq/ipyvizzu-story/releases).
 
 **Note:** Publishing a new release will automatically trigger the `cd` workflow,
 which builds, checks, and uploads the `ipyvizzu-story` package to

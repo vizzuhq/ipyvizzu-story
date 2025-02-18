@@ -39,7 +39,7 @@ jobs:
                   node-version: '22'
                   cache: 'npm'
                   cache-dependency-path: 'package-lock.json'
-  
+
             - name: Set up npm
               run: |
                   npm ci
