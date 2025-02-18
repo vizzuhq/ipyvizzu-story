@@ -43,7 +43,7 @@ dataLoaded.then((data) => {
 			style: { plot: { xAxis: { label: { color: '#00000000' } } } },
 			config: {
 				split: true,
-				align: 'min',
+				align: 'none',
 				title: 'Python is always or frequently used by 58%'
 			}
 		},
@@ -57,7 +57,7 @@ dataLoaded.then((data) => {
 				filter: (record) =>
 					(record.Popularity === 'Always' || record.Popularity === 'Frequently') &&
 					record.Year === '2022',
-				config: { x: { range: { max: 100 } }, align: 'min' }
+				config: { x: { range: { max: 100 } }, align: 'none' }
 			},
 			{
 				config: {

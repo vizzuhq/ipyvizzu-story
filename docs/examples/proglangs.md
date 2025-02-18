@@ -95,7 +95,7 @@ slide2 = Slide(
         Config(
             {
                 "split": True,
-                "align": "min",
+                "align": "none",
                 "title": "Python is always or frequently used by 58%",
             }
         ),
@@ -119,7 +119,7 @@ slide3.add_step(
             && record.Year == 2022
             """
         ),
-        Config({"x": {"range": {"max": 100}}, "align": "min"}),
+        Config({"x": {"range": {"max": 100}}, "align": "none"}),
     )
 )
 slide3.add_step(
