@@ -353,9 +353,11 @@ slide15.add_step(
     Step(
         Config(
             {
-                "y": ["tweets", "Tool"],
+                "y": {
+                    "set": ["tweets", "Tool"],
+                    "range": {"min": "110%", "max": "0%"},
+                },
                 "x": ["AMPM", "hour12"],
-                "align": "max",
             }
         ),
     )

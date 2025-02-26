@@ -188,7 +188,10 @@ dataLoaded.then((data) => {
 		[
 			{ config: { x: ['tweets', 'AMPM', 'hour12'], label: null } },
 			{
-				config: { y: ['tweets', 'Tool'], x: ['AMPM', 'hour12'], align: 'max' }
+				config: {
+					y: { set: ['tweets', 'Tool'], range: { min: '110%', max: '0%' } },
+					x: ['AMPM', 'hour12']
+				}
 			},
 			{ config: { geometry: 'area' } },
 			{

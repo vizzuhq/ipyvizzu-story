@@ -50,7 +50,6 @@ Promise.all([dataLoaded, vizzuLoaded]).then((results) => {
 				config: Vizzu.presets.groupedBar({
 					x: 'Count',
 					y: 'Sex',
-					groupedBy: 'Sex',
 					legend: 'color',
 					title: 'Rougly one-third of the passengers were ladies'
 				})
