@@ -92,26 +92,26 @@ more details and a step-by-step tutorial into `ipyvizzu-story` or check out our
 for more details.
 
 - Notebooks
-  - [Jupyter Notebook](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyternotebook/)
-  - [Colab](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/colab/)
-  - [Databricks](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/databricks/)
-  - [DataCamp](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/datacamp/)
-  - [Deepnote](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/deepnote/)
-  - [JupyterLab](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlab/)
-  - [JupyterLite](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlite/)
-  - [Kaggle](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/kaggle/)
-  - [Noteable](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/noteable/)
+    - [Jupyter Notebook](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyternotebook/)
+    - [Colab](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/colab/)
+    - [Databricks](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/databricks/)
+    - [DataCamp](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/datacamp/)
+    - [Deepnote](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/deepnote/)
+    - [JupyterLab](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlab/)
+    - [JupyterLite](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/jupyterlite/)
+    - [Kaggle](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/kaggle/)
+    - [Noteable](https://ipyvizzu-story.vizzuhq.com/latest/environments/notebook/noteable/)
 - App platforms
-  - [Streamlit](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/streamlit/)
-  - [Flask](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/flask/)
-  - [Panel](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/panel/)
-  - [Mercury](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/mercury/)
-  - [Voilà](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/voila/)
+    - [Streamlit](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/streamlit/)
+    - [Flask](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/flask/)
+    - [Panel](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/panel/)
+    - [Mercury](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/mercury/)
+    - [Voilà](https://ipyvizzu-story.vizzuhq.com/latest/environments/platform/voila/)
 - BI tools
-  - [Mode](https://ipyvizzu-story.vizzuhq.com/latest/environments/bi/mode/)
+    - [Mode](https://ipyvizzu-story.vizzuhq.com/latest/environments/bi/mode/)
 - IDEs
-  - [PyCharm](https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/pycharm/)
-  - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/vscode/)
+    - [PyCharm](https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/pycharm/)
+    - [VSCode Python](https://ipyvizzu-story.vizzuhq.com/latest/environments/ide/vscode/)
 - [Python](https://ipyvizzu-story.vizzuhq.com/latest/environments/python/)
 
 ## Contributing
@@ -123,8 +123,11 @@ further info.
 ## Contact
 
 - Join our Slack if you have any questions or comments:
-  [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
-- Drop us a line at hello@vizzuhq.com
+    [vizzu-community.slack.com](https://join.slack.com/t/vizzu-community/shared_invite/zt-w2nqhq44-2CCWL4o7qn2Ns1EFSf9kEg)
+    
+
+- Drop us a line at hello@vizzu.io
+
 - Follow us on Twitter: [VizzuHQ](https://twitter.com/VizzuHQ)
 
 ## Usage Statistics
@@ -139,7 +142,7 @@ compatible. For more details, please visit
 
 ## License
 
-Copyright © 2022-2023 [Vizzu Inc](https://vizzuhq.com).
+Copyright © 2022-2025 [Vizzu Inc](https://vizzuhq.com).
 
 Released under the
 [Apache 2.0 License](https://ipyvizzu-story.vizzuhq.com/latest/LICENSE).

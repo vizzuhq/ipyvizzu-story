@@ -13,7 +13,7 @@ in [ipyvizzu](https://ipyvizzu.vizzuhq.com/latest/tutorial/), with a minor, but
 important difference:
 
 - all of the data has to be added to the story at initialization, and it can be
-  filtered at every `Step` throughout the `Story`.
+    filtered at every `Step` throughout the `Story`.
 
 ```python
 slide = Slide(
@@ -66,6 +66,7 @@ story.add_slide(slide)
 ```
 
 !!! tip
+
     Check
     [ipyvizzu - Filtering & adding new records chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/filter_add_new_records/)
     and
@@ -84,6 +85,7 @@ story.set_feature("tooltip", True)
 ```
 
 !!! tip
+
     See
     [ipyvizzu - Axes, title, tooltip chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/axes_title_tooltip/)
     for more details on chart features.
@@ -100,6 +102,7 @@ story.add_event("click", handler)
 ```
 
 !!! tip
+
     See
     [ipyvizzu - Events chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/events/)
     for more details on events.
@@ -120,6 +123,7 @@ story
 ```
 
 !!! info
+
     If you run into issues with playing your story, check the
     [Environments chapter](../environments/index.md) for more details on the
     available features in your environment.

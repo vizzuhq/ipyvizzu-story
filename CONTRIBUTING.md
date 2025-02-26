@@ -22,22 +22,22 @@ mind, that's awesome and we are very interested in hearing about it.
 
 ### Development environment
 
-For contributing to the project, it is recommended to use `Python` `3.10`.
+For contributing to the project, it is recommended to use `Python` `3.13`.
 However, for the documentation we are also using `JavaScript`. If you plan to
 contribute to this part of the project, you will need `Node.js`, preferably
-version `18`.
+version `22`.
 
 The following steps demonstrate how to set up the development environment on an
-`Ubuntu` `22.04` operating system. However, the process can be adapted for other
+`Ubuntu` `24.04` operating system. However, the process can be adapted for other
 operating systems as well.
 
 To start using the `ipyvizzu-story` development environment, you need to create
 a virtual environment and install `pdm` within it.
 
 ```sh
-python3.10 -m venv ".venv"
+python3.13 -m venv ".venv"
 source .venv/bin/activate
-pip install pdm==2.8.0
+pip install pdm==2.22.3
 ```
 
 Once set up, you can install development dependencies:
@@ -70,7 +70,7 @@ pre-commit install --hook-type pre-commit --hook-type pre-push -c ./tools/ci/.pr
 ```
 
 **Note:** The provided `.pre-commit-ubuntu.yaml` configuration file is tailored
-for `Ubuntu` `22.04`. If you intend to use another operating system, you may
+for `Ubuntu` `24.04`. If you intend to use another operating system, you may
 need to create a custom configuration file suitable for that environment.
 
 ### CI
@@ -156,10 +156,10 @@ administrator to release the project.
 To release `ipyvizzu-story`, follow the steps below:
 
 - Increase the version number in `__version__.py`. The version bump should be in
-  a separate commit.
+    a separate commit.
 
 - Generate the release notes and publish the new release on
-  [Releases](https://github.com/vizzuhq/ipyvizzu-story/releases).
+    [Releases](https://github.com/vizzuhq/ipyvizzu-story/releases).
 
 **Note:** Publishing a new release will automatically trigger the `cd` workflow,
 which builds, checks, and uploads the `ipyvizzu-story` package to

@@ -29,6 +29,7 @@ story = Story(data=data, style=Style({"title": {"fontSize": 50}}))
 ```
 
 !!! tip
+
     Check
     [ipyvizzu - Color palette & fonts chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/color_palette_fonts/)
     and
@@ -96,8 +97,9 @@ story.vizzu = "<url>/vizzu.min.js"
 ```
 
 !!! info
-    The default value of `vizzu` property is `None`, because the default version
-    of `Vizzu` is stored in the `vizzu-story` package.
+
+    The default value of `vizzu` property is `None`, because the default version of
+    `Vizzu` is stored in the `vizzu-story` package.
 
 ### Vizzu-Story
 

@@ -9,11 +9,13 @@ You can use the same data definition formats as in the `ipyvizzu` library:
 to `ipyvizzu`, there are two types of data series: dimensions and measures.
 
 !!! note
+
     Please note, that all of the data used throughout your data story has to be
-    added to the story at initialization. The data being shown can be filtered
-    at each step.
+    added to the story at initialization. The data being shown can be filtered at
+    each step.
 
 !!! tip
+
     See
     [ipyvizzu - Data chapter](https://ipyvizzu.vizzuhq.com/latest/tutorial/data/)
     for more details about data.

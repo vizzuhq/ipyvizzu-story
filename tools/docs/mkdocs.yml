@@ -2,7 +2,7 @@ strict: true
 
 site_name: ipyvizzu-story
 site_url: https://ipyvizzu-story.vizzuhq.com
-copyright: Copyright &copy; 2022-2023 Vizzu Inc.
+copyright: Copyright &copy; 2022-2025 Vizzu Inc.
 
 docs_dir: ../../docs
 site_dir: ../../site
@@ -62,7 +62,6 @@ extra:
 markdown_extensions:
     - pymdownx.tasklist:
           custom_checkbox: true
-    - mdx_truly_sane_lists
     - attr_list
     - md_in_html
     - admonition
@@ -79,7 +78,8 @@ plugins:
           redirect_template: ./tools/docs/overrides/mike/redirect.html
     - search
     - section-index
-    - autorefs
+    - autorefs:
+          resolve_closest: true
     - mkdocstrings:
           enable_inventory: true
           handlers:
@@ -99,7 +99,7 @@ plugins:
               - examples/gen_examples.py
               - reference/gen_reference.py
     - coverage:
-          page_name: coverage
+          page_path: coverage
           html_report_dir: .coverage/html
     - literate-nav:
           implicit_index: true

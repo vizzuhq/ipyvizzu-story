@@ -3,10 +3,10 @@ name = "ipyvizzu-story"
 dynamic = ["version"]
 description = "Build, present and share animated data stories in Jupyter Notebook and similar environments."
 authors = [
-    {name = "Vizzu Inc.", email = "hello@vizzuhq.com"},
+    {name = "Vizzu Inc.", email = "hello@vizzu.io"},
 ]
 readme = "README.md"
-requires-python = ">=3.6"
+requires-python = ">=3.9"
 dependencies = [
     "ipyvizzu<1.0.0"
 ]
@@ -135,7 +135,7 @@ release = {composite = ["build", "python ./tools/ci/version.py True"]}
 legacy_tox_ini = """
 [tox]
 envlist =
-    py{36,37,38,39,310,311}
+    py{39,310,311,312,313}
     coverage
 
 [testenv]
@@ -144,17 +144,17 @@ setenv =
 deps =
     coverage[toml]
     ddt
-extras =
-    jupyter
-    streamlit
-    panel
 commands =
     python -m coverage run --branch --source ipyvizzustory -m unittest discover tests
     python -m coverage report -m
     python -c "import os; pyenv='{envname}'; os.rename('.coverage/env/.coverage.' + pyenv, '.coverage/env/.coverage.3.' + pyenv[3:])"
 
-[testenv:py{37,38,39,310,311}]
+[testenv:py{39,310,311,312,313}]
 package = editable
+extras =
+    jupyter
+    streamlit
+    panel
 
 [testenv:coverage]
 skip_install = True
@@ -166,52 +166,52 @@ commands =
 
 [tool.pdm.dev-dependencies]
 packagetool = [
-    "twine ; python_version >= '3.10'"
+    "twine ; python_version >= '3.13'"
 ]
 packagedeps = [
-    "ipyvizzu ; python_version >= '3.10'",
+    "ipyvizzu ; python_version >= '3.13'",
 ]
 codequality = [
-    "pre-commit ; python_version >= '3.10'",
-    "black ; python_version >= '3.10'",
-    "black[jupyter] ; python_version >= '3.10'",
-    "pylint ; python_version >= '3.10'",
-    "mypy ; python_version >= '3.10'",
-    "ddt ; python_version >= '3.10'",
-    "tox ; python_version >= '3.10'",
+    "pre-commit ; python_version >= '3.13'",
+    "black ; python_version >= '3.13'",
+    "black[jupyter] ; python_version >= '3.13'",
+    "pylint ; python_version >= '3.13'",
+    "mypy ; python_version >= '3.13'",
+    "ddt ; python_version >= '3.13'",
+    "tox ; python_version >= '3.13'",
 ]
 env = [
-    "notebook ; python_version >= '3.10'",
-    "IPython ; python_version >= '3.10'",
-    "streamlit ; python_version >= '3.10'",
-    "panel ; python_version >= '3.10'",
+    "notebook ; python_version >= '3.13'",
+    "IPython ; python_version >= '3.13'",
+    "streamlit ; python_version >= '3.13'",
+    "panel ; python_version >= '3.13'",
 ]
 docs = [
-    "mdformat ; python_version >= '3.10'",
-    "mdformat-beautysh ; python_version >= '3.10'",
-    "mdformat-black ; python_version >= '3.10'",
-    "mdformat-configurable-black ; python_version >= '3.10'",
-    "mdformat-config ; python_version >= '3.10'",
-    "mdformat-web ; python_version >= '3.10'",
-    "mdformat-admon ; python_version >= '3.10'",
-    "mdformat-gfm ; python_version >= '3.10'",
-    "mdformat-tables ; python_version >= '3.10'",
-    "mdformat-footnote ; python_version >= '3.10'",
-    "mdformat-frontmatter ; python_version >= '3.10'",
-    "mdx_truly_sane_lists ; python_version >= '3.10'",
-    "pyyaml ; python_version >= '3.10'",
-    "types-pyyaml ; python_version >= '3.10'",
-    "requests ; python_version >= '3.10'",
-    "types-requests ; python_version >= '3.10'",
-    "mkdocs ; python_version >= '3.10'",
-    "mkdocs-material ; python_version >= '3.10'",
-    "mkdocs-section-index ; python_version >= '3.10'",
-    "mkdocs-literate-nav ; python_version >= '3.10'",
-    "mkdocs-autorefs ; python_version >= '3.10'",
-    "mkdocstrings[python] ; python_version >= '3.10'",
-    "mkdocs-gen-files ; python_version >= '3.10'",
-    "mkdocs-coverage ; python_version >= '3.10'",
-    "mike ; python_version >= '3.10'",
+    "setuptools ; python_version >= '3.13'",
+    "mdformat ; python_version >= '3.13'",
+    "mdformat-beautysh ; python_version >= '3.13'",
+    "mdformat-black ; python_version >= '3.13'",
+    "mdformat-configurable-black ; python_version >= '3.13'",
+    "mdformat-config ; python_version >= '3.13'",
+    "mdformat-web ; python_version >= '3.13'",
+    "mdformat-mkdocs ; python_version >= '3.13'",
+    "mdformat-gfm ; python_version >= '3.13'",
+    "mdformat-tables ; python_version >= '3.13'",
+    "mdformat-footnote ; python_version >= '3.13'",
+    "mdformat-frontmatter ; python_version >= '3.13'",
+    "pyyaml ; python_version >= '3.13'",
+    "types-pyyaml ; python_version >= '3.13'",
+    "requests ; python_version >= '3.13'",
+    "types-requests ; python_version >= '3.13'",
+    "mkdocs ; python_version >= '3.13'",
+    "mkdocs-material ; python_version >= '3.13'",
+    "mkdocs-section-index ; python_version >= '3.13'",
+    "mkdocs-literate-nav ; python_version >= '3.13'",
+    "mkdocs-autorefs ; python_version >= '3.13'",
+    "mkdocstrings[python] ; python_version >= '3.13'",
+    "mkdocs-gen-files ; python_version >= '3.13'",
+    "mkdocs-coverage ; python_version >= '3.13'",
+    "mike ; python_version >= '3.13'",
 ]
 
 [tool.pylint.messages-control]

@@ -4,15 +4,15 @@
 package.
 
 !!! info
+
     `ipyvizzu-story` requires and downloads the
     [Vizzu](https://github.com/vizzuhq/vizzu-lib) `JavaScript`/`C++`
     [library](https://www.jsdelivr.com/package/npm/vizzu) and the
     [Vizzu-Story](https://github.com/vizzuhq/vizzu-ext-js-story) `JavaScript`
-    [package](https://www.jsdelivr.com/package/npm/vizzu-story) from
-    `jsDelivr CDN`, but you can also use a different or self-hosted version of
-    them. Check
-    [Initialization chapter](./tutorial/initialization.md#story-properties) for
-    more details.
+    [package](https://www.jsdelivr.com/package/npm/vizzu-story) from `jsDelivr CDN`,
+    but you can also use a different or self-hosted version of them. Check
+    [Initialization chapter](./tutorial/initialization.md#story-properties) for more
+    details.
 
 ## pypi
 

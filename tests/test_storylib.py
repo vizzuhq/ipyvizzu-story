@@ -54,7 +54,7 @@ class TestHtml(ABC):
         chart_events="",
         chart_plugins="",
     ) -> str:
-        # pylint: disable=too-many-arguments
+        # pylint: disable=too-many-arguments,too-many-positional-arguments
         return DISPLAY_TEMPLATE.format(
             id="1234567",
             version=version,

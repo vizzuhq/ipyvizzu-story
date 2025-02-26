@@ -571,9 +571,9 @@ class Story(dict):
             vizzu=f'vizzu-url="{self._vizzu}"' if self._vizzu else "",
             vizzu_story=self._vizzu_story,
             vizzu_player_data=vizzu_player_data,
-            start_slide=f'start-slide="{self._start_slide}"'
-            if self._start_slide
-            else "",
+            start_slide=(
+                f'start-slide="{self._start_slide}"' if self._start_slide else ""
+            ),
             chart_size=self._size.style,
             chart_features=f"\n{DISPLAY_INDENT * 3}".join(self._features),
             chart_events=f"\n{DISPLAY_INDENT * 3}".join(self._events),

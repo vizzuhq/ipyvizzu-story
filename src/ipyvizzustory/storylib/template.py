@@ -1,6 +1,5 @@
 """A module for storing the `HTML` templates."""
 
-
 VIZZU_STORY: str = (
     "https://cdn.jsdelivr.net/npm/vizzu-story@0.7/dist/vizzu-story.min.js"
 )
